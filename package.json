@@ -10,7 +10,8 @@
     "check:evidence": "node scripts/check-evidence.mjs",
     "check:regressions": "node scripts/check-regressions.mjs",
     "compare": "node scripts/compare-runs.mjs",
-    "agent": "node --env-file=.env scripts/run-agent.mjs"
+    "agent": "node --env-file=.env scripts/run-agent.mjs",
+    "benchmark": "node scripts/benchmark.mjs"
   },
   "dependencies": {
     "playwright": "^1.64.1"

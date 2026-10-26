@@ -7,11 +7,12 @@ import {expected,variants} from '../src/fixture.mjs';
 import {collectEvidence,replayTrace} from '../src/evidence.mjs';
 import {classifyReport,renderReport} from '../src/report.mjs';
 import {runConfiguration} from '../src/comparison.mjs';
+import {randomInt} from 'node:crypto';
 
 const variant=process.argv[2]||'correct';
 if(!variants.includes(variant))throw new Error('Unknown fixture variant');
 const task='Book a studio introduction for Alex Tester, email alex@example.test, on October 30, 2026 at 15:00. Review the details, close the review window, then confirm the booking.';
-const output=resolve('output/playwright',`agent-${Date.now()}`);
+const output=resolve('output/playwright',`agent-${Date.now()}${String(randomInt(1000000)).padStart(6,'0')}`);
 await mkdir(output,{recursive:true});
 const app=await createFixtureServer();
 let session;
@@ -35,7 +36,7 @@ try{
     }catch(error){attempt.state='failed';attempt.reason=error.message;throw error;}
     const result=await session.executor.execute(decision.action);
     const after=await observe(session.page,resolve(output,`${String(i).padStart(2,'0')}-after.png`));
-    report.steps.push({...result,focusBefore:observation.focus,focusAfter:after.focus});
+    report.steps.push({...result,timestamp:new Date().toISOString(),focusBefore:observation.focus,focusAfter:after.focus});
     report.model=decision.model;
     history=decision.continueWith({executed:true,focus:after.focus});
     console.log(`${i+1}: ${decision.action.name} ${JSON.stringify(decision.action.arguments)} -> ${after.focus.id||after.focus.tag}`);
