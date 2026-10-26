@@ -8,6 +8,8 @@ Planning and the first implementation started on October 26, 2026 for the Meta G
 
 See [the first-run evidence and limitations](docs/first-run.md).
 
+A local workbench now starts and stops the real agent, shows its observed page and keyboard actions, and opens the saved evidence report. Run history survives page refresh and server restart. User cancellation preserves a partial report without attributing a website defect.
+
 ## Run locally
 
 Requires Node.js 24+.
@@ -18,7 +20,11 @@ npx playwright install chromium
 npm start
 ```
 
-Open http://127.0.0.1:3000/lab to select a condition and open a fresh booking session. The developer panel is separate from the agent page.
+Open http://127.0.0.1:3000 for the agent workbench. Choose a condition and press **Start agent**; **Stop** cancels the current attempt or evidence checks. The page updates the screenshot and action record as the agent works, then exposes **Open evidence report**. Only one run may be active; opening or refreshing the workbench never starts a run. Live runs use Meta API credits.
+
+The server loads a local `.env` automatically. Without a configured `MODEL_API_KEY`, the workbench remains viewable and disables starting the agent. Keys stay on the server. This workbench binds only to the local computer; it is not a hosted multi-user service.
+
+Open http://127.0.0.1:3000/lab to manually open a fresh booking fixture. This developer panel is separate from the agent's observations.
 
 ```sh
 npm test
@@ -26,6 +32,7 @@ npm run check:fixtures
 npm run check:evidence
 npm run check:regressions
 npm run check:stopping
+npm run check:console
 ```
 
 For a live Meta run, copy `.env.example` to `.env` and fill your own `MODEL_API_KEY` and `META_MODEL` locally. The validated model is `muse-spark-1.3`. Never paste keys into issues, chat, screenshots, or committed files. Then run:
@@ -37,6 +44,8 @@ npm run agent -- correct
 Each live run can make up to 25 billable model calls. The model sees only screenshots, accessible semantics, current focus and its action history. It does not see the chosen condition or server record. Outputs go to ignored `output/playwright/` folders. The fixture runner only permits network requests to its local booking routes; arbitrary external URLs are not supported.
 
 The agent now stops before another model request when three actions leave its observation unchanged or same-direction Tab navigation completes a cycle back to the same page/focus state. The model may also return a strictly validated blocked message without a keyboard action. Stops are recorded separately from website attribution; API failures remain invalid runs. See [stopping policy and verification](docs/agent-stopping.md). The original 25-run benchmark remains frozen.
+
+Workbench verification covers start, live actions/screenshots, cancellation before the first key and during evidence checks, partial reports, restart, history, and mobile layout. `check:console` uses real Chromium with explicitly labelled scripted decisions and makes no Meta calls. See [console verification](docs/console-verification.md).
 
 Other conditions: `unreachable_button`, `calendar_keyboard`, `modal_dismissal`, `focus_loss`. Every live run now includes three independent fixture-contract probes, three corrected controls, exact-key replays, and an HTML evidence report. An unconfirmed failure stays inconclusive. Confirmed fixture observations produce a suspected-blocker outcome while keeping the AI task outcome separate. Do not treat the current runner as a general accessibility scanner: probes currently know the booking fixture's expected contracts.
 

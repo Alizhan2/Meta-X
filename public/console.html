@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>TabProof — Keyboard runs</title>
+  <link rel="stylesheet" href="/console.css">
+  <script type="module" src="/console.mjs"></script>
+</head>
+<body>
+  <a class="skip-link" href="#workbench">Skip to the run</a>
+  <header class="app-header">
+    <a class="brand" href="/" aria-label="TabProof home">
+      <svg viewBox="0 0 36 36" width="36" height="36" fill="none" aria-hidden="true"><rect x="1" y="1" width="34" height="34" rx="9" fill="currentColor"/><path d="M9 15h15m-4-4 4 4-4 4M26 11v13M10 24h8" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span>TabProof</span>
+    </a>
+    <nav aria-label="Project"><a href="/lab">Open test fixture <span aria-hidden="true">↗</span></a><span class="environment">Local workbench</span></nav>
+  </header>
+
+  <main>
+    <section class="introduction" aria-labelledby="page-title">
+      <div><h1 id="page-title">A task, from the keyboard.</h1><p>Watch the agent try it. Keep the evidence. Check the fix.</p></div>
+      <div class="constraint"><svg viewBox="0 0 24 24" fill="none" width="22" height="22" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="3" stroke="currentColor" stroke-width="1.5"/><path d="M6 9h1m4 0h1m4 0h1M6 12h1m4 0h1m4 0h1M7 15h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg><span>Keys and text only</span></div>
+    </section>
+
+    <section class="run-controls" aria-label="Run controls">
+      <form id="start-form">
+        <div class="condition-control"><label for="condition">Test condition</label><select id="condition" name="variant"><option value="correct">Corrected form</option><option value="unreachable_button">Unreachable confirm button</option><option value="calendar_keyboard">Calendar keyboard barrier</option><option value="modal_dismissal">Review window cannot close</option><option value="focus_loss">Unexpected focus return</option></select></div>
+        <div class="control-buttons"><button class="button button-primary" id="start" type="submit" disabled><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="m4 2 9 6-9 6z" fill="currentColor"/></svg><span id="start-label">Start agent</span></button><button class="button button-stop" id="stop" type="button" disabled><svg viewBox="0 0 16 16" width="15" height="15" aria-hidden="true"><rect x="3" y="3" width="10" height="10" rx="1" fill="currentColor"/></svg>Stop</button></div><p class="credit-note">Live Meta runs use API credits.</p>
+      </form>
+      <div class="service-state"><span class="status-mark" id="status-mark" data-state="connecting" aria-hidden="true"></span><span id="service-status" role="status" aria-live="polite">Connecting to the run service</span><p id="control-note">Checking whether the agent is ready.</p></div>
+    </section>
+
+    <div id="notice" class="notice" role="alert" hidden><span id="notice-text"></span><button id="retry" class="text-button" type="button" hidden>Retry connection</button></div>
+
+    <section class="task-brief" aria-labelledby="task-title"><div><h2 id="task-title">The task</h2><p>Book a studio introduction for <strong>Alex Tester</strong>, using <span class="email">alex@example.test</span>. Review the details, close the review, then confirm.</p></div><dl><div><dt>Date</dt><dd>October 30, 2026</dd></div><div><dt>Time</dt><dd>15:00 Aqtobe</dd></div></dl></section>
+
+    <section id="workbench" class="workbench" aria-label="Agent workbench" tabindex="-1">
+      <section class="screen-panel" aria-labelledby="screen-title">
+        <div class="panel-heading"><div><h2 id="screen-title">Observed page</h2><p id="selected-run-label">No run selected</p></div><span class="run-state" id="selected-run-state" hidden></span></div>
+        <div class="screen-stage" id="screen-stage">
+          <div class="screen-empty" id="screen-empty">
+            <svg class="keyboard-path" viewBox="0 0 590 170" fill="none" aria-hidden="true">
+              <path d="M135 88h80m150 0h80" stroke="#a4bec2" stroke-width="2" stroke-dasharray="5 6"/><path d="m205 83 6 5-6 5m230-5 6 5-6 5" stroke="#a4bec2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <rect x="25" y="52" width="112" height="72" rx="10" fill="white" stroke="#a4bec2"/><text x="81" y="94" text-anchor="middle" fill="#526e76" font-size="18" font-family="Avenir Next, sans-serif">Name</text>
+              <rect x="220" y="47" width="145" height="82" rx="10" fill="white" stroke="#2455cf" stroke-width="2"/><rect x="226" y="53" width="133" height="70" rx="6" stroke="#d9e3f9"/><text x="293" y="96" text-anchor="middle" fill="#2455cf" font-size="22" font-family="Avenir Next, sans-serif">Tab ↹</text>
+              <rect x="448" y="52" width="112" height="72" rx="10" fill="white" stroke="#a4bec2"/><text x="504" y="94" text-anchor="middle" fill="#526e76" font-size="18" font-family="Avenir Next, sans-serif">Confirm</text>
+            </svg>
+            <h3 id="empty-title">The next move is a key press.</h3><p id="empty-description">Start a run to see the real page and the agent’s actions.</p><span class="empty-note">No clicks. No hidden shortcuts.</span>
+          </div>
+          <img id="screen-image" alt="Observed booking page" hidden>
+          <p class="image-error" id="image-error" hidden>The screenshot could not load. The action record is still available.</p>
+        </div>
+        <div class="screen-caption"><span class="focus-symbol" aria-hidden="true">⌖</span><p id="focus-caption">Keyboard focus will appear here.</p><span id="screen-caption-meta"></span></div>
+      </section>
+
+      <section class="action-panel" aria-labelledby="actions-title"><div class="panel-heading"><div><h2 id="actions-title">Action record</h2><p id="action-count">No actions recorded</p></div><svg viewBox="0 0 24 24" width="22" height="22" fill="none" aria-hidden="true"><path d="M8 6h13M8 12h13M8 18h13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="3" cy="6" r="1.5" fill="currentColor"/><circle cx="3" cy="12" r="1.5" fill="currentColor"/><circle cx="3" cy="18" r="1.5" fill="currentColor"/></svg></div><div class="action-scroll" id="action-scroll"><p class="action-empty" id="action-empty">Each executed action will appear here, in order.</p><ol class="timeline" id="timeline"></ol></div><div class="run-footer"><p id="run-detail">Choose a test condition to begin.</p><a class="button button-report" id="report-link" href="#" hidden>Open evidence report <span aria-hidden="true">↗</span></a></div></section>
+    </section>
+
+    <section class="history-section" aria-labelledby="history-title"><div class="history-heading"><div><h2 id="history-title">Run history</h2><p id="history-note">Only real runs are listed here.</p></div><button class="text-button" type="button" id="refresh-history">Refresh</button></div><p id="history-empty" class="history-empty">No runs yet. Your first run will stay here for comparison.</p><ul id="run-history" class="history-list" aria-label="Previous runs"></ul></section>
+
+    <footer class="app-footer"><p>Controlled booking fixture. A successful task does not prove full accessibility.</p><p>Keyboard actions. Independent evidence checks.</p></footer>
+  </main>
+  <noscript><p class="notice">Enable JavaScript to control and inspect agent runs.</p></noscript>
+</body>
+</html>

@@ -1,11 +1,10 @@
 import http from 'node:http';
 import {readFile} from 'node:fs/promises';
 import {randomUUID} from 'node:crypto';
-import {fileURLToPath} from 'node:url';
 import {resolve} from 'node:path';
 import {bookingPage, variants} from './fixture.mjs';
 
-export async function createFixtureServer({port = 0} = {}) {
+export async function createFixtureServer({port = 0,runs=null,artifactRoot=resolve('output/playwright')} = {}) {
   const sessions = new Map();
   const css = await readFile(new URL('../public/style.css', import.meta.url));
   function createSession(variant = 'correct') {
@@ -15,15 +14,38 @@ export async function createFixtureServer({port = 0} = {}) {
   const server = http.createServer(async (req, res) => {
     const url = new URL(req.url, 'http://127.0.0.1');
     const send = (status, body, type = 'text/html') => {res.writeHead(status, {'Content-Type': type+'; charset=utf-8', 'Cache-Control': 'no-store', 'X-Content-Type-Options': 'nosniff'}); res.end(body);};
+    const json=(status,body)=>send(status,JSON.stringify(body),'application/json');
     const sid = /(?:^|;\s*)session=([\w-]+)/.exec(req.headers.cookie || '')?.[1];
     let session = sessions.get(sid);
     try {
+      const actualPort=server.address().port;
+      if(![`127.0.0.1:${actualPort}`,`localhost:${actualPort}`].includes(req.headers.host))return send(403,'Invalid host');
+      if(url.pathname.startsWith('/api/runs')&&runs){
+        if(req.method==='POST'){
+          if(req.headers.origin&&req.headers.origin!==`http://${req.headers.host}`)return json(403,{error:'invalid_origin'});
+          if(req.headers['content-type']?.split(';')[0]!=='application/json')return json(415,{error:'json_required'});
+        }
+        try{
+          if(url.pathname==='/api/runs'&&req.method==='GET')return json(200,runs.list());
+          if(url.pathname==='/api/runs'&&req.method==='POST'){
+            const body=JSON.parse(await readBody(req));
+            if(!body||Object.keys(body).join()!=='variant')return json(400,{error:'invalid_request'});
+            return json(202,{run:runs.start(body.variant)});
+          }
+          const match=/^\/api\/runs\/(agent-\d+)(\/stop)?$/.exec(url.pathname);
+          if(match&&!match[2]&&req.method==='GET')return json(200,{run:runs.get(match[1])});
+          if(match&&match[2]&&req.method==='POST')return json(202,{run:runs.stop(match[1])});
+          return json(404,{error:'not_found'});
+        }catch(error){return json(error.status||400,{error:error.code||'invalid_request'});}
+      }
+      const consoleFiles={'/':'console.html','/console':'console.html','/console.css':'console.css','/console.mjs':'console.mjs'};
+      if(runs&&consoleFiles[url.pathname]&&req.method==='GET')return send(200,await readFile(new URL('../public/'+consoleFiles[url.pathname],import.meta.url)),url.pathname.endsWith('.css')?'text/css':url.pathname.endsWith('.mjs')?'text/javascript':'text/html');
       if (url.pathname === '/style.css') return send(200, css, 'text/css');
       if (url.pathname === '/favicon.ico') return send(204, '');
       const artifact=/^\/reports\/(agent-\d+)\/(report\.(?:html|json)|\d{2}(?:-after)?\.png|evidence\/evidence\.json)$/.exec(url.pathname);
       if(artifact && req.method==='GET'){
         try{
-          const file=await readFile(resolve('output/playwright',artifact[1],artifact[2]));
+          const file=await readFile(resolve(artifactRoot,artifact[1],artifact[2]));
           return send(200,file,artifact[2].endsWith('.png')?'image/png':artifact[2].endsWith('.json')?'application/json':'text/html');
         }catch{return send(404,'Report not found');}
       }
@@ -52,7 +74,3 @@ export async function createFixtureServer({port = 0} = {}) {
 }
 
 async function readBody(req) {let body='';for await (const chunk of req){body+=chunk;if(Buffer.byteLength(body)>4096)throw new Error('body_too_large')}return body;}
-if (process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1]) {
-  const app = await createFixtureServer({port:Number(process.env.PORT || 3000)});
-  console.log(`TabProof fixture lab: ${app.origin}/lab`);
-}

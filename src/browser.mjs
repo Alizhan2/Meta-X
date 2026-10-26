@@ -6,9 +6,13 @@ async function waitForRender(page){
   await handle.dispose();
 }
 
-export async function openSession(app, variant, {budget = 25} = {}) {
+export async function openSession(app, variant, {budget = 25,signal} = {}) {
+  signal?.throwIfAborted();
   const browser = await chromium.launch({headless:true, ...(process.env.BROWSER_EXECUTABLE_PATH ? {executablePath:process.env.BROWSER_EXECUTABLE_PATH} : {})});
+  const abort=()=>{void browser.close().catch(()=>{});};
+  signal?.addEventListener('abort',abort,{once:true});
   try {
+    signal?.throwIfAborted();
     const context = await browser.newContext({viewport:{width:1180,height:960}, reducedMotion:'reduce', serviceWorkers:'block'});
     const id = app.createSession(variant);
     await context.addCookies([{name:'session',value:id,url:app.origin,httpOnly:true,sameSite:'Strict'}]);
@@ -32,7 +36,7 @@ export async function openSession(app, variant, {budget = 25} = {}) {
     });
     await page.goto(app.origin+'/booking');
     await page.waitForFunction(()=>document.activeElement?.id==='name');
-    const executor=createKeyboardExecutor(page,{budget,afterAction:async()=>{
+    const executor=createKeyboardExecutor(page,{budget,signal,afterAction:async()=>{
       await waitForRender(page);
       if(pendingBooking){
         let timer;
@@ -41,8 +45,8 @@ export async function openSession(app, variant, {budget = 25} = {}) {
         await waitForRender(page);
       }
     }});
-    return {page, executor, record:()=>app.getRecord(id), close:()=>browser.close()};
-  } catch(error) {await browser.close();throw error;}
+    return {page, executor, record:()=>app.getRecord(id), close:async()=>{signal?.removeEventListener('abort',abort);await browser.close();}};
+  } catch(error) {signal?.removeEventListener('abort',abort);await browser.close();throw error;}
 }
 
 export async function observe(page, screenshotPath) {

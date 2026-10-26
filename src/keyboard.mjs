@@ -15,7 +15,7 @@ export function validateAction(action) {
 }
 
 // The returned interface closes over a page; the agent never receives that page.
-export function createKeyboardExecutor(page, {budget = 25, afterAction = async () => {}} = {}) {
+export function createKeyboardExecutor(page, {budget = 25, afterAction = async () => {},signal} = {}) {
   if (!Number.isInteger(budget) || budget < 1 || budget > 100) throw new Error('invalid_budget');
   let used = 0;
   let active = false;
@@ -23,6 +23,7 @@ export function createKeyboardExecutor(page, {budget = 25, afterAction = async (
     get used() { return used; },
     async execute(candidate) {
       const action = validateAction(candidate);
+      signal?.throwIfAborted();
       if (active) throw new Error('concurrent_action');
       if (used >= budget) throw new Error('action_budget_exhausted');
       active = true;

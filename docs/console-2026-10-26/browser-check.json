@@ -1,0 +1,45 @@
+{
+  "scope": "UI/API/real Chromium fixture integration using injected scripted decisions; no Meta calls or credits.",
+  "checks": [
+    "start",
+    "duplicate rejected",
+    "live actions and screenshot",
+    "stop",
+    "partial report",
+    "restart",
+    "task completion",
+    "report link",
+    "mobile",
+    "history refresh",
+    "cancel during evidence",
+    "immediate stop",
+    "cross-origin rejection"
+  ],
+  "runs": [
+    {
+      "id": "agent-1793038835747113481",
+      "state": "stopped",
+      "actions": 0,
+      "taskCompleted": false
+    },
+    {
+      "id": "agent-1793038828013007551",
+      "state": "stopped",
+      "actions": 15,
+      "taskCompleted": true
+    },
+    {
+      "id": "agent-1793038813621992515",
+      "state": "completed",
+      "actions": 15,
+      "taskCompleted": true
+    },
+    {
+      "id": "agent-1793038812287823540",
+      "state": "stopped",
+      "actions": 2,
+      "taskCompleted": false
+    }
+  ],
+  "pageErrors": []
+}

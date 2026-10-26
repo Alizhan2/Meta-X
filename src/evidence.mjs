@@ -28,9 +28,9 @@ export async function tabPath(session, {count=12, backward=false}={}) {
 
 // Fixture-specific contract checks. This detector knows expected UI contracts,
 // not the active defect switch. Never publish its accuracy as model accuracy.
-export async function inspectFixture(app,variant,{directory}={}) {
+export async function inspectFixture(app,variant,{directory,signal}={}) {
   if(directory)await mkdir(directory,{recursive:true});
-  const session=await openSession(app,variant,{budget:100});
+  const session=await openSession(app,variant,{budget:100,signal});
   const trace=[];const findings=[];const checkpoints=[];
   async function action(name,args){const before=await active(session.page);const result=await session.executor.execute({name,arguments:args});trace.push({...result,before,after:await active(session.page)});}
   const press=key=>action('press_key',{key});
@@ -93,22 +93,23 @@ export function summarizeComparisons(observed,control) {
   return {findings,controlsClean,observedRuns:observed.length,controlRuns:control.length,scope:'Fixture-specific deterministic contract checks; not a general WCAG verdict and not model detection metrics.'};
 }
 
-export async function collectEvidence(app,variant,{repeats=3,directory}={}) {
+export async function collectEvidence(app,variant,{repeats=3,directory,signal}={}) {
   if(!Number.isInteger(repeats)||repeats<1||repeats>5)throw new Error('invalid_repeats');
   const observed=[],control=[];
   for(let i=0;i<repeats;i++){
-    observed.push(await inspectFixture(app,variant,{directory:directory&&resolve(directory,`observed-${i+1}`)}));
-    control.push(await inspectFixture(app,'correct',{directory:directory&&resolve(directory,`corrected-${i+1}`)}));
+    signal?.throwIfAborted();
+    observed.push(await inspectFixture(app,variant,{directory:directory&&resolve(directory,`observed-${i+1}`),signal}));
+    control.push(await inspectFixture(app,'correct',{directory:directory&&resolve(directory,`corrected-${i+1}`),signal}));
   }
   const result={...summarizeComparisons(observed,control),observed,control};
   if(directory)await writeFile(resolve(directory,'evidence.json'),JSON.stringify(result,null,2));
   return result;
 }
 
-export async function replayTrace(app,variant,steps,{directory}={}) {
+export async function replayTrace(app,variant,steps,{directory,signal}={}) {
   if(!Array.isArray(steps)||steps.length>25)throw new Error('invalid_trace');
   if(directory)await mkdir(directory,{recursive:true});
-  const session=await openSession(app,variant,{budget:25});const replay=[];
+  const session=await openSession(app,variant,{budget:25,signal});const replay=[];
   try{
     for(const [index,step] of steps.entries()){
       await session.executor.execute(step.action);
