@@ -1,0 +1,130 @@
+{
+  "schema": 1,
+  "checkedAt": "2026-10-26T19:42:47.925Z",
+  "task": "Open reading details, use the keyboard to focus the Reading panel and scroll that panel all the way to the end, then close the dialog.",
+  "scope": "One fresh Meta session per condition on the same URL, task, model and agent build. Two exploratory attempts, not reliability statistics. All attempts retained. No scripted model decisions.",
+  "comparable": true,
+  "passed": true,
+  "sources": {
+    "examples/react-aria-scroll/app.jsx": "471b659ef14cfef2c2c4c9f1fb48c40ca55a5b55dd4253b5af68c82a1c5e3deb",
+    "examples/react-aria-scroll/style.css": "1ec11af0117bc35e1edc9fc3fede41cb982185133a803fcdf55bebe0aa0f1bc6",
+    "examples/react-aria-scroll/server.mjs": "a1106cfe7da3dab7ce273a2f66e4eb68e7f077b25f9c8f6bd4ee814f4308ace4",
+    "examples/react-aria-scroll/package-lock.json": "3c000d8ea07d3fc00f51b2352df4e35e230570cca3ce1fe9f214f6b1fc8cefb8",
+    "scripts/react-aria-contract.mjs": "9c6fe1b9604ff228a6fba3f40849191705e773575c5de913a4c3cbc0b7217b7b",
+    "scripts/check-react-aria-agent.mjs": "e394967d631a3d54db334ac3affa649df79ac3b57a7563be986e82988c3eb8bc"
+  },
+  "attempts": [
+    {
+      "condition": "original",
+      "runId": "agent-1793043687813023279",
+      "output": "/Users/ali/Desktop/meta hack/output/playwright/agent-1793043687813023279",
+      "model": "muse-spark-1.3",
+      "configuration": {
+        "schema": 1,
+        "fixtureAndAgentBuild": "6f1a17ab9d07d1e1c4fd57a8a5240154f41fe05092cfcef6695ea294684629ce",
+        "browserVersion": "156.0.8078.4",
+        "playwrightVersion": "1.64.1",
+        "platform": "darwin",
+        "architecture": "arm64",
+        "seed": null,
+        "requestedModel": "muse-spark-1.3",
+        "inputTokenLimit": 64000,
+        "modelSettings": {
+          "tool_choice": "auto",
+          "parallel_tool_calls": false,
+          "max_output_tokens": 2048,
+          "store": false
+        },
+        "contextPolicy": {
+          "version": 3,
+          "observations": "current-screenshot-and-page",
+          "memory": "complete-action-ledger-and-bounded-page-excerpts",
+          "recentToolTurns": 1,
+          "reasoning": "latest-encrypted-turn-in-memory-only",
+          "maxActions": 25,
+          "maxPageExcerpts": 3,
+          "maxExcerptCharacters": 12000
+        },
+        "targetKind": "custom",
+        "completionVerification": "model-reported"
+      },
+      "sources": {
+        "examples/react-aria-scroll/app.jsx": "471b659ef14cfef2c2c4c9f1fb48c40ca55a5b55dd4253b5af68c82a1c5e3deb",
+        "examples/react-aria-scroll/style.css": "1ec11af0117bc35e1edc9fc3fede41cb982185133a803fcdf55bebe0aa0f1bc6",
+        "examples/react-aria-scroll/server.mjs": "a1106cfe7da3dab7ce273a2f66e4eb68e7f077b25f9c8f6bd4ee814f4308ace4",
+        "examples/react-aria-scroll/package-lock.json": "3c000d8ea07d3fc00f51b2352df4e35e230570cca3ce1fe9f214f6b1fc8cefb8",
+        "scripts/react-aria-contract.mjs": "9c6fe1b9604ff228a6fba3f40849191705e773575c5de913a4c3cbc0b7217b7b",
+        "scripts/check-react-aria-agent.mjs": "e394967d631a3d54db334ac3affa649df79ac3b57a7563be986e82988c3eb8bc"
+      },
+      "sourcesStable": true,
+      "valid": true,
+      "outcome": "agent_inconclusive",
+      "reason": "model_reported_blockage",
+      "actions": 4,
+      "contract": {
+        "panelReached": false,
+        "panelScrolled": false,
+        "endReached": false,
+        "dialogClosed": false
+      },
+      "taskVerified": false,
+      "knownTokens": 20920
+    },
+    {
+      "condition": "corrected",
+      "runId": "agent-1793043716255035530",
+      "output": "/Users/ali/Desktop/meta hack/output/playwright/agent-1793043716255035530",
+      "model": "muse-spark-1.3",
+      "configuration": {
+        "schema": 1,
+        "fixtureAndAgentBuild": "6f1a17ab9d07d1e1c4fd57a8a5240154f41fe05092cfcef6695ea294684629ce",
+        "browserVersion": "156.0.8078.4",
+        "playwrightVersion": "1.64.1",
+        "platform": "darwin",
+        "architecture": "arm64",
+        "seed": null,
+        "requestedModel": "muse-spark-1.3",
+        "inputTokenLimit": 64000,
+        "modelSettings": {
+          "tool_choice": "auto",
+          "parallel_tool_calls": false,
+          "max_output_tokens": 2048,
+          "store": false
+        },
+        "contextPolicy": {
+          "version": 3,
+          "observations": "current-screenshot-and-page",
+          "memory": "complete-action-ledger-and-bounded-page-excerpts",
+          "recentToolTurns": 1,
+          "reasoning": "latest-encrypted-turn-in-memory-only",
+          "maxActions": 25,
+          "maxPageExcerpts": 3,
+          "maxExcerptCharacters": 12000
+        },
+        "targetKind": "custom",
+        "completionVerification": "model-reported"
+      },
+      "sources": {
+        "examples/react-aria-scroll/app.jsx": "471b659ef14cfef2c2c4c9f1fb48c40ca55a5b55dd4253b5af68c82a1c5e3deb",
+        "examples/react-aria-scroll/style.css": "1ec11af0117bc35e1edc9fc3fede41cb982185133a803fcdf55bebe0aa0f1bc6",
+        "examples/react-aria-scroll/server.mjs": "a1106cfe7da3dab7ce273a2f66e4eb68e7f077b25f9c8f6bd4ee814f4308ace4",
+        "examples/react-aria-scroll/package-lock.json": "3c000d8ea07d3fc00f51b2352df4e35e230570cca3ce1fe9f214f6b1fc8cefb8",
+        "scripts/react-aria-contract.mjs": "9c6fe1b9604ff228a6fba3f40849191705e773575c5de913a4c3cbc0b7217b7b",
+        "scripts/check-react-aria-agent.mjs": "e394967d631a3d54db334ac3affa649df79ac3b57a7563be986e82988c3eb8bc"
+      },
+      "sourcesStable": true,
+      "valid": true,
+      "outcome": "agent_reported_complete",
+      "reason": "model_reported_completion",
+      "actions": 7,
+      "contract": {
+        "panelReached": true,
+        "panelScrolled": true,
+        "endReached": true,
+        "dialogClosed": true
+      },
+      "taskVerified": true,
+      "knownTokens": 34394
+    }
+  ]
+}

@@ -1,0 +1,112 @@
+{
+  "condition": "original",
+  "runId": "agent-1793043522810239683",
+  "scope": "Read-only DOM/focus/scroll audit of the actual live session. These measurements were never provided to the model. This is a task-specific oracle, not universal accessibility detection.",
+  "contract": {
+    "panelReached": false,
+    "panelScrolled": false,
+    "endReached": false,
+    "dialogClosed": false
+  },
+  "taskVerified": false,
+  "states": [
+    {
+      "index": 0,
+      "after": false,
+      "focusId": null,
+      "focusTag": "BODY",
+      "dialogOpen": false,
+      "panelPresent": false,
+      "panelFocused": false,
+      "scrollTop": null,
+      "scrollHeight": null,
+      "clientHeight": null,
+      "atEnd": false,
+      "endVisible": false
+    },
+    {
+      "index": 0,
+      "after": true,
+      "focusId": "open-reading",
+      "focusTag": "BUTTON",
+      "dialogOpen": false,
+      "panelPresent": false,
+      "panelFocused": false,
+      "scrollTop": null,
+      "scrollHeight": null,
+      "clientHeight": null,
+      "atEnd": false,
+      "endVisible": false
+    },
+    {
+      "index": 1,
+      "after": false,
+      "focusId": "open-reading",
+      "focusTag": "BUTTON",
+      "dialogOpen": false,
+      "panelPresent": false,
+      "panelFocused": false,
+      "scrollTop": null,
+      "scrollHeight": null,
+      "clientHeight": null,
+      "atEnd": false,
+      "endVisible": false
+    },
+    {
+      "index": 1,
+      "after": true,
+      "focusId": "react-aria5199747347-:r0:",
+      "focusTag": "SECTION",
+      "dialogOpen": true,
+      "panelPresent": true,
+      "panelFocused": false,
+      "scrollTop": 0,
+      "scrollHeight": 2796,
+      "clientHeight": 536,
+      "atEnd": false,
+      "endVisible": false
+    },
+    {
+      "index": 2,
+      "after": false,
+      "focusId": "react-aria5199747347-:r0:",
+      "focusTag": "SECTION",
+      "dialogOpen": true,
+      "panelPresent": true,
+      "panelFocused": false,
+      "scrollTop": 0,
+      "scrollHeight": 2796,
+      "clientHeight": 536,
+      "atEnd": false,
+      "endVisible": false
+    },
+    {
+      "index": 2,
+      "after": true,
+      "focusId": "close-reading",
+      "focusTag": "BUTTON",
+      "dialogOpen": true,
+      "panelPresent": true,
+      "panelFocused": false,
+      "scrollTop": 0,
+      "scrollHeight": 2796,
+      "clientHeight": 536,
+      "atEnd": false,
+      "endVisible": false
+    },
+    {
+      "index": 3,
+      "after": false,
+      "focusId": "close-reading",
+      "focusTag": "BUTTON",
+      "dialogOpen": true,
+      "panelPresent": true,
+      "panelFocused": false,
+      "scrollTop": 0,
+      "scrollHeight": 2796,
+      "clientHeight": 536,
+      "atEnd": false,
+      "endVisible": false
+    }
+  ]
+}

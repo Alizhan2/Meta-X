@@ -1,0 +1,266 @@
+{
+  "runId": "agent-1793043522810239683",
+  "targetKind": "custom",
+  "targetUrl": "http://127.0.0.1:59768/",
+  "task": "Open reading details, use the keyboard to focus the Reading panel and scroll that panel all the way to the end, then close the dialog.",
+  "startedAt": "2026-10-26T19:38:42.810Z",
+  "budget": 25,
+  "valid": false,
+  "outcome": "agent_inconclusive",
+  "reason": "The operation was aborted due to timeout",
+  "steps": [
+    {
+      "index": 1,
+      "action": {
+        "name": "press_key",
+        "arguments": {
+          "key": "Tab"
+        }
+      },
+      "timestamp": "2026-10-26T19:38:49.677Z",
+      "focusBefore": {
+        "id": null,
+        "tag": "BODY",
+        "role": null,
+        "name": "Page",
+        "value": null,
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "focusAfter": {
+        "id": "open-reading",
+        "tag": "BUTTON",
+        "role": null,
+        "name": "Open reading details",
+        "value": "",
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "checkpoint": {
+        "before": "05bf883b7eb25d9b3b98345247c7dc96490693556d897d858cde614d36e53978",
+        "after": "ad5244f112b36f4264f9854d46aa50461b9191e8d63d1ec89bd7047561337233",
+        "unchangedActions": 0
+      }
+    },
+    {
+      "index": 2,
+      "action": {
+        "name": "press_key",
+        "arguments": {
+          "key": "Enter"
+        }
+      },
+      "timestamp": "2026-10-26T19:38:53.250Z",
+      "focusBefore": {
+        "id": "open-reading",
+        "tag": "BUTTON",
+        "role": null,
+        "name": "Open reading details",
+        "value": "",
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "focusAfter": {
+        "id": "react-aria5199747347-:r0:",
+        "tag": "SECTION",
+        "role": "dialog",
+        "name": "Reading details\n\nThe reading panel below contains the complete document.\n\nSection 1\n\nThis document demonstrates a scrollable region inside a third-party modal. ",
+        "value": null,
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "checkpoint": {
+        "before": "ad5244f112b36f4264f9854d46aa50461b9191e8d63d1ec89bd7047561337233",
+        "after": "41588b55463cebc35dcaecd1a05027f496d2dae41a612459cbe2c71168d0c517",
+        "unchangedActions": 0
+      }
+    },
+    {
+      "index": 3,
+      "action": {
+        "name": "press_key",
+        "arguments": {
+          "key": "Tab"
+        }
+      },
+      "timestamp": "2026-10-26T19:38:56.776Z",
+      "focusBefore": {
+        "id": "react-aria5199747347-:r0:",
+        "tag": "SECTION",
+        "role": "dialog",
+        "name": "Reading details\n\nThe reading panel below contains the complete document.\n\nSection 1\n\nThis document demonstrates a scrollable region inside a third-party modal. ",
+        "value": null,
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "focusAfter": {
+        "id": "close-reading",
+        "tag": "BUTTON",
+        "role": null,
+        "name": "Close reading details",
+        "value": "",
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "checkpoint": {
+        "before": "41588b55463cebc35dcaecd1a05027f496d2dae41a612459cbe2c71168d0c517",
+        "after": "98b4f4e68c1843d731d0b4ef1d232493945cb0ab4d55a504da8129abb5e4a2ec",
+        "unchangedActions": 0
+      }
+    }
+  ],
+  "usage": [
+    {
+      "input_tokens": 2691,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 96,
+      "output_tokens_details": {
+        "reasoning_tokens": 26
+      },
+      "total_tokens": 2787
+    },
+    {
+      "input_tokens": 2899,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 91,
+      "output_tokens_details": {
+        "reasoning_tokens": 18
+      },
+      "total_tokens": 2990
+    },
+    {
+      "input_tokens": 4286,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 188,
+      "output_tokens_details": {
+        "reasoning_tokens": 114
+      },
+      "total_tokens": 4474
+    }
+  ],
+  "requests": [
+    {
+      "index": 1,
+      "startedAt": "2026-10-26T19:38:43.337Z",
+      "state": "validated",
+      "preflightInputTokens": 2834,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 2691,
+        "input_tokens_details": {
+          "cached_tokens": 0
+        },
+        "output_tokens": 96,
+        "output_tokens_details": {
+          "reasoning_tokens": 26
+        },
+        "total_tokens": 2787
+      }
+    },
+    {
+      "index": 2,
+      "startedAt": "2026-10-26T19:38:49.705Z",
+      "state": "validated",
+      "preflightInputTokens": 3042,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 2899,
+        "input_tokens_details": {
+          "cached_tokens": 0
+        },
+        "output_tokens": 91,
+        "output_tokens_details": {
+          "reasoning_tokens": 18
+        },
+        "total_tokens": 2990
+      }
+    },
+    {
+      "index": 3,
+      "startedAt": "2026-10-26T19:38:53.280Z",
+      "state": "validated",
+      "preflightInputTokens": 4429,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 4286,
+        "input_tokens_details": {
+          "cached_tokens": 0
+        },
+        "output_tokens": 188,
+        "output_tokens_details": {
+          "reasoning_tokens": 114
+        },
+        "total_tokens": 4474
+      }
+    },
+    {
+      "index": 4,
+      "startedAt": "2026-10-26T19:38:56.831Z",
+      "state": "failed",
+      "reason": "The operation was aborted due to timeout"
+    }
+  ],
+  "executionMode": "meta-live",
+  "scope": "Real Meta/TabProof attempt on pinned third-party React Aria; generic completion remains model-reported. Separate example-specific read-only audit is saved beside this report.",
+  "configuration": {
+    "schema": 1,
+    "fixtureAndAgentBuild": "6f1a17ab9d07d1e1c4fd57a8a5240154f41fe05092cfcef6695ea294684629ce",
+    "browserVersion": "156.0.8078.4",
+    "playwrightVersion": "1.64.1",
+    "platform": "darwin",
+    "architecture": "arm64",
+    "seed": null,
+    "requestedModel": "muse-spark-1.3",
+    "inputTokenLimit": 64000,
+    "modelSettings": {
+      "tool_choice": "auto",
+      "parallel_tool_calls": false,
+      "max_output_tokens": 2048,
+      "store": false
+    },
+    "contextPolicy": {
+      "version": 3,
+      "observations": "current-screenshot-and-page",
+      "memory": "complete-action-ledger-and-bounded-page-excerpts",
+      "recentToolTurns": 1,
+      "reasoning": "latest-encrypted-turn-in-memory-only",
+      "maxActions": 25,
+      "maxPageExcerpts": 3,
+      "maxExcerptCharacters": 12000
+    },
+    "targetKind": "custom",
+    "completionVerification": "model-reported"
+  },
+  "finalUrl": "http://127.0.0.1:59768/",
+  "stopPolicy": {
+    "version": 2,
+    "unchangedActions": 3,
+    "tabCycleMinimum": 2,
+    "repeatedNavigationActions": 4
+  },
+  "model": "muse-spark-1.3",
+  "executedActions": 3,
+  "agentResult": {
+    "outcome": "agent_inconclusive",
+    "reason": "The operation was aborted due to timeout",
+    "valid": false
+  },
+  "evidenceSkipped": "custom_target",
+  "replaysSkipped": "custom_target",
+  "finishedAt": "2026-10-26T19:39:56.837Z"
+}

@@ -1,0 +1,23 @@
+:root { color-scheme: light; font-family: system-ui, sans-serif; color: #192b31; background: #edf2f1; }
+* { box-sizing: border-box; }
+body { margin: 0; }
+main { max-width: 720px; margin: 90px auto; padding: 32px; }
+.eyebrow { color: #4f6c69; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; }
+h1 { font-size: 32px; letter-spacing: -.04em; }
+p { line-height: 1.65; }
+button { font: inherit; border: 1px solid #1f5553; border-radius: 8px; padding: 12px 20px; color: white; background: #1f5553; cursor: pointer; }
+:focus-visible { outline: 3px solid #d06b22; outline-offset: 4px; }
+.react-aria-ModalOverlay { position: fixed; inset: 0; background: #12252cc4; display: flex; align-items: center; justify-content: center; padding: 40px; }
+.react-aria-Modal { width: min(700px, 100%); background: white; border-radius: 14px; overflow: hidden; box-shadow: 0 24px 90px #07181e70; }
+.react-aria-Dialog { display: flex; flex-direction: column; height: min(740px, 80dvh); overflow: hidden; }
+header, footer { flex: none; padding: 22px 30px; }
+header { border-bottom: 1px solid #dce5e3; }
+header h2 { margin: 0; font-size: 24px; }
+header p { margin-bottom: 0; color: #53666b; }
+footer { border-top: 1px solid #dce5e3; }
+.reading-panel { min-height: 0; overflow-y: auto; padding: 8px 30px; }
+.reading-panel:focus-visible { outline-offset: -5px; }
+section { margin-block: 28px; }
+#document-end { font-weight: 700; padding-block: 24px; }
+.native-control .reading-panel { height: 360px; margin-top: 20px; background: white; }
+@media (max-width: 600px) { main { margin: 20px auto; padding: 24px; } .react-aria-ModalOverlay { padding: 18px; } }

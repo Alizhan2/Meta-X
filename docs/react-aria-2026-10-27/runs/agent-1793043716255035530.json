@@ -1,0 +1,558 @@
+{
+  "runId": "agent-1793043716255035530",
+  "targetKind": "custom",
+  "targetUrl": "http://127.0.0.1:59852/",
+  "task": "Open reading details, use the keyboard to focus the Reading panel and scroll that panel all the way to the end, then close the dialog.",
+  "startedAt": "2026-10-26T19:41:56.255Z",
+  "budget": 25,
+  "valid": true,
+  "outcome": "agent_reported_complete",
+  "reason": "model_reported_completion",
+  "steps": [
+    {
+      "index": 1,
+      "action": {
+        "name": "press_key",
+        "arguments": {
+          "key": "Tab"
+        }
+      },
+      "timestamp": "2026-10-26T19:42:02.533Z",
+      "focusBefore": {
+        "id": null,
+        "tag": "BODY",
+        "role": null,
+        "name": "Page",
+        "value": null,
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "focusAfter": {
+        "id": "open-reading",
+        "tag": "BUTTON",
+        "role": null,
+        "name": "Open reading details",
+        "value": "",
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "checkpoint": {
+        "before": "d354c75c1ec6b6b1633d7c572fc9f63d1988b57f190a026117dcb1391fe3b751",
+        "after": "f439098be1db491d7383f2e278894f5728eb5e6ab5a33abde54ed02ed17b0e1c",
+        "unchangedActions": 0
+      }
+    },
+    {
+      "index": 2,
+      "action": {
+        "name": "press_key",
+        "arguments": {
+          "key": "Enter"
+        }
+      },
+      "timestamp": "2026-10-26T19:42:07.119Z",
+      "focusBefore": {
+        "id": "open-reading",
+        "tag": "BUTTON",
+        "role": null,
+        "name": "Open reading details",
+        "value": "",
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "focusAfter": {
+        "id": "react-aria6213058585-:r0:",
+        "tag": "SECTION",
+        "role": "dialog",
+        "name": "Reading details\n\nThe reading panel below contains the complete document.\n\nSection 1\n\nThis document demonstrates a scrollable region inside a third-party modal. ",
+        "value": null,
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "checkpoint": {
+        "before": "f439098be1db491d7383f2e278894f5728eb5e6ab5a33abde54ed02ed17b0e1c",
+        "after": "37fdbdbb8b918f4e7b622a74ba3518f8cce06a916d359bccbce04348587b8d4d",
+        "unchangedActions": 0
+      }
+    },
+    {
+      "index": 3,
+      "action": {
+        "name": "press_key",
+        "arguments": {
+          "key": "Tab"
+        }
+      },
+      "timestamp": "2026-10-26T19:42:13.807Z",
+      "focusBefore": {
+        "id": "react-aria6213058585-:r0:",
+        "tag": "SECTION",
+        "role": "dialog",
+        "name": "Reading details\n\nThe reading panel below contains the complete document.\n\nSection 1\n\nThis document demonstrates a scrollable region inside a third-party modal. ",
+        "value": null,
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "focusAfter": {
+        "id": "reading-panel",
+        "tag": "DIV",
+        "role": "region",
+        "name": "Reading panel",
+        "value": null,
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "checkpoint": {
+        "before": "37fdbdbb8b918f4e7b622a74ba3518f8cce06a916d359bccbce04348587b8d4d",
+        "after": "675dba91fe53b8d0373abf675cfb8547c00920c08941304959095b4552d007a5",
+        "unchangedActions": 0
+      }
+    },
+    {
+      "index": 4,
+      "action": {
+        "name": "press_key",
+        "arguments": {
+          "key": "End"
+        }
+      },
+      "timestamp": "2026-10-26T19:42:18.434Z",
+      "focusBefore": {
+        "id": "reading-panel",
+        "tag": "DIV",
+        "role": "region",
+        "name": "Reading panel",
+        "value": null,
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "focusAfter": {
+        "id": "reading-panel",
+        "tag": "DIV",
+        "role": "region",
+        "name": "Reading panel",
+        "value": null,
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "checkpoint": {
+        "before": "675dba91fe53b8d0373abf675cfb8547c00920c08941304959095b4552d007a5",
+        "after": "675dba91fe53b8d0373abf675cfb8547c00920c08941304959095b4552d007a5",
+        "unchangedActions": 1
+      }
+    },
+    {
+      "index": 5,
+      "action": {
+        "name": "press_key",
+        "arguments": {
+          "key": "End"
+        }
+      },
+      "timestamp": "2026-10-26T19:42:25.596Z",
+      "focusBefore": {
+        "id": "reading-panel",
+        "tag": "DIV",
+        "role": "region",
+        "name": "Reading panel",
+        "value": null,
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "focusAfter": {
+        "id": "reading-panel",
+        "tag": "DIV",
+        "role": "region",
+        "name": "Reading panel",
+        "value": null,
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "checkpoint": {
+        "before": "675dba91fe53b8d0373abf675cfb8547c00920c08941304959095b4552d007a5",
+        "after": "675dba91fe53b8d0373abf675cfb8547c00920c08941304959095b4552d007a5",
+        "unchangedActions": 2
+      }
+    },
+    {
+      "index": 6,
+      "action": {
+        "name": "press_key",
+        "arguments": {
+          "key": "Tab"
+        }
+      },
+      "timestamp": "2026-10-26T19:42:39.187Z",
+      "focusBefore": {
+        "id": "reading-panel",
+        "tag": "DIV",
+        "role": "region",
+        "name": "Reading panel",
+        "value": null,
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "focusAfter": {
+        "id": "close-reading",
+        "tag": "BUTTON",
+        "role": null,
+        "name": "Close reading details",
+        "value": "",
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "checkpoint": {
+        "before": "675dba91fe53b8d0373abf675cfb8547c00920c08941304959095b4552d007a5",
+        "after": "7709163b56eb333d0c495cbf081446581f801f61bf563c3bcf4e9cb64003b3e3",
+        "unchangedActions": 0
+      }
+    },
+    {
+      "index": 7,
+      "action": {
+        "name": "press_key",
+        "arguments": {
+          "key": "Enter"
+        }
+      },
+      "timestamp": "2026-10-26T19:42:44.786Z",
+      "focusBefore": {
+        "id": "close-reading",
+        "tag": "BUTTON",
+        "role": null,
+        "name": "Close reading details",
+        "value": "",
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "focusAfter": {
+        "id": "open-reading",
+        "tag": "BUTTON",
+        "role": null,
+        "name": "Open reading details",
+        "value": "",
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "checkpoint": {
+        "before": "7709163b56eb333d0c495cbf081446581f801f61bf563c3bcf4e9cb64003b3e3",
+        "after": "f439098be1db491d7383f2e278894f5728eb5e6ab5a33abde54ed02ed17b0e1c",
+        "unchangedActions": 0
+      }
+    }
+  ],
+  "usage": [
+    {
+      "input_tokens": 2691,
+      "input_tokens_details": {
+        "cached_tokens": 2673
+      },
+      "output_tokens": 99,
+      "output_tokens_details": {
+        "reasoning_tokens": 31
+      },
+      "total_tokens": 2790
+    },
+    {
+      "input_tokens": 2904,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 83,
+      "output_tokens_details": {
+        "reasoning_tokens": 14
+      },
+      "total_tokens": 2987
+    },
+    {
+      "input_tokens": 4282,
+      "input_tokens_details": {
+        "cached_tokens": 881
+      },
+      "output_tokens": 155,
+      "output_tokens_details": {
+        "reasoning_tokens": 82
+      },
+      "total_tokens": 4437
+    },
+    {
+      "input_tokens": 4329,
+      "input_tokens_details": {
+        "cached_tokens": 881
+      },
+      "output_tokens": 142,
+      "output_tokens_details": {
+        "reasoning_tokens": 69
+      },
+      "total_tokens": 4471
+    },
+    {
+      "input_tokens": 4375,
+      "input_tokens_details": {
+        "cached_tokens": 881
+      },
+      "output_tokens": 711,
+      "output_tokens_details": {
+        "reasoning_tokens": 632
+      },
+      "total_tokens": 5086
+    },
+    {
+      "input_tokens": 4997,
+      "input_tokens_details": {
+        "cached_tokens": 881
+      },
+      "output_tokens": 159,
+      "output_tokens_details": {
+        "reasoning_tokens": 84
+      },
+      "total_tokens": 5156
+    },
+    {
+      "input_tokens": 4510,
+      "input_tokens_details": {
+        "cached_tokens": 881
+      },
+      "output_tokens": 170,
+      "output_tokens_details": {
+        "reasoning_tokens": 100
+      },
+      "total_tokens": 4680
+    },
+    {
+      "input_tokens": 4719,
+      "input_tokens_details": {
+        "cached_tokens": 881
+      },
+      "output_tokens": 68,
+      "output_tokens_details": {
+        "reasoning_tokens": 40
+      },
+      "total_tokens": 4787
+    }
+  ],
+  "requests": [
+    {
+      "index": 1,
+      "startedAt": "2026-10-26T19:41:56.449Z",
+      "state": "validated",
+      "preflightInputTokens": 2834,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 2691,
+        "input_tokens_details": {
+          "cached_tokens": 2673
+        },
+        "output_tokens": 99,
+        "output_tokens_details": {
+          "reasoning_tokens": 31
+        },
+        "total_tokens": 2790
+      }
+    },
+    {
+      "index": 2,
+      "startedAt": "2026-10-26T19:42:02.566Z",
+      "state": "validated",
+      "preflightInputTokens": 3047,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 2904,
+        "input_tokens_details": {
+          "cached_tokens": 0
+        },
+        "output_tokens": 83,
+        "output_tokens_details": {
+          "reasoning_tokens": 14
+        },
+        "total_tokens": 2987
+      }
+    },
+    {
+      "index": 3,
+      "startedAt": "2026-10-26T19:42:07.178Z",
+      "state": "validated",
+      "preflightInputTokens": 4425,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 4282,
+        "input_tokens_details": {
+          "cached_tokens": 881
+        },
+        "output_tokens": 155,
+        "output_tokens_details": {
+          "reasoning_tokens": 82
+        },
+        "total_tokens": 4437
+      }
+    },
+    {
+      "index": 4,
+      "startedAt": "2026-10-26T19:42:13.856Z",
+      "state": "validated",
+      "preflightInputTokens": 4472,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 4329,
+        "input_tokens_details": {
+          "cached_tokens": 881
+        },
+        "output_tokens": 142,
+        "output_tokens_details": {
+          "reasoning_tokens": 69
+        },
+        "total_tokens": 4471
+      }
+    },
+    {
+      "index": 5,
+      "startedAt": "2026-10-26T19:42:18.478Z",
+      "state": "validated",
+      "preflightInputTokens": 4518,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 4375,
+        "input_tokens_details": {
+          "cached_tokens": 881
+        },
+        "output_tokens": 711,
+        "output_tokens_details": {
+          "reasoning_tokens": 632
+        },
+        "total_tokens": 5086
+      }
+    },
+    {
+      "index": 6,
+      "startedAt": "2026-10-26T19:42:25.626Z",
+      "state": "validated",
+      "preflightInputTokens": 5140,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 4997,
+        "input_tokens_details": {
+          "cached_tokens": 881
+        },
+        "output_tokens": 159,
+        "output_tokens_details": {
+          "reasoning_tokens": 84
+        },
+        "total_tokens": 5156
+      }
+    },
+    {
+      "index": 7,
+      "startedAt": "2026-10-26T19:42:39.240Z",
+      "state": "validated",
+      "preflightInputTokens": 4653,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 4510,
+        "input_tokens_details": {
+          "cached_tokens": 881
+        },
+        "output_tokens": 170,
+        "output_tokens_details": {
+          "reasoning_tokens": 100
+        },
+        "total_tokens": 4680
+      }
+    },
+    {
+      "index": 8,
+      "startedAt": "2026-10-26T19:42:44.815Z",
+      "state": "validated",
+      "preflightInputTokens": 4862,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 4719,
+        "input_tokens_details": {
+          "cached_tokens": 881
+        },
+        "output_tokens": 68,
+        "output_tokens_details": {
+          "reasoning_tokens": 40
+        },
+        "total_tokens": 4787
+      }
+    }
+  ],
+  "executionMode": "meta-live",
+  "scope": "Real Meta/TabProof attempt on pinned third-party React Aria; generic completion remains model-reported. Separate example-specific read-only audit is saved beside this report.",
+  "configuration": {
+    "schema": 1,
+    "fixtureAndAgentBuild": "6f1a17ab9d07d1e1c4fd57a8a5240154f41fe05092cfcef6695ea294684629ce",
+    "browserVersion": "156.0.8078.4",
+    "playwrightVersion": "1.64.1",
+    "platform": "darwin",
+    "architecture": "arm64",
+    "seed": null,
+    "requestedModel": "muse-spark-1.3",
+    "inputTokenLimit": 64000,
+    "modelSettings": {
+      "tool_choice": "auto",
+      "parallel_tool_calls": false,
+      "max_output_tokens": 2048,
+      "store": false
+    },
+    "contextPolicy": {
+      "version": 3,
+      "observations": "current-screenshot-and-page",
+      "memory": "complete-action-ledger-and-bounded-page-excerpts",
+      "recentToolTurns": 1,
+      "reasoning": "latest-encrypted-turn-in-memory-only",
+      "maxActions": 25,
+      "maxPageExcerpts": 3,
+      "maxExcerptCharacters": 12000
+    },
+    "targetKind": "custom",
+    "completionVerification": "model-reported"
+  },
+  "finalUrl": "http://127.0.0.1:59852/",
+  "stopPolicy": {
+    "version": 2,
+    "unchangedActions": 3,
+    "tabCycleMinimum": 2,
+    "repeatedNavigationActions": 4
+  },
+  "model": "muse-spark-1.3",
+  "stop": {
+    "source": "model",
+    "reason": "model_reported_completion",
+    "atStep": 7,
+    "detail": "Dialog closed, focus returned to Open button after panel scroll"
+  },
+  "executedActions": 7,
+  "agentResult": {
+    "outcome": "agent_reported_complete",
+    "reason": "model_reported_completion",
+    "valid": true
+  },
+  "evidenceSkipped": "custom_target",
+  "replaysSkipped": "custom_target",
+  "finishedAt": "2026-10-26T19:42:47.903Z"
+}

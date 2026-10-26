@@ -26,6 +26,16 @@ To test your own site, choose **Run on → Your website**, paste a complete HTTP
 
 The final build was checked on the unmodified official Python documentation: opening Tutorial took 14 actions and searching for `venv` took 15. Separate read-only replays verified the resulting URLs, page headings/results and focus paths. Earlier context-limit and navigation-loop failures are retained alongside the fixes. See [all public-site attempts and verification](docs/public-sites-2026-10-27/README.md).
 
+A third-party keyboard barrier is now reproduced with the actual, unmodified **React Aria Components 1.19.0** package: a modal skips its scrollable reading panel. An identical keyboard test fails on the original integration in 3/3 sessions and passes after adding `tabIndex={0}` in 3/3, with pointer and native-browser controls. In a valid real-Meta comparison the agent stops on the original after 4 actions and completes the corrected task in 7; separate read-only live-session measurements confirm the results. An earlier API timeout is retained. This reproduces known upstream issue #10395 locally; it is an integration workaround, not an original upstream discovery or library patch. See [the before/after report and all attempts](docs/react-aria-2026-10-27/README.md).
+
+```sh
+npm ci --prefix examples/react-aria-scroll --ignore-scripts
+npm run check:third-party
+npm run demo:third-party
+```
+
+The deterministic check makes no Meta calls. The demo opens at http://127.0.0.1:4187/ with screenshots, measurements and links to the original/corrected integrations.
+
 For a custom website, completion is explicitly **model-reported**, without an independent success oracle. Its report contains the actual URL, task, observed actions and screenshots. Fixture-specific contract checks and automatic replays never run against a custom site, so submitting a form is not repeated for evidence. See [custom website support and verification](docs/custom-targets.md).
 
 The server loads a local `.env` automatically. Without a configured `MODEL_API_KEY`, the workbench remains viewable and disables starting the agent. Keys stay on the server. This workbench binds only to the local computer; it is not a hosted multi-user service.

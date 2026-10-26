@@ -1,0 +1,12 @@
+{
+  "name": "tabproof-react-aria-scroll-reproduction",
+  "private": true,
+  "type": "module",
+  "scripts": {"start": "node server.mjs"},
+  "dependencies": {
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "react-aria-components": "1.19.0",
+    "esbuild": "0.25.12"
+  }
+}
