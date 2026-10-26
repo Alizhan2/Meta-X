@@ -1,0 +1,79 @@
+{
+  "scope": "Post-benchmark local replay regression only. No AI requests; original 25-run data unchanged.",
+  "recordedAt": "2026-10-26T17:49:11.389Z",
+  "browserSourceSha256": "5723cc70de1c9e551c79dabb2e22b1aeabe1ec033f70f23e8c49371a362b414b",
+  "results": [
+    {
+      "runId": "agent-1793035233037270379",
+      "variant": "calendar_keyboard",
+      "actions": 25,
+      "replayCompletedWithoutError": true,
+      "taskCompleted": false,
+      "focusPathMatches": false
+    },
+    {
+      "runId": "agent-1793035368627942190",
+      "variant": "focus_loss",
+      "actions": 18,
+      "replayCompletedWithoutError": true,
+      "taskCompleted": false,
+      "focusPathMatches": false
+    },
+    {
+      "runId": "agent-1793035657954428168",
+      "variant": "focus_loss",
+      "actions": 18,
+      "replayCompletedWithoutError": true,
+      "taskCompleted": false,
+      "focusPathMatches": false
+    },
+    {
+      "runId": "agent-1793035848342337335",
+      "variant": "calendar_keyboard",
+      "actions": 25,
+      "replayCompletedWithoutError": true,
+      "taskCompleted": false,
+      "focusPathMatches": false
+    },
+    {
+      "runId": "agent-1793036020615113624",
+      "variant": "focus_loss",
+      "actions": 18,
+      "replayCompletedWithoutError": true,
+      "taskCompleted": false,
+      "focusPathMatches": false
+    },
+    {
+      "runId": "agent-1793036127001221566",
+      "variant": "calendar_keyboard",
+      "actions": 25,
+      "replayCompletedWithoutError": true,
+      "taskCompleted": false,
+      "focusPathMatches": false
+    },
+    {
+      "runId": "agent-1793036267663325348",
+      "variant": "focus_loss",
+      "actions": 18,
+      "replayCompletedWithoutError": true,
+      "taskCompleted": false,
+      "focusPathMatches": false
+    },
+    {
+      "runId": "agent-1793036433334901464",
+      "variant": "calendar_keyboard",
+      "actions": 25,
+      "replayCompletedWithoutError": true,
+      "taskCompleted": false,
+      "focusPathMatches": false
+    },
+    {
+      "runId": "agent-1793036599211641947",
+      "variant": "focus_loss",
+      "actions": 18,
+      "replayCompletedWithoutError": true,
+      "taskCompleted": false,
+      "focusPathMatches": false
+    }
+  ]
+}

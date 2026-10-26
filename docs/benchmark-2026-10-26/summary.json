@@ -1,0 +1,251 @@
+{
+  "attempts": 25,
+  "configurationState": "consistent",
+  "configurationConsistent": true,
+  "missingConfigurations": 0,
+  "rows": [
+    {
+      "variant": "correct",
+      "attempts": 5,
+      "eligible": 5,
+      "operationalCompletion": {
+        "numerator": 5,
+        "denominator": 5,
+        "percent": 100
+      },
+      "eligibleCompletion": {
+        "numerator": 5,
+        "denominator": 5,
+        "percent": 100
+      },
+      "confirmedFixtureFinding": null,
+      "falsePositive": {
+        "numerator": 0,
+        "denominator": 5,
+        "percent": 0
+      },
+      "reproducibility": {
+        "numerator": 5,
+        "denominator": 5,
+        "percent": 100
+      },
+      "replayPathMatches": {
+        "numerator": 5,
+        "denominator": 5,
+        "percent": 100
+      },
+      "errors": [],
+      "evidenceErrors": []
+    },
+    {
+      "variant": "unreachable_button",
+      "attempts": 5,
+      "eligible": 2,
+      "operationalCompletion": {
+        "numerator": 0,
+        "denominator": 5,
+        "percent": 0
+      },
+      "eligibleCompletion": {
+        "numerator": 0,
+        "denominator": 2,
+        "percent": 0
+      },
+      "confirmedFixtureFinding": {
+        "numerator": 2,
+        "denominator": 2,
+        "percent": 100
+      },
+      "falsePositive": null,
+      "reproducibility": {
+        "numerator": 2,
+        "denominator": 2,
+        "percent": 100
+      },
+      "replayPathMatches": {
+        "numerator": 5,
+        "denominator": 5,
+        "percent": 100
+      },
+      "errors": [
+        {
+          "runId": "agent-1793035133080089065",
+          "reason": "model_incomplete"
+        },
+        {
+          "runId": "agent-1793035461820294624",
+          "reason": "model_incomplete"
+        },
+        {
+          "runId": "agent-1793036113346233715",
+          "reason": "model_incomplete"
+        }
+      ],
+      "evidenceErrors": []
+    },
+    {
+      "variant": "calendar_keyboard",
+      "attempts": 5,
+      "eligible": 5,
+      "operationalCompletion": {
+        "numerator": 0,
+        "denominator": 5,
+        "percent": 0
+      },
+      "eligibleCompletion": {
+        "numerator": 0,
+        "denominator": 5,
+        "percent": 0
+      },
+      "confirmedFixtureFinding": {
+        "numerator": 5,
+        "denominator": 5,
+        "percent": 100
+      },
+      "falsePositive": null,
+      "reproducibility": {
+        "numerator": 5,
+        "denominator": 5,
+        "percent": 100
+      },
+      "replayPathMatches": {
+        "numerator": 5,
+        "denominator": 5,
+        "percent": 100
+      },
+      "errors": [],
+      "evidenceErrors": [
+        {
+          "runId": "agent-1793035233037270379",
+          "reason": "page.evaluate: Execution context was destroyed, most likely because of a navigation"
+        },
+        {
+          "runId": "agent-1793035848342337335",
+          "reason": "page.evaluate: Execution context was destroyed, most likely because of a navigation"
+        },
+        {
+          "runId": "agent-1793036127001221566",
+          "reason": "page.evaluate: Execution context was destroyed, most likely because of a navigation"
+        },
+        {
+          "runId": "agent-1793036433334901464",
+          "reason": "page.evaluate: Execution context was destroyed, most likely because of a navigation"
+        }
+      ]
+    },
+    {
+      "variant": "modal_dismissal",
+      "attempts": 5,
+      "eligible": 0,
+      "operationalCompletion": {
+        "numerator": 0,
+        "denominator": 5,
+        "percent": 0
+      },
+      "eligibleCompletion": {
+        "numerator": 0,
+        "denominator": 0,
+        "percent": null
+      },
+      "confirmedFixtureFinding": {
+        "numerator": 0,
+        "denominator": 0,
+        "percent": null
+      },
+      "falsePositive": null,
+      "reproducibility": {
+        "numerator": 0,
+        "denominator": 0,
+        "percent": null
+      },
+      "replayPathMatches": {
+        "numerator": 5,
+        "denominator": 5,
+        "percent": 100
+      },
+      "errors": [
+        {
+          "runId": "agent-1793035273203213310",
+          "reason": "model_incomplete"
+        },
+        {
+          "runId": "agent-1793035624368042030",
+          "reason": "model_incomplete"
+        },
+        {
+          "runId": "agent-1793035918862648708",
+          "reason": "model_incomplete"
+        },
+        {
+          "runId": "agent-1793036234901702591",
+          "reason": "model_incomplete"
+        },
+        {
+          "runId": "agent-1793036498989575852",
+          "reason": "model_incomplete"
+        }
+      ],
+      "evidenceErrors": []
+    },
+    {
+      "variant": "focus_loss",
+      "attempts": 5,
+      "eligible": 5,
+      "operationalCompletion": {
+        "numerator": 5,
+        "denominator": 5,
+        "percent": 100
+      },
+      "eligibleCompletion": {
+        "numerator": 5,
+        "denominator": 5,
+        "percent": 100
+      },
+      "confirmedFixtureFinding": {
+        "numerator": 5,
+        "denominator": 5,
+        "percent": 100
+      },
+      "falsePositive": null,
+      "reproducibility": {
+        "numerator": 5,
+        "denominator": 5,
+        "percent": 100
+      },
+      "replayPathMatches": {
+        "numerator": 5,
+        "denominator": 5,
+        "percent": 100
+      },
+      "errors": [],
+      "evidenceErrors": [
+        {
+          "runId": "agent-1793035368627942190",
+          "reason": "page.evaluate: Execution context was destroyed, most likely because of a navigation"
+        },
+        {
+          "runId": "agent-1793035657954428168",
+          "reason": "page.evaluate: Execution context was destroyed, most likely because of a navigation"
+        },
+        {
+          "runId": "agent-1793036020615113624",
+          "reason": "page.evaluate: Execution context was destroyed, most likely because of a navigation"
+        },
+        {
+          "runId": "agent-1793036267663325348",
+          "reason": "page.evaluate: Execution context was destroyed, most likely because of a navigation"
+        },
+        {
+          "runId": "agent-1793036599211641947",
+          "reason": "page.evaluate: Execution context was destroyed, most likely because of a navigation"
+        }
+      ]
+    }
+  ],
+  "requests": 505,
+  "knownTokens": 12603702,
+  "requestsWithoutUsage": 0,
+  "runsWithUnknownRequestCount": 0,
+  "modelDefectDetection": null,
+  "limitation": "Fixture-finding rates measure the hybrid system with a fixture-specific independent detector. They are not standalone model defect-detection rates. Errors remain in operational completion denominators and are listed separately from eligible-run ratios. Five trials per condition are exploratory."
+}

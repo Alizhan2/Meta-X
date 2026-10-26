@@ -26,6 +26,10 @@ test('HTML report escapes model-controlled text',()=>{
   const html=renderReport({task:'<script>alert(1)</script>',outcome:'agent_inconclusive',steps:[],evidence:{findings:[]}});
   assert.ok(!html.includes('<script>'));assert.ok(html.includes('&lt;script&gt;'));
 });
+test('later replay error does not deny completed independent attribution',()=>{
+  const html=renderReport({task:'test',outcome:'suspected_blocker',steps:[],evidenceError:'context lost',evidence:{findings:[]}});
+  assert.ok(html.includes('completed independent findings are preserved'));assert.ok(!html.includes('no independent attribution is made'));
+});
 test('API failure cannot count as agent detection even with independent fixture findings',()=>{
   const result=classifyReport({agentResult:{valid:false,reason:'model_http_429'}},{findings:[{confirmedInControlledFixture:true}]});
   assert.equal(result.outcome,'agent_inconclusive');assert.equal(result.reason,'model_http_429');

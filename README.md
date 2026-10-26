@@ -4,7 +4,7 @@ A keyboard-only AI agent that attempts a web task, records evidence of blockers,
 
 ## Status and scope
 
-Planning and the first implementation started on October 26, 2026 for the Meta Global AI Developer Hackathon. The first Meta-driven keyboard-only booking completed in 15 actions, verified against a server-side record. The fixture's five conditions have deterministic checks; the planned 25-run AI benchmark has not been performed. Initial scope: Chromium, controlled test sites without authentication, and one appointment-booking workflow.
+Planning and the first implementation started on October 26, 2026 for the Meta Global AI Developer Hackathon. A 25-run controlled-fixture benchmark is recorded: the corrected page completed 5/5 times in 15 keyboard actions, with no false positives on those five controls. Eight model output-limit failures and nine later corrected-replay errors are retained in the data. Initial scope: Chromium, controlled test sites without authentication, and one appointment-booking workflow.
 
 See [the first-run evidence and limitations](docs/first-run.md).
 
@@ -37,7 +37,7 @@ Each live run can make up to 25 billable model calls. The model sees only screen
 
 Other conditions: `unreachable_button`, `calendar_keyboard`, `modal_dismissal`, `focus_loss`. Every live run now includes three independent fixture-contract probes, three corrected controls, exact-key replays, and an HTML evidence report. An unconfirmed failure stays inconclusive. Confirmed fixture observations produce a suspected-blocker outcome while keeping the AI task outcome separate. Do not treat the current runner as a general accessibility scanner: probes currently know the booking fixture's expected contracts.
 
-See [repeated checks and the live broken/corrected comparison](docs/evidence-results.md). The AI benchmark across five trials per condition remains pending.
+See [the 25-run results, limitations and raw data](docs/benchmark-2026-10-26/README.md), plus [the earlier repeated checks](docs/evidence-results.md).
 
 An independent review added regression guards for delayed server writes, full focus identity during replay, invalid model responses and token accounting. New reports record browser/runtime versions, model settings and a source fingerprint for comparison; older sample reports lack this metadata and are not eligible for strict automatic verification. See [review fixes](docs/review-fixes.md).
 
@@ -92,15 +92,17 @@ Start with an all-correct control and four single-defect variants. Combined defe
 
 ## Evaluation
 
-Run five independent trials per initial variant: 25 trials total. Report raw counts and denominators, model/version, configuration, budgets, and infrastructure failures. Results are **not measured yet**.
+Five independent trials per initial variant have been recorded: 25 trials total, with all failures retained. Raw records include model/version, configuration, budgets, errors and usage.
 
-| Metric | Planned definition | Result |
+| Metric | Definition | Result |
 | --- | --- | --- |
-| Correct-control completion | Successful valid runs / valid control runs | Not measured |
-| Defect detection | Correctly attributed injected blockers / valid defect runs; also report each defect separately | Not measured |
-| False positives | Control runs incorrectly attributed to a site blocker / valid control runs | Not measured |
-| Reproducibility | Trials agreeing on the same normalized outcome and blocker / valid trials per variant | Not measured |
-| Replay confirmation | Successful reproductions / attempted replays | Not measured |
+| Correct-control completion | Successful bookings / all control attempts | 5/5 |
+| Hybrid fixture findings | Correct contract finding / eligible defect runs; excludes eight invalid AI runs | 12/12 eligible; see per-condition denominators |
+| Standalone model diagnosis | Model's independently scored defect identification | Not measured |
+| False positives | Control runs incorrectly attributed to a site blocker / all control attempts | 0/5 |
+| Reproducibility | Same normalized pipeline outcome / eligible runs | Per-condition table in benchmark metrics |
+| Original exact-key replay | Saved focus path matches / replayed traces, including partial traces | 25/25; not task-completion proof |
+| Corrected exact-key replay errors | Navigation/observation failure after successful probes | 9 retained; separate local follow-up fixes execution |
 
 Five trials are a small exploratory sample. Publish counts, not unsupported claims of reliability. A screenshot or an LLM's statement that a task succeeded is not a success oracle.
 

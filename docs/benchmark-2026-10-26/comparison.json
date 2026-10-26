@@ -1,0 +1,9 @@
+{
+  "originalRunId": "agent-1793035233037270379",
+  "correctedRunId": "agent-1793035395976248204",
+  "originalActions": 25,
+  "correctedActions": 15,
+  "selection": "Earliest valid blocked task, followed by the earliest later corrected-control run. Raw reports were not edited.",
+  "verified": true,
+  "reason": "distinct_comparable_runs"
+}

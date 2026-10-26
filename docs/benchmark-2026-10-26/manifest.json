@@ -1,0 +1,292 @@
+{
+  "startedAt": "2026-10-26T17:18:52.920Z",
+  "planned": 25,
+  "concurrency": 2,
+  "maxKnownTokens": 25000000,
+  "jobs": [
+    {
+      "round": 1,
+      "variant": "correct",
+      "startedAt": "2026-10-26T17:18:52.922Z",
+      "state": "finished",
+      "reportPath": "runs/agent-1793035133081151000.json",
+      "runId": "agent-1793035133081151000",
+      "outcome": "task_completed",
+      "exitCode": 0,
+      "finishedAt": "2026-10-26T17:20:32.893Z"
+    },
+    {
+      "round": 1,
+      "variant": "unreachable_button",
+      "startedAt": "2026-10-26T17:18:52.924Z",
+      "state": "finished",
+      "reportPath": "runs/agent-1793035133080089065.json",
+      "runId": "agent-1793035133080089065",
+      "outcome": "agent_inconclusive",
+      "exitCode": 1,
+      "finishedAt": "2026-10-26T17:21:13.057Z"
+    },
+    {
+      "round": 1,
+      "variant": "calendar_keyboard",
+      "startedAt": "2026-10-26T17:20:32.894Z",
+      "state": "finished",
+      "reportPath": "runs/agent-1793035233037270379.json",
+      "runId": "agent-1793035233037270379",
+      "outcome": "suspected_blocker",
+      "exitCode": 1,
+      "finishedAt": "2026-10-26T17:23:15.822Z"
+    },
+    {
+      "round": 1,
+      "variant": "modal_dismissal",
+      "startedAt": "2026-10-26T17:21:13.058Z",
+      "state": "finished",
+      "reportPath": "runs/agent-1793035273203213310.json",
+      "runId": "agent-1793035273203213310",
+      "outcome": "agent_inconclusive",
+      "exitCode": 1,
+      "finishedAt": "2026-10-26T17:22:48.480Z"
+    },
+    {
+      "round": 1,
+      "variant": "focus_loss",
+      "startedAt": "2026-10-26T17:22:48.481Z",
+      "state": "finished",
+      "reportPath": "runs/agent-1793035368627942190.json",
+      "runId": "agent-1793035368627942190",
+      "outcome": "suspected_blocker",
+      "exitCode": 1,
+      "finishedAt": "2026-10-26T17:24:21.652Z"
+    },
+    {
+      "round": 2,
+      "variant": "correct",
+      "startedAt": "2026-10-26T17:23:15.822Z",
+      "state": "finished",
+      "reportPath": "runs/agent-1793035395976248204.json",
+      "runId": "agent-1793035395976248204",
+      "outcome": "task_completed",
+      "exitCode": 0,
+      "finishedAt": "2026-10-26T17:24:27.141Z"
+    },
+    {
+      "round": 2,
+      "variant": "unreachable_button",
+      "startedAt": "2026-10-26T17:24:21.652Z",
+      "state": "finished",
+      "reportPath": "runs/agent-1793035461820294624.json",
+      "runId": "agent-1793035461820294624",
+      "outcome": "agent_inconclusive",
+      "exitCode": 1,
+      "finishedAt": "2026-10-26T17:27:37.804Z"
+    },
+    {
+      "round": 2,
+      "variant": "calendar_keyboard",
+      "startedAt": "2026-10-26T17:24:27.141Z",
+      "state": "finished",
+      "reportPath": "runs/agent-1793035467281807805.json",
+      "runId": "agent-1793035467281807805",
+      "outcome": "suspected_blocker",
+      "exitCode": 1,
+      "finishedAt": "2026-10-26T17:27:04.218Z"
+    },
+    {
+      "round": 2,
+      "variant": "modal_dismissal",
+      "startedAt": "2026-10-26T17:27:04.219Z",
+      "state": "finished",
+      "reportPath": "runs/agent-1793035624368042030.json",
+      "runId": "agent-1793035624368042030",
+      "outcome": "agent_inconclusive",
+      "exitCode": 1,
+      "finishedAt": "2026-10-26T17:28:52.805Z"
+    },
+    {
+      "round": 2,
+      "variant": "focus_loss",
+      "startedAt": "2026-10-26T17:27:37.805Z",
+      "state": "finished",
+      "reportPath": "runs/agent-1793035657954428168.json",
+      "runId": "agent-1793035657954428168",
+      "outcome": "suspected_blocker",
+      "exitCode": 1,
+      "finishedAt": "2026-10-26T17:29:11.549Z"
+    },
+    {
+      "round": 3,
+      "variant": "correct",
+      "startedAt": "2026-10-26T17:28:52.806Z",
+      "state": "finished",
+      "reportPath": "runs/agent-1793035732953266654.json",
+      "runId": "agent-1793035732953266654",
+      "outcome": "task_completed",
+      "exitCode": 0,
+      "finishedAt": "2026-10-26T17:30:48.197Z"
+    },
+    {
+      "round": 3,
+      "variant": "unreachable_button",
+      "startedAt": "2026-10-26T17:29:11.550Z",
+      "state": "finished",
+      "reportPath": "runs/agent-1793035751701306950.json",
+      "runId": "agent-1793035751701306950",
+      "outcome": "suspected_blocker",
+      "exitCode": 1,
+      "finishedAt": "2026-10-26T17:31:58.716Z"
+    },
+    {
+      "round": 3,
+      "variant": "calendar_keyboard",
+      "startedAt": "2026-10-26T17:30:48.197Z",
+      "state": "finished",
+      "reportPath": "runs/agent-1793035848342337335.json",
+      "runId": "agent-1793035848342337335",
+      "outcome": "suspected_blocker",
+      "exitCode": 1,
+      "finishedAt": "2026-10-26T17:34:14.151Z"
+    },
+    {
+      "round": 3,
+      "variant": "modal_dismissal",
+      "startedAt": "2026-10-26T17:31:58.716Z",
+      "state": "finished",
+      "reportPath": "runs/agent-1793035918862648708.json",
+      "runId": "agent-1793035918862648708",
+      "outcome": "agent_inconclusive",
+      "exitCode": 1,
+      "finishedAt": "2026-10-26T17:33:40.467Z"
+    },
+    {
+      "round": 3,
+      "variant": "focus_loss",
+      "startedAt": "2026-10-26T17:33:40.468Z",
+      "state": "finished",
+      "reportPath": "runs/agent-1793036020615113624.json",
+      "runId": "agent-1793036020615113624",
+      "outcome": "suspected_blocker",
+      "exitCode": 1,
+      "finishedAt": "2026-10-26T17:35:13.184Z"
+    },
+    {
+      "round": 4,
+      "variant": "correct",
+      "startedAt": "2026-10-26T17:34:14.151Z",
+      "state": "finished",
+      "reportPath": "runs/agent-1793036054302247940.json",
+      "runId": "agent-1793036054302247940",
+      "outcome": "task_completed",
+      "exitCode": 0,
+      "finishedAt": "2026-10-26T17:35:26.862Z"
+    },
+    {
+      "round": 4,
+      "variant": "unreachable_button",
+      "startedAt": "2026-10-26T17:35:13.185Z",
+      "state": "finished",
+      "reportPath": "runs/agent-1793036113346233715.json",
+      "runId": "agent-1793036113346233715",
+      "outcome": "agent_inconclusive",
+      "exitCode": 1,
+      "finishedAt": "2026-10-26T17:37:14.751Z"
+    },
+    {
+      "round": 4,
+      "variant": "calendar_keyboard",
+      "startedAt": "2026-10-26T17:35:26.863Z",
+      "state": "finished",
+      "reportPath": "runs/agent-1793036127001221566.json",
+      "runId": "agent-1793036127001221566",
+      "outcome": "suspected_blocker",
+      "exitCode": 1,
+      "finishedAt": "2026-10-26T17:37:47.517Z"
+    },
+    {
+      "round": 4,
+      "variant": "modal_dismissal",
+      "startedAt": "2026-10-26T17:37:14.752Z",
+      "state": "finished",
+      "reportPath": "runs/agent-1793036234901702591.json",
+      "runId": "agent-1793036234901702591",
+      "outcome": "agent_inconclusive",
+      "exitCode": 1,
+      "finishedAt": "2026-10-26T17:39:24.043Z"
+    },
+    {
+      "round": 4,
+      "variant": "focus_loss",
+      "startedAt": "2026-10-26T17:37:47.518Z",
+      "state": "finished",
+      "reportPath": "runs/agent-1793036267663325348.json",
+      "runId": "agent-1793036267663325348",
+      "outcome": "suspected_blocker",
+      "exitCode": 1,
+      "finishedAt": "2026-10-26T17:39:27.481Z"
+    },
+    {
+      "round": 5,
+      "variant": "correct",
+      "startedAt": "2026-10-26T17:39:24.044Z",
+      "state": "finished",
+      "reportPath": "runs/agent-1793036364190325252.json",
+      "runId": "agent-1793036364190325252",
+      "outcome": "task_completed",
+      "exitCode": 0,
+      "finishedAt": "2026-10-26T17:40:33.182Z"
+    },
+    {
+      "round": 5,
+      "variant": "unreachable_button",
+      "startedAt": "2026-10-26T17:39:27.482Z",
+      "state": "finished",
+      "reportPath": "runs/agent-1793036367624288782.json",
+      "runId": "agent-1793036367624288782",
+      "outcome": "suspected_blocker",
+      "exitCode": 1,
+      "finishedAt": "2026-10-26T17:41:38.845Z"
+    },
+    {
+      "round": 5,
+      "variant": "calendar_keyboard",
+      "startedAt": "2026-10-26T17:40:33.183Z",
+      "state": "finished",
+      "reportPath": "runs/agent-1793036433334901464.json",
+      "runId": "agent-1793036433334901464",
+      "outcome": "suspected_blocker",
+      "exitCode": 1,
+      "finishedAt": "2026-10-26T17:43:19.059Z"
+    },
+    {
+      "round": 5,
+      "variant": "modal_dismissal",
+      "startedAt": "2026-10-26T17:41:38.845Z",
+      "state": "finished",
+      "reportPath": "runs/agent-1793036498989575852.json",
+      "runId": "agent-1793036498989575852",
+      "outcome": "agent_inconclusive",
+      "exitCode": 1,
+      "finishedAt": "2026-10-26T17:43:40.994Z"
+    },
+    {
+      "round": 5,
+      "variant": "focus_loss",
+      "startedAt": "2026-10-26T17:43:19.060Z",
+      "state": "finished",
+      "reportPath": "runs/agent-1793036599211641947.json",
+      "runId": "agent-1793036599211641947",
+      "outcome": "suspected_blocker",
+      "exitCode": 1,
+      "finishedAt": "2026-10-26T17:44:48.536Z"
+    }
+  ],
+  "state": "complete",
+  "finishedAt": "2026-10-26T17:44:48.538Z",
+  "runtimeCommit": "bf9bc20",
+  "audit": {
+    "maximumPreflightInput": 60783,
+    "maximumOutput": 2048,
+    "maximumRequests": 25,
+    "distinctBuilds": 1
+  }
+}

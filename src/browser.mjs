@@ -1,6 +1,11 @@
 import {chromium} from 'playwright';
 import {createKeyboardExecutor} from './keyboard.mjs';
 
+async function waitForRender(page){
+  const handle=await page.waitForFunction(()=>new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(()=>resolve(document.readyState!=='loading')))),null,{timeout:5000});
+  await handle.dispose();
+}
+
 export async function openSession(app, variant, {budget = 25} = {}) {
   const browser = await chromium.launch({headless:true, ...(process.env.BROWSER_EXECUTABLE_PATH ? {executablePath:process.env.BROWSER_EXECUTABLE_PATH} : {})});
   try {
@@ -28,12 +33,12 @@ export async function openSession(app, variant, {budget = 25} = {}) {
     await page.goto(app.origin+'/booking');
     await page.waitForFunction(()=>document.activeElement?.id==='name');
     const executor=createKeyboardExecutor(page,{budget,afterAction:async()=>{
-      await page.evaluate(()=>new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve))));
+      await waitForRender(page);
       if(pendingBooking){
         let timer;
         try{await Promise.race([pendingBooking,new Promise((_,reject)=>{timer=setTimeout(()=>reject(new Error('booking_settlement_timeout')),5000)})]);}
         finally{clearTimeout(timer);pendingBooking=null;}
-        await page.evaluate(()=>new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve))));
+        await waitForRender(page);
       }
     }});
     return {page, executor, record:()=>app.getRecord(id), close:()=>browser.close()};

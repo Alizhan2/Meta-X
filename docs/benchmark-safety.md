@@ -1,6 +1,6 @@
 # Benchmark request bounds
 
-Before a run, verify the current Meta credit balance and current official rates. This check was performed October 26, 2026: the UI showed $149.83 free credits and $0 outstanding balance; billing can lag up to an hour.
+Before a run, verify the current Meta credit balance and current official rates. This check was performed October 26, 2026, and available free credits exceeded the conservative generation estimate below. Private account/payment details are not included here; billing can lag up to an hour.
 
 The initial uncapped batch was rejected by automatic approval review because credits could be exhausted and the linked card charged. No paid batch was started by that rejected command.
 

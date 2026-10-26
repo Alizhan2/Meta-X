@@ -56,12 +56,14 @@ finally{
     console.log('Collecting independent keyboard evidence and corrected comparisons...');
     const evidence=await collectEvidence(app,variant,{directory:resolve(output,'evidence')});
     report.evidence={findings:evidence.findings,controlsClean:evidence.controlsClean,observedRuns:evidence.observedRuns,controlRuns:evidence.controlRuns,scope:evidence.scope};
-    report.replays=[];
-    for(const [label,condition] of [['Original condition',variant],['Corrected condition','correct']]){
+  }catch(error){report.evidenceError=error.message;}
+  report.replays=[];report.replayErrors=[];
+  for(const [label,condition] of [['Original condition',variant],['Corrected condition','correct']]){
+    try{
       const result=await replayTrace(app,condition,report.steps,{directory:resolve(output,label==='Original condition'?'replay-original':'replay-corrected')});
       report.replays.push({label,...result});
-    }
-  }catch(error){report.evidenceError=error.message;}
+    }catch(error){report.replayErrors.push({label,reason:error.message});}
+  }
   Object.assign(report,classifyReport(report,report.evidence));
   report.finishedAt=new Date().toISOString();
   await writeFile(resolve(output,'report.json'),JSON.stringify(report,null,2));

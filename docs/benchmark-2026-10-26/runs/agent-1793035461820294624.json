@@ -1,0 +1,1994 @@
+{
+  "runId": "agent-1793035461820294624",
+  "variant": "unreachable_button",
+  "task": "Book a studio introduction for Alex Tester, email alex@example.test, on October 30, 2026 at 15:00. Review the details, close the review window, then confirm the booking.",
+  "startedAt": "2026-10-26T17:24:21.823Z",
+  "budget": 25,
+  "valid": false,
+  "outcome": "agent_inconclusive",
+  "reason": "model_incomplete",
+  "steps": [
+    {
+      "index": 1,
+      "action": {
+        "name": "type_text",
+        "arguments": {
+          "text": "Alex Tester"
+        }
+      },
+      "timestamp": "2026-10-26T17:24:25.014Z",
+      "focusBefore": {
+        "id": "name",
+        "tag": "INPUT",
+        "role": null,
+        "name": "Full name",
+        "value": ""
+      },
+      "focusAfter": {
+        "id": "name",
+        "tag": "INPUT",
+        "role": null,
+        "name": "Full name",
+        "value": "Alex Tester"
+      }
+    },
+    {
+      "index": 2,
+      "action": {
+        "name": "press_key",
+        "arguments": {
+          "key": "Tab"
+        }
+      },
+      "timestamp": "2026-10-26T17:24:29.777Z",
+      "focusBefore": {
+        "id": "name",
+        "tag": "INPUT",
+        "role": null,
+        "name": "Full name",
+        "value": "Alex Tester"
+      },
+      "focusAfter": {
+        "id": "email",
+        "tag": "INPUT",
+        "role": null,
+        "name": "Email address",
+        "value": ""
+      }
+    },
+    {
+      "index": 3,
+      "action": {
+        "name": "type_text",
+        "arguments": {
+          "text": "alex@example.test"
+        }
+      },
+      "timestamp": "2026-10-26T17:24:33.042Z",
+      "focusBefore": {
+        "id": "email",
+        "tag": "INPUT",
+        "role": null,
+        "name": "Email address",
+        "value": ""
+      },
+      "focusAfter": {
+        "id": "email",
+        "tag": "INPUT",
+        "role": null,
+        "name": "Email address",
+        "value": "alex@example.test"
+      }
+    },
+    {
+      "index": 4,
+      "action": {
+        "name": "press_key",
+        "arguments": {
+          "key": "Tab"
+        }
+      },
+      "timestamp": "2026-10-26T17:24:36.431Z",
+      "focusBefore": {
+        "id": "email",
+        "tag": "INPUT",
+        "role": null,
+        "name": "Email address",
+        "value": "alex@example.test"
+      },
+      "focusAfter": {
+        "id": "date-trigger",
+        "tag": "BUTTON",
+        "role": null,
+        "name": "Choose a date",
+        "value": ""
+      }
+    },
+    {
+      "index": 5,
+      "action": {
+        "name": "press_key",
+        "arguments": {
+          "key": "Enter"
+        }
+      },
+      "timestamp": "2026-10-26T17:24:39.359Z",
+      "focusBefore": {
+        "id": "date-trigger",
+        "tag": "BUTTON",
+        "role": null,
+        "name": "Choose a date",
+        "value": ""
+      },
+      "focusAfter": {
+        "id": "date-trigger",
+        "tag": "BUTTON",
+        "role": null,
+        "name": "Choose a date",
+        "value": ""
+      }
+    },
+    {
+      "index": 6,
+      "action": {
+        "name": "press_key",
+        "arguments": {
+          "key": "Tab"
+        }
+      },
+      "timestamp": "2026-10-26T17:24:42.156Z",
+      "focusBefore": {
+        "id": "date-trigger",
+        "tag": "BUTTON",
+        "role": null,
+        "name": "Choose a date",
+        "value": ""
+      },
+      "focusAfter": {
+        "id": null,
+        "tag": "BUTTON",
+        "role": null,
+        "name": "October 29, 2026",
+        "value": ""
+      }
+    },
+    {
+      "index": 7,
+      "action": {
+        "name": "press_key",
+        "arguments": {
+          "key": "Tab"
+        }
+      },
+      "timestamp": "2026-10-26T17:24:47.154Z",
+      "focusBefore": {
+        "id": null,
+        "tag": "BUTTON",
+        "role": null,
+        "name": "October 29, 2026",
+        "value": ""
+      },
+      "focusAfter": {
+        "id": null,
+        "tag": "BUTTON",
+        "role": null,
+        "name": "October 30, 2026",
+        "value": ""
+      }
+    },
+    {
+      "index": 8,
+      "action": {
+        "name": "press_key",
+        "arguments": {
+          "key": "Enter"
+        }
+      },
+      "timestamp": "2026-10-26T17:24:51.520Z",
+      "focusBefore": {
+        "id": null,
+        "tag": "BUTTON",
+        "role": null,
+        "name": "October 30, 2026",
+        "value": ""
+      },
+      "focusAfter": {
+        "id": "date-trigger",
+        "tag": "BUTTON",
+        "role": null,
+        "name": "October 30, 2026",
+        "value": ""
+      }
+    },
+    {
+      "index": 9,
+      "action": {
+        "name": "press_key",
+        "arguments": {
+          "key": "Tab"
+        }
+      },
+      "timestamp": "2026-10-26T17:24:54.794Z",
+      "focusBefore": {
+        "id": "date-trigger",
+        "tag": "BUTTON",
+        "role": null,
+        "name": "October 30, 2026",
+        "value": ""
+      },
+      "focusAfter": {
+        "id": "time-14",
+        "tag": "INPUT",
+        "role": null,
+        "name": " 14:00",
+        "value": "14:00"
+      }
+    },
+    {
+      "index": 10,
+      "action": {
+        "name": "press_key",
+        "arguments": {
+          "key": "ArrowRight"
+        }
+      },
+      "timestamp": "2026-10-26T17:24:58.371Z",
+      "focusBefore": {
+        "id": "time-14",
+        "tag": "INPUT",
+        "role": null,
+        "name": " 14:00",
+        "value": "14:00"
+      },
+      "focusAfter": {
+        "id": "time-15",
+        "tag": "INPUT",
+        "role": null,
+        "name": " 15:00",
+        "value": "15:00"
+      }
+    },
+    {
+      "index": 11,
+      "action": {
+        "name": "press_key",
+        "arguments": {
+          "key": "Tab"
+        }
+      },
+      "timestamp": "2026-10-26T17:25:03.307Z",
+      "focusBefore": {
+        "id": "time-15",
+        "tag": "INPUT",
+        "role": null,
+        "name": " 15:00",
+        "value": "15:00"
+      },
+      "focusAfter": {
+        "id": "review",
+        "tag": "BUTTON",
+        "role": null,
+        "name": "Review details",
+        "value": ""
+      }
+    },
+    {
+      "index": 12,
+      "action": {
+        "name": "press_key",
+        "arguments": {
+          "key": "Enter"
+        }
+      },
+      "timestamp": "2026-10-26T17:25:07.456Z",
+      "focusBefore": {
+        "id": "review",
+        "tag": "BUTTON",
+        "role": null,
+        "name": "Review details",
+        "value": ""
+      },
+      "focusAfter": {
+        "id": "dialog-title",
+        "tag": "H2",
+        "role": null,
+        "name": "Review your session",
+        "value": null
+      }
+    },
+    {
+      "index": 13,
+      "action": {
+        "name": "press_key",
+        "arguments": {
+          "key": "Escape"
+        }
+      },
+      "timestamp": "2026-10-26T17:25:12.491Z",
+      "focusBefore": {
+        "id": "dialog-title",
+        "tag": "H2",
+        "role": null,
+        "name": "Review your session",
+        "value": null
+      },
+      "focusAfter": {
+        "id": "review",
+        "tag": "BUTTON",
+        "role": null,
+        "name": "Review details",
+        "value": ""
+      }
+    },
+    {
+      "index": 14,
+      "action": {
+        "name": "press_key",
+        "arguments": {
+          "key": "Tab"
+        }
+      },
+      "timestamp": "2026-10-26T17:25:20.772Z",
+      "focusBefore": {
+        "id": "review",
+        "tag": "BUTTON",
+        "role": null,
+        "name": "Review details",
+        "value": ""
+      },
+      "focusAfter": {
+        "id": null,
+        "tag": "BODY",
+        "role": null,
+        "name": "Fieldwork StudioBooking desk\n  A little room for your next idea.Make timeto make things.Reserve a 30-minute studio introduction. Pick a date, review your detail",
+        "value": null
+      }
+    },
+    {
+      "index": 15,
+      "action": {
+        "name": "press_key",
+        "arguments": {
+          "key": "Tab"
+        }
+      },
+      "timestamp": "2026-10-26T17:25:26.247Z",
+      "focusBefore": {
+        "id": null,
+        "tag": "BODY",
+        "role": null,
+        "name": "Fieldwork StudioBooking desk\n  A little room for your next idea.Make timeto make things.Reserve a 30-minute studio introduction. Pick a date, review your detail",
+        "value": null
+      },
+      "focusAfter": {
+        "id": null,
+        "tag": "A",
+        "role": null,
+        "name": "Studio home",
+        "value": null
+      }
+    },
+    {
+      "index": 16,
+      "action": {
+        "name": "press_key",
+        "arguments": {
+          "key": "Tab"
+        }
+      },
+      "timestamp": "2026-10-26T17:25:33.457Z",
+      "focusBefore": {
+        "id": null,
+        "tag": "A",
+        "role": null,
+        "name": "Studio home",
+        "value": null
+      },
+      "focusAfter": {
+        "id": "name",
+        "tag": "INPUT",
+        "role": null,
+        "name": "Full name",
+        "value": "Alex Tester"
+      }
+    },
+    {
+      "index": 17,
+      "action": {
+        "name": "press_key",
+        "arguments": {
+          "key": "Tab"
+        }
+      },
+      "timestamp": "2026-10-26T17:25:40.850Z",
+      "focusBefore": {
+        "id": "name",
+        "tag": "INPUT",
+        "role": null,
+        "name": "Full name",
+        "value": "Alex Tester"
+      },
+      "focusAfter": {
+        "id": "email",
+        "tag": "INPUT",
+        "role": null,
+        "name": "Email address",
+        "value": "alex@example.test"
+      }
+    },
+    {
+      "index": 18,
+      "action": {
+        "name": "press_key",
+        "arguments": {
+          "key": "Tab"
+        }
+      },
+      "timestamp": "2026-10-26T17:25:46.386Z",
+      "focusBefore": {
+        "id": "email",
+        "tag": "INPUT",
+        "role": null,
+        "name": "Email address",
+        "value": "alex@example.test"
+      },
+      "focusAfter": {
+        "id": "date-trigger",
+        "tag": "BUTTON",
+        "role": null,
+        "name": "October 30, 2026",
+        "value": ""
+      }
+    },
+    {
+      "index": 19,
+      "action": {
+        "name": "press_key",
+        "arguments": {
+          "key": "Tab"
+        }
+      },
+      "timestamp": "2026-10-26T17:25:55.188Z",
+      "focusBefore": {
+        "id": "date-trigger",
+        "tag": "BUTTON",
+        "role": null,
+        "name": "October 30, 2026",
+        "value": ""
+      },
+      "focusAfter": {
+        "id": "time-15",
+        "tag": "INPUT",
+        "role": null,
+        "name": " 15:00",
+        "value": "15:00"
+      }
+    },
+    {
+      "index": 20,
+      "action": {
+        "name": "press_key",
+        "arguments": {
+          "key": "Tab"
+        }
+      },
+      "timestamp": "2026-10-26T17:26:00.419Z",
+      "focusBefore": {
+        "id": "time-15",
+        "tag": "INPUT",
+        "role": null,
+        "name": " 15:00",
+        "value": "15:00"
+      },
+      "focusAfter": {
+        "id": "review",
+        "tag": "BUTTON",
+        "role": null,
+        "name": "Review details",
+        "value": ""
+      }
+    },
+    {
+      "index": 21,
+      "action": {
+        "name": "press_key",
+        "arguments": {
+          "key": "Tab"
+        }
+      },
+      "timestamp": "2026-10-26T17:26:06.036Z",
+      "focusBefore": {
+        "id": "review",
+        "tag": "BUTTON",
+        "role": null,
+        "name": "Review details",
+        "value": ""
+      },
+      "focusAfter": {
+        "id": null,
+        "tag": "BODY",
+        "role": null,
+        "name": "Fieldwork StudioBooking desk\n  A little room for your next idea.Make timeto make things.Reserve a 30-minute studio introduction. Pick a date, review your detail",
+        "value": null
+      }
+    },
+    {
+      "index": 22,
+      "action": {
+        "name": "press_key",
+        "arguments": {
+          "key": "Shift+Tab"
+        }
+      },
+      "timestamp": "2026-10-26T17:26:16.385Z",
+      "focusBefore": {
+        "id": null,
+        "tag": "BODY",
+        "role": null,
+        "name": "Fieldwork StudioBooking desk\n  A little room for your next idea.Make timeto make things.Reserve a 30-minute studio introduction. Pick a date, review your detail",
+        "value": null
+      },
+      "focusAfter": {
+        "id": "review",
+        "tag": "BUTTON",
+        "role": null,
+        "name": "Review details",
+        "value": ""
+      }
+    },
+    {
+      "index": 23,
+      "action": {
+        "name": "press_key",
+        "arguments": {
+          "key": "Shift+Tab"
+        }
+      },
+      "timestamp": "2026-10-26T17:26:27.101Z",
+      "focusBefore": {
+        "id": "review",
+        "tag": "BUTTON",
+        "role": null,
+        "name": "Review details",
+        "value": ""
+      },
+      "focusAfter": {
+        "id": "time-15",
+        "tag": "INPUT",
+        "role": null,
+        "name": " 15:00",
+        "value": "15:00"
+      }
+    },
+    {
+      "index": 24,
+      "action": {
+        "name": "press_key",
+        "arguments": {
+          "key": "Tab"
+        }
+      },
+      "timestamp": "2026-10-26T17:27:11.535Z",
+      "focusBefore": {
+        "id": "time-15",
+        "tag": "INPUT",
+        "role": null,
+        "name": " 15:00",
+        "value": "15:00"
+      },
+      "focusAfter": {
+        "id": "review",
+        "tag": "BUTTON",
+        "role": null,
+        "name": "Review details",
+        "value": ""
+      }
+    }
+  ],
+  "usage": [
+    {
+      "input_tokens": 2671,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 223,
+      "output_tokens_details": {
+        "reasoning_tokens": 155
+      },
+      "total_tokens": 2894
+    },
+    {
+      "input_tokens": 4891,
+      "input_tokens_details": {
+        "cached_tokens": 2673
+      },
+      "output_tokens": 89,
+      "output_tokens_details": {
+        "reasoning_tokens": 39
+      },
+      "total_tokens": 4980
+    },
+    {
+      "input_tokens": 6973,
+      "input_tokens_details": {
+        "cached_tokens": 2673
+      },
+      "output_tokens": 59,
+      "output_tokens_details": {
+        "reasoning_tokens": 7
+      },
+      "total_tokens": 7032
+    },
+    {
+      "input_tokens": 9039,
+      "input_tokens_details": {
+        "cached_tokens": 2673
+      },
+      "output_tokens": 88,
+      "output_tokens_details": {
+        "reasoning_tokens": 38
+      },
+      "total_tokens": 9127
+    },
+    {
+      "input_tokens": 11132,
+      "input_tokens_details": {
+        "cached_tokens": 2673
+      },
+      "output_tokens": 80,
+      "output_tokens_details": {
+        "reasoning_tokens": 9
+      },
+      "total_tokens": 11212
+    },
+    {
+      "input_tokens": 13324,
+      "input_tokens_details": {
+        "cached_tokens": 2673
+      },
+      "output_tokens": 108,
+      "output_tokens_details": {
+        "reasoning_tokens": 58
+      },
+      "total_tokens": 13432
+    },
+    {
+      "input_tokens": 15550,
+      "input_tokens_details": {
+        "cached_tokens": 2673
+      },
+      "output_tokens": 73,
+      "output_tokens_details": {
+        "reasoning_tokens": 23
+      },
+      "total_tokens": 15623
+    },
+    {
+      "input_tokens": 17741,
+      "input_tokens_details": {
+        "cached_tokens": 15473
+      },
+      "output_tokens": 64,
+      "output_tokens_details": {
+        "reasoning_tokens": 14
+      },
+      "total_tokens": 17805
+    },
+    {
+      "input_tokens": 19826,
+      "input_tokens_details": {
+        "cached_tokens": 17649
+      },
+      "output_tokens": 151,
+      "output_tokens_details": {
+        "reasoning_tokens": 78
+      },
+      "total_tokens": 19977
+    },
+    {
+      "input_tokens": 22000,
+      "input_tokens_details": {
+        "cached_tokens": 19825
+      },
+      "output_tokens": 79,
+      "output_tokens_details": {
+        "reasoning_tokens": 28
+      },
+      "total_tokens": 22079
+    },
+    {
+      "input_tokens": 24102,
+      "input_tokens_details": {
+        "cached_tokens": 8945
+      },
+      "output_tokens": 182,
+      "output_tokens_details": {
+        "reasoning_tokens": 132
+      },
+      "total_tokens": 24284
+    },
+    {
+      "input_tokens": 26293,
+      "input_tokens_details": {
+        "cached_tokens": 4849
+      },
+      "output_tokens": 65,
+      "output_tokens_details": {
+        "reasoning_tokens": 15
+      },
+      "total_tokens": 26358
+    },
+    {
+      "input_tokens": 28440,
+      "input_tokens_details": {
+        "cached_tokens": 21873
+      },
+      "output_tokens": 190,
+      "output_tokens_details": {
+        "reasoning_tokens": 122
+      },
+      "total_tokens": 28630
+    },
+    {
+      "input_tokens": 30640,
+      "input_tokens_details": {
+        "cached_tokens": 13297
+      },
+      "output_tokens": 97,
+      "output_tokens_details": {
+        "reasoning_tokens": 47
+      },
+      "total_tokens": 30737
+    },
+    {
+      "input_tokens": 32814,
+      "input_tokens_details": {
+        "cached_tokens": 24049
+      },
+      "output_tokens": 211,
+      "output_tokens_details": {
+        "reasoning_tokens": 161
+      },
+      "total_tokens": 33025
+    },
+    {
+      "input_tokens": 35036,
+      "input_tokens_details": {
+        "cached_tokens": 28401
+      },
+      "output_tokens": 163,
+      "output_tokens_details": {
+        "reasoning_tokens": 113
+      },
+      "total_tokens": 35199
+    },
+    {
+      "input_tokens": 37213,
+      "input_tokens_details": {
+        "cached_tokens": 30577
+      },
+      "output_tokens": 103,
+      "output_tokens_details": {
+        "reasoning_tokens": 35
+      },
+      "total_tokens": 37316
+    },
+    {
+      "input_tokens": 39332,
+      "input_tokens_details": {
+        "cached_tokens": 6897
+      },
+      "output_tokens": 56,
+      "output_tokens_details": {
+        "reasoning_tokens": 6
+      },
+      "total_tokens": 39388
+    },
+    {
+      "input_tokens": 41410,
+      "input_tokens_details": {
+        "cached_tokens": 26225
+      },
+      "output_tokens": 56,
+      "output_tokens_details": {
+        "reasoning_tokens": 6
+      },
+      "total_tokens": 41466
+    },
+    {
+      "input_tokens": 43490,
+      "input_tokens_details": {
+        "cached_tokens": 34929
+      },
+      "output_tokens": 85,
+      "output_tokens_details": {
+        "reasoning_tokens": 35
+      },
+      "total_tokens": 43575
+    },
+    {
+      "input_tokens": 45585,
+      "input_tokens_details": {
+        "cached_tokens": 43377
+      },
+      "output_tokens": 61,
+      "output_tokens_details": {
+        "reasoning_tokens": 11
+      },
+      "total_tokens": 45646
+    },
+    {
+      "input_tokens": 47723,
+      "input_tokens_details": {
+        "cached_tokens": 39281
+      },
+      "output_tokens": 574,
+      "output_tokens_details": {
+        "reasoning_tokens": 500
+      },
+      "total_tokens": 48297
+    },
+    {
+      "input_tokens": 50307,
+      "input_tokens_details": {
+        "cached_tokens": 41329
+      },
+      "output_tokens": 925,
+      "output_tokens_details": {
+        "reasoning_tokens": 873
+      },
+      "total_tokens": 51232
+    },
+    {
+      "input_tokens": 53256,
+      "input_tokens_details": {
+        "cached_tokens": 47601
+      },
+      "output_tokens": 1016,
+      "output_tokens_details": {
+        "reasoning_tokens": 966
+      },
+      "total_tokens": 54272
+    },
+    {
+      "input_tokens": 56282,
+      "input_tokens_details": {
+        "cached_tokens": 50289
+      },
+      "output_tokens": 2048,
+      "output_tokens_details": {
+        "reasoning_tokens": 2046
+      },
+      "total_tokens": 58330
+    }
+  ],
+  "requests": [
+    {
+      "index": 1,
+      "startedAt": "2026-10-26T17:24:22.007Z",
+      "state": "validated",
+      "preflightInputTokens": 2814,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 2671,
+        "input_tokens_details": {
+          "cached_tokens": 0
+        },
+        "output_tokens": 223,
+        "output_tokens_details": {
+          "reasoning_tokens": 155
+        },
+        "total_tokens": 2894
+      }
+    },
+    {
+      "index": 2,
+      "startedAt": "2026-10-26T17:24:25.045Z",
+      "state": "validated",
+      "preflightInputTokens": 5034,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 4891,
+        "input_tokens_details": {
+          "cached_tokens": 2673
+        },
+        "output_tokens": 89,
+        "output_tokens_details": {
+          "reasoning_tokens": 39
+        },
+        "total_tokens": 4980
+      }
+    },
+    {
+      "index": 3,
+      "startedAt": "2026-10-26T17:24:29.800Z",
+      "state": "validated",
+      "preflightInputTokens": 7116,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 6973,
+        "input_tokens_details": {
+          "cached_tokens": 2673
+        },
+        "output_tokens": 59,
+        "output_tokens_details": {
+          "reasoning_tokens": 7
+        },
+        "total_tokens": 7032
+      }
+    },
+    {
+      "index": 4,
+      "startedAt": "2026-10-26T17:24:33.066Z",
+      "state": "validated",
+      "preflightInputTokens": 9182,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 9039,
+        "input_tokens_details": {
+          "cached_tokens": 2673
+        },
+        "output_tokens": 88,
+        "output_tokens_details": {
+          "reasoning_tokens": 38
+        },
+        "total_tokens": 9127
+      }
+    },
+    {
+      "index": 5,
+      "startedAt": "2026-10-26T17:24:36.463Z",
+      "state": "validated",
+      "preflightInputTokens": 11275,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 11132,
+        "input_tokens_details": {
+          "cached_tokens": 2673
+        },
+        "output_tokens": 80,
+        "output_tokens_details": {
+          "reasoning_tokens": 9
+        },
+        "total_tokens": 11212
+      }
+    },
+    {
+      "index": 6,
+      "startedAt": "2026-10-26T17:24:39.384Z",
+      "state": "validated",
+      "preflightInputTokens": 13467,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 13324,
+        "input_tokens_details": {
+          "cached_tokens": 2673
+        },
+        "output_tokens": 108,
+        "output_tokens_details": {
+          "reasoning_tokens": 58
+        },
+        "total_tokens": 13432
+      }
+    },
+    {
+      "index": 7,
+      "startedAt": "2026-10-26T17:24:42.183Z",
+      "state": "validated",
+      "preflightInputTokens": 15693,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 15550,
+        "input_tokens_details": {
+          "cached_tokens": 2673
+        },
+        "output_tokens": 73,
+        "output_tokens_details": {
+          "reasoning_tokens": 23
+        },
+        "total_tokens": 15623
+      }
+    },
+    {
+      "index": 8,
+      "startedAt": "2026-10-26T17:24:47.184Z",
+      "state": "validated",
+      "preflightInputTokens": 17884,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 17741,
+        "input_tokens_details": {
+          "cached_tokens": 15473
+        },
+        "output_tokens": 64,
+        "output_tokens_details": {
+          "reasoning_tokens": 14
+        },
+        "total_tokens": 17805
+      }
+    },
+    {
+      "index": 9,
+      "startedAt": "2026-10-26T17:24:51.548Z",
+      "state": "validated",
+      "preflightInputTokens": 19969,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 19826,
+        "input_tokens_details": {
+          "cached_tokens": 17649
+        },
+        "output_tokens": 151,
+        "output_tokens_details": {
+          "reasoning_tokens": 78
+        },
+        "total_tokens": 19977
+      }
+    },
+    {
+      "index": 10,
+      "startedAt": "2026-10-26T17:24:54.833Z",
+      "state": "validated",
+      "preflightInputTokens": 22143,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 22000,
+        "input_tokens_details": {
+          "cached_tokens": 19825
+        },
+        "output_tokens": 79,
+        "output_tokens_details": {
+          "reasoning_tokens": 28
+        },
+        "total_tokens": 22079
+      }
+    },
+    {
+      "index": 11,
+      "startedAt": "2026-10-26T17:24:58.399Z",
+      "state": "validated",
+      "preflightInputTokens": 24245,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 24102,
+        "input_tokens_details": {
+          "cached_tokens": 8945
+        },
+        "output_tokens": 182,
+        "output_tokens_details": {
+          "reasoning_tokens": 132
+        },
+        "total_tokens": 24284
+      }
+    },
+    {
+      "index": 12,
+      "startedAt": "2026-10-26T17:25:03.332Z",
+      "state": "validated",
+      "preflightInputTokens": 26436,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 26293,
+        "input_tokens_details": {
+          "cached_tokens": 4849
+        },
+        "output_tokens": 65,
+        "output_tokens_details": {
+          "reasoning_tokens": 15
+        },
+        "total_tokens": 26358
+      }
+    },
+    {
+      "index": 13,
+      "startedAt": "2026-10-26T17:25:07.483Z",
+      "state": "validated",
+      "preflightInputTokens": 28583,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 28440,
+        "input_tokens_details": {
+          "cached_tokens": 21873
+        },
+        "output_tokens": 190,
+        "output_tokens_details": {
+          "reasoning_tokens": 122
+        },
+        "total_tokens": 28630
+      }
+    },
+    {
+      "index": 14,
+      "startedAt": "2026-10-26T17:25:12.514Z",
+      "state": "validated",
+      "preflightInputTokens": 30783,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 30640,
+        "input_tokens_details": {
+          "cached_tokens": 13297
+        },
+        "output_tokens": 97,
+        "output_tokens_details": {
+          "reasoning_tokens": 47
+        },
+        "total_tokens": 30737
+      }
+    },
+    {
+      "index": 15,
+      "startedAt": "2026-10-26T17:25:20.799Z",
+      "state": "validated",
+      "preflightInputTokens": 32957,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 32814,
+        "input_tokens_details": {
+          "cached_tokens": 24049
+        },
+        "output_tokens": 211,
+        "output_tokens_details": {
+          "reasoning_tokens": 161
+        },
+        "total_tokens": 33025
+      }
+    },
+    {
+      "index": 16,
+      "startedAt": "2026-10-26T17:25:26.278Z",
+      "state": "validated",
+      "preflightInputTokens": 35179,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 35036,
+        "input_tokens_details": {
+          "cached_tokens": 28401
+        },
+        "output_tokens": 163,
+        "output_tokens_details": {
+          "reasoning_tokens": 113
+        },
+        "total_tokens": 35199
+      }
+    },
+    {
+      "index": 17,
+      "startedAt": "2026-10-26T17:25:33.481Z",
+      "state": "validated",
+      "preflightInputTokens": 37356,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 37213,
+        "input_tokens_details": {
+          "cached_tokens": 30577
+        },
+        "output_tokens": 103,
+        "output_tokens_details": {
+          "reasoning_tokens": 35
+        },
+        "total_tokens": 37316
+      }
+    },
+    {
+      "index": 18,
+      "startedAt": "2026-10-26T17:25:40.879Z",
+      "state": "validated",
+      "preflightInputTokens": 39475,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 39332,
+        "input_tokens_details": {
+          "cached_tokens": 6897
+        },
+        "output_tokens": 56,
+        "output_tokens_details": {
+          "reasoning_tokens": 6
+        },
+        "total_tokens": 39388
+      }
+    },
+    {
+      "index": 19,
+      "startedAt": "2026-10-26T17:25:46.413Z",
+      "state": "validated",
+      "preflightInputTokens": 41553,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 41410,
+        "input_tokens_details": {
+          "cached_tokens": 26225
+        },
+        "output_tokens": 56,
+        "output_tokens_details": {
+          "reasoning_tokens": 6
+        },
+        "total_tokens": 41466
+      }
+    },
+    {
+      "index": 20,
+      "startedAt": "2026-10-26T17:25:55.213Z",
+      "state": "validated",
+      "preflightInputTokens": 43633,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 43490,
+        "input_tokens_details": {
+          "cached_tokens": 34929
+        },
+        "output_tokens": 85,
+        "output_tokens_details": {
+          "reasoning_tokens": 35
+        },
+        "total_tokens": 43575
+      }
+    },
+    {
+      "index": 21,
+      "startedAt": "2026-10-26T17:26:00.445Z",
+      "state": "validated",
+      "preflightInputTokens": 45728,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 45585,
+        "input_tokens_details": {
+          "cached_tokens": 43377
+        },
+        "output_tokens": 61,
+        "output_tokens_details": {
+          "reasoning_tokens": 11
+        },
+        "total_tokens": 45646
+      }
+    },
+    {
+      "index": 22,
+      "startedAt": "2026-10-26T17:26:06.062Z",
+      "state": "validated",
+      "preflightInputTokens": 47866,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 47723,
+        "input_tokens_details": {
+          "cached_tokens": 39281
+        },
+        "output_tokens": 574,
+        "output_tokens_details": {
+          "reasoning_tokens": 500
+        },
+        "total_tokens": 48297
+      }
+    },
+    {
+      "index": 23,
+      "startedAt": "2026-10-26T17:26:16.412Z",
+      "state": "validated",
+      "preflightInputTokens": 50450,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 50307,
+        "input_tokens_details": {
+          "cached_tokens": 41329
+        },
+        "output_tokens": 925,
+        "output_tokens_details": {
+          "reasoning_tokens": 873
+        },
+        "total_tokens": 51232
+      }
+    },
+    {
+      "index": 24,
+      "startedAt": "2026-10-26T17:26:27.127Z",
+      "state": "validated",
+      "preflightInputTokens": 53399,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 53256,
+        "input_tokens_details": {
+          "cached_tokens": 47601
+        },
+        "output_tokens": 1016,
+        "output_tokens_details": {
+          "reasoning_tokens": 966
+        },
+        "total_tokens": 54272
+      }
+    },
+    {
+      "index": 25,
+      "startedAt": "2026-10-26T17:27:11.560Z",
+      "state": "failed",
+      "preflightInputTokens": 56425,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "incomplete",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 56282,
+        "input_tokens_details": {
+          "cached_tokens": 50289
+        },
+        "output_tokens": 2048,
+        "output_tokens_details": {
+          "reasoning_tokens": 2046
+        },
+        "total_tokens": 58330
+      },
+      "reason": "model_incomplete"
+    }
+  ],
+  "scope": "Single controlled fixture run; not benchmark metrics.",
+  "configuration": {
+    "schema": 1,
+    "fixtureAndAgentBuild": "98fd699c63b2d498aa396e7a90a135a638def2bfaa92888776ee8107a5aba87b",
+    "browserVersion": "156.0.8078.4",
+    "playwrightVersion": "1.64.1",
+    "platform": "darwin",
+    "architecture": "arm64",
+    "seed": "booking-v1",
+    "requestedModel": "muse-spark-1.3",
+    "inputTokenLimit": 64000,
+    "modelSettings": {
+      "tool_choice": "auto",
+      "parallel_tool_calls": false,
+      "max_output_tokens": 2048,
+      "store": false
+    }
+  },
+  "model": "muse-spark-1.3",
+  "agentResult": {
+    "outcome": "agent_inconclusive",
+    "reason": "model_incomplete",
+    "valid": false
+  },
+  "evidence": {
+    "findings": [
+      {
+        "code": "confirmation_unreachable",
+        "occurrences": 3,
+        "runs": 3,
+        "reproduced": true,
+        "correctedControlClean": true,
+        "confirmedInControlledFixture": true
+      }
+    ],
+    "controlsClean": true,
+    "observedRuns": 3,
+    "controlRuns": 3,
+    "scope": "Fixture-specific deterministic contract checks; not a general WCAG verdict and not model detection metrics."
+  },
+  "replays": [
+    {
+      "label": "Original condition",
+      "taskCompleted": false,
+      "record": null,
+      "focusPathMatches": true,
+      "steps": [
+        {
+          "index": 1,
+          "focus": {
+            "id": "name",
+            "tag": "INPUT",
+            "role": null,
+            "name": "Full name",
+            "value": "Alex Tester"
+          },
+          "matchesOriginalFocus": true
+        },
+        {
+          "index": 2,
+          "focus": {
+            "id": "email",
+            "tag": "INPUT",
+            "role": null,
+            "name": "Email address",
+            "value": ""
+          },
+          "matchesOriginalFocus": true
+        },
+        {
+          "index": 3,
+          "focus": {
+            "id": "email",
+            "tag": "INPUT",
+            "role": null,
+            "name": "Email address",
+            "value": "alex@example.test"
+          },
+          "matchesOriginalFocus": true
+        },
+        {
+          "index": 4,
+          "focus": {
+            "id": "date-trigger",
+            "tag": "BUTTON",
+            "role": null,
+            "name": "Choose a date",
+            "value": ""
+          },
+          "matchesOriginalFocus": true
+        },
+        {
+          "index": 5,
+          "focus": {
+            "id": "date-trigger",
+            "tag": "BUTTON",
+            "role": null,
+            "name": "Choose a date",
+            "value": ""
+          },
+          "matchesOriginalFocus": true
+        },
+        {
+          "index": 6,
+          "focus": {
+            "id": null,
+            "tag": "BUTTON",
+            "role": null,
+            "name": "October 29, 2026",
+            "value": ""
+          },
+          "matchesOriginalFocus": true
+        },
+        {
+          "index": 7,
+          "focus": {
+            "id": null,
+            "tag": "BUTTON",
+            "role": null,
+            "name": "October 30, 2026",
+            "value": ""
+          },
+          "matchesOriginalFocus": true
+        },
+        {
+          "index": 8,
+          "focus": {
+            "id": "date-trigger",
+            "tag": "BUTTON",
+            "role": null,
+            "name": "October 30, 2026",
+            "value": ""
+          },
+          "matchesOriginalFocus": true
+        },
+        {
+          "index": 9,
+          "focus": {
+            "id": "time-14",
+            "tag": "INPUT",
+            "role": null,
+            "name": " 14:00",
+            "value": "14:00"
+          },
+          "matchesOriginalFocus": true
+        },
+        {
+          "index": 10,
+          "focus": {
+            "id": "time-15",
+            "tag": "INPUT",
+            "role": null,
+            "name": " 15:00",
+            "value": "15:00"
+          },
+          "matchesOriginalFocus": true
+        },
+        {
+          "index": 11,
+          "focus": {
+            "id": "review",
+            "tag": "BUTTON",
+            "role": null,
+            "name": "Review details",
+            "value": ""
+          },
+          "matchesOriginalFocus": true
+        },
+        {
+          "index": 12,
+          "focus": {
+            "id": "dialog-title",
+            "tag": "H2",
+            "role": null,
+            "name": "Review your session",
+            "value": null
+          },
+          "matchesOriginalFocus": true
+        },
+        {
+          "index": 13,
+          "focus": {
+            "id": "review",
+            "tag": "BUTTON",
+            "role": null,
+            "name": "Review details",
+            "value": ""
+          },
+          "matchesOriginalFocus": true
+        },
+        {
+          "index": 14,
+          "focus": {
+            "id": null,
+            "tag": "BODY",
+            "role": null,
+            "name": "Fieldwork StudioBooking desk\n  A little room for your next idea.Make timeto make things.Reserve a 30-minute studio introduction. Pick a date, review your detail",
+            "value": null
+          },
+          "matchesOriginalFocus": true
+        },
+        {
+          "index": 15,
+          "focus": {
+            "id": null,
+            "tag": "A",
+            "role": null,
+            "name": "Studio home",
+            "value": null
+          },
+          "matchesOriginalFocus": true
+        },
+        {
+          "index": 16,
+          "focus": {
+            "id": "name",
+            "tag": "INPUT",
+            "role": null,
+            "name": "Full name",
+            "value": "Alex Tester"
+          },
+          "matchesOriginalFocus": true
+        },
+        {
+          "index": 17,
+          "focus": {
+            "id": "email",
+            "tag": "INPUT",
+            "role": null,
+            "name": "Email address",
+            "value": "alex@example.test"
+          },
+          "matchesOriginalFocus": true
+        },
+        {
+          "index": 18,
+          "focus": {
+            "id": "date-trigger",
+            "tag": "BUTTON",
+            "role": null,
+            "name": "October 30, 2026",
+            "value": ""
+          },
+          "matchesOriginalFocus": true
+        },
+        {
+          "index": 19,
+          "focus": {
+            "id": "time-15",
+            "tag": "INPUT",
+            "role": null,
+            "name": " 15:00",
+            "value": "15:00"
+          },
+          "matchesOriginalFocus": true
+        },
+        {
+          "index": 20,
+          "focus": {
+            "id": "review",
+            "tag": "BUTTON",
+            "role": null,
+            "name": "Review details",
+            "value": ""
+          },
+          "matchesOriginalFocus": true
+        },
+        {
+          "index": 21,
+          "focus": {
+            "id": null,
+            "tag": "BODY",
+            "role": null,
+            "name": "Fieldwork StudioBooking desk\n  A little room for your next idea.Make timeto make things.Reserve a 30-minute studio introduction. Pick a date, review your detail",
+            "value": null
+          },
+          "matchesOriginalFocus": true
+        },
+        {
+          "index": 22,
+          "focus": {
+            "id": "review",
+            "tag": "BUTTON",
+            "role": null,
+            "name": "Review details",
+            "value": ""
+          },
+          "matchesOriginalFocus": true
+        },
+        {
+          "index": 23,
+          "focus": {
+            "id": "time-15",
+            "tag": "INPUT",
+            "role": null,
+            "name": " 15:00",
+            "value": "15:00"
+          },
+          "matchesOriginalFocus": true
+        },
+        {
+          "index": 24,
+          "focus": {
+            "id": "review",
+            "tag": "BUTTON",
+            "role": null,
+            "name": "Review details",
+            "value": ""
+          },
+          "matchesOriginalFocus": true
+        }
+      ],
+      "finalFocus": {
+        "id": "review",
+        "tag": "BUTTON",
+        "role": null,
+        "name": "Review details",
+        "value": ""
+      }
+    },
+    {
+      "label": "Corrected condition",
+      "taskCompleted": false,
+      "record": null,
+      "focusPathMatches": false,
+      "steps": [
+        {
+          "index": 1,
+          "focus": {
+            "id": "name",
+            "tag": "INPUT",
+            "role": null,
+            "name": "Full name",
+            "value": "Alex Tester"
+          },
+          "matchesOriginalFocus": true
+        },
+        {
+          "index": 2,
+          "focus": {
+            "id": "email",
+            "tag": "INPUT",
+            "role": null,
+            "name": "Email address",
+            "value": ""
+          },
+          "matchesOriginalFocus": true
+        },
+        {
+          "index": 3,
+          "focus": {
+            "id": "email",
+            "tag": "INPUT",
+            "role": null,
+            "name": "Email address",
+            "value": "alex@example.test"
+          },
+          "matchesOriginalFocus": true
+        },
+        {
+          "index": 4,
+          "focus": {
+            "id": "date-trigger",
+            "tag": "BUTTON",
+            "role": null,
+            "name": "Choose a date",
+            "value": ""
+          },
+          "matchesOriginalFocus": true
+        },
+        {
+          "index": 5,
+          "focus": {
+            "id": "date-trigger",
+            "tag": "BUTTON",
+            "role": null,
+            "name": "Choose a date",
+            "value": ""
+          },
+          "matchesOriginalFocus": true
+        },
+        {
+          "index": 6,
+          "focus": {
+            "id": null,
+            "tag": "BUTTON",
+            "role": null,
+            "name": "October 29, 2026",
+            "value": ""
+          },
+          "matchesOriginalFocus": true
+        },
+        {
+          "index": 7,
+          "focus": {
+            "id": null,
+            "tag": "BUTTON",
+            "role": null,
+            "name": "October 30, 2026",
+            "value": ""
+          },
+          "matchesOriginalFocus": true
+        },
+        {
+          "index": 8,
+          "focus": {
+            "id": "date-trigger",
+            "tag": "BUTTON",
+            "role": null,
+            "name": "October 30, 2026",
+            "value": ""
+          },
+          "matchesOriginalFocus": true
+        },
+        {
+          "index": 9,
+          "focus": {
+            "id": "time-14",
+            "tag": "INPUT",
+            "role": null,
+            "name": " 14:00",
+            "value": "14:00"
+          },
+          "matchesOriginalFocus": true
+        },
+        {
+          "index": 10,
+          "focus": {
+            "id": "time-15",
+            "tag": "INPUT",
+            "role": null,
+            "name": " 15:00",
+            "value": "15:00"
+          },
+          "matchesOriginalFocus": true
+        },
+        {
+          "index": 11,
+          "focus": {
+            "id": "review",
+            "tag": "BUTTON",
+            "role": null,
+            "name": "Review details",
+            "value": ""
+          },
+          "matchesOriginalFocus": true
+        },
+        {
+          "index": 12,
+          "focus": {
+            "id": "dialog-title",
+            "tag": "H2",
+            "role": null,
+            "name": "Review your session",
+            "value": null
+          },
+          "matchesOriginalFocus": true
+        },
+        {
+          "index": 13,
+          "focus": {
+            "id": "review",
+            "tag": "BUTTON",
+            "role": null,
+            "name": "Review details",
+            "value": ""
+          },
+          "matchesOriginalFocus": true
+        },
+        {
+          "index": 14,
+          "focus": {
+            "id": "book",
+            "tag": "BUTTON",
+            "role": null,
+            "name": "Confirm booking",
+            "value": ""
+          },
+          "matchesOriginalFocus": false
+        },
+        {
+          "index": 15,
+          "focus": {
+            "id": null,
+            "tag": "BODY",
+            "role": null,
+            "name": "Fieldwork StudioBooking desk\n  A little room for your next idea.Make timeto make things.Reserve a 30-minute studio introduction. Pick a date, review your detail",
+            "value": null
+          },
+          "matchesOriginalFocus": false
+        },
+        {
+          "index": 16,
+          "focus": {
+            "id": null,
+            "tag": "A",
+            "role": null,
+            "name": "Studio home",
+            "value": null
+          },
+          "matchesOriginalFocus": false
+        },
+        {
+          "index": 17,
+          "focus": {
+            "id": "name",
+            "tag": "INPUT",
+            "role": null,
+            "name": "Full name",
+            "value": "Alex Tester"
+          },
+          "matchesOriginalFocus": false
+        },
+        {
+          "index": 18,
+          "focus": {
+            "id": "email",
+            "tag": "INPUT",
+            "role": null,
+            "name": "Email address",
+            "value": "alex@example.test"
+          },
+          "matchesOriginalFocus": false
+        },
+        {
+          "index": 19,
+          "focus": {
+            "id": "date-trigger",
+            "tag": "BUTTON",
+            "role": null,
+            "name": "October 30, 2026",
+            "value": ""
+          },
+          "matchesOriginalFocus": false
+        },
+        {
+          "index": 20,
+          "focus": {
+            "id": "time-15",
+            "tag": "INPUT",
+            "role": null,
+            "name": " 15:00",
+            "value": "15:00"
+          },
+          "matchesOriginalFocus": false
+        },
+        {
+          "index": 21,
+          "focus": {
+            "id": "review",
+            "tag": "BUTTON",
+            "role": null,
+            "name": "Review details",
+            "value": ""
+          },
+          "matchesOriginalFocus": false
+        },
+        {
+          "index": 22,
+          "focus": {
+            "id": "time-15",
+            "tag": "INPUT",
+            "role": null,
+            "name": " 15:00",
+            "value": "15:00"
+          },
+          "matchesOriginalFocus": false
+        },
+        {
+          "index": 23,
+          "focus": {
+            "id": "date-trigger",
+            "tag": "BUTTON",
+            "role": null,
+            "name": "October 30, 2026",
+            "value": ""
+          },
+          "matchesOriginalFocus": false
+        },
+        {
+          "index": 24,
+          "focus": {
+            "id": "time-15",
+            "tag": "INPUT",
+            "role": null,
+            "name": " 15:00",
+            "value": "15:00"
+          },
+          "matchesOriginalFocus": false
+        }
+      ],
+      "finalFocus": {
+        "id": "time-15",
+        "tag": "INPUT",
+        "role": null,
+        "name": " 15:00",
+        "value": "15:00"
+      }
+    }
+  ],
+  "finishedAt": "2026-10-26T17:27:37.796Z"
+}
