@@ -56,3 +56,19 @@ test('list omits step detail but reports step counts; get keeps the full action 
     await manager.close();
   }finally{await rm(root,{recursive:true,force:true});}
 });
+test('live screenshot is tracked on the run record without being written into the saved report',async()=>{
+  const root=await mkdtemp(join(tmpdir(),'tabproof-shot-'));
+  try{
+    let report;
+    const manager=await createRunManager({root,configured:()=>true,execute:async({id,variant,onUpdate})=>{
+      report={runId:id,variant,startedAt:new Date().toISOString(),steps:[],requests:[],agentResult:{valid:true}};
+      onUpdate({phase:'running',report,screenshot:'00.png'});
+      return {report};
+    }});
+    const {id}=manager.start('correct');
+    while(manager.list().activeId)await delay(5);
+    assert.equal(manager.get(id).latestScreenshot,`/reports/${id}/00.png`);
+    assert.equal('latestScreenshot' in report,false);
+    await manager.close();
+  }finally{await rm(root,{recursive:true,force:true});}
+});

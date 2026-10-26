@@ -22,7 +22,7 @@ npm start
 
 Open http://127.0.0.1:3000 for the agent workbench. Choose a condition and press **Start agent**; **Stop** cancels the current attempt or evidence checks. The page updates the screenshot and action record as the agent works, then exposes **Open evidence report**. Only one run may be active; opening or refreshing the workbench never starts a run. Live runs use Meta API credits.
 
-The server loads a local `.env` automatically. Without a configured `MODEL_API_KEY`, the workbench remains viewable and disables starting the agent. Keys stay on the server. This workbench binds only to the local computer; it is not a hosted multi-user service.
+The server loads a local `.env` automatically. Without a configured `MODEL_API_KEY`, the workbench remains viewable and disables starting the agent. Keys stay on the server. The server accepts only `127.0.0.1:<port>` or `localhost:<port>` as the `Host` header (DNS-rebinding protection), so a forwarded port, devcontainer URL or reverse proxy answers `403 Invalid host`; open the workbench through a local address. This workbench binds only to the local computer; it is not a hosted multi-user service.
 
 Open http://127.0.0.1:3000/lab to manually open a fresh booking fixture. This developer panel is separate from the agent's observations.
 
@@ -44,6 +44,8 @@ npm run agent -- correct
 Each live run can make up to 25 billable model calls. The model sees only screenshots, accessible semantics, current focus and its action history. It does not see the chosen condition or server record. Outputs go to ignored `output/playwright/` folders. The fixture runner only permits network requests to its local booking routes; arbitrary external URLs are not supported.
 
 The agent now stops before another model request when three actions leave its observation unchanged or same-direction Tab navigation completes a cycle back to the same page/focus state. The model may also return a strictly validated blocked message without a keyboard action. Stops are recorded separately from website attribution; API failures remain invalid runs. See [stopping policy and verification](docs/agent-stopping.md). The original 25-run benchmark remains frozen.
+
+Reports record a hash of the fixture and agent source files. Any change to those files (including the workbench commit `f88fb3c`) changes the hash, so `compare` rejects pairing runs from different builds (`different_run_configuration`); compare runs made on the same build.
 
 Workbench verification covers start, live actions/screenshots, cancellation before the first key and during evidence checks, partial reports, restart, history, and mobile layout. `check:console` uses real Chromium with explicitly labelled scripted decisions and makes no Meta calls. See [console verification](docs/console-verification.md).
 

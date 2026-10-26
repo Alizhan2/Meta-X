@@ -4,8 +4,8 @@ import {executeRun,newRunId,task} from './runner.mjs';
 import {variants} from './fixture.mjs';
 
 const fail=(status,code)=>Object.assign(new Error(code),{status,code});
-function project(report){
-  const screenshot=report.latestScreenshot||(report.steps.length?`${String(report.steps.length-1).padStart(2,'0')}-after.png`:null);
+function project(report,liveScreenshot=null){
+  const screenshot=liveScreenshot||(report.steps.length?`${String(report.steps.length-1).padStart(2,'0')}-after.png`:null);
   return {id:report.runId,variant:report.variant,startedAt:report.startedAt,finishedAt:report.finishedAt,steps:report.steps,stepCount:report.steps.length,requests:report.requests?.length??0,reason:report.reason,outcome:report.outcome,taskCompleted:report.agentResult?.outcome==='task_completed',latestScreenshot:screenshot?`/reports/${report.runId}/${screenshot}`:null,task:report.task,executionMode:report.executionMode||'meta-live',model:report.model,interruptedAction:report.interruptedAction,executedActions:report.executedActions};
 }
 function finalState(report){return report.cancelled?'stopped':report.agentResult?.valid===false?'failed':'completed';}
@@ -33,14 +33,14 @@ export async function createRunManager({execute=executeRun,root=resolve('output/
       const run={id,variant,state:'starting',phase:'starting',steps:[],stepCount:0,requests:0,latestScreenshot:null,reportUrl:null,startedAt:new Date().toISOString(),task,taskCompleted:false,executionMode:'meta-live'};
       records.set(id,run);
       active={id,controller,promise:null};
-      const job=active;
+      const job=active;let liveScreenshot=null;
       job.promise=Promise.resolve().then(()=>execute({variant,id,root,signal:controller.signal,onUpdate:({phase,report,screenshot})=>{
-        if(screenshot)report.latestScreenshot=screenshot;
-        Object.assign(run,project(report));
+        if(screenshot)liveScreenshot=screenshot;
+        Object.assign(run,project(report,liveScreenshot));
         run.phase=phase;
         if(!controller.signal.aborted&&phase!=='finished')run.state=phase==='checking'?'checking':phase==='starting'?'starting':'running';
       }})).then(({report})=>{
-        Object.assign(run,project(report),{state:finalState(report),phase:'finished',reportUrl:`/reports/${id}/report.html`});
+        Object.assign(run,project(report,liveScreenshot),{state:finalState(report),phase:'finished',reportUrl:`/reports/${id}/report.html`});
       }).catch(()=>{
         // No raw exception/credential material is exposed through the control API.
         Object.assign(run,{state:controller.signal.aborted?'stopped':'failed',phase:'finished',reason:controller.signal.aborted?'user_stopped':'run_failed',finishedAt:new Date().toISOString()});

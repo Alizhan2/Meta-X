@@ -17,7 +17,7 @@ The main page is a local control surface. It never becomes part of the agent's o
 | Mobile layout | 390px viewport has no horizontal page overflow; controls and report remain available |
 | Request boundary | Cross-origin mutations and non-JSON start requests are rejected; manager shutdown rejects new starts before draining |
 
-`npm test`: 32 passing tests. Cancellation tests cover abort before a key, during inference, and after token counting; no next keyboard action or inference is allowed. Shutdown tests reject starts while closing and after closing. Report tests retain uncertainty for an interrupted action and never treat user cancellation as website attribution.
+`npm test`: 33 passing tests. Cancellation tests cover abort before a key, during inference, and after token counting; no next keyboard action or inference is allowed. Shutdown tests reject starts while closing and after closing. Report tests retain uncertainty for an interrupted action and never treat user cancellation as website attribution.
 
 `npm run check:console`: 13 browser/API checks passed with no page errors. It used real Chromium and the real fixture/server/runner; decisions were injected from a saved successful keyboard sequence. No Meta API calls were made. Four test runs covered partial cancellation after two actions, a complete 15-action booking, cancellation during evidence after booking, and cancellation before the first action. Generated reports are explicitly marked `scripted-test` and kept in their own ignored test folder.
 
