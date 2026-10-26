@@ -29,3 +29,5 @@ Chromium is configured to send loopback traffic through the proxy, with QUIC and
 One live Muse Spark 1.3 run was launched from the workbench against a separate local workshop-search site with a task written in Russian. The agent used four keyboard actions and five decisions, found the requested result, and returned the strict completion message. The site recorded one search submission. The report correctly retained `agent_reported_complete`, without a fixture success oracle. Returned usage: 33,005 tokens. [Raw live record](custom-2026-10-26/live-run.json), [scripted browser check](custom-2026-10-26/browser-check.json).
 
 This small check verifies the new flow; it is not a reliability estimate across arbitrary websites. Original fixture benchmarks remain unchanged.
+
+A later [public-site verification](public-sites-2026-10-27/README.md) exercised real navigation and search on official Python documentation, found and fixed history growth/reasoning-continuity issues, and retained every development attempt.

@@ -8,6 +8,8 @@ After every executed action, a monitor checks accessible page semantics, full fo
 
 Same-direction Tab or Shift+Tab traversal stops with `focus_navigation_cycle` when it returns to an earlier page/focus state after at least two transitions between distinct states. Automatic viewport scrolling is excluded from this cycle identity. Reversing direction or pressing another key resets the traversal. A fresh change between actions resets monitoring, so asynchronous visible progress is not mistaken for another no-op.
 
+A public-site follow-up also added `repeated_navigation_states`: four successive navigation actions that revisit known states without discovering a new page/focus state stop exploration, including alternating Tab/Shift+Tab loops. This remains a qualified agent stop, not proof of a website defect. See [public-site verification](public-sites-2026-10-27/README.md).
+
 The runner checks the server booking record before applying a stop. A successful final action, including a delayed write, still completes the task. A stop breaks the loop before any further agent decision or keyboard action. Independent fixture probes and exact-key replays then run separately; historical replay is never truncated by the new policy.
 
 ## Model terminal response

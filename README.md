@@ -24,6 +24,8 @@ Open http://127.0.0.1:3000 for the agent workbench. Choose a condition and press
 
 To test your own site, choose **Run on → Your website**, paste a complete HTTP(S) address, and write the task in **Task to attempt**. Press **Start agent**. Public websites and a separate localhost development server are supported. The agent starts in a fresh browser and stays on the same site. Screenshots and page text are sent to Meta; use test data for private pages.
 
+The final build was checked on the unmodified official Python documentation: opening Tutorial took 14 actions and searching for `venv` took 15. Separate read-only replays verified the resulting URLs, page headings/results and focus paths. Earlier context-limit and navigation-loop failures are retained alongside the fixes. See [all public-site attempts and verification](docs/public-sites-2026-10-27/README.md).
+
 For a custom website, completion is explicitly **model-reported**, without an independent success oracle. Its report contains the actual URL, task, observed actions and screenshots. Fixture-specific contract checks and automatic replays never run against a custom site, so submitting a form is not repeated for evidence. See [custom website support and verification](docs/custom-targets.md).
 
 The server loads a local `.env` automatically. Without a configured `MODEL_API_KEY`, the workbench remains viewable and disables starting the agent. Keys stay on the server. This workbench binds only to the local computer; it is not a hosted multi-user service.

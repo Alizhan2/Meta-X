@@ -12,6 +12,7 @@
     "check:stopping": "node scripts/check-stopping.mjs",
     "check:console": "node scripts/check-console.mjs",
     "check:custom": "node scripts/check-custom.mjs",
+    "check:public-run": "node scripts/check-public-run.mjs",
     "check:benchmark-replays": "node scripts/check-benchmark-replays.mjs",
     "compare": "node scripts/compare-runs.mjs",
     "agent": "node --env-file=.env scripts/run-agent.mjs",

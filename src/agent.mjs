@@ -46,7 +46,7 @@ export async function runAgent(session,report,{observeStep,decide=nextAction,onS
     const {checkpoint,stop}=progress.afterAction(decision.action,after,result.index);
     report.steps.push({...result,timestamp:new Date().toISOString(),focusBefore:observation.focus,focusAfter:after.focus,checkpoint});
     delete report.pendingAction;
-    history=decision.continueWith({executed:true,focus:after.focus});
+    history=decision.continueWith({executed:true,focus:after.focus,url:after.url});
     onStep(result,after);
     // A completed server write wins even if its visible page happens to repeat.
     if(session.record()){

@@ -1,0 +1,1010 @@
+{
+  "runId": "agent-1793041330446274199",
+  "targetKind": "custom",
+  "variant": "custom",
+  "targetUrl": "https://docs.python.org/3/",
+  "task": "Открой раздел Tutorial по ссылке на главной странице документации Python. Остановись, когда загрузится страница The Python Tutorial. Не используй поиск и не переходи на другие сайты.",
+  "startedAt": "2026-10-26T19:02:10.447Z",
+  "budget": 25,
+  "valid": true,
+  "outcome": "agent_reported_complete",
+  "reason": "model_reported_completion",
+  "steps": [
+    {
+      "index": 1,
+      "action": {
+        "name": "press_key",
+        "arguments": {
+          "key": "Tab"
+        }
+      },
+      "timestamp": "2026-10-26T19:02:19.716Z",
+      "focusBefore": {
+        "id": null,
+        "tag": "BODY",
+        "role": null,
+        "name": "Page",
+        "value": null,
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "focusAfter": {
+        "id": null,
+        "tag": "A",
+        "role": null,
+        "name": "index",
+        "value": null,
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "checkpoint": {
+        "before": "ec7d4c581298494d0428c6627915ca1a81ad41e769d36f887bde2b72b13c3d5e",
+        "after": "ab7ce5de9b9b1143022c8e9242af6b4fac62c7c1e7509c5f59b7f2540343b9a3",
+        "unchangedActions": 0
+      }
+    },
+    {
+      "index": 2,
+      "action": {
+        "name": "press_key",
+        "arguments": {
+          "key": "Tab"
+        }
+      },
+      "timestamp": "2026-10-26T19:02:25.891Z",
+      "focusBefore": {
+        "id": null,
+        "tag": "A",
+        "role": null,
+        "name": "index",
+        "value": null,
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "focusAfter": {
+        "id": null,
+        "tag": "A",
+        "role": null,
+        "name": "modules",
+        "value": null,
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "checkpoint": {
+        "before": "ab7ce5de9b9b1143022c8e9242af6b4fac62c7c1e7509c5f59b7f2540343b9a3",
+        "after": "96cbe1d671dc65241c843239a8cba7fd89b1a2ab639ed18eb4a7a90e32f24edf",
+        "unchangedActions": 0
+      }
+    },
+    {
+      "index": 3,
+      "action": {
+        "name": "press_key",
+        "arguments": {
+          "key": "Tab"
+        }
+      },
+      "timestamp": "2026-10-26T19:02:33.526Z",
+      "focusBefore": {
+        "id": null,
+        "tag": "A",
+        "role": null,
+        "name": "modules",
+        "value": null,
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "focusAfter": {
+        "id": null,
+        "tag": "A",
+        "role": null,
+        "name": "Python",
+        "value": null,
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "checkpoint": {
+        "before": "96cbe1d671dc65241c843239a8cba7fd89b1a2ab639ed18eb4a7a90e32f24edf",
+        "after": "69e1614807eae866e5194ec48468170e5d75584b35840c6c3e2978f24c040062",
+        "unchangedActions": 0
+      }
+    },
+    {
+      "index": 4,
+      "action": {
+        "name": "press_key",
+        "arguments": {
+          "key": "Tab"
+        }
+      },
+      "timestamp": "2026-10-26T19:02:40.344Z",
+      "focusBefore": {
+        "id": null,
+        "tag": "A",
+        "role": null,
+        "name": "Python",
+        "value": null,
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "focusAfter": {
+        "id": null,
+        "tag": "SELECT",
+        "role": null,
+        "name": "Language",
+        "value": "en",
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "checkpoint": {
+        "before": "69e1614807eae866e5194ec48468170e5d75584b35840c6c3e2978f24c040062",
+        "after": "13ddeed836cc894a07a87755ffafd63e6e17478aa60fc134bcedcd086724dc39",
+        "unchangedActions": 0
+      }
+    },
+    {
+      "index": 5,
+      "action": {
+        "name": "press_key",
+        "arguments": {
+          "key": "Tab"
+        }
+      },
+      "timestamp": "2026-10-26T19:02:44.375Z",
+      "focusBefore": {
+        "id": null,
+        "tag": "SELECT",
+        "role": null,
+        "name": "Language",
+        "value": "en",
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "focusAfter": {
+        "id": null,
+        "tag": "SELECT",
+        "role": null,
+        "name": "Python version",
+        "value": "3.15",
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "checkpoint": {
+        "before": "13ddeed836cc894a07a87755ffafd63e6e17478aa60fc134bcedcd086724dc39",
+        "after": "0fd036ba3312bf9fc234e030abb657b0e779a42381638fb6566f551923073d02",
+        "unchangedActions": 0
+      }
+    },
+    {
+      "index": 6,
+      "action": {
+        "name": "press_key",
+        "arguments": {
+          "key": "Tab"
+        }
+      },
+      "timestamp": "2026-10-26T19:02:52.286Z",
+      "focusBefore": {
+        "id": null,
+        "tag": "SELECT",
+        "role": null,
+        "name": "Python version",
+        "value": "3.15",
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "focusAfter": {
+        "id": null,
+        "tag": "A",
+        "role": null,
+        "name": "3.15.2 Documentation",
+        "value": null,
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "checkpoint": {
+        "before": "0fd036ba3312bf9fc234e030abb657b0e779a42381638fb6566f551923073d02",
+        "after": "ea5a3e782a30f612ad6241e6349192249f924a74c4f340c8b635e814b04c4d68",
+        "unchangedActions": 0
+      }
+    },
+    {
+      "index": 7,
+      "action": {
+        "name": "press_key",
+        "arguments": {
+          "key": "Tab"
+        }
+      },
+      "timestamp": "2026-10-26T19:02:59.381Z",
+      "focusBefore": {
+        "id": null,
+        "tag": "A",
+        "role": null,
+        "name": "3.15.2 Documentation",
+        "value": null,
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "focusAfter": {
+        "id": null,
+        "tag": "A",
+        "role": null,
+        "name": "",
+        "value": null,
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "checkpoint": {
+        "before": "ea5a3e782a30f612ad6241e6349192249f924a74c4f340c8b635e814b04c4d68",
+        "after": "f4d32e023c9279b054cf94584bff52e0c419716aaa090be5d3c5c408d817c99a",
+        "unchangedActions": 0
+      }
+    },
+    {
+      "index": 8,
+      "action": {
+        "name": "press_key",
+        "arguments": {
+          "key": "Tab"
+        }
+      },
+      "timestamp": "2026-10-26T19:03:07.615Z",
+      "focusBefore": {
+        "id": null,
+        "tag": "A",
+        "role": null,
+        "name": "",
+        "value": null,
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "focusAfter": {
+        "id": "search-box",
+        "tag": "INPUT",
+        "role": null,
+        "name": "Quick search",
+        "value": "",
+        "selectionStart": 0,
+        "selectionEnd": 0
+      },
+      "checkpoint": {
+        "before": "f4d32e023c9279b054cf94584bff52e0c419716aaa090be5d3c5c408d817c99a",
+        "after": "e4fad08de9a9fbc1282c2e1da6c6a7675561def6352848ff36845ed59e01dee4",
+        "unchangedActions": 0
+      }
+    },
+    {
+      "index": 9,
+      "action": {
+        "name": "press_key",
+        "arguments": {
+          "key": "Tab"
+        }
+      },
+      "timestamp": "2026-10-26T19:03:14.517Z",
+      "focusBefore": {
+        "id": "search-box",
+        "tag": "INPUT",
+        "role": null,
+        "name": "Quick search",
+        "value": "",
+        "selectionStart": 0,
+        "selectionEnd": 0
+      },
+      "focusAfter": {
+        "id": null,
+        "tag": "INPUT",
+        "role": null,
+        "name": "",
+        "value": "Go",
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "checkpoint": {
+        "before": "e4fad08de9a9fbc1282c2e1da6c6a7675561def6352848ff36845ed59e01dee4",
+        "after": "8a71e1238200acd6fa8b64414d5649e10a2c2daa8da7dc2ad1253f29f8ad4abb",
+        "unchangedActions": 0
+      }
+    },
+    {
+      "index": 10,
+      "action": {
+        "name": "press_key",
+        "arguments": {
+          "key": "Tab"
+        }
+      },
+      "timestamp": "2026-10-26T19:03:21.545Z",
+      "focusBefore": {
+        "id": null,
+        "tag": "INPUT",
+        "role": null,
+        "name": "",
+        "value": "Go",
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "focusAfter": {
+        "id": null,
+        "tag": "SELECT",
+        "role": null,
+        "name": "Theme \nAuto\nLight\nDark\n ",
+        "value": "auto",
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "checkpoint": {
+        "before": "8a71e1238200acd6fa8b64414d5649e10a2c2daa8da7dc2ad1253f29f8ad4abb",
+        "after": "aff65eb108b034fd349f8686f4e624a5daec57c8e8b4202bb123204128fd9292",
+        "unchangedActions": 0
+      }
+    },
+    {
+      "index": 11,
+      "action": {
+        "name": "press_key",
+        "arguments": {
+          "key": "Tab"
+        }
+      },
+      "timestamp": "2026-10-26T19:03:26.497Z",
+      "focusBefore": {
+        "id": null,
+        "tag": "SELECT",
+        "role": null,
+        "name": "Theme \nAuto\nLight\nDark\n ",
+        "value": "auto",
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "focusAfter": {
+        "id": null,
+        "tag": "A",
+        "role": null,
+        "name": "What's new in Python 3.15?",
+        "value": null,
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "checkpoint": {
+        "before": "aff65eb108b034fd349f8686f4e624a5daec57c8e8b4202bb123204128fd9292",
+        "after": "02b4c45dbb279a2a489ccf74c50651284fd77b40256dd81ad2c3ef1b387b3318",
+        "unchangedActions": 0
+      }
+    },
+    {
+      "index": 12,
+      "action": {
+        "name": "press_key",
+        "arguments": {
+          "key": "Tab"
+        }
+      },
+      "timestamp": "2026-10-26T19:03:32.170Z",
+      "focusBefore": {
+        "id": null,
+        "tag": "A",
+        "role": null,
+        "name": "What's new in Python 3.15?",
+        "value": null,
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "focusAfter": {
+        "id": null,
+        "tag": "A",
+        "role": null,
+        "name": "all \"What's new\" documents since Python 2.0",
+        "value": null,
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "checkpoint": {
+        "before": "02b4c45dbb279a2a489ccf74c50651284fd77b40256dd81ad2c3ef1b387b3318",
+        "after": "77a66db6430198517797fe02b44cbb42b51eae6b35f99a4c807abc7c16af6b94",
+        "unchangedActions": 0
+      }
+    },
+    {
+      "index": 13,
+      "action": {
+        "name": "press_key",
+        "arguments": {
+          "key": "Tab"
+        }
+      },
+      "timestamp": "2026-10-26T19:03:37.125Z",
+      "focusBefore": {
+        "id": null,
+        "tag": "A",
+        "role": null,
+        "name": "all \"What's new\" documents since Python 2.0",
+        "value": null,
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "focusAfter": {
+        "id": null,
+        "tag": "A",
+        "role": null,
+        "name": "Tutorial",
+        "value": null,
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "checkpoint": {
+        "before": "77a66db6430198517797fe02b44cbb42b51eae6b35f99a4c807abc7c16af6b94",
+        "after": "9819c7fae05547b382d447dd18aca28c7b6331075cbcf21119fc864d798a5c8d",
+        "unchangedActions": 0
+      }
+    },
+    {
+      "index": 14,
+      "action": {
+        "name": "press_key",
+        "arguments": {
+          "key": "Enter"
+        }
+      },
+      "timestamp": "2026-10-26T19:03:41.896Z",
+      "focusBefore": {
+        "id": null,
+        "tag": "A",
+        "role": null,
+        "name": "Tutorial",
+        "value": null,
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "focusAfter": {
+        "id": null,
+        "tag": "BODY",
+        "role": null,
+        "name": "Page",
+        "value": null,
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "checkpoint": {
+        "before": "9819c7fae05547b382d447dd18aca28c7b6331075cbcf21119fc864d798a5c8d",
+        "after": "33061dc6eabbbed5039201f5d417547adad831cd5d7fd78f06b1c7953004985f",
+        "unchangedActions": 0
+      }
+    }
+  ],
+  "usage": [
+    {
+      "input_tokens": 5749,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 290,
+      "output_tokens_details": {
+        "reasoning_tokens": 213
+      },
+      "total_tokens": 6039
+    },
+    {
+      "input_tokens": 5802,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 400,
+      "output_tokens_details": {
+        "reasoning_tokens": 329
+      },
+      "total_tokens": 6202
+    },
+    {
+      "input_tokens": 5854,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 726,
+      "output_tokens_details": {
+        "reasoning_tokens": 655
+      },
+      "total_tokens": 6580
+    },
+    {
+      "input_tokens": 5906,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 932,
+      "output_tokens_details": {
+        "reasoning_tokens": 860
+      },
+      "total_tokens": 6838
+    },
+    {
+      "input_tokens": 5958,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 370,
+      "output_tokens_details": {
+        "reasoning_tokens": 299
+      },
+      "total_tokens": 6328
+    },
+    {
+      "input_tokens": 6016,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 373,
+      "output_tokens_details": {
+        "reasoning_tokens": 299
+      },
+      "total_tokens": 6389
+    },
+    {
+      "input_tokens": 6075,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 514,
+      "output_tokens_details": {
+        "reasoning_tokens": 440
+      },
+      "total_tokens": 6589
+    },
+    {
+      "input_tokens": 6118,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 736,
+      "output_tokens_details": {
+        "reasoning_tokens": 659
+      },
+      "total_tokens": 6854
+    },
+    {
+      "input_tokens": 6173,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 492,
+      "output_tokens_details": {
+        "reasoning_tokens": 418
+      },
+      "total_tokens": 6665
+    },
+    {
+      "input_tokens": 6221,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 706,
+      "output_tokens_details": {
+        "reasoning_tokens": 637
+      },
+      "total_tokens": 6927
+    },
+    {
+      "input_tokens": 6291,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 329,
+      "output_tokens_details": {
+        "reasoning_tokens": 252
+      },
+      "total_tokens": 6620
+    },
+    {
+      "input_tokens": 6351,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 298,
+      "output_tokens_details": {
+        "reasoning_tokens": 230
+      },
+      "total_tokens": 6649
+    },
+    {
+      "input_tokens": 6417,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 299,
+      "output_tokens_details": {
+        "reasoning_tokens": 227
+      },
+      "total_tokens": 6716
+    },
+    {
+      "input_tokens": 6458,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 160,
+      "output_tokens_details": {
+        "reasoning_tokens": 91
+      },
+      "total_tokens": 6618
+    },
+    {
+      "input_tokens": 9553,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 203,
+      "output_tokens_details": {
+        "reasoning_tokens": 175
+      },
+      "total_tokens": 9756
+    }
+  ],
+  "requests": [
+    {
+      "index": 1,
+      "startedAt": "2026-10-26T19:02:11.845Z",
+      "state": "validated",
+      "preflightInputTokens": 5892,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 5749,
+        "input_tokens_details": {
+          "cached_tokens": 0
+        },
+        "output_tokens": 290,
+        "output_tokens_details": {
+          "reasoning_tokens": 213
+        },
+        "total_tokens": 6039
+      }
+    },
+    {
+      "index": 2,
+      "startedAt": "2026-10-26T19:02:19.755Z",
+      "state": "validated",
+      "preflightInputTokens": 5945,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 5802,
+        "input_tokens_details": {
+          "cached_tokens": 0
+        },
+        "output_tokens": 400,
+        "output_tokens_details": {
+          "reasoning_tokens": 329
+        },
+        "total_tokens": 6202
+      }
+    },
+    {
+      "index": 3,
+      "startedAt": "2026-10-26T19:02:25.938Z",
+      "state": "validated",
+      "preflightInputTokens": 5997,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 5854,
+        "input_tokens_details": {
+          "cached_tokens": 0
+        },
+        "output_tokens": 726,
+        "output_tokens_details": {
+          "reasoning_tokens": 655
+        },
+        "total_tokens": 6580
+      }
+    },
+    {
+      "index": 4,
+      "startedAt": "2026-10-26T19:02:33.573Z",
+      "state": "validated",
+      "preflightInputTokens": 6049,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 5906,
+        "input_tokens_details": {
+          "cached_tokens": 0
+        },
+        "output_tokens": 932,
+        "output_tokens_details": {
+          "reasoning_tokens": 860
+        },
+        "total_tokens": 6838
+      }
+    },
+    {
+      "index": 5,
+      "startedAt": "2026-10-26T19:02:40.389Z",
+      "state": "validated",
+      "preflightInputTokens": 6101,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 5958,
+        "input_tokens_details": {
+          "cached_tokens": 0
+        },
+        "output_tokens": 370,
+        "output_tokens_details": {
+          "reasoning_tokens": 299
+        },
+        "total_tokens": 6328
+      }
+    },
+    {
+      "index": 6,
+      "startedAt": "2026-10-26T19:02:44.424Z",
+      "state": "validated",
+      "preflightInputTokens": 6159,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 6016,
+        "input_tokens_details": {
+          "cached_tokens": 0
+        },
+        "output_tokens": 373,
+        "output_tokens_details": {
+          "reasoning_tokens": 299
+        },
+        "total_tokens": 6389
+      }
+    },
+    {
+      "index": 7,
+      "startedAt": "2026-10-26T19:02:52.320Z",
+      "state": "validated",
+      "preflightInputTokens": 6218,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 6075,
+        "input_tokens_details": {
+          "cached_tokens": 0
+        },
+        "output_tokens": 514,
+        "output_tokens_details": {
+          "reasoning_tokens": 440
+        },
+        "total_tokens": 6589
+      }
+    },
+    {
+      "index": 8,
+      "startedAt": "2026-10-26T19:02:59.419Z",
+      "state": "validated",
+      "preflightInputTokens": 6261,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 6118,
+        "input_tokens_details": {
+          "cached_tokens": 0
+        },
+        "output_tokens": 736,
+        "output_tokens_details": {
+          "reasoning_tokens": 659
+        },
+        "total_tokens": 6854
+      }
+    },
+    {
+      "index": 9,
+      "startedAt": "2026-10-26T19:03:07.653Z",
+      "state": "validated",
+      "preflightInputTokens": 6316,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 6173,
+        "input_tokens_details": {
+          "cached_tokens": 0
+        },
+        "output_tokens": 492,
+        "output_tokens_details": {
+          "reasoning_tokens": 418
+        },
+        "total_tokens": 6665
+      }
+    },
+    {
+      "index": 10,
+      "startedAt": "2026-10-26T19:03:14.553Z",
+      "state": "validated",
+      "preflightInputTokens": 6364,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 6221,
+        "input_tokens_details": {
+          "cached_tokens": 0
+        },
+        "output_tokens": 706,
+        "output_tokens_details": {
+          "reasoning_tokens": 637
+        },
+        "total_tokens": 6927
+      }
+    },
+    {
+      "index": 11,
+      "startedAt": "2026-10-26T19:03:21.585Z",
+      "state": "validated",
+      "preflightInputTokens": 6434,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 6291,
+        "input_tokens_details": {
+          "cached_tokens": 0
+        },
+        "output_tokens": 329,
+        "output_tokens_details": {
+          "reasoning_tokens": 252
+        },
+        "total_tokens": 6620
+      }
+    },
+    {
+      "index": 12,
+      "startedAt": "2026-10-26T19:03:26.536Z",
+      "state": "validated",
+      "preflightInputTokens": 6494,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 6351,
+        "input_tokens_details": {
+          "cached_tokens": 0
+        },
+        "output_tokens": 298,
+        "output_tokens_details": {
+          "reasoning_tokens": 230
+        },
+        "total_tokens": 6649
+      }
+    },
+    {
+      "index": 13,
+      "startedAt": "2026-10-26T19:03:32.220Z",
+      "state": "validated",
+      "preflightInputTokens": 6560,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 6417,
+        "input_tokens_details": {
+          "cached_tokens": 0
+        },
+        "output_tokens": 299,
+        "output_tokens_details": {
+          "reasoning_tokens": 227
+        },
+        "total_tokens": 6716
+      }
+    },
+    {
+      "index": 14,
+      "startedAt": "2026-10-26T19:03:37.170Z",
+      "state": "validated",
+      "preflightInputTokens": 6601,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 6458,
+        "input_tokens_details": {
+          "cached_tokens": 0
+        },
+        "output_tokens": 160,
+        "output_tokens_details": {
+          "reasoning_tokens": 91
+        },
+        "total_tokens": 6618
+      }
+    },
+    {
+      "index": 15,
+      "startedAt": "2026-10-26T19:03:41.944Z",
+      "state": "validated",
+      "preflightInputTokens": 9696,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 9553,
+        "input_tokens_details": {
+          "cached_tokens": 0
+        },
+        "output_tokens": 203,
+        "output_tokens_details": {
+          "reasoning_tokens": 175
+        },
+        "total_tokens": 9756
+      }
+    }
+  ],
+  "scope": "Website keyboard-task attempt; completion is model-reported, without an independent success oracle.",
+  "executionMode": "meta-live",
+  "configuration": {
+    "schema": 1,
+    "fixtureAndAgentBuild": "5b3af53e2c04213e9317dcad3a7d91601d78d5902f7260ab3c6c2af1304f5ac5",
+    "browserVersion": "156.0.8078.4",
+    "playwrightVersion": "1.64.1",
+    "platform": "darwin",
+    "architecture": "arm64",
+    "seed": null,
+    "requestedModel": "muse-spark-1.3",
+    "inputTokenLimit": 64000,
+    "modelSettings": {
+      "tool_choice": "auto",
+      "parallel_tool_calls": false,
+      "max_output_tokens": 2048,
+      "store": false
+    },
+    "contextPolicy": {
+      "version": 1,
+      "observations": "current-only",
+      "memory": "complete-executed-action-ledger",
+      "maxActions": 25
+    },
+    "targetKind": "custom",
+    "completionVerification": "model-reported"
+  },
+  "finalUrl": "https://docs.python.org/3/tutorial/index.html",
+  "latestScreenshot": "14.png",
+  "stopPolicy": {
+    "version": 1,
+    "unchangedActions": 3,
+    "tabCycleMinimum": 2
+  },
+  "model": "muse-spark-1.3",
+  "stop": {
+    "source": "model",
+    "reason": "model_reported_completion",
+    "atStep": 14,
+    "detail": "Page at /tutorial/index.html shows heading The Python Tutorial"
+  },
+  "executedActions": 14,
+  "agentResult": {
+    "outcome": "agent_reported_complete",
+    "reason": "model_reported_completion",
+    "valid": true
+  },
+  "evidenceSkipped": "custom_target",
+  "replaysSkipped": "custom_target",
+  "finishedAt": "2026-10-26T19:03:48.887Z"
+}
