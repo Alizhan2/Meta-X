@@ -10,7 +10,7 @@ export function validateAction(action) {
   const args = action.arguments;
   if (!args || typeof args !== 'object' || Array.isArray(args)) throw new Error('invalid_arguments');
   if (action.name === 'press_key' && Object.keys(args).join() === 'key' && KEYS.includes(args.key)) return structuredClone(action);
-  if (action.name === 'type_text' && Object.keys(args).join() === 'text' && typeof args.text === 'string' && args.text.length > 0 && args.text.length <= 256 && /^[\x20-\x7e]+$/.test(args.text)) return structuredClone(action);
+  if (action.name === 'type_text' && Object.keys(args).join() === 'text' && typeof args.text === 'string' && args.text.length > 0 && args.text.length <= 256 && !/[\p{Cc}\p{Cf}\p{Cs}\u2028\u2029]/u.test(args.text)) return structuredClone(action);
   throw new Error('forbidden_action');
 }
 

@@ -17,7 +17,7 @@ The main page is a local control surface. It never becomes part of the agent's o
 | Mobile layout | 390px viewport has no horizontal page overflow; controls and report remain available |
 | Request boundary | Cross-origin mutations and non-JSON start requests are rejected; manager shutdown rejects new starts before draining |
 
-`npm test`: 34 passing tests. Cancellation tests cover abort before a key, during inference, and after token counting; no next keyboard action or inference is allowed. Shutdown tests reject starts while closing and after closing. Report tests retain uncertainty for an interrupted action and never treat user cancellation as website attribution.
+`npm test`: 47 passing tests. Cancellation tests cover abort before a key, during inference, and after token counting; no next keyboard action or inference is allowed. Shutdown tests reject starts while closing and after closing. Report tests retain uncertainty for an interrupted action and never treat user cancellation as website attribution.
 
 `npm run check:console`: 13 browser/API checks passed with no page errors. It used real Chromium and the real fixture/server/runner; decisions were injected from a saved successful keyboard sequence. No Meta API calls were made. Four test runs covered partial cancellation after two actions, a complete 15-action booking, cancellation during evidence after booking, and cancellation before the first action. Generated reports are explicitly marked `scripted-test` and kept in their own ignored test folder.
 
@@ -33,4 +33,4 @@ The screenshot is the latest observation, not a remote interactive browser. Run 
 
 Reports are saved under `output/playwright/agent-…/` and are retained between server restarts. The service lists up to 100 saved runs on startup. A browser refresh reconnects to an active run; server shutdown stops its own active run. A force-killed server cannot produce a final cancellation report.
 
-The server binds to `127.0.0.1`. There is no hosted deployment, user authentication or arbitrary target URL. Every live attempt still has the existing 25-request/action ceiling, 64,000-token input preflight and 2,048-token output limit.
+The server binds to `127.0.0.1`. There is no hosted deployment or user authentication. This verification covers the fixture console; [custom website URL/task support](custom-targets.md) was added in a subsequent follow-up. Every live attempt still has the existing 25-request/action ceiling, 64,000-token input preflight and 2,048-token output limit.

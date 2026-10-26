@@ -28,9 +28,9 @@ export async function createFixtureServer({port = 0,runs=null,artifactRoot=resol
         try{
           if(url.pathname==='/api/runs'&&req.method==='GET')return json(200,runs.list());
           if(url.pathname==='/api/runs'&&req.method==='POST'){
-            const body=JSON.parse(await readBody(req));
-            if(!body||Object.keys(body).join()!=='variant')return json(400,{error:'invalid_request'});
-            return json(202,{run:runs.start(body.variant)});
+            const body=JSON.parse(await readBody(req,16384));
+            if(!body||typeof body!=='object'||Array.isArray(body))return json(400,{error:'invalid_request'});
+            return json(202,{run:runs.start(body)});
           }
           const match=/^\/api\/runs\/(agent-\d+)(\/stop)?$/.exec(url.pathname);
           if(match&&!match[2]&&req.method==='GET')return json(200,{run:runs.get(match[1])});
@@ -70,7 +70,8 @@ export async function createFixtureServer({port = 0,runs=null,artifactRoot=resol
   });
   await new Promise((resolve,reject)=>{server.once('error',reject);server.listen(port,'127.0.0.1',resolve)});
   const origin = `http://127.0.0.1:${server.address().port}`;
+  runs?.addControlOrigin?.(origin);
   return {origin, createSession, getRecord(id) {return structuredClone(sessions.get(id)?.record ?? null)}, async close(){await new Promise((resolve,reject)=>server.close(e=>e?reject(e):resolve()))}};
 }
 
-async function readBody(req) {let body='';for await (const chunk of req){body+=chunk;if(Buffer.byteLength(body)>4096)throw new Error('body_too_large')}return body;}
+async function readBody(req,limit=4096) {const chunks=[];let size=0;for await(const chunk of req){size+=chunk.length;if(size>limit)throw new Error('body_too_large');chunks.push(chunk);}return Buffer.concat(chunks).toString('utf8');}

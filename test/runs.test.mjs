@@ -89,3 +89,13 @@ test('in-memory history is capped, and stop/close work when detached from the ma
     assert.throws(()=>manager.start('correct'),error=>error.status===503);
   }finally{await rm(root,{recursive:true,force:true});}
 });
+test('restored history uses the screenshot recorded in the saved report',async()=>{
+  const root=await mkdtemp(join(tmpdir(),'tabproof-restore-shot-'));
+  try{
+    await mkdir(join(root,'agent-789'));
+    await writeFile(join(root,'agent-789','report.json'),JSON.stringify({runId:'agent-789',variant:'correct',startedAt:'2026-10-26T00:00:00Z',steps:[],requests:[],latestScreenshot:'00.png',agentResult:{valid:true}}));
+    const manager=await createRunManager({root,configured:()=>false});
+    assert.equal(manager.get('agent-789').latestScreenshot,'/reports/agent-789/00.png');
+    await manager.close();
+  }finally{await rm(root,{recursive:true,force:true});}
+});

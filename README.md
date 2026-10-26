@@ -22,6 +22,10 @@ npm start
 
 Open http://127.0.0.1:3000 for the agent workbench. Choose a condition and press **Start agent**; **Stop** cancels the current attempt or evidence checks. The page updates the screenshot and action record as the agent works, then exposes **Open evidence report**. Only one run may be active; opening or refreshing the workbench never starts a run. Live runs use Meta API credits.
 
+To test your own site, choose **Run on → Your website**, paste a complete HTTP(S) address, and write the task in **Task to attempt**. Press **Start agent**. Public websites and a separate localhost development server are supported. The agent starts in a fresh browser and stays on the same site. Screenshots and page text are sent to Meta; use test data for private pages.
+
+For a custom website, completion is explicitly **model-reported**, without an independent success oracle. Its report contains the actual URL, task, observed actions and screenshots. Fixture-specific contract checks and automatic replays never run against a custom site, so submitting a form is not repeated for evidence. See [custom website support and verification](docs/custom-targets.md).
+
 The server loads a local `.env` automatically. Without a configured `MODEL_API_KEY`, the workbench remains viewable and disables starting the agent. Keys stay on the server. The server accepts only `127.0.0.1:<port>` or `localhost:<port>` as the `Host` header (DNS-rebinding protection), so a forwarded port, devcontainer URL or reverse proxy answers `403 Invalid host`; open the workbench through a local address. This workbench binds only to the local computer; it is not a hosted multi-user service.
 
 Open http://127.0.0.1:3000/lab to manually open a fresh booking fixture. This developer panel is separate from the agent's observations.
@@ -33,6 +37,7 @@ npm run check:evidence
 npm run check:regressions
 npm run check:stopping
 npm run check:console
+npm run check:custom
 ```
 
 For a live Meta run, copy `.env.example` to `.env` and fill your own `MODEL_API_KEY` and `META_MODEL` locally. The validated model is `muse-spark-1.3`. Never paste keys into issues, chat, screenshots, or committed files. Then run:
@@ -41,7 +46,7 @@ For a live Meta run, copy `.env.example` to `.env` and fill your own `MODEL_API_
 npm run agent -- correct
 ```
 
-Each live run can make up to 25 billable model calls. The model sees only screenshots, accessible semantics, current focus and its action history. It does not see the chosen condition or server record. Outputs go to ignored `output/playwright/` folders. The fixture runner only permits network requests to its local booking routes; arbitrary external URLs are not supported.
+Each live run can make up to 25 model decision attempts. The model sees only screenshots, accessible semantics, current focus, page URL and its action history. For a fixture run it does not see the chosen condition or server record. Outputs go to ignored `output/playwright/` folders. Fixture requests remain restricted to local booking routes. Custom sites use a separate browser network policy described above.
 
 The agent now stops before another model request when three actions leave its observation unchanged or same-direction Tab navigation completes a cycle back to the same page/focus state. The model may also return a strictly validated blocked message without a keyboard action. Stops are recorded separately from website attribution; API failures remain invalid runs. See [stopping policy and verification](docs/agent-stopping.md). The original 25-run benchmark remains frozen.
 

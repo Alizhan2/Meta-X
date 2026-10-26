@@ -39,6 +39,7 @@ test('one repeat is insufficient for fixture confirmation',()=>{
   assert.equal(summarizeComparisons([bad],[good]).findings[0].confirmedInControlledFixture,false);
 });
 test('calendar buttons with different names cannot be the same replay focus',()=>{
+  assert.equal(focusMatches({id:'time-15',tag:'INPUT',name:' 15:00\n',value:'15:00'},{id:'time-15',tag:'INPUT',name:'15:00',value:'15:00'}),true,'accessible label whitespace does not change identity');
   assert.equal(focusMatches({id:null,tag:'BUTTON',name:'October 29, 2026'},{id:null,tag:'BUTTON',name:'October 30, 2026'}),false);
 });
 test('corrected comparisons require distinct runs, an original fault and matching recorded configuration',()=>{

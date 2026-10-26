@@ -8,7 +8,7 @@ export function matchesBooking(record) {
 }
 
 async function active(page) {
-  return page.evaluate(()=>{const el=document.activeElement;return {id:el?.id||null,tag:el?.tagName||null,role:el?.getAttribute('role')||null,name:el?.getAttribute('aria-label')||el?.labels?.[0]?.textContent||el?.textContent?.trim().slice(0,160)||'',value:el&&'value'in el?el.value:null};});
+  return page.evaluate(()=>{const el=document.activeElement;return {id:el?.id||null,tag:el?.tagName||null,role:el?.getAttribute('role')||null,name:el?.tagName==='BODY'||el?.tagName==='HTML'?'Page':el?.getAttribute('aria-label')||el?.labels?.[0]?.innerText||el?.innerText?.trim().slice(0,160)||'',value:el&&'value'in el?el.value:null};});
 }
 
 // This inventory is evidence, never an exhaustive operability verdict.
@@ -121,4 +121,4 @@ export async function replayTrace(app,variant,steps,{directory,signal}={}) {
   }finally{await session.close();}
 }
 
-export function focusMatches(a,b){return ['id','tag','role','name','value'].every(key=>(a[key]??null)===(b[key]??null));}
+export function focusMatches(a,b){return ['id','tag','role','name','value'].every(key=>key==='name'?String(a[key]??'').replace(/\s+/g,' ').trim()===String(b[key]??'').replace(/\s+/g,' ').trim():(a[key]??null)===(b[key]??null));}
