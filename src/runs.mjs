@@ -6,7 +6,7 @@ import {variants} from './fixture.mjs';
 const fail=(status,code)=>Object.assign(new Error(code),{status,code});
 function project(report){
   const screenshot=report.latestScreenshot||(report.steps.length?`${String(report.steps.length-1).padStart(2,'0')}-after.png`:null);
-  return {id:report.runId,variant:report.variant,startedAt:report.startedAt,finishedAt:report.finishedAt,steps:report.steps,requests:report.requests?.length??0,reason:report.reason,outcome:report.outcome,taskCompleted:report.agentResult?.outcome==='task_completed',latestScreenshot:screenshot?`/reports/${report.runId}/${screenshot}`:null,task:report.task,executionMode:report.executionMode||'meta-live',model:report.model,interruptedAction:report.interruptedAction,executedActions:report.executedActions};
+  return {id:report.runId,variant:report.variant,startedAt:report.startedAt,finishedAt:report.finishedAt,steps:report.steps,stepCount:report.steps.length,requests:report.requests?.length??0,reason:report.reason,outcome:report.outcome,taskCompleted:report.agentResult?.outcome==='task_completed',latestScreenshot:screenshot?`/reports/${report.runId}/${screenshot}`:null,task:report.task,executionMode:report.executionMode||'meta-live',model:report.model,interruptedAction:report.interruptedAction,executedActions:report.executedActions};
 }
 function finalState(report){return report.cancelled?'stopped':report.agentResult?.valid===false?'failed':'completed';}
 
@@ -22,7 +22,7 @@ export async function createRunManager({execute=executeRun,root=resolve('output/
   }
   const get=id=>{const run=records.get(id);if(!run)throw fail(404,'run_not_found');return structuredClone(run);};
   return {
-    list(){return {runs:[...records.values()].sort((a,b)=>b.startedAt.localeCompare(a.startedAt)).map(run=>structuredClone(run)),configured:configured(),activeId:active?.id??null};},
+    list(){return {runs:[...records.values()].sort((a,b)=>b.startedAt.localeCompare(a.startedAt)).map(({steps,...summary})=>structuredClone(summary)),configured:configured(),activeId:active?.id??null};},
     get,
     start(variant){
       if(closing)throw fail(503,'service_stopping');
@@ -30,7 +30,7 @@ export async function createRunManager({execute=executeRun,root=resolve('output/
       if(active)throw fail(409,'run_already_active');
       if(!configured())throw fail(503,'model_not_configured');
       const id=newRunId(),controller=new AbortController();
-      const run={id,variant,state:'starting',phase:'starting',steps:[],requests:0,latestScreenshot:null,reportUrl:null,startedAt:new Date().toISOString(),task,taskCompleted:false,executionMode:'meta-live'};
+      const run={id,variant,state:'starting',phase:'starting',steps:[],stepCount:0,requests:0,latestScreenshot:null,reportUrl:null,startedAt:new Date().toISOString(),task,taskCompleted:false,executionMode:'meta-live'};
       records.set(id,run);
       active={id,controller,promise:null};
       const job=active;

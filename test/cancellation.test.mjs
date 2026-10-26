@@ -53,3 +53,9 @@ test('abort propagates into a pending inference and an interrupted action remain
     assert.ok(html.includes('Interrupted action'));assert.ok(html.includes('partial trace'));
   }finally{if(old===undefined)delete process.env.MODEL_API_KEY;else process.env.MODEL_API_KEY=old;}
 });
+
+test('report keeps an earlier agent stop visible when the user cancels afterwards',()=>{
+  const html=renderReport({...report(),cancelled:true,stop:{source:'user',reason:'user_stopped',atStep:3},stopBeforeCancellation:{source:'model',reason:'model_reported_blockage',atStep:3,detail:'Button <b>unreachable</b>'}});
+  assert.ok(html.includes('had already stopped: model_reported_blockage after 3 actions'));
+  assert.ok(html.includes('Button &lt;b&gt;unreachable&lt;/b&gt;'));
+});

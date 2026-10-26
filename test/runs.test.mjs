@@ -43,3 +43,16 @@ test('run history survives manager restart and missing credentials cannot start 
     await manager.close();
   }finally{await rm(root,{recursive:true,force:true});}
 });
+test('list omits step detail but reports step counts; get keeps the full action record',async()=>{
+  const root=await mkdtemp(join(tmpdir(),'tabproof-summary-'));
+  try{
+    await mkdir(join(root,'agent-456'));
+    const steps=[{index:1,action:{name:'press_key',arguments:{key:'Tab'}},focusBefore:{id:'a'},focusAfter:{id:'b'}}];
+    await writeFile(join(root,'agent-456','report.json'),JSON.stringify({runId:'agent-456',variant:'correct',startedAt:'2026-10-26T00:00:00Z',steps,requests:[],agentResult:{valid:true}}));
+    const manager=await createRunManager({root,configured:()=>true});
+    const [summary]=manager.list().runs;
+    assert.equal(summary.stepCount,1);assert.equal('steps' in summary,false);
+    assert.equal(manager.get('agent-456').steps.length,1);
+    await manager.close();
+  }finally{await rm(root,{recursive:true,force:true});}
+});

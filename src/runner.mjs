@@ -18,7 +18,10 @@ export async function executeRun({variant='correct',id=newRunId(),root=resolve('
   const report={runId:id,variant,task,startedAt:new Date().toISOString(),budget:25,valid:true,outcome:'agent_inconclusive',reason:'action_budget_exhausted',steps:[],usage:[],requests:[],scope:'Single controlled fixture run; not benchmark metrics.',executionMode:decide?'scripted-test':'meta-live'};
   let app,session;
   const update=(phase,extra={})=>onUpdate({phase,report,...extra});
-  const markCancelled=()=>{report.cancelled=true;report.reason='user_stopped';report.stop={source:'user',reason:'user_stopped',atStep:report.steps.length};};
+  const markCancelled=()=>{
+    if(report.cancelled)return;
+    if(report.stop)report.stopBeforeCancellation=report.stop;
+    report.cancelled=true;report.reason='user_stopped';report.stop={source:'user',reason:'user_stopped',atStep:report.steps.length};};
   try{
     signal?.throwIfAborted();update('starting');
     app=await createFixtureServer();
@@ -40,7 +43,7 @@ export async function executeRun({variant='correct',id=newRunId(),root=resolve('
     if(report.pendingAction){report.interruptedAction=report.pendingAction;delete report.pendingAction;}
     if(session)report.executedActions=session.executor.used;
     report.agentResult={outcome:report.outcome,reason:report.reason,valid:report.valid};
-    await session?.close();
+    await session?.close().catch(()=>{});
   }
   try{
     if(app&&!signal?.aborted){

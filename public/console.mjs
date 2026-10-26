@@ -19,6 +19,11 @@ function safeReportPath(value,{image=false}={}){
   try{const url=new URL(value,location.origin);if(url.origin!==location.origin||url.pathname.split('/').some(part=>part==='..')||!url.pathname.startsWith('/reports/'))return null;if(image?!url.pathname.endsWith('.png'):!url.pathname.endsWith('/report.html'))return null;return url.pathname+url.search;}catch{return null;}
 }
 function store(run){if(!run||typeof run.id!=='string'||!Array.isArray(run.steps))throw new Error('The run service returned an unreadable run.');runs.set(run.id,run);return run;}
+function storeSummary(run){
+  if(!run||typeof run.id!=='string'||!Number.isInteger(run.stepCount))throw new Error('The run service returned an unreadable run.');
+  runs.set(run.id,{...run,steps:runs.get(run.id)?.steps??[]});
+}
+const needsDetail=run=>!!run&&run.steps.length!==run.stepCount;
 function newest(){return [...runs.values()].sort((a,b)=>(Date.parse(b.startedAt)||0)-(Date.parse(a.startedAt)||0));}
 function selected(){return runs.get(selectedId)||null;}
 function setSelection(id,{persist=false}={}){selectedId=id;timelineSignature='';previewKey='';if(persist){const url=new URL(location.href);url.searchParams.set('run',id);history.replaceState(null,'',url);}render();}
@@ -94,13 +99,13 @@ async function refreshList(){
   try{
     const data=await api('/api/runs');if(version!==mutationVersion){lastListAt=0;return;}
     if(!Array.isArray(data.runs)||typeof data.configured!=='boolean'||!(data.activeId===null||typeof data.activeId==='string'))throw new Error('The run service returned an unreadable state.');
-    for(const run of data.runs)store(run);
+    for(const run of data.runs)storeSummary(run);
     configured=data.configured;activeId=data.activeId;connected=true;lastListAt=Date.now();
     if(!selectedId){selectedId=activeId||newest()[0]?.id||null;}
     if(!configured)notice('The Meta API key is not configured on this server. Add it locally before starting a run.');
     else notice('');
     render();
-    if(selectedId&&!runs.has(selectedId))void refreshRun(selectedId);
+    if(selectedId&&(!runs.has(selectedId)||(needsDetail(runs.get(selectedId))&&selectedId!==activeId)))void refreshRun(selectedId);
   }catch(error){if(version===mutationVersion){connected=false;notice(`Cannot reach the run service. ${error.message}`,{retry:true});renderControls();}}
   finally{listBusy=false;ui.refresh.disabled=false;}
 }
