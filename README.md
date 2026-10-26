@@ -4,7 +4,36 @@ A keyboard-only AI agent that attempts a web task, records evidence of blockers,
 
 ## Status and scope
 
-Planning started on October 26, 2026 for the Meta Global AI Developer Hackathon. No working agent or benchmark results are claimed yet. Implementation is planned for October 27–November 4. Initial scope: Chromium, controlled test sites without authentication, and one appointment-booking workflow.
+Planning and the first implementation started on October 26, 2026 for the Meta Global AI Developer Hackathon. The first Meta-driven keyboard-only booking completed in 15 actions, verified against a server-side record. The fixture's five conditions have deterministic checks; the planned 25-run AI benchmark has not been performed. Initial scope: Chromium, controlled test sites without authentication, and one appointment-booking workflow.
+
+See [the first-run evidence and limitations](docs/first-run.md).
+
+## Run locally
+
+Requires Node.js 24+.
+
+```sh
+npm ci
+npx playwright install chromium
+npm start
+```
+
+Open http://127.0.0.1:3000/lab to select a condition and open a fresh booking session. The developer panel is separate from the agent page.
+
+```sh
+npm test
+npm run check:fixtures
+```
+
+For a live Meta run, copy `.env.example` to `.env` and fill your own `MODEL_API_KEY` and `META_MODEL` locally. The validated model is `muse-spark-1.3`. Never paste keys into issues, chat, screenshots, or committed files. Then run:
+
+```sh
+npm run agent -- correct
+```
+
+Each live run can make up to 25 billable model calls. The model sees only screenshots, accessible semantics, current focus and its action history. It does not see the chosen condition or server record. Outputs go to ignored `output/playwright/` folders. The fixture runner only permits network requests to its local booking routes; arbitrary external URLs are not supported.
+
+Other conditions: `unreachable_button`, `calendar_keyboard`, `modal_dismissal`, `focus_loss`. An incomplete task is currently reported as inconclusive; automated blocker attribution, general Tab probes, replay comparison, and the report UI are still planned. Do not treat the current runner as a complete accessibility scanner.
 
 The distinction to demonstrate is **keyboard-only execution + reproducible evidence + verification after a fix**. This is a developer testing aid, not a certification of accessibility or a simulation of every disabled user's experience.
 
@@ -87,12 +116,12 @@ Dates use Asia/Aqtobe (UTC+5). Organizer submission deadline: **November 5, 2026
 
 Validate image input and tool calling against the account's actual available Meta model before selecting a model identifier. Candidate: Muse Spark through Meta Model API. Fallback to evaluate: Muse Spark Open through Baseten. For that partner, the participant guide specifies `meta-models/muse-spark-open-1026`.
 
-Credits have been requested from partners; availability is not assumed. No API key is included in this repository.
+Meta API access has been validated with a local key; no API key is included in this repository. The live screenshot/tool-call check and the first booking run use Muse Spark 1.3. Meta currently rejects `tool_choice: "required"`, so the client uses `"auto"` and independently rejects missing, multiple, malformed, or forbidden actions.
 
 ## Provenance and new work
 
 - These planning documents were authored on October 26, 2026 with AI assistance.
-- No product implementation, borrowed application template, or pre-existing fixture is present in this initial revision.
+- The initial planning revision contained no implementation or borrowed fixture. The current fixture and executor were authored for this project; their actual dates are retained in Git.
 - Record implementation changes in Git from the beginning. Preserve actual commit dates.
 - When dependencies, external templates, snippets, data, images, or fixtures are introduced, document their source, license, and our modifications in [PROVENANCE.md](PROVENANCE.md).
 - The demo must identify features and code built during the event. Using an existing library does not mean we authored that library.
