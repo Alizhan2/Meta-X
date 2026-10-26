@@ -1,13 +1,13 @@
 import {createHash} from 'node:crypto';
 import {readFile} from 'node:fs/promises';
 import {createRequire} from 'node:module';
-import {modelSettings} from './meta.mjs';
+import {modelSettings,inputTokenLimit} from './meta.mjs';
 import {matchesBooking} from './evidence.mjs';
 
 export async function runConfiguration(browserVersion){
   const hash=createHash('sha256');
   for(const file of ['fixture.mjs','keyboard.mjs','browser.mjs','meta.mjs','server.mjs','evidence.mjs','report.mjs','comparison.mjs','../scripts/run-agent.mjs','../public/style.css'])hash.update(file).update(await readFile(new URL(file,import.meta.url)));
-  return {schema:1,fixtureAndAgentBuild:hash.digest('hex'),browserVersion,playwrightVersion:createRequire(import.meta.url)('playwright/package.json').version,platform:process.platform,architecture:process.arch,seed:'booking-v1',modelSettings};
+  return {schema:1,fixtureAndAgentBuild:hash.digest('hex'),browserVersion,playwrightVersion:createRequire(import.meta.url)('playwright/package.json').version,platform:process.platform,architecture:process.arch,seed:'booking-v1',requestedModel:process.env.META_MODEL||'muse-spark-1.3',inputTokenLimit,modelSettings};
 }
 
 export function compareRuns(original,corrected){

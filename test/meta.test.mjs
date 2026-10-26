@@ -13,8 +13,15 @@ test('usage is captured before rejecting missing, malformed or incomplete action
       {status:'completed',model:'test',usage:{total_tokens:30},output:[{type:'function_call',name:'type_text',arguments:'not JSON'}]}
     ]){
       const metadata=[];
-      await assert.rejects(nextAction([],observation,'test',{request:async()=>({ok:true,status:200,json:async()=>body}),onResponse:item=>metadata.push(item)}));
-      assert.equal(metadata.length,1);assert.equal(metadata[0].usage.total_tokens,30);
+      await assert.rejects(nextAction([],observation,'test',{request:async url=>({ok:true,status:200,json:async()=>url.endsWith('/input_tokens')?{input_tokens:100}:body}),onResponse:item=>metadata.push(item)}));
+      assert.equal(metadata.filter(item=>item.usage).length,1);assert.equal(metadata.find(item=>item.usage).usage.total_tokens,30);
     }
+  }finally{if(old===undefined)delete process.env.MODEL_API_KEY;else process.env.MODEL_API_KEY=old;}
+});
+test('preflight refuses oversized input before any inference is sent',async()=>{
+  const old=process.env.MODEL_API_KEY;process.env.MODEL_API_KEY='synthetic-test-key';const urls=[];
+  try{
+    await assert.rejects(nextAction([],{focus:{},semantics:'',screenshot:''},'test',{request:async url=>{urls.push(url);return {ok:true,status:200,json:async()=>({input_tokens:64001})};}}),/input_token_limit/);
+    assert.deepEqual(urls,['https://api.meta.ai/v1/responses/input_tokens']);
   }finally{if(old===undefined)delete process.env.MODEL_API_KEY;else process.env.MODEL_API_KEY=old;}
 });

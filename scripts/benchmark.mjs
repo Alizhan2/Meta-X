@@ -34,11 +34,11 @@ async function run(job){
     if(!result)throw new Error('child_report_missing');
     report=JSON.parse(await readFile(resolve(result.output,'report.json'),'utf8'));
     entry.reportPath=resolve(result.output,'report.json');entry.runId=report.runId;entry.outcome=report.outcome;
-  }catch(error){report={variant:job.variant,runId:`batch-${job.round}-${job.variant}`,agentResult:{valid:false,reason:error.message},steps:[],usage:[],requests:[]};entry.error=error.message;}
+  }catch(error){report={variant:job.variant,runId:`batch-${job.round}-${job.variant}`,missingReport:true,agentResult:{valid:false,reason:error.message},steps:[],usage:[],requests:[]};entry.error=error.message;}
   reports.push(report);entry.exitCode=exitCode;entry.finishedAt=new Date().toISOString();entry.state='finished';
   const summary=await save();
   if(summary.knownTokens>=manifest.maxKnownTokens){halt=true;manifest.haltReason='known_token_budget';}
-  if(!summary.configurationConsistent){halt=true;manifest.haltReason='configuration_mismatch';}
+  if(summary.configurationState==='mismatch'){halt=true;manifest.haltReason='configuration_mismatch';}
   console.log(`DONE ${reports.length}/25 ${job.variant}: ${report.outcome||'failed'}; ${report.steps.length} actions; known tokens ${summary.knownTokens}`);
 }
 async function worker(){while(!halt&&next<jobs.length){const job=jobs[next++];await run(job);}}

@@ -14,3 +14,12 @@ test('mixed configurations cannot yield eligible comparisons and empty groups yi
   const summary=summarizeBenchmark([report,{...report,configuration:{version:2}}]);
   assert.equal(summary.configurationConsistent,false);assert.equal(summary.rows[0].eligible,0);assert.equal(summary.rows[1].operationalCompletion.percent,null);
 });
+test('unknown configuration and usage remain unknown rather than mismatch or zero confidence',()=>{
+  const summary=summarizeBenchmark([{variant:'correct',missingReport:true,agentResult:{valid:false}}]);
+  assert.equal(summary.configurationState,'unknown');assert.equal(summary.runsWithUnknownRequestCount,1);
+});
+test('models and tasks are part of benchmark compatibility',()=>{
+  const report={variant:'correct',configuration:{version:1},model:'model-a',task:'task-a',budget:25,agentResult:{valid:true}};
+  assert.equal(summarizeBenchmark([report,{...report,model:'model-b'}]).configurationState,'mismatch');
+  assert.equal(summarizeBenchmark([report,{...report,task:'task-b'}]).configurationState,'mismatch');
+});
