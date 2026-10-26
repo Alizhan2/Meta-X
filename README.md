@@ -25,6 +25,7 @@ npm test
 npm run check:fixtures
 npm run check:evidence
 npm run check:regressions
+npm run check:stopping
 ```
 
 For a live Meta run, copy `.env.example` to `.env` and fill your own `MODEL_API_KEY` and `META_MODEL` locally. The validated model is `muse-spark-1.3`. Never paste keys into issues, chat, screenshots, or committed files. Then run:
@@ -34,6 +35,8 @@ npm run agent -- correct
 ```
 
 Each live run can make up to 25 billable model calls. The model sees only screenshots, accessible semantics, current focus and its action history. It does not see the chosen condition or server record. Outputs go to ignored `output/playwright/` folders. The fixture runner only permits network requests to its local booking routes; arbitrary external URLs are not supported.
+
+The agent now stops before another model request when three actions leave its observation unchanged or same-direction Tab navigation completes a cycle back to the same page/focus state. The model may also return a strictly validated blocked message without a keyboard action. Stops are recorded separately from website attribution; API failures remain invalid runs. See [stopping policy and verification](docs/agent-stopping.md). The original 25-run benchmark remains frozen.
 
 Other conditions: `unreachable_button`, `calendar_keyboard`, `modal_dismissal`, `focus_loss`. Every live run now includes three independent fixture-contract probes, three corrected controls, exact-key replays, and an HTML evidence report. An unconfirmed failure stays inconclusive. Confirmed fixture observations produce a suspected-blocker outcome while keeping the AI task outcome separate. Do not treat the current runner as a general accessibility scanner: probes currently know the booking fixture's expected contracts.
 
@@ -124,7 +127,7 @@ Dates use Asia/Aqtobe (UTC+5). Organizer submission deadline: **November 5, 2026
 
 Validate image input and tool calling against the account's actual available Meta model before selecting a model identifier. Candidate: Muse Spark through Meta Model API. Fallback to evaluate: Muse Spark Open through Baseten. For that partner, the participant guide specifies `meta-models/muse-spark-open-1026`.
 
-Meta API access has been validated with a local key; no API key is included in this repository. The live screenshot/tool-call check and the first booking run use Muse Spark 1.3. Meta currently rejects `tool_choice: "required"`, so the client uses `"auto"` and independently rejects missing, multiple, malformed, or forbidden actions.
+Meta API access has been validated with a local key; no API key is included in this repository. The live screenshot/tool-call check and the first booking run use Muse Spark 1.3. Meta currently rejects `tool_choice: "required"`, so the client uses `"auto"` and independently rejects missing, multiple, malformed, or forbidden actions. A completed assistant message containing exactly `{"status":"blocked","reason":"..."}` is a valid terminal decision; mixed stop/action responses are rejected.
 
 ## Provenance and new work
 

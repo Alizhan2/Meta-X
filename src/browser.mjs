@@ -49,8 +49,9 @@ export async function observe(page, screenshotPath) {
   const screenshot=await page.screenshot({path:screenshotPath});
   const focus=await page.evaluate(()=>{
     const el=document.activeElement;
-    return {id:el?.id||null,tag:el?.tagName||null,role:el?.getAttribute('role')||null,name:el?.getAttribute('aria-label')||el?.labels?.[0]?.textContent||el?.textContent?.trim().slice(0,160)||'',value:el && 'value' in el?el.value:null};
+    return {id:el?.id||null,tag:el?.tagName||null,role:el?.getAttribute('role')||null,name:el?.getAttribute('aria-label')||el?.labels?.[0]?.textContent||el?.textContent?.trim().slice(0,160)||'',value:el && 'value' in el?el.value:null,selectionStart:el?.selectionStart??null,selectionEnd:el?.selectionEnd??null};
   });
   const semantics=await page.locator('body').ariaSnapshot();
-  return {screenshot:screenshot.toString('base64'),focus,semantics};
+  const viewport=await page.evaluate(()=>({scrollX,scrollY}));
+  return {screenshot:screenshot.toString('base64'),focus,semantics,viewport};
 }

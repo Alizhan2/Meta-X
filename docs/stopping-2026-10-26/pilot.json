@@ -1,0 +1,198 @@
+{
+  "scope": "Five fresh live runs with graceful stopping; exploratory pilot, separate from the frozen 25-run benchmark.",
+  "planned": 5,
+  "maxRequests": 125,
+  "startedAt": "2026-10-26T18:03:36.507Z",
+  "jobs": [
+    {
+      "variant": "correct",
+      "reportPath": "runs/agent-1793037816661012558.json",
+      "runId": "agent-1793037816661012558",
+      "exitCode": 0,
+      "outcome": "task_completed",
+      "agentResult": {
+        "outcome": "task_completed",
+        "reason": "server_record_matches",
+        "valid": true
+      },
+      "actions": 15,
+      "requests": 15,
+      "stop": null,
+      "configuration": {
+        "schema": 1,
+        "fixtureAndAgentBuild": "7297935507c2517ed60869b588b3035c3031ab4b683d675d332e6de5f38a2584",
+        "browserVersion": "156.0.8078.4",
+        "playwrightVersion": "1.64.1",
+        "platform": "darwin",
+        "architecture": "arm64",
+        "seed": "booking-v1",
+        "requestedModel": "muse-spark-1.3",
+        "inputTokenLimit": 64000,
+        "modelSettings": {
+          "tool_choice": "auto",
+          "parallel_tool_calls": false,
+          "max_output_tokens": 2048,
+          "store": false
+        }
+      },
+      "model": "muse-spark-1.3"
+    },
+    {
+      "variant": "unreachable_button",
+      "reportPath": "runs/agent-1793037899333777110.json",
+      "runId": "agent-1793037899333777110",
+      "exitCode": 1,
+      "outcome": "suspected_blocker",
+      "agentResult": {
+        "outcome": "agent_inconclusive",
+        "reason": "focus_navigation_cycle",
+        "valid": true
+      },
+      "actions": 20,
+      "requests": 20,
+      "stop": {
+        "source": "runner",
+        "reason": "focus_navigation_cycle",
+        "atStep": 20,
+        "cycleStart": 13,
+        "cycleLength": 7,
+        "state": "aaef03a10a0a26c2103f20a0debb458be96017d3e9057ad67eb41763062c2a41"
+      },
+      "configuration": {
+        "schema": 1,
+        "fixtureAndAgentBuild": "7297935507c2517ed60869b588b3035c3031ab4b683d675d332e6de5f38a2584",
+        "browserVersion": "156.0.8078.4",
+        "playwrightVersion": "1.64.1",
+        "platform": "darwin",
+        "architecture": "arm64",
+        "seed": "booking-v1",
+        "requestedModel": "muse-spark-1.3",
+        "inputTokenLimit": 64000,
+        "modelSettings": {
+          "tool_choice": "auto",
+          "parallel_tool_calls": false,
+          "max_output_tokens": 2048,
+          "store": false
+        }
+      },
+      "model": "muse-spark-1.3"
+    },
+    {
+      "variant": "calendar_keyboard",
+      "reportPath": "runs/agent-1793038005312369585.json",
+      "runId": "agent-1793038005312369585",
+      "exitCode": 1,
+      "outcome": "suspected_blocker",
+      "agentResult": {
+        "outcome": "agent_inconclusive",
+        "reason": "focus_navigation_cycle",
+        "valid": true
+      },
+      "actions": 16,
+      "requests": 16,
+      "stop": {
+        "source": "runner",
+        "reason": "focus_navigation_cycle",
+        "atStep": 16,
+        "cycleStart": 8,
+        "cycleLength": 8,
+        "state": "f456012ede7cb074f040e140fd8781649a1ffbf7f0905e9844fca56ae57a0370"
+      },
+      "configuration": {
+        "schema": 1,
+        "fixtureAndAgentBuild": "7297935507c2517ed60869b588b3035c3031ab4b683d675d332e6de5f38a2584",
+        "browserVersion": "156.0.8078.4",
+        "playwrightVersion": "1.64.1",
+        "platform": "darwin",
+        "architecture": "arm64",
+        "seed": "booking-v1",
+        "requestedModel": "muse-spark-1.3",
+        "inputTokenLimit": 64000,
+        "modelSettings": {
+          "tool_choice": "auto",
+          "parallel_tool_calls": false,
+          "max_output_tokens": 2048,
+          "store": false
+        }
+      },
+      "model": "muse-spark-1.3"
+    },
+    {
+      "variant": "modal_dismissal",
+      "reportPath": "runs/agent-1793038107498643690.json",
+      "runId": "agent-1793038107498643690",
+      "exitCode": 1,
+      "outcome": "suspected_blocker",
+      "agentResult": {
+        "outcome": "agent_inconclusive",
+        "reason": "unchanged_observation",
+        "valid": true
+      },
+      "actions": 17,
+      "requests": 17,
+      "stop": {
+        "source": "runner",
+        "reason": "unchanged_observation",
+        "atStep": 17,
+        "unchangedActions": 3,
+        "state": "426663b9279dbe9831071cf0f2ff0d38926c4f5d88826fa98a24d2fa7531e04b"
+      },
+      "configuration": {
+        "schema": 1,
+        "fixtureAndAgentBuild": "7297935507c2517ed60869b588b3035c3031ab4b683d675d332e6de5f38a2584",
+        "browserVersion": "156.0.8078.4",
+        "playwrightVersion": "1.64.1",
+        "platform": "darwin",
+        "architecture": "arm64",
+        "seed": "booking-v1",
+        "requestedModel": "muse-spark-1.3",
+        "inputTokenLimit": 64000,
+        "modelSettings": {
+          "tool_choice": "auto",
+          "parallel_tool_calls": false,
+          "max_output_tokens": 2048,
+          "store": false
+        }
+      },
+      "model": "muse-spark-1.3"
+    },
+    {
+      "variant": "focus_loss",
+      "reportPath": "runs/agent-1793038191548689570.json",
+      "runId": "agent-1793038191548689570",
+      "exitCode": 1,
+      "outcome": "suspected_blocker",
+      "agentResult": {
+        "outcome": "task_completed",
+        "reason": "server_record_matches",
+        "valid": true
+      },
+      "actions": 18,
+      "requests": 18,
+      "stop": null,
+      "configuration": {
+        "schema": 1,
+        "fixtureAndAgentBuild": "7297935507c2517ed60869b588b3035c3031ab4b683d675d332e6de5f38a2584",
+        "browserVersion": "156.0.8078.4",
+        "playwrightVersion": "1.64.1",
+        "platform": "darwin",
+        "architecture": "arm64",
+        "seed": "booking-v1",
+        "requestedModel": "muse-spark-1.3",
+        "inputTokenLimit": 64000,
+        "modelSettings": {
+          "tool_choice": "auto",
+          "parallel_tool_calls": false,
+          "max_output_tokens": 2048,
+          "store": false
+        }
+      },
+      "model": "muse-spark-1.3"
+    }
+  ],
+  "finishedAt": "2026-10-26T18:11:18.828Z",
+  "knownTokens": 1824097,
+  "requests": 86,
+  "maxPreflightInputTokens": 44827,
+  "maxOutputTokens": 1341
+}

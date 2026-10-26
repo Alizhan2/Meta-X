@@ -1,0 +1,1847 @@
+{
+  "runId": "agent-1793037899333777110",
+  "variant": "unreachable_button",
+  "task": "Book a studio introduction for Alex Tester, email alex@example.test, on October 30, 2026 at 15:00. Review the details, close the review window, then confirm the booking.",
+  "startedAt": "2026-10-26T18:04:59.336Z",
+  "budget": 25,
+  "valid": true,
+  "outcome": "suspected_blocker",
+  "reason": "reproduced_fixture_contract_violation",
+  "steps": [
+    {
+      "index": 1,
+      "action": {
+        "name": "type_text",
+        "arguments": {
+          "text": "Alex Tester"
+        }
+      },
+      "timestamp": "2026-10-26T18:05:03.947Z",
+      "focusBefore": {
+        "id": "name",
+        "tag": "INPUT",
+        "role": null,
+        "name": "Full name",
+        "value": "",
+        "selectionStart": 0,
+        "selectionEnd": 0
+      },
+      "focusAfter": {
+        "id": "name",
+        "tag": "INPUT",
+        "role": null,
+        "name": "Full name",
+        "value": "Alex Tester",
+        "selectionStart": 11,
+        "selectionEnd": 11
+      },
+      "checkpoint": {
+        "before": "4d5908ed042990cce202399973c4c175551ced56a699f0f768a8525dc451a195",
+        "after": "3820a90344c644c6858fd6ca4246837e422b956c452e16aa2f1737436c651303",
+        "unchangedActions": 0
+      }
+    },
+    {
+      "index": 2,
+      "action": {
+        "name": "press_key",
+        "arguments": {
+          "key": "Tab"
+        }
+      },
+      "timestamp": "2026-10-26T18:05:06.705Z",
+      "focusBefore": {
+        "id": "name",
+        "tag": "INPUT",
+        "role": null,
+        "name": "Full name",
+        "value": "Alex Tester",
+        "selectionStart": 11,
+        "selectionEnd": 11
+      },
+      "focusAfter": {
+        "id": "email",
+        "tag": "INPUT",
+        "role": null,
+        "name": "Email address",
+        "value": "",
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "checkpoint": {
+        "before": "3820a90344c644c6858fd6ca4246837e422b956c452e16aa2f1737436c651303",
+        "after": "3c36d20cd281dd916eb51cb78e61caa8ea168317eaffc0737c3d0d1ac187e96b",
+        "unchangedActions": 0
+      }
+    },
+    {
+      "index": 3,
+      "action": {
+        "name": "type_text",
+        "arguments": {
+          "text": "alex@example.test"
+        }
+      },
+      "timestamp": "2026-10-26T18:05:10.005Z",
+      "focusBefore": {
+        "id": "email",
+        "tag": "INPUT",
+        "role": null,
+        "name": "Email address",
+        "value": "",
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "focusAfter": {
+        "id": "email",
+        "tag": "INPUT",
+        "role": null,
+        "name": "Email address",
+        "value": "alex@example.test",
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "checkpoint": {
+        "before": "3c36d20cd281dd916eb51cb78e61caa8ea168317eaffc0737c3d0d1ac187e96b",
+        "after": "bd92ca1278b617f77e5a33c4333055625aa28da2b29ccd6ceabc77dcb8fdfdee",
+        "unchangedActions": 0
+      }
+    },
+    {
+      "index": 4,
+      "action": {
+        "name": "press_key",
+        "arguments": {
+          "key": "Tab"
+        }
+      },
+      "timestamp": "2026-10-26T18:05:16.338Z",
+      "focusBefore": {
+        "id": "email",
+        "tag": "INPUT",
+        "role": null,
+        "name": "Email address",
+        "value": "alex@example.test",
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "focusAfter": {
+        "id": "date-trigger",
+        "tag": "BUTTON",
+        "role": null,
+        "name": "Choose a date",
+        "value": "",
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "checkpoint": {
+        "before": "bd92ca1278b617f77e5a33c4333055625aa28da2b29ccd6ceabc77dcb8fdfdee",
+        "after": "b7216fbdba76c79191b051de21e1497c5cb2adc7fb2d7c27f1cfc4de54d2d627",
+        "unchangedActions": 0
+      }
+    },
+    {
+      "index": 5,
+      "action": {
+        "name": "press_key",
+        "arguments": {
+          "key": "Enter"
+        }
+      },
+      "timestamp": "2026-10-26T18:05:20.991Z",
+      "focusBefore": {
+        "id": "date-trigger",
+        "tag": "BUTTON",
+        "role": null,
+        "name": "Choose a date",
+        "value": "",
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "focusAfter": {
+        "id": "date-trigger",
+        "tag": "BUTTON",
+        "role": null,
+        "name": "Choose a date",
+        "value": "",
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "checkpoint": {
+        "before": "b7216fbdba76c79191b051de21e1497c5cb2adc7fb2d7c27f1cfc4de54d2d627",
+        "after": "b830528cf25a4fc3a42cad06d29556038953df236bb5c9edf9a9cba86adda845",
+        "unchangedActions": 0
+      }
+    },
+    {
+      "index": 6,
+      "action": {
+        "name": "press_key",
+        "arguments": {
+          "key": "Tab"
+        }
+      },
+      "timestamp": "2026-10-26T18:05:26.527Z",
+      "focusBefore": {
+        "id": "date-trigger",
+        "tag": "BUTTON",
+        "role": null,
+        "name": "Choose a date",
+        "value": "",
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "focusAfter": {
+        "id": null,
+        "tag": "BUTTON",
+        "role": null,
+        "name": "October 29, 2026",
+        "value": "",
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "checkpoint": {
+        "before": "b830528cf25a4fc3a42cad06d29556038953df236bb5c9edf9a9cba86adda845",
+        "after": "051119b849406f6eb1b05817cb10d1578edad0959bb1297413658d4141ec7ae0",
+        "unchangedActions": 0
+      }
+    },
+    {
+      "index": 7,
+      "action": {
+        "name": "press_key",
+        "arguments": {
+          "key": "Tab"
+        }
+      },
+      "timestamp": "2026-10-26T18:05:29.859Z",
+      "focusBefore": {
+        "id": null,
+        "tag": "BUTTON",
+        "role": null,
+        "name": "October 29, 2026",
+        "value": "",
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "focusAfter": {
+        "id": null,
+        "tag": "BUTTON",
+        "role": null,
+        "name": "October 30, 2026",
+        "value": "",
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "checkpoint": {
+        "before": "051119b849406f6eb1b05817cb10d1578edad0959bb1297413658d4141ec7ae0",
+        "after": "82481587cd269b6dadfe259ccf5ba3fd737563c4e437947f6b662214d5c5df88",
+        "unchangedActions": 0
+      }
+    },
+    {
+      "index": 8,
+      "action": {
+        "name": "press_key",
+        "arguments": {
+          "key": "Space"
+        }
+      },
+      "timestamp": "2026-10-26T18:05:33.739Z",
+      "focusBefore": {
+        "id": null,
+        "tag": "BUTTON",
+        "role": null,
+        "name": "October 30, 2026",
+        "value": "",
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "focusAfter": {
+        "id": "date-trigger",
+        "tag": "BUTTON",
+        "role": null,
+        "name": "October 30, 2026",
+        "value": "",
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "checkpoint": {
+        "before": "82481587cd269b6dadfe259ccf5ba3fd737563c4e437947f6b662214d5c5df88",
+        "after": "ce72187fdfe5790fdf04ac0347cff19f73d428c7bd774c120c821b5f26eccb74",
+        "unchangedActions": 0
+      }
+    },
+    {
+      "index": 9,
+      "action": {
+        "name": "press_key",
+        "arguments": {
+          "key": "Tab"
+        }
+      },
+      "timestamp": "2026-10-26T18:05:38.655Z",
+      "focusBefore": {
+        "id": "date-trigger",
+        "tag": "BUTTON",
+        "role": null,
+        "name": "October 30, 2026",
+        "value": "",
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "focusAfter": {
+        "id": "time-14",
+        "tag": "INPUT",
+        "role": null,
+        "name": " 14:00",
+        "value": "14:00",
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "checkpoint": {
+        "before": "ce72187fdfe5790fdf04ac0347cff19f73d428c7bd774c120c821b5f26eccb74",
+        "after": "c9cd3a0ea9f83cdc4a570efba338d70ab31d70949f7cf365a2f6d21e86edcdc1",
+        "unchangedActions": 0
+      }
+    },
+    {
+      "index": 10,
+      "action": {
+        "name": "press_key",
+        "arguments": {
+          "key": "ArrowRight"
+        }
+      },
+      "timestamp": "2026-10-26T18:05:43.858Z",
+      "focusBefore": {
+        "id": "time-14",
+        "tag": "INPUT",
+        "role": null,
+        "name": " 14:00",
+        "value": "14:00",
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "focusAfter": {
+        "id": "time-15",
+        "tag": "INPUT",
+        "role": null,
+        "name": " 15:00",
+        "value": "15:00",
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "checkpoint": {
+        "before": "c9cd3a0ea9f83cdc4a570efba338d70ab31d70949f7cf365a2f6d21e86edcdc1",
+        "after": "2968693a8916cb32f5cfebc23ac68d5ff2a3397603bed958bf54967d46ccd28e",
+        "unchangedActions": 0
+      }
+    },
+    {
+      "index": 11,
+      "action": {
+        "name": "press_key",
+        "arguments": {
+          "key": "Tab"
+        }
+      },
+      "timestamp": "2026-10-26T18:05:48.222Z",
+      "focusBefore": {
+        "id": "time-15",
+        "tag": "INPUT",
+        "role": null,
+        "name": " 15:00",
+        "value": "15:00",
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "focusAfter": {
+        "id": "review",
+        "tag": "BUTTON",
+        "role": null,
+        "name": "Review details",
+        "value": "",
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "checkpoint": {
+        "before": "2968693a8916cb32f5cfebc23ac68d5ff2a3397603bed958bf54967d46ccd28e",
+        "after": "0b784fffd759f821cd6cd9468f1a733333c4a6abaf15ca8e62616415a9c198c3",
+        "unchangedActions": 0
+      }
+    },
+    {
+      "index": 12,
+      "action": {
+        "name": "press_key",
+        "arguments": {
+          "key": "Enter"
+        }
+      },
+      "timestamp": "2026-10-26T18:05:51.948Z",
+      "focusBefore": {
+        "id": "review",
+        "tag": "BUTTON",
+        "role": null,
+        "name": "Review details",
+        "value": "",
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "focusAfter": {
+        "id": "dialog-title",
+        "tag": "H2",
+        "role": null,
+        "name": "Review your session",
+        "value": null,
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "checkpoint": {
+        "before": "0b784fffd759f821cd6cd9468f1a733333c4a6abaf15ca8e62616415a9c198c3",
+        "after": "36c2aeb16ad750d2e082d0b5c0b85282262a355fd098c29a677d23b0a1330a4c",
+        "unchangedActions": 0
+      }
+    },
+    {
+      "index": 13,
+      "action": {
+        "name": "press_key",
+        "arguments": {
+          "key": "Escape"
+        }
+      },
+      "timestamp": "2026-10-26T18:05:56.390Z",
+      "focusBefore": {
+        "id": "dialog-title",
+        "tag": "H2",
+        "role": null,
+        "name": "Review your session",
+        "value": null,
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "focusAfter": {
+        "id": "review",
+        "tag": "BUTTON",
+        "role": null,
+        "name": "Review details",
+        "value": "",
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "checkpoint": {
+        "before": "36c2aeb16ad750d2e082d0b5c0b85282262a355fd098c29a677d23b0a1330a4c",
+        "after": "2acac4b1eaf7353dc2d79aec4e0c28b6ebf47a3d723edd8cfaa2a831c1bf50a2",
+        "unchangedActions": 0
+      }
+    },
+    {
+      "index": 14,
+      "action": {
+        "name": "press_key",
+        "arguments": {
+          "key": "Tab"
+        }
+      },
+      "timestamp": "2026-10-26T18:06:02.739Z",
+      "focusBefore": {
+        "id": "review",
+        "tag": "BUTTON",
+        "role": null,
+        "name": "Review details",
+        "value": "",
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "focusAfter": {
+        "id": null,
+        "tag": "BODY",
+        "role": null,
+        "name": "Fieldwork StudioBooking desk\n  A little room for your next idea.Make timeto make things.Reserve a 30-minute studio introduction. Pick a date, review your detail",
+        "value": null,
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "checkpoint": {
+        "before": "2acac4b1eaf7353dc2d79aec4e0c28b6ebf47a3d723edd8cfaa2a831c1bf50a2",
+        "after": "3c3a18f5fb306b54e5c0f95f9b71bdc1325c7e38cf15335b762790972a79065b",
+        "unchangedActions": 0
+      }
+    },
+    {
+      "index": 15,
+      "action": {
+        "name": "press_key",
+        "arguments": {
+          "key": "Tab"
+        }
+      },
+      "timestamp": "2026-10-26T18:06:09.036Z",
+      "focusBefore": {
+        "id": null,
+        "tag": "BODY",
+        "role": null,
+        "name": "Fieldwork StudioBooking desk\n  A little room for your next idea.Make timeto make things.Reserve a 30-minute studio introduction. Pick a date, review your detail",
+        "value": null,
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "focusAfter": {
+        "id": null,
+        "tag": "A",
+        "role": null,
+        "name": "Studio home",
+        "value": null,
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "checkpoint": {
+        "before": "3c3a18f5fb306b54e5c0f95f9b71bdc1325c7e38cf15335b762790972a79065b",
+        "after": "68b2e188c296aec3996ab5f7939cab4ecb3eb22502af2aeabd8a6d21dbffba40",
+        "unchangedActions": 0
+      }
+    },
+    {
+      "index": 16,
+      "action": {
+        "name": "press_key",
+        "arguments": {
+          "key": "Tab"
+        }
+      },
+      "timestamp": "2026-10-26T18:06:13.336Z",
+      "focusBefore": {
+        "id": null,
+        "tag": "A",
+        "role": null,
+        "name": "Studio home",
+        "value": null,
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "focusAfter": {
+        "id": "name",
+        "tag": "INPUT",
+        "role": null,
+        "name": "Full name",
+        "value": "Alex Tester",
+        "selectionStart": 0,
+        "selectionEnd": 11
+      },
+      "checkpoint": {
+        "before": "68b2e188c296aec3996ab5f7939cab4ecb3eb22502af2aeabd8a6d21dbffba40",
+        "after": "730e964858e9b55a22d7f73e89bbd264e55864d8254d2b696c443dc8cfdc111a",
+        "unchangedActions": 0
+      }
+    },
+    {
+      "index": 17,
+      "action": {
+        "name": "press_key",
+        "arguments": {
+          "key": "Tab"
+        }
+      },
+      "timestamp": "2026-10-26T18:06:17.670Z",
+      "focusBefore": {
+        "id": "name",
+        "tag": "INPUT",
+        "role": null,
+        "name": "Full name",
+        "value": "Alex Tester",
+        "selectionStart": 0,
+        "selectionEnd": 11
+      },
+      "focusAfter": {
+        "id": "email",
+        "tag": "INPUT",
+        "role": null,
+        "name": "Email address",
+        "value": "alex@example.test",
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "checkpoint": {
+        "before": "730e964858e9b55a22d7f73e89bbd264e55864d8254d2b696c443dc8cfdc111a",
+        "after": "8632fd15ba7b29f1816480ddd0687fd4e13bb076c5d4aa1c8df8de9afcb55c2c",
+        "unchangedActions": 0
+      }
+    },
+    {
+      "index": 18,
+      "action": {
+        "name": "press_key",
+        "arguments": {
+          "key": "Tab"
+        }
+      },
+      "timestamp": "2026-10-26T18:06:25.051Z",
+      "focusBefore": {
+        "id": "email",
+        "tag": "INPUT",
+        "role": null,
+        "name": "Email address",
+        "value": "alex@example.test",
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "focusAfter": {
+        "id": "date-trigger",
+        "tag": "BUTTON",
+        "role": null,
+        "name": "October 30, 2026",
+        "value": "",
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "checkpoint": {
+        "before": "8632fd15ba7b29f1816480ddd0687fd4e13bb076c5d4aa1c8df8de9afcb55c2c",
+        "after": "ec11cc5070e36a1c566cd812fd888b56711924ce0dfaf1c0b36f4aa7b9be0ebf",
+        "unchangedActions": 0
+      }
+    },
+    {
+      "index": 19,
+      "action": {
+        "name": "press_key",
+        "arguments": {
+          "key": "Tab"
+        }
+      },
+      "timestamp": "2026-10-26T18:06:31.890Z",
+      "focusBefore": {
+        "id": "date-trigger",
+        "tag": "BUTTON",
+        "role": null,
+        "name": "October 30, 2026",
+        "value": "",
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "focusAfter": {
+        "id": "time-15",
+        "tag": "INPUT",
+        "role": null,
+        "name": " 15:00",
+        "value": "15:00",
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "checkpoint": {
+        "before": "ec11cc5070e36a1c566cd812fd888b56711924ce0dfaf1c0b36f4aa7b9be0ebf",
+        "after": "3d38b6332f1776c9093a9469fc916006b40c4c30c4eedde009464e6801d984f9",
+        "unchangedActions": 0
+      }
+    },
+    {
+      "index": 20,
+      "action": {
+        "name": "press_key",
+        "arguments": {
+          "key": "Tab"
+        }
+      },
+      "timestamp": "2026-10-26T18:06:36.239Z",
+      "focusBefore": {
+        "id": "time-15",
+        "tag": "INPUT",
+        "role": null,
+        "name": " 15:00",
+        "value": "15:00",
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "focusAfter": {
+        "id": "review",
+        "tag": "BUTTON",
+        "role": null,
+        "name": "Review details",
+        "value": "",
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "checkpoint": {
+        "before": "3d38b6332f1776c9093a9469fc916006b40c4c30c4eedde009464e6801d984f9",
+        "after": "2acac4b1eaf7353dc2d79aec4e0c28b6ebf47a3d723edd8cfaa2a831c1bf50a2",
+        "unchangedActions": 0
+      }
+    }
+  ],
+  "usage": [
+    {
+      "input_tokens": 2777,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 294,
+      "output_tokens_details": {
+        "reasoning_tokens": 223
+      },
+      "total_tokens": 3071
+    },
+    {
+      "input_tokens": 5116,
+      "input_tokens_details": {
+        "cached_tokens": 2673
+      },
+      "output_tokens": 138,
+      "output_tokens_details": {
+        "reasoning_tokens": 68
+      },
+      "total_tokens": 5254
+    },
+    {
+      "input_tokens": 7293,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 82,
+      "output_tokens_details": {
+        "reasoning_tokens": 12
+      },
+      "total_tokens": 7375
+    },
+    {
+      "input_tokens": 9430,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 98,
+      "output_tokens_details": {
+        "reasoning_tokens": 28
+      },
+      "total_tokens": 9528
+    },
+    {
+      "input_tokens": 11579,
+      "input_tokens_details": {
+        "cached_tokens": 7281
+      },
+      "output_tokens": 67,
+      "output_tokens_details": {
+        "reasoning_tokens": 17
+      },
+      "total_tokens": 11646
+    },
+    {
+      "input_tokens": 13804,
+      "input_tokens_details": {
+        "cached_tokens": 5105
+      },
+      "output_tokens": 110,
+      "output_tokens_details": {
+        "reasoning_tokens": 60
+      },
+      "total_tokens": 13914
+    },
+    {
+      "input_tokens": 16078,
+      "input_tokens_details": {
+        "cached_tokens": 2673
+      },
+      "output_tokens": 72,
+      "output_tokens_details": {
+        "reasoning_tokens": 22
+      },
+      "total_tokens": 16150
+    },
+    {
+      "input_tokens": 18314,
+      "input_tokens_details": {
+        "cached_tokens": 13681
+      },
+      "output_tokens": 87,
+      "output_tokens_details": {
+        "reasoning_tokens": 17
+      },
+      "total_tokens": 18401
+    },
+    {
+      "input_tokens": 20468,
+      "input_tokens_details": {
+        "cached_tokens": 9329
+      },
+      "output_tokens": 127,
+      "output_tokens_details": {
+        "reasoning_tokens": 77
+      },
+      "total_tokens": 20595
+    },
+    {
+      "input_tokens": 22666,
+      "input_tokens_details": {
+        "cached_tokens": 20465
+      },
+      "output_tokens": 107,
+      "output_tokens_details": {
+        "reasoning_tokens": 56
+      },
+      "total_tokens": 22773
+    },
+    {
+      "input_tokens": 24844,
+      "input_tokens_details": {
+        "cached_tokens": 18289
+      },
+      "output_tokens": 123,
+      "output_tokens_details": {
+        "reasoning_tokens": 53
+      },
+      "total_tokens": 24967
+    },
+    {
+      "input_tokens": 27022,
+      "input_tokens_details": {
+        "cached_tokens": 11505
+      },
+      "output_tokens": 65,
+      "output_tokens_details": {
+        "reasoning_tokens": 15
+      },
+      "total_tokens": 27087
+    },
+    {
+      "input_tokens": 29218,
+      "input_tokens_details": {
+        "cached_tokens": 22641
+      },
+      "output_tokens": 175,
+      "output_tokens_details": {
+        "reasoning_tokens": 125
+      },
+      "total_tokens": 29393
+    },
+    {
+      "input_tokens": 31449,
+      "input_tokens_details": {
+        "cached_tokens": 24817
+      },
+      "output_tokens": 139,
+      "output_tokens_details": {
+        "reasoning_tokens": 70
+      },
+      "total_tokens": 31588
+    },
+    {
+      "input_tokens": 33714,
+      "input_tokens_details": {
+        "cached_tokens": 29169
+      },
+      "output_tokens": 341,
+      "output_tokens_details": {
+        "reasoning_tokens": 291
+      },
+      "total_tokens": 34055
+    },
+    {
+      "input_tokens": 36115,
+      "input_tokens_details": {
+        "cached_tokens": 15985
+      },
+      "output_tokens": 88,
+      "output_tokens_details": {
+        "reasoning_tokens": 38
+      },
+      "total_tokens": 36203
+    },
+    {
+      "input_tokens": 38265,
+      "input_tokens_details": {
+        "cached_tokens": 26993
+      },
+      "output_tokens": 84,
+      "output_tokens_details": {
+        "reasoning_tokens": 34
+      },
+      "total_tokens": 38349
+    },
+    {
+      "input_tokens": 40413,
+      "input_tokens_details": {
+        "cached_tokens": 33649
+      },
+      "output_tokens": 55,
+      "output_tokens_details": {
+        "reasoning_tokens": 5
+      },
+      "total_tokens": 40468
+    },
+    {
+      "input_tokens": 42536,
+      "input_tokens_details": {
+        "cached_tokens": 38257
+      },
+      "output_tokens": 76,
+      "output_tokens_details": {
+        "reasoning_tokens": 11
+      },
+      "total_tokens": 42612
+    },
+    {
+      "input_tokens": 44684,
+      "input_tokens_details": {
+        "cached_tokens": 42481
+      },
+      "output_tokens": 67,
+      "output_tokens_details": {
+        "reasoning_tokens": 17
+      },
+      "total_tokens": 44751
+    }
+  ],
+  "requests": [
+    {
+      "index": 1,
+      "startedAt": "2026-10-26T18:04:59.505Z",
+      "state": "validated",
+      "preflightInputTokens": 2920,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 2777,
+        "input_tokens_details": {
+          "cached_tokens": 0
+        },
+        "output_tokens": 294,
+        "output_tokens_details": {
+          "reasoning_tokens": 223
+        },
+        "total_tokens": 3071
+      }
+    },
+    {
+      "index": 2,
+      "startedAt": "2026-10-26T18:05:03.979Z",
+      "state": "validated",
+      "preflightInputTokens": 5259,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 5116,
+        "input_tokens_details": {
+          "cached_tokens": 2673
+        },
+        "output_tokens": 138,
+        "output_tokens_details": {
+          "reasoning_tokens": 68
+        },
+        "total_tokens": 5254
+      }
+    },
+    {
+      "index": 3,
+      "startedAt": "2026-10-26T18:05:06.732Z",
+      "state": "validated",
+      "preflightInputTokens": 7436,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 7293,
+        "input_tokens_details": {
+          "cached_tokens": 0
+        },
+        "output_tokens": 82,
+        "output_tokens_details": {
+          "reasoning_tokens": 12
+        },
+        "total_tokens": 7375
+      }
+    },
+    {
+      "index": 4,
+      "startedAt": "2026-10-26T18:05:10.033Z",
+      "state": "validated",
+      "preflightInputTokens": 9573,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 9430,
+        "input_tokens_details": {
+          "cached_tokens": 0
+        },
+        "output_tokens": 98,
+        "output_tokens_details": {
+          "reasoning_tokens": 28
+        },
+        "total_tokens": 9528
+      }
+    },
+    {
+      "index": 5,
+      "startedAt": "2026-10-26T18:05:16.364Z",
+      "state": "validated",
+      "preflightInputTokens": 11722,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 11579,
+        "input_tokens_details": {
+          "cached_tokens": 7281
+        },
+        "output_tokens": 67,
+        "output_tokens_details": {
+          "reasoning_tokens": 17
+        },
+        "total_tokens": 11646
+      }
+    },
+    {
+      "index": 6,
+      "startedAt": "2026-10-26T18:05:21.016Z",
+      "state": "validated",
+      "preflightInputTokens": 13947,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 13804,
+        "input_tokens_details": {
+          "cached_tokens": 5105
+        },
+        "output_tokens": 110,
+        "output_tokens_details": {
+          "reasoning_tokens": 60
+        },
+        "total_tokens": 13914
+      }
+    },
+    {
+      "index": 7,
+      "startedAt": "2026-10-26T18:05:26.566Z",
+      "state": "validated",
+      "preflightInputTokens": 16221,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 16078,
+        "input_tokens_details": {
+          "cached_tokens": 2673
+        },
+        "output_tokens": 72,
+        "output_tokens_details": {
+          "reasoning_tokens": 22
+        },
+        "total_tokens": 16150
+      }
+    },
+    {
+      "index": 8,
+      "startedAt": "2026-10-26T18:05:29.899Z",
+      "state": "validated",
+      "preflightInputTokens": 18457,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 18314,
+        "input_tokens_details": {
+          "cached_tokens": 13681
+        },
+        "output_tokens": 87,
+        "output_tokens_details": {
+          "reasoning_tokens": 17
+        },
+        "total_tokens": 18401
+      }
+    },
+    {
+      "index": 9,
+      "startedAt": "2026-10-26T18:05:33.764Z",
+      "state": "validated",
+      "preflightInputTokens": 20611,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 20468,
+        "input_tokens_details": {
+          "cached_tokens": 9329
+        },
+        "output_tokens": 127,
+        "output_tokens_details": {
+          "reasoning_tokens": 77
+        },
+        "total_tokens": 20595
+      }
+    },
+    {
+      "index": 10,
+      "startedAt": "2026-10-26T18:05:38.680Z",
+      "state": "validated",
+      "preflightInputTokens": 22809,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 22666,
+        "input_tokens_details": {
+          "cached_tokens": 20465
+        },
+        "output_tokens": 107,
+        "output_tokens_details": {
+          "reasoning_tokens": 56
+        },
+        "total_tokens": 22773
+      }
+    },
+    {
+      "index": 11,
+      "startedAt": "2026-10-26T18:05:43.880Z",
+      "state": "validated",
+      "preflightInputTokens": 24987,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 24844,
+        "input_tokens_details": {
+          "cached_tokens": 18289
+        },
+        "output_tokens": 123,
+        "output_tokens_details": {
+          "reasoning_tokens": 53
+        },
+        "total_tokens": 24967
+      }
+    },
+    {
+      "index": 12,
+      "startedAt": "2026-10-26T18:05:48.246Z",
+      "state": "validated",
+      "preflightInputTokens": 27165,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 27022,
+        "input_tokens_details": {
+          "cached_tokens": 11505
+        },
+        "output_tokens": 65,
+        "output_tokens_details": {
+          "reasoning_tokens": 15
+        },
+        "total_tokens": 27087
+      }
+    },
+    {
+      "index": 13,
+      "startedAt": "2026-10-26T18:05:51.979Z",
+      "state": "validated",
+      "preflightInputTokens": 29361,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 29218,
+        "input_tokens_details": {
+          "cached_tokens": 22641
+        },
+        "output_tokens": 175,
+        "output_tokens_details": {
+          "reasoning_tokens": 125
+        },
+        "total_tokens": 29393
+      }
+    },
+    {
+      "index": 14,
+      "startedAt": "2026-10-26T18:05:56.414Z",
+      "state": "validated",
+      "preflightInputTokens": 31592,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 31449,
+        "input_tokens_details": {
+          "cached_tokens": 24817
+        },
+        "output_tokens": 139,
+        "output_tokens_details": {
+          "reasoning_tokens": 70
+        },
+        "total_tokens": 31588
+      }
+    },
+    {
+      "index": 15,
+      "startedAt": "2026-10-26T18:06:02.763Z",
+      "state": "validated",
+      "preflightInputTokens": 33857,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 33714,
+        "input_tokens_details": {
+          "cached_tokens": 29169
+        },
+        "output_tokens": 341,
+        "output_tokens_details": {
+          "reasoning_tokens": 291
+        },
+        "total_tokens": 34055
+      }
+    },
+    {
+      "index": 16,
+      "startedAt": "2026-10-26T18:06:09.062Z",
+      "state": "validated",
+      "preflightInputTokens": 36258,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 36115,
+        "input_tokens_details": {
+          "cached_tokens": 15985
+        },
+        "output_tokens": 88,
+        "output_tokens_details": {
+          "reasoning_tokens": 38
+        },
+        "total_tokens": 36203
+      }
+    },
+    {
+      "index": 17,
+      "startedAt": "2026-10-26T18:06:13.363Z",
+      "state": "validated",
+      "preflightInputTokens": 38408,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 38265,
+        "input_tokens_details": {
+          "cached_tokens": 26993
+        },
+        "output_tokens": 84,
+        "output_tokens_details": {
+          "reasoning_tokens": 34
+        },
+        "total_tokens": 38349
+      }
+    },
+    {
+      "index": 18,
+      "startedAt": "2026-10-26T18:06:17.696Z",
+      "state": "validated",
+      "preflightInputTokens": 40556,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 40413,
+        "input_tokens_details": {
+          "cached_tokens": 33649
+        },
+        "output_tokens": 55,
+        "output_tokens_details": {
+          "reasoning_tokens": 5
+        },
+        "total_tokens": 40468
+      }
+    },
+    {
+      "index": 19,
+      "startedAt": "2026-10-26T18:06:25.079Z",
+      "state": "validated",
+      "preflightInputTokens": 42679,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 42536,
+        "input_tokens_details": {
+          "cached_tokens": 38257
+        },
+        "output_tokens": 76,
+        "output_tokens_details": {
+          "reasoning_tokens": 11
+        },
+        "total_tokens": 42612
+      }
+    },
+    {
+      "index": 20,
+      "startedAt": "2026-10-26T18:06:31.928Z",
+      "state": "validated",
+      "preflightInputTokens": 44827,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 44684,
+        "input_tokens_details": {
+          "cached_tokens": 42481
+        },
+        "output_tokens": 67,
+        "output_tokens_details": {
+          "reasoning_tokens": 17
+        },
+        "total_tokens": 44751
+      }
+    }
+  ],
+  "scope": "Single controlled fixture run; not benchmark metrics.",
+  "configuration": {
+    "schema": 1,
+    "fixtureAndAgentBuild": "7297935507c2517ed60869b588b3035c3031ab4b683d675d332e6de5f38a2584",
+    "browserVersion": "156.0.8078.4",
+    "playwrightVersion": "1.64.1",
+    "platform": "darwin",
+    "architecture": "arm64",
+    "seed": "booking-v1",
+    "requestedModel": "muse-spark-1.3",
+    "inputTokenLimit": 64000,
+    "modelSettings": {
+      "tool_choice": "auto",
+      "parallel_tool_calls": false,
+      "max_output_tokens": 2048,
+      "store": false
+    }
+  },
+  "stopPolicy": {
+    "version": 1,
+    "unchangedActions": 3,
+    "tabCycleMinimum": 2
+  },
+  "model": "muse-spark-1.3",
+  "stop": {
+    "source": "runner",
+    "reason": "focus_navigation_cycle",
+    "atStep": 20,
+    "cycleStart": 13,
+    "cycleLength": 7,
+    "state": "aaef03a10a0a26c2103f20a0debb458be96017d3e9057ad67eb41763062c2a41"
+  },
+  "agentResult": {
+    "outcome": "agent_inconclusive",
+    "reason": "focus_navigation_cycle",
+    "valid": true
+  },
+  "evidence": {
+    "findings": [
+      {
+        "code": "confirmation_unreachable",
+        "occurrences": 3,
+        "runs": 3,
+        "reproduced": true,
+        "correctedControlClean": true,
+        "confirmedInControlledFixture": true
+      }
+    ],
+    "controlsClean": true,
+    "observedRuns": 3,
+    "controlRuns": 3,
+    "scope": "Fixture-specific deterministic contract checks; not a general WCAG verdict and not model detection metrics."
+  },
+  "replays": [
+    {
+      "label": "Original condition",
+      "taskCompleted": false,
+      "record": null,
+      "focusPathMatches": true,
+      "steps": [
+        {
+          "index": 1,
+          "focus": {
+            "id": "name",
+            "tag": "INPUT",
+            "role": null,
+            "name": "Full name",
+            "value": "Alex Tester"
+          },
+          "matchesOriginalFocus": true
+        },
+        {
+          "index": 2,
+          "focus": {
+            "id": "email",
+            "tag": "INPUT",
+            "role": null,
+            "name": "Email address",
+            "value": ""
+          },
+          "matchesOriginalFocus": true
+        },
+        {
+          "index": 3,
+          "focus": {
+            "id": "email",
+            "tag": "INPUT",
+            "role": null,
+            "name": "Email address",
+            "value": "alex@example.test"
+          },
+          "matchesOriginalFocus": true
+        },
+        {
+          "index": 4,
+          "focus": {
+            "id": "date-trigger",
+            "tag": "BUTTON",
+            "role": null,
+            "name": "Choose a date",
+            "value": ""
+          },
+          "matchesOriginalFocus": true
+        },
+        {
+          "index": 5,
+          "focus": {
+            "id": "date-trigger",
+            "tag": "BUTTON",
+            "role": null,
+            "name": "Choose a date",
+            "value": ""
+          },
+          "matchesOriginalFocus": true
+        },
+        {
+          "index": 6,
+          "focus": {
+            "id": null,
+            "tag": "BUTTON",
+            "role": null,
+            "name": "October 29, 2026",
+            "value": ""
+          },
+          "matchesOriginalFocus": true
+        },
+        {
+          "index": 7,
+          "focus": {
+            "id": null,
+            "tag": "BUTTON",
+            "role": null,
+            "name": "October 30, 2026",
+            "value": ""
+          },
+          "matchesOriginalFocus": true
+        },
+        {
+          "index": 8,
+          "focus": {
+            "id": "date-trigger",
+            "tag": "BUTTON",
+            "role": null,
+            "name": "October 30, 2026",
+            "value": ""
+          },
+          "matchesOriginalFocus": true
+        },
+        {
+          "index": 9,
+          "focus": {
+            "id": "time-14",
+            "tag": "INPUT",
+            "role": null,
+            "name": " 14:00",
+            "value": "14:00"
+          },
+          "matchesOriginalFocus": true
+        },
+        {
+          "index": 10,
+          "focus": {
+            "id": "time-15",
+            "tag": "INPUT",
+            "role": null,
+            "name": " 15:00",
+            "value": "15:00"
+          },
+          "matchesOriginalFocus": true
+        },
+        {
+          "index": 11,
+          "focus": {
+            "id": "review",
+            "tag": "BUTTON",
+            "role": null,
+            "name": "Review details",
+            "value": ""
+          },
+          "matchesOriginalFocus": true
+        },
+        {
+          "index": 12,
+          "focus": {
+            "id": "dialog-title",
+            "tag": "H2",
+            "role": null,
+            "name": "Review your session",
+            "value": null
+          },
+          "matchesOriginalFocus": true
+        },
+        {
+          "index": 13,
+          "focus": {
+            "id": "review",
+            "tag": "BUTTON",
+            "role": null,
+            "name": "Review details",
+            "value": ""
+          },
+          "matchesOriginalFocus": true
+        },
+        {
+          "index": 14,
+          "focus": {
+            "id": null,
+            "tag": "BODY",
+            "role": null,
+            "name": "Fieldwork StudioBooking desk\n  A little room for your next idea.Make timeto make things.Reserve a 30-minute studio introduction. Pick a date, review your detail",
+            "value": null
+          },
+          "matchesOriginalFocus": true
+        },
+        {
+          "index": 15,
+          "focus": {
+            "id": null,
+            "tag": "A",
+            "role": null,
+            "name": "Studio home",
+            "value": null
+          },
+          "matchesOriginalFocus": true
+        },
+        {
+          "index": 16,
+          "focus": {
+            "id": "name",
+            "tag": "INPUT",
+            "role": null,
+            "name": "Full name",
+            "value": "Alex Tester"
+          },
+          "matchesOriginalFocus": true
+        },
+        {
+          "index": 17,
+          "focus": {
+            "id": "email",
+            "tag": "INPUT",
+            "role": null,
+            "name": "Email address",
+            "value": "alex@example.test"
+          },
+          "matchesOriginalFocus": true
+        },
+        {
+          "index": 18,
+          "focus": {
+            "id": "date-trigger",
+            "tag": "BUTTON",
+            "role": null,
+            "name": "October 30, 2026",
+            "value": ""
+          },
+          "matchesOriginalFocus": true
+        },
+        {
+          "index": 19,
+          "focus": {
+            "id": "time-15",
+            "tag": "INPUT",
+            "role": null,
+            "name": " 15:00",
+            "value": "15:00"
+          },
+          "matchesOriginalFocus": true
+        },
+        {
+          "index": 20,
+          "focus": {
+            "id": "review",
+            "tag": "BUTTON",
+            "role": null,
+            "name": "Review details",
+            "value": ""
+          },
+          "matchesOriginalFocus": true
+        }
+      ],
+      "finalFocus": {
+        "id": "review",
+        "tag": "BUTTON",
+        "role": null,
+        "name": "Review details",
+        "value": "",
+        "selectionStart": null,
+        "selectionEnd": null
+      }
+    },
+    {
+      "label": "Corrected condition",
+      "taskCompleted": false,
+      "record": null,
+      "focusPathMatches": false,
+      "steps": [
+        {
+          "index": 1,
+          "focus": {
+            "id": "name",
+            "tag": "INPUT",
+            "role": null,
+            "name": "Full name",
+            "value": "Alex Tester"
+          },
+          "matchesOriginalFocus": true
+        },
+        {
+          "index": 2,
+          "focus": {
+            "id": "email",
+            "tag": "INPUT",
+            "role": null,
+            "name": "Email address",
+            "value": ""
+          },
+          "matchesOriginalFocus": true
+        },
+        {
+          "index": 3,
+          "focus": {
+            "id": "email",
+            "tag": "INPUT",
+            "role": null,
+            "name": "Email address",
+            "value": "alex@example.test"
+          },
+          "matchesOriginalFocus": true
+        },
+        {
+          "index": 4,
+          "focus": {
+            "id": "date-trigger",
+            "tag": "BUTTON",
+            "role": null,
+            "name": "Choose a date",
+            "value": ""
+          },
+          "matchesOriginalFocus": true
+        },
+        {
+          "index": 5,
+          "focus": {
+            "id": "date-trigger",
+            "tag": "BUTTON",
+            "role": null,
+            "name": "Choose a date",
+            "value": ""
+          },
+          "matchesOriginalFocus": true
+        },
+        {
+          "index": 6,
+          "focus": {
+            "id": null,
+            "tag": "BUTTON",
+            "role": null,
+            "name": "October 29, 2026",
+            "value": ""
+          },
+          "matchesOriginalFocus": true
+        },
+        {
+          "index": 7,
+          "focus": {
+            "id": null,
+            "tag": "BUTTON",
+            "role": null,
+            "name": "October 30, 2026",
+            "value": ""
+          },
+          "matchesOriginalFocus": true
+        },
+        {
+          "index": 8,
+          "focus": {
+            "id": "date-trigger",
+            "tag": "BUTTON",
+            "role": null,
+            "name": "October 30, 2026",
+            "value": ""
+          },
+          "matchesOriginalFocus": true
+        },
+        {
+          "index": 9,
+          "focus": {
+            "id": "time-14",
+            "tag": "INPUT",
+            "role": null,
+            "name": " 14:00",
+            "value": "14:00"
+          },
+          "matchesOriginalFocus": true
+        },
+        {
+          "index": 10,
+          "focus": {
+            "id": "time-15",
+            "tag": "INPUT",
+            "role": null,
+            "name": " 15:00",
+            "value": "15:00"
+          },
+          "matchesOriginalFocus": true
+        },
+        {
+          "index": 11,
+          "focus": {
+            "id": "review",
+            "tag": "BUTTON",
+            "role": null,
+            "name": "Review details",
+            "value": ""
+          },
+          "matchesOriginalFocus": true
+        },
+        {
+          "index": 12,
+          "focus": {
+            "id": "dialog-title",
+            "tag": "H2",
+            "role": null,
+            "name": "Review your session",
+            "value": null
+          },
+          "matchesOriginalFocus": true
+        },
+        {
+          "index": 13,
+          "focus": {
+            "id": "review",
+            "tag": "BUTTON",
+            "role": null,
+            "name": "Review details",
+            "value": ""
+          },
+          "matchesOriginalFocus": true
+        },
+        {
+          "index": 14,
+          "focus": {
+            "id": "book",
+            "tag": "BUTTON",
+            "role": null,
+            "name": "Confirm booking",
+            "value": ""
+          },
+          "matchesOriginalFocus": false
+        },
+        {
+          "index": 15,
+          "focus": {
+            "id": null,
+            "tag": "BODY",
+            "role": null,
+            "name": "Fieldwork StudioBooking desk\n  A little room for your next idea.Make timeto make things.Reserve a 30-minute studio introduction. Pick a date, review your detail",
+            "value": null
+          },
+          "matchesOriginalFocus": false
+        },
+        {
+          "index": 16,
+          "focus": {
+            "id": null,
+            "tag": "A",
+            "role": null,
+            "name": "Studio home",
+            "value": null
+          },
+          "matchesOriginalFocus": false
+        },
+        {
+          "index": 17,
+          "focus": {
+            "id": "name",
+            "tag": "INPUT",
+            "role": null,
+            "name": "Full name",
+            "value": "Alex Tester"
+          },
+          "matchesOriginalFocus": false
+        },
+        {
+          "index": 18,
+          "focus": {
+            "id": "email",
+            "tag": "INPUT",
+            "role": null,
+            "name": "Email address",
+            "value": "alex@example.test"
+          },
+          "matchesOriginalFocus": false
+        },
+        {
+          "index": 19,
+          "focus": {
+            "id": "date-trigger",
+            "tag": "BUTTON",
+            "role": null,
+            "name": "October 30, 2026",
+            "value": ""
+          },
+          "matchesOriginalFocus": false
+        },
+        {
+          "index": 20,
+          "focus": {
+            "id": "time-15",
+            "tag": "INPUT",
+            "role": null,
+            "name": " 15:00",
+            "value": "15:00"
+          },
+          "matchesOriginalFocus": false
+        }
+      ],
+      "finalFocus": {
+        "id": "time-15",
+        "tag": "INPUT",
+        "role": null,
+        "name": " 15:00",
+        "value": "15:00",
+        "selectionStart": null,
+        "selectionEnd": null
+      }
+    }
+  ],
+  "replayErrors": [],
+  "finishedAt": "2026-10-26T18:06:45.159Z"
+}

@@ -9,6 +9,7 @@
     "check:fixtures": "node scripts/check-fixtures.mjs",
     "check:evidence": "node scripts/check-evidence.mjs",
     "check:regressions": "node scripts/check-regressions.mjs",
+    "check:stopping": "node scripts/check-stopping.mjs",
     "check:benchmark-replays": "node scripts/check-benchmark-replays.mjs",
     "compare": "node scripts/compare-runs.mjs",
     "agent": "node --env-file=.env scripts/run-agent.mjs",

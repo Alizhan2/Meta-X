@@ -2,8 +2,8 @@ import {mkdir,writeFile} from 'node:fs/promises';
 import {resolve} from 'node:path';
 import {createFixtureServer} from '../src/server.mjs';
 import {openSession,observe} from '../src/browser.mjs';
-import {nextAction} from '../src/meta.mjs';
-import {expected,variants} from '../src/fixture.mjs';
+import {runAgent} from '../src/agent.mjs';
+import {variants} from '../src/fixture.mjs';
 import {collectEvidence,replayTrace} from '../src/evidence.mjs';
 import {classifyReport,renderReport} from '../src/report.mjs';
 import {runConfiguration} from '../src/comparison.mjs';
@@ -17,37 +17,13 @@ await mkdir(output,{recursive:true});
 const app=await createFixtureServer();
 let session;
 const report={runId:output.split('/').at(-1),variant,task,startedAt:new Date().toISOString(),budget:25,valid:true,outcome:'agent_inconclusive',reason:'action_budget_exhausted',steps:[],usage:[],requests:[],scope:'Single controlled fixture run; not benchmark metrics.'};
-let history=[];
 try{
   session=await openSession(app,variant);
   report.configuration=await runConfiguration(session.page.context().browser().version());
-  for(let i=0;i<25;i++){
-    const observation=await observe(session.page,resolve(output,`${String(i).padStart(2,'0')}.png`));
-    const attempt={index:report.requests.length+1,startedAt:new Date().toISOString(),state:'pending'};
-    report.requests.push(attempt);
-    let decision;
-    try{
-      decision=await nextAction(history,observation,task,{onResponse:metadata=>{
-        Object.assign(attempt,metadata);
-        if(metadata.usage)report.usage.push(metadata.usage);
-        if(metadata.model)report.model=metadata.model;
-      }});
-      attempt.state='validated';
-    }catch(error){attempt.state='failed';attempt.reason=error.message;throw error;}
-    const result=await session.executor.execute(decision.action);
-    const after=await observe(session.page,resolve(output,`${String(i).padStart(2,'0')}-after.png`));
-    report.steps.push({...result,timestamp:new Date().toISOString(),focusBefore:observation.focus,focusAfter:after.focus});
-    report.model=decision.model;
-    history=decision.continueWith({executed:true,focus:after.focus});
-    console.log(`${i+1}: ${decision.action.name} ${JSON.stringify(decision.action.arguments)} -> ${after.focus.id||after.focus.tag}`);
-    if(session.record()){
-      const record=session.record();
-      report.record=record;
-      if(Object.entries(expected).every(([key,value])=>record[key]===value)) {report.outcome='task_completed';report.reason='server_record_matches';}
-      else report.reason='wrong_booking_record';
-      break;
-    }
-  }
+  await runAgent(session,report,{
+    observeStep:(i,after)=>observe(session.page,resolve(output,`${String(i).padStart(2,'0')}${after?'-after':''}.png`)),
+    onStep:(result,after)=>console.log(`${result.index}: ${result.action.name} ${JSON.stringify(result.action.arguments)} -> ${after.focus.id||after.focus.tag}`)
+  });
 }catch(error){report.valid=false;report.reason=error.message;console.error(`Run stopped: ${error.message}`);}
 finally{
   report.agentResult={outcome:report.outcome,reason:report.reason,valid:report.valid};

@@ -1,0 +1,383 @@
+{
+  "scope": "Counterfactual local keyboard replay of 25 frozen traces with the new stopping policy; no new model requests or model reliability claims.",
+  "results": [
+    {
+      "runId": "agent-1793035133081151000",
+      "variant": "correct",
+      "originalActions": 15,
+      "originalModelFailure": false,
+      "actions": 15,
+      "savedActionDifference": 0,
+      "completed": true,
+      "reason": "server_record_matches",
+      "stop": null
+    },
+    {
+      "runId": "agent-1793035133080089065",
+      "variant": "unreachable_button",
+      "originalActions": 22,
+      "originalModelFailure": true,
+      "actions": 20,
+      "savedActionDifference": 2,
+      "completed": false,
+      "reason": "focus_navigation_cycle",
+      "stop": {
+        "source": "runner",
+        "reason": "focus_navigation_cycle",
+        "atStep": 20,
+        "cycleStart": 13,
+        "cycleLength": 7,
+        "state": "aaef03a10a0a26c2103f20a0debb458be96017d3e9057ad67eb41763062c2a41"
+      }
+    },
+    {
+      "runId": "agent-1793035233037270379",
+      "variant": "calendar_keyboard",
+      "originalActions": 25,
+      "originalModelFailure": false,
+      "actions": 17,
+      "savedActionDifference": 8,
+      "completed": false,
+      "reason": "focus_navigation_cycle",
+      "stop": {
+        "source": "runner",
+        "reason": "focus_navigation_cycle",
+        "atStep": 17,
+        "cycleStart": 9,
+        "cycleLength": 8,
+        "state": "f456012ede7cb074f040e140fd8781649a1ffbf7f0905e9844fca56ae57a0370"
+      }
+    },
+    {
+      "runId": "agent-1793035273203213310",
+      "variant": "modal_dismissal",
+      "originalActions": 17,
+      "originalModelFailure": true,
+      "actions": 17,
+      "savedActionDifference": 0,
+      "completed": false,
+      "reason": "unchanged_observation",
+      "stop": {
+        "source": "runner",
+        "reason": "unchanged_observation",
+        "atStep": 17,
+        "unchangedActions": 3,
+        "state": "426663b9279dbe9831071cf0f2ff0d38926c4f5d88826fa98a24d2fa7531e04b"
+      }
+    },
+    {
+      "runId": "agent-1793035368627942190",
+      "variant": "focus_loss",
+      "originalActions": 18,
+      "originalModelFailure": false,
+      "actions": 18,
+      "savedActionDifference": 0,
+      "completed": true,
+      "reason": "server_record_matches",
+      "stop": null
+    },
+    {
+      "runId": "agent-1793035395976248204",
+      "variant": "correct",
+      "originalActions": 15,
+      "originalModelFailure": false,
+      "actions": 15,
+      "savedActionDifference": 0,
+      "completed": true,
+      "reason": "server_record_matches",
+      "stop": null
+    },
+    {
+      "runId": "agent-1793035461820294624",
+      "variant": "unreachable_button",
+      "originalActions": 24,
+      "originalModelFailure": true,
+      "actions": 20,
+      "savedActionDifference": 4,
+      "completed": false,
+      "reason": "focus_navigation_cycle",
+      "stop": {
+        "source": "runner",
+        "reason": "focus_navigation_cycle",
+        "atStep": 20,
+        "cycleStart": 13,
+        "cycleLength": 7,
+        "state": "aaef03a10a0a26c2103f20a0debb458be96017d3e9057ad67eb41763062c2a41"
+      }
+    },
+    {
+      "runId": "agent-1793035467281807805",
+      "variant": "calendar_keyboard",
+      "originalActions": 25,
+      "originalModelFailure": false,
+      "actions": 25,
+      "savedActionDifference": 0,
+      "completed": false,
+      "reason": "action_budget_exhausted",
+      "stop": null
+    },
+    {
+      "runId": "agent-1793035624368042030",
+      "variant": "modal_dismissal",
+      "originalActions": 18,
+      "originalModelFailure": true,
+      "actions": 17,
+      "savedActionDifference": 1,
+      "completed": false,
+      "reason": "unchanged_observation",
+      "stop": {
+        "source": "runner",
+        "reason": "unchanged_observation",
+        "atStep": 17,
+        "unchangedActions": 3,
+        "state": "426663b9279dbe9831071cf0f2ff0d38926c4f5d88826fa98a24d2fa7531e04b"
+      }
+    },
+    {
+      "runId": "agent-1793035657954428168",
+      "variant": "focus_loss",
+      "originalActions": 18,
+      "originalModelFailure": false,
+      "actions": 18,
+      "savedActionDifference": 0,
+      "completed": true,
+      "reason": "server_record_matches",
+      "stop": null
+    },
+    {
+      "runId": "agent-1793035732953266654",
+      "variant": "correct",
+      "originalActions": 15,
+      "originalModelFailure": false,
+      "actions": 15,
+      "savedActionDifference": 0,
+      "completed": true,
+      "reason": "server_record_matches",
+      "stop": null
+    },
+    {
+      "runId": "agent-1793035751701306950",
+      "variant": "unreachable_button",
+      "originalActions": 25,
+      "originalModelFailure": false,
+      "actions": 20,
+      "savedActionDifference": 5,
+      "completed": false,
+      "reason": "focus_navigation_cycle",
+      "stop": {
+        "source": "runner",
+        "reason": "focus_navigation_cycle",
+        "atStep": 20,
+        "cycleStart": 13,
+        "cycleLength": 7,
+        "state": "aaef03a10a0a26c2103f20a0debb458be96017d3e9057ad67eb41763062c2a41"
+      }
+    },
+    {
+      "runId": "agent-1793035848342337335",
+      "variant": "calendar_keyboard",
+      "originalActions": 25,
+      "originalModelFailure": false,
+      "actions": 16,
+      "savedActionDifference": 9,
+      "completed": false,
+      "reason": "focus_navigation_cycle",
+      "stop": {
+        "source": "runner",
+        "reason": "focus_navigation_cycle",
+        "atStep": 16,
+        "cycleStart": 8,
+        "cycleLength": 8,
+        "state": "f456012ede7cb074f040e140fd8781649a1ffbf7f0905e9844fca56ae57a0370"
+      }
+    },
+    {
+      "runId": "agent-1793035918862648708",
+      "variant": "modal_dismissal",
+      "originalActions": 17,
+      "originalModelFailure": true,
+      "actions": 17,
+      "savedActionDifference": 0,
+      "completed": false,
+      "reason": "unchanged_observation",
+      "stop": {
+        "source": "runner",
+        "reason": "unchanged_observation",
+        "atStep": 17,
+        "unchangedActions": 3,
+        "state": "426663b9279dbe9831071cf0f2ff0d38926c4f5d88826fa98a24d2fa7531e04b"
+      }
+    },
+    {
+      "runId": "agent-1793036020615113624",
+      "variant": "focus_loss",
+      "originalActions": 18,
+      "originalModelFailure": false,
+      "actions": 18,
+      "savedActionDifference": 0,
+      "completed": true,
+      "reason": "server_record_matches",
+      "stop": null
+    },
+    {
+      "runId": "agent-1793036054302247940",
+      "variant": "correct",
+      "originalActions": 15,
+      "originalModelFailure": false,
+      "actions": 15,
+      "savedActionDifference": 0,
+      "completed": true,
+      "reason": "server_record_matches",
+      "stop": null
+    },
+    {
+      "runId": "agent-1793036113346233715",
+      "variant": "unreachable_button",
+      "originalActions": 21,
+      "originalModelFailure": true,
+      "actions": 21,
+      "savedActionDifference": 0,
+      "completed": false,
+      "reason": "saved_trace_ended",
+      "stop": null
+    },
+    {
+      "runId": "agent-1793036127001221566",
+      "variant": "calendar_keyboard",
+      "originalActions": 25,
+      "originalModelFailure": false,
+      "actions": 17,
+      "savedActionDifference": 8,
+      "completed": false,
+      "reason": "focus_navigation_cycle",
+      "stop": {
+        "source": "runner",
+        "reason": "focus_navigation_cycle",
+        "atStep": 17,
+        "cycleStart": 9,
+        "cycleLength": 8,
+        "state": "f456012ede7cb074f040e140fd8781649a1ffbf7f0905e9844fca56ae57a0370"
+      }
+    },
+    {
+      "runId": "agent-1793036234901702591",
+      "variant": "modal_dismissal",
+      "originalActions": 18,
+      "originalModelFailure": true,
+      "actions": 17,
+      "savedActionDifference": 1,
+      "completed": false,
+      "reason": "unchanged_observation",
+      "stop": {
+        "source": "runner",
+        "reason": "unchanged_observation",
+        "atStep": 17,
+        "unchangedActions": 3,
+        "state": "426663b9279dbe9831071cf0f2ff0d38926c4f5d88826fa98a24d2fa7531e04b"
+      }
+    },
+    {
+      "runId": "agent-1793036267663325348",
+      "variant": "focus_loss",
+      "originalActions": 18,
+      "originalModelFailure": false,
+      "actions": 18,
+      "savedActionDifference": 0,
+      "completed": true,
+      "reason": "server_record_matches",
+      "stop": null
+    },
+    {
+      "runId": "agent-1793036364190325252",
+      "variant": "correct",
+      "originalActions": 15,
+      "originalModelFailure": false,
+      "actions": 15,
+      "savedActionDifference": 0,
+      "completed": true,
+      "reason": "server_record_matches",
+      "stop": null
+    },
+    {
+      "runId": "agent-1793036367624288782",
+      "variant": "unreachable_button",
+      "originalActions": 25,
+      "originalModelFailure": false,
+      "actions": 20,
+      "savedActionDifference": 5,
+      "completed": false,
+      "reason": "focus_navigation_cycle",
+      "stop": {
+        "source": "runner",
+        "reason": "focus_navigation_cycle",
+        "atStep": 20,
+        "cycleStart": 13,
+        "cycleLength": 7,
+        "state": "aaef03a10a0a26c2103f20a0debb458be96017d3e9057ad67eb41763062c2a41"
+      }
+    },
+    {
+      "runId": "agent-1793036433334901464",
+      "variant": "calendar_keyboard",
+      "originalActions": 25,
+      "originalModelFailure": false,
+      "actions": 16,
+      "savedActionDifference": 9,
+      "completed": false,
+      "reason": "focus_navigation_cycle",
+      "stop": {
+        "source": "runner",
+        "reason": "focus_navigation_cycle",
+        "atStep": 16,
+        "cycleStart": 8,
+        "cycleLength": 8,
+        "state": "f456012ede7cb074f040e140fd8781649a1ffbf7f0905e9844fca56ae57a0370"
+      }
+    },
+    {
+      "runId": "agent-1793036498989575852",
+      "variant": "modal_dismissal",
+      "originalActions": 20,
+      "originalModelFailure": true,
+      "actions": 17,
+      "savedActionDifference": 3,
+      "completed": false,
+      "reason": "unchanged_observation",
+      "stop": {
+        "source": "runner",
+        "reason": "unchanged_observation",
+        "atStep": 17,
+        "unchangedActions": 3,
+        "state": "426663b9279dbe9831071cf0f2ff0d38926c4f5d88826fa98a24d2fa7531e04b"
+      }
+    },
+    {
+      "runId": "agent-1793036599211641947",
+      "variant": "focus_loss",
+      "originalActions": 18,
+      "originalModelFailure": false,
+      "actions": 18,
+      "savedActionDifference": 0,
+      "completed": true,
+      "reason": "server_record_matches",
+      "stop": null
+    }
+  ],
+  "configuration": {
+    "schema": 1,
+    "fixtureAndAgentBuild": "7297935507c2517ed60869b588b3035c3031ab4b683d675d332e6de5f38a2584",
+    "browserVersion": "156.0.8078.4",
+    "playwrightVersion": "1.64.1",
+    "platform": "darwin",
+    "architecture": "arm64",
+    "seed": "booking-v1",
+    "requestedModel": "muse-spark-1.3",
+    "inputTokenLimit": 64000,
+    "modelSettings": {
+      "tool_choice": "auto",
+      "parallel_tool_calls": false,
+      "max_output_tokens": 2048,
+      "store": false
+    }
+  }
+}
