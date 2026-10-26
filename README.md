@@ -23,6 +23,7 @@ Open http://127.0.0.1:3000/lab to select a condition and open a fresh booking se
 ```sh
 npm test
 npm run check:fixtures
+npm run check:evidence
 ```
 
 For a live Meta run, copy `.env.example` to `.env` and fill your own `MODEL_API_KEY` and `META_MODEL` locally. The validated model is `muse-spark-1.3`. Never paste keys into issues, chat, screenshots, or committed files. Then run:
@@ -33,7 +34,9 @@ npm run agent -- correct
 
 Each live run can make up to 25 billable model calls. The model sees only screenshots, accessible semantics, current focus and its action history. It does not see the chosen condition or server record. Outputs go to ignored `output/playwright/` folders. The fixture runner only permits network requests to its local booking routes; arbitrary external URLs are not supported.
 
-Other conditions: `unreachable_button`, `calendar_keyboard`, `modal_dismissal`, `focus_loss`. An incomplete task is currently reported as inconclusive; automated blocker attribution, general Tab probes, replay comparison, and the report UI are still planned. Do not treat the current runner as a complete accessibility scanner.
+Other conditions: `unreachable_button`, `calendar_keyboard`, `modal_dismissal`, `focus_loss`. Every live run now includes three independent fixture-contract probes, three corrected controls, exact-key replays, and an HTML evidence report. An unconfirmed failure stays inconclusive. Confirmed fixture observations produce a suspected-blocker outcome while keeping the AI task outcome separate. Do not treat the current runner as a general accessibility scanner: probes currently know the booking fixture's expected contracts.
+
+See [repeated checks and the live broken/corrected comparison](docs/evidence-results.md). The AI benchmark across five trials per condition remains pending.
 
 The distinction to demonstrate is **keyboard-only execution + reproducible evidence + verification after a fix**. This is a developer testing aid, not a certification of accessibility or a simulation of every disabled user's experience.
 

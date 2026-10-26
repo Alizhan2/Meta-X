@@ -4,6 +4,8 @@ import {createFixtureServer} from '../src/server.mjs';
 import {openSession,observe} from '../src/browser.mjs';
 import {nextAction} from '../src/meta.mjs';
 import {expected,variants} from '../src/fixture.mjs';
+import {collectEvidence,replayTrace} from '../src/evidence.mjs';
+import {classifyReport,renderReport} from '../src/report.mjs';
 
 const variant=process.argv[2]||'correct';
 if(!variants.includes(variant))throw new Error('Unknown fixture variant');
@@ -34,6 +36,24 @@ try{
     }
   }
 }catch(error){report.valid=false;report.reason=error.message;console.error(`Run stopped: ${error.message}`);}
-finally{report.finishedAt=new Date().toISOString();await writeFile(resolve(output,'report.json'),JSON.stringify(report,null,2));await session?.close();await app.close();}
+finally{
+  report.agentResult={outcome:report.outcome,reason:report.reason,valid:report.valid};
+  await session?.close();
+  try{
+    console.log('Collecting independent keyboard evidence and corrected comparisons...');
+    const evidence=await collectEvidence(app,variant,{directory:resolve(output,'evidence')});
+    report.evidence={findings:evidence.findings,controlsClean:evidence.controlsClean,observedRuns:evidence.observedRuns,controlRuns:evidence.controlRuns,scope:evidence.scope};
+    report.replays=[];
+    for(const [label,condition] of [['Original condition',variant],['Corrected condition','correct']]){
+      const result=await replayTrace(app,condition,report.steps,{directory:resolve(output,label==='Original condition'?'replay-original':'replay-corrected')});
+      report.replays.push({label,...result});
+    }
+  }catch(error){report.evidenceError=error.message;}
+  Object.assign(report,classifyReport(report,report.evidence));
+  report.finishedAt=new Date().toISOString();
+  await writeFile(resolve(output,'report.json'),JSON.stringify(report,null,2));
+  await writeFile(resolve(output,'report.html'),renderReport(report));
+  await app.close();
+}
 console.log(JSON.stringify({outcome:report.outcome,reason:report.reason,valid:report.valid,steps:report.steps.length,output}));
 if(report.outcome!=='task_completed')process.exitCode=1;

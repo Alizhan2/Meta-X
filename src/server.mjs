@@ -2,6 +2,7 @@ import http from 'node:http';
 import {readFile} from 'node:fs/promises';
 import {randomUUID} from 'node:crypto';
 import {fileURLToPath} from 'node:url';
+import {resolve} from 'node:path';
 import {bookingPage, variants} from './fixture.mjs';
 
 export async function createFixtureServer({port = 0} = {}) {
@@ -19,6 +20,13 @@ export async function createFixtureServer({port = 0} = {}) {
     try {
       if (url.pathname === '/style.css') return send(200, css, 'text/css');
       if (url.pathname === '/favicon.ico') return send(204, '');
+      const artifact=/^\/reports\/(agent-\d+)\/(report\.(?:html|json)|\d{2}(?:-after)?\.png|evidence\/evidence\.json)$/.exec(url.pathname);
+      if(artifact && req.method==='GET'){
+        try{
+          const file=await readFile(resolve('output/playwright',artifact[1],artifact[2]));
+          return send(200,file,artifact[2].endsWith('.png')?'image/png':artifact[2].endsWith('.json')?'application/json':'text/html');
+        }catch{return send(404,'Report not found');}
+      }
       if (url.pathname === '/' || url.pathname === '/lab') return send(200, `<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>TabProof fixture lab</title><link rel="stylesheet" href="/style.css"><header><a href="/lab">TabProof</a><span>Fixture lab</span></header><main class="lab"><h1>One task. Five conditions.</h1><p>Book a studio session for Alex Tester (alex@example.test), October 30, 2026 at 15:00. Review the details, close the review, then confirm.</p><form method="post" action="/lab/session"><label for="variant">Test condition</label><select id="variant" name="variant">${variants.map(v=>`<option value="${v}">${v.replaceAll('_',' ')}</option>`).join('')}</select><button class="primary">Open a fresh booking session</button></form><ul><li>Agent sessions open only the booking page. This control panel is not part of the agent's observations.</li><li>The server stores the booking record independently of the page's success message.</li><li>Focus loss can be a defect even when the task is eventually completed.</li></ul></main></html>`);
       if (url.pathname === '/lab/session' && req.method === 'POST') {
         const body = await readBody(req); const variant = new URLSearchParams(body).get('variant');

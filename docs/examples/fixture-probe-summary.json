@@ -1,0 +1,37 @@
+[
+  {
+    "variant": "correct",
+    "code": "none",
+    "reproduced": "3/3",
+    "correctedControl": true,
+    "taskCompleted": true
+  },
+  {
+    "variant": "unreachable_button",
+    "code": "confirmation_unreachable",
+    "reproduced": "3/3",
+    "correctedControl": true,
+    "taskCompleted": false
+  },
+  {
+    "variant": "calendar_keyboard",
+    "code": "calendar_date_unreachable",
+    "reproduced": "3/3",
+    "correctedControl": true,
+    "taskCompleted": false
+  },
+  {
+    "variant": "modal_dismissal",
+    "code": "modal_keyboard_dismissal",
+    "reproduced": "3/3",
+    "correctedControl": true,
+    "taskCompleted": false
+  },
+  {
+    "variant": "focus_loss",
+    "code": "unexpected_focus_return",
+    "reproduced": "3/3",
+    "correctedControl": true,
+    "taskCompleted": true
+  }
+]
