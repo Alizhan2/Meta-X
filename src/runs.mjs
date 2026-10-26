@@ -10,10 +10,12 @@ function project(report,liveScreenshot=null){
 }
 function finalState(report){return report.cancelled?'stopped':report.agentResult?.valid===false?'failed':'completed';}
 
+const maxRecords=100;
+
 export async function createRunManager({execute=executeRun,root=resolve('output/playwright'),configured=()=>!!process.env.MODEL_API_KEY}={}){
   const records=new Map();let active=null,closing=false;
   let folders=[];try{folders=await readdir(root);}catch{}
-  for(const folder of folders.filter(name=>/^agent-\d+$/.test(name)).sort().reverse().slice(0,100)){
+  for(const folder of folders.filter(name=>/^agent-\d+$/.test(name)).sort().reverse().slice(0,maxRecords)){
     try{
       const report=JSON.parse(await readFile(resolve(root,folder,'report.json'),'utf8'));
       if(report.runId!==folder||!Array.isArray(report.steps)||typeof report.startedAt!=='string')continue;
@@ -21,6 +23,15 @@ export async function createRunManager({execute=executeRun,root=resolve('output/
     }catch{}
   }
   const get=id=>{const run=records.get(id);if(!run)throw fail(404,'run_not_found');return structuredClone(run);};
+  const stop=id=>{
+    const run=records.get(id);if(!run)throw fail(404,'run_not_found');
+    if(active?.id===id&&!active.controller.signal.aborted){run.state='stopping';run.phase='stopping';active.controller.abort(new Error('user_stopped'));}
+    return get(id);
+  };
+  const prune=()=>{
+    const stale=[...records.values()].filter(run=>run.id!==active?.id).sort((a,b)=>a.startedAt.localeCompare(b.startedAt));
+    while(records.size>maxRecords&&stale.length)records.delete(stale.shift().id);
+  };
   return {
     list(){return {runs:[...records.values()].sort((a,b)=>b.startedAt.localeCompare(a.startedAt)).map(({steps,...summary})=>structuredClone(summary)),configured:configured(),activeId:active?.id??null};},
     get,
@@ -32,7 +43,7 @@ export async function createRunManager({execute=executeRun,root=resolve('output/
       const id=newRunId(),controller=new AbortController();
       const run={id,variant,state:'starting',phase:'starting',steps:[],stepCount:0,requests:0,latestScreenshot:null,reportUrl:null,startedAt:new Date().toISOString(),task,taskCompleted:false,executionMode:'meta-live'};
       records.set(id,run);
-      active={id,controller,promise:null};
+      active={id,controller,promise:null};prune();
       const job=active;let liveScreenshot=null;
       job.promise=Promise.resolve().then(()=>execute({variant,id,root,signal:controller.signal,onUpdate:({phase,report,screenshot})=>{
         if(screenshot)liveScreenshot=screenshot;
@@ -47,11 +58,7 @@ export async function createRunManager({execute=executeRun,root=resolve('output/
       }).finally(()=>{if(active===job)active=null;});
       return get(id);
     },
-    stop(id){
-      const run=records.get(id);if(!run)throw fail(404,'run_not_found');
-      if(active?.id===id&&!active.controller.signal.aborted){run.state='stopping';run.phase='stopping';active.controller.abort(new Error('user_stopped'));}
-      return get(id);
-    },
-    async close(){closing=true;const job=active;if(job){this.stop(job.id);await job.promise;}}
+    stop,
+    async close(){closing=true;const job=active;if(job){stop(job.id);await job.promise;}}
   };
 }

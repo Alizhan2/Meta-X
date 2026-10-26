@@ -72,3 +72,20 @@ test('live screenshot is tracked on the run record without being written into th
     await manager.close();
   }finally{await rm(root,{recursive:true,force:true});}
 });
+test('in-memory history is capped, and stop/close work when detached from the manager',async()=>{
+  const root=await mkdtemp(join(tmpdir(),'tabproof-cap-'));
+  try{
+    const manager=await createRunManager({root,configured:()=>true,execute:async({id,variant,onUpdate})=>{
+      const report={runId:id,variant,startedAt:new Date().toISOString(),finishedAt:new Date().toISOString(),steps:[],requests:[],agentResult:{valid:true}};
+      onUpdate({phase:'finished',report});return {report};
+    }});
+    let last;
+    for(let i=0;i<105;i++){last=manager.start('correct').id;while(manager.list().activeId)await delay(1);}
+    assert.equal(manager.list().runs.length,100);
+    assert.equal(manager.get(last).state,'completed');
+    const {stop,close}=manager;
+    assert.equal(stop(last).state,'completed');
+    await close();
+    assert.throws(()=>manager.start('correct'),error=>error.status===503);
+  }finally{await rm(root,{recursive:true,force:true});}
+});
