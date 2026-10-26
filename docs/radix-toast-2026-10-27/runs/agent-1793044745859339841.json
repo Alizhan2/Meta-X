@@ -1,0 +1,558 @@
+{
+  "runId": "agent-1793044745859339841",
+  "targetKind": "custom",
+  "targetUrl": "http://127.0.0.1:60163/",
+  "task": "Using only the keyboard, focus the Draft saved notification and press Escape once to dismiss only that notification. Keep Upload complete and Sync finished open. Do not activate a Dismiss button. Stop when the task is complete, or report blockage if another notification disappears.",
+  "startedAt": "2026-10-26T19:59:05.859Z",
+  "budget": 25,
+  "valid": true,
+  "outcome": "agent_reported_complete",
+  "reason": "model_reported_completion",
+  "steps": [
+    {
+      "index": 1,
+      "action": {
+        "name": "press_key",
+        "arguments": {
+          "key": "Tab"
+        }
+      },
+      "timestamp": "2026-10-26T19:59:11.519Z",
+      "focusBefore": {
+        "id": null,
+        "tag": "BODY",
+        "role": null,
+        "name": "Page",
+        "value": null,
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "focusAfter": {
+        "id": "inbox-home",
+        "tag": "BUTTON",
+        "role": null,
+        "name": "Notification inbox",
+        "value": "",
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "checkpoint": {
+        "before": "ce2e4479fb4840937ecefa3fa5f339d313f64d51896c71a63029a2420b68595b",
+        "after": "dd43459837f2914adb4dc1fb1b6d730bf48c9d5e205b8e02823717e057388eda",
+        "unchangedActions": 0
+      }
+    },
+    {
+      "index": 2,
+      "action": {
+        "name": "press_key",
+        "arguments": {
+          "key": "Tab"
+        }
+      },
+      "timestamp": "2026-10-26T19:59:16.152Z",
+      "focusBefore": {
+        "id": "inbox-home",
+        "tag": "BUTTON",
+        "role": null,
+        "name": "Notification inbox",
+        "value": "",
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "focusAfter": {
+        "id": "toast-sync",
+        "tag": "LI",
+        "role": null,
+        "name": "Sync finished\nAll changes have been synchronized.\nDismiss",
+        "value": 0,
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "checkpoint": {
+        "before": "dd43459837f2914adb4dc1fb1b6d730bf48c9d5e205b8e02823717e057388eda",
+        "after": "145aaa52c74604ccd0e37ae77e8b5cf6a8db4baad8c2df32454de11472c952ed",
+        "unchangedActions": 0
+      }
+    },
+    {
+      "index": 3,
+      "action": {
+        "name": "press_key",
+        "arguments": {
+          "key": "Tab"
+        }
+      },
+      "timestamp": "2026-10-26T19:59:21.384Z",
+      "focusBefore": {
+        "id": "toast-sync",
+        "tag": "LI",
+        "role": null,
+        "name": "Sync finished\nAll changes have been synchronized.\nDismiss",
+        "value": 0,
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "focusAfter": {
+        "id": null,
+        "tag": "BUTTON",
+        "role": null,
+        "name": "Dismiss Sync finished",
+        "value": "",
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "checkpoint": {
+        "before": "145aaa52c74604ccd0e37ae77e8b5cf6a8db4baad8c2df32454de11472c952ed",
+        "after": "16bdc7c80151e894351f741c194543783ee3e0751dea18fc2132811ce59a4b41",
+        "unchangedActions": 0
+      }
+    },
+    {
+      "index": 4,
+      "action": {
+        "name": "press_key",
+        "arguments": {
+          "key": "Tab"
+        }
+      },
+      "timestamp": "2026-10-26T19:59:24.650Z",
+      "focusBefore": {
+        "id": null,
+        "tag": "BUTTON",
+        "role": null,
+        "name": "Dismiss Sync finished",
+        "value": "",
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "focusAfter": {
+        "id": "toast-upload",
+        "tag": "LI",
+        "role": null,
+        "name": "Upload complete\nYour image is ready to use.\nDismiss",
+        "value": 0,
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "checkpoint": {
+        "before": "16bdc7c80151e894351f741c194543783ee3e0751dea18fc2132811ce59a4b41",
+        "after": "03e7a9c6250bb287736f4dcd75e4fd513a14464795266f97c441b38d323a624b",
+        "unchangedActions": 0
+      }
+    },
+    {
+      "index": 5,
+      "action": {
+        "name": "press_key",
+        "arguments": {
+          "key": "Tab"
+        }
+      },
+      "timestamp": "2026-10-26T19:59:28.736Z",
+      "focusBefore": {
+        "id": "toast-upload",
+        "tag": "LI",
+        "role": null,
+        "name": "Upload complete\nYour image is ready to use.\nDismiss",
+        "value": 0,
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "focusAfter": {
+        "id": null,
+        "tag": "BUTTON",
+        "role": null,
+        "name": "Dismiss Upload complete",
+        "value": "",
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "checkpoint": {
+        "before": "03e7a9c6250bb287736f4dcd75e4fd513a14464795266f97c441b38d323a624b",
+        "after": "66ec1d80b5230533a87a6c4ac98b8719b2cffe9bc8f78ab6fbb525559c3253e8",
+        "unchangedActions": 0
+      }
+    },
+    {
+      "index": 6,
+      "action": {
+        "name": "press_key",
+        "arguments": {
+          "key": "Tab"
+        }
+      },
+      "timestamp": "2026-10-26T19:59:31.651Z",
+      "focusBefore": {
+        "id": null,
+        "tag": "BUTTON",
+        "role": null,
+        "name": "Dismiss Upload complete",
+        "value": "",
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "focusAfter": {
+        "id": "toast-draft",
+        "tag": "LI",
+        "role": null,
+        "name": "Draft saved\nYour draft is saved on this device.\nDismiss",
+        "value": 0,
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "checkpoint": {
+        "before": "66ec1d80b5230533a87a6c4ac98b8719b2cffe9bc8f78ab6fbb525559c3253e8",
+        "after": "4154a2b3dee124b2b297fd8527f2df4b69b41edbabdf6ff8a8eeb14c3e39be48",
+        "unchangedActions": 0
+      }
+    },
+    {
+      "index": 7,
+      "action": {
+        "name": "press_key",
+        "arguments": {
+          "key": "Escape"
+        }
+      },
+      "timestamp": "2026-10-26T19:59:34.916Z",
+      "focusBefore": {
+        "id": "toast-draft",
+        "tag": "LI",
+        "role": null,
+        "name": "Draft saved\nYour draft is saved on this device.\nDismiss",
+        "value": 0,
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "focusAfter": {
+        "id": null,
+        "tag": "OL",
+        "role": null,
+        "name": "Upload complete\nYour image is ready to use.\nDismiss\nSync finished\nAll changes have been synchronized.\nDismiss",
+        "value": null,
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "checkpoint": {
+        "before": "4154a2b3dee124b2b297fd8527f2df4b69b41edbabdf6ff8a8eeb14c3e39be48",
+        "after": "24ad16d23026cf1e92a41a5220aa157250140168560459df010c92c79bb753fc",
+        "unchangedActions": 0
+      }
+    }
+  ],
+  "usage": [
+    {
+      "input_tokens": 2964,
+      "input_tokens_details": {
+        "cached_tokens": 2929
+      },
+      "output_tokens": 430,
+      "output_tokens_details": {
+        "reasoning_tokens": 357
+      },
+      "total_tokens": 3394
+    },
+    {
+      "input_tokens": 3461,
+      "input_tokens_details": {
+        "cached_tokens": 881
+      },
+      "output_tokens": 166,
+      "output_tokens_details": {
+        "reasoning_tokens": 90
+      },
+      "total_tokens": 3627
+    },
+    {
+      "input_tokens": 3281,
+      "input_tokens_details": {
+        "cached_tokens": 881
+      },
+      "output_tokens": 473,
+      "output_tokens_details": {
+        "reasoning_tokens": 400
+      },
+      "total_tokens": 3754
+    },
+    {
+      "input_tokens": 3628,
+      "input_tokens_details": {
+        "cached_tokens": 881
+      },
+      "output_tokens": 289,
+      "output_tokens_details": {
+        "reasoning_tokens": 213
+      },
+      "total_tokens": 3917
+    },
+    {
+      "input_tokens": 3533,
+      "input_tokens_details": {
+        "cached_tokens": 881
+      },
+      "output_tokens": 196,
+      "output_tokens_details": {
+        "reasoning_tokens": 124
+      },
+      "total_tokens": 3729
+    },
+    {
+      "input_tokens": 3479,
+      "input_tokens_details": {
+        "cached_tokens": 881
+      },
+      "output_tokens": 194,
+      "output_tokens_details": {
+        "reasoning_tokens": 126
+      },
+      "total_tokens": 3673
+    },
+    {
+      "input_tokens": 3579,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 109,
+      "output_tokens_details": {
+        "reasoning_tokens": 40
+      },
+      "total_tokens": 3688
+    },
+    {
+      "input_tokens": 3847,
+      "input_tokens_details": {
+        "cached_tokens": 881
+      },
+      "output_tokens": 132,
+      "output_tokens_details": {
+        "reasoning_tokens": 104
+      },
+      "total_tokens": 3979
+    }
+  ],
+  "requests": [
+    {
+      "index": 1,
+      "startedAt": "2026-10-26T19:59:06.056Z",
+      "state": "validated",
+      "preflightInputTokens": 3107,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 2964,
+        "input_tokens_details": {
+          "cached_tokens": 2929
+        },
+        "output_tokens": 430,
+        "output_tokens_details": {
+          "reasoning_tokens": 357
+        },
+        "total_tokens": 3394
+      }
+    },
+    {
+      "index": 2,
+      "startedAt": "2026-10-26T19:59:11.542Z",
+      "state": "validated",
+      "preflightInputTokens": 3604,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 3461,
+        "input_tokens_details": {
+          "cached_tokens": 881
+        },
+        "output_tokens": 166,
+        "output_tokens_details": {
+          "reasoning_tokens": 90
+        },
+        "total_tokens": 3627
+      }
+    },
+    {
+      "index": 3,
+      "startedAt": "2026-10-26T19:59:16.176Z",
+      "state": "validated",
+      "preflightInputTokens": 3424,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 3281,
+        "input_tokens_details": {
+          "cached_tokens": 881
+        },
+        "output_tokens": 473,
+        "output_tokens_details": {
+          "reasoning_tokens": 400
+        },
+        "total_tokens": 3754
+      }
+    },
+    {
+      "index": 4,
+      "startedAt": "2026-10-26T19:59:21.409Z",
+      "state": "validated",
+      "preflightInputTokens": 3771,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 3628,
+        "input_tokens_details": {
+          "cached_tokens": 881
+        },
+        "output_tokens": 289,
+        "output_tokens_details": {
+          "reasoning_tokens": 213
+        },
+        "total_tokens": 3917
+      }
+    },
+    {
+      "index": 5,
+      "startedAt": "2026-10-26T19:59:24.675Z",
+      "state": "validated",
+      "preflightInputTokens": 3676,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 3533,
+        "input_tokens_details": {
+          "cached_tokens": 881
+        },
+        "output_tokens": 196,
+        "output_tokens_details": {
+          "reasoning_tokens": 124
+        },
+        "total_tokens": 3729
+      }
+    },
+    {
+      "index": 6,
+      "startedAt": "2026-10-26T19:59:28.772Z",
+      "state": "validated",
+      "preflightInputTokens": 3622,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 3479,
+        "input_tokens_details": {
+          "cached_tokens": 881
+        },
+        "output_tokens": 194,
+        "output_tokens_details": {
+          "reasoning_tokens": 126
+        },
+        "total_tokens": 3673
+      }
+    },
+    {
+      "index": 7,
+      "startedAt": "2026-10-26T19:59:31.675Z",
+      "state": "validated",
+      "preflightInputTokens": 3722,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 3579,
+        "input_tokens_details": {
+          "cached_tokens": 0
+        },
+        "output_tokens": 109,
+        "output_tokens_details": {
+          "reasoning_tokens": 40
+        },
+        "total_tokens": 3688
+      }
+    },
+    {
+      "index": 8,
+      "startedAt": "2026-10-26T19:59:34.941Z",
+      "state": "validated",
+      "preflightInputTokens": 3990,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 3847,
+        "input_tokens_details": {
+          "cached_tokens": 881
+        },
+        "output_tokens": 132,
+        "output_tokens_details": {
+          "reasoning_tokens": 104
+        },
+        "total_tokens": 3979
+      }
+    }
+  ],
+  "executionMode": "meta-live",
+  "scope": "Real Meta/TabProof attempt on pinned Radix Toast; generic completion is model-reported. A separate read-only live-session oracle checks selective Escape dismissal.",
+  "configuration": {
+    "schema": 1,
+    "fixtureAndAgentBuild": "6f1a17ab9d07d1e1c4fd57a8a5240154f41fe05092cfcef6695ea294684629ce",
+    "browserVersion": "156.0.8078.4",
+    "playwrightVersion": "1.64.1",
+    "platform": "darwin",
+    "architecture": "arm64",
+    "seed": null,
+    "requestedModel": "muse-spark-1.3",
+    "inputTokenLimit": 64000,
+    "modelSettings": {
+      "tool_choice": "auto",
+      "parallel_tool_calls": false,
+      "max_output_tokens": 2048,
+      "store": false
+    },
+    "contextPolicy": {
+      "version": 3,
+      "observations": "current-screenshot-and-page",
+      "memory": "complete-action-ledger-and-bounded-page-excerpts",
+      "recentToolTurns": 1,
+      "reasoning": "latest-encrypted-turn-in-memory-only",
+      "maxActions": 25,
+      "maxPageExcerpts": 3,
+      "maxExcerptCharacters": 12000
+    },
+    "targetKind": "custom",
+    "completionVerification": "model-reported"
+  },
+  "finalUrl": "http://127.0.0.1:60163/",
+  "stopPolicy": {
+    "version": 2,
+    "unchangedActions": 3,
+    "tabCycleMinimum": 2,
+    "repeatedNavigationActions": 4
+  },
+  "model": "muse-spark-1.3",
+  "stop": {
+    "source": "model",
+    "reason": "model_reported_completion",
+    "atStep": 7,
+    "detail": "Draft saved gone, Upload complete and Sync finished remain visible"
+  },
+  "executedActions": 7,
+  "agentResult": {
+    "outcome": "agent_reported_complete",
+    "reason": "model_reported_completion",
+    "valid": true
+  },
+  "evidenceSkipped": "custom_target",
+  "replaysSkipped": "custom_target",
+  "finishedAt": "2026-10-26T19:59:38.354Z"
+}

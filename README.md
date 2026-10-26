@@ -36,6 +36,16 @@ npm run demo:third-party
 
 The deterministic check makes no Meta calls. The demo opens at http://127.0.0.1:4187/ with screenshots, measurements and links to the original/corrected integrations.
 
+A second, independent example uses **Radix Toast 1.2.19 → 1.2.20**. On the old version one Escape dismisses both the focused notification and an unrelated notification; after the actual upstream dependency upgrade it dismisses only the focused one. The same keyboard test fails in 3/3 original sessions and passes in 3/3 corrected sessions. Two real Muse Spark attempts both take seven actions; the original reports blockage, while the corrected completes, with separate live-session measurements confirming the remaining notifications. Both complete dependency graphs are pinned; host JSX/CSS and agent runtime are unchanged. This is known upstream issue #2906, not a new original discovery. See [the Radix before/after evidence](docs/radix-toast-2026-10-27/README.md).
+
+```sh
+npm ci --prefix examples/radix-toast --ignore-scripts
+npm run check:radix-toast
+npm run demo:radix-toast
+```
+
+The second local evidence viewer is http://127.0.0.1:4197/. `check:radix-toast` makes no Meta calls; `check:radix-toast:agent` explicitly starts a fresh paid live pair.
+
 For a custom website, completion is explicitly **model-reported**, without an independent success oracle. Its report contains the actual URL, task, observed actions and screenshots. Fixture-specific contract checks and automatic replays never run against a custom site, so submitting a form is not repeated for evidence. See [custom website support and verification](docs/custom-targets.md).
 
 The server loads a local `.env` automatically. Without a configured `MODEL_API_KEY`, the workbench remains viewable and disables starting the agent. Keys stay on the server. This workbench binds only to the local computer; it is not a hosted multi-user service.
