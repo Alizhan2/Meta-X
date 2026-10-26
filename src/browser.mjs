@@ -13,9 +13,29 @@ export async function openSession(app, variant, {budget = 25} = {}) {
       return route.abort();
     });
     const page=await context.newPage();
+    let pendingBooking=null;
+    page.on('request',request=>{
+      if(request.method()==='POST'&&new URL(request.url()).pathname==='/api/book'){
+        // Wait on the request's response promise rather than Request wrapper identity.
+        pendingBooking=request.response().then(response=>{
+          if(!response)throw new Error('booking_request_failed');
+          if(!response.ok())throw new Error('booking_http_'+response.status());
+        });
+        // Observe rejection immediately; the action boundary still receives it below.
+        pendingBooking.catch(()=>{});
+      }
+    });
     await page.goto(app.origin+'/booking');
     await page.waitForFunction(()=>document.activeElement?.id==='name');
-    const executor=createKeyboardExecutor(page,{budget,afterAction:()=>page.evaluate(()=>new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve))))});
+    const executor=createKeyboardExecutor(page,{budget,afterAction:async()=>{
+      await page.evaluate(()=>new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve))));
+      if(pendingBooking){
+        let timer;
+        try{await Promise.race([pendingBooking,new Promise((_,reject)=>{timer=setTimeout(()=>reject(new Error('booking_settlement_timeout')),5000)})]);}
+        finally{clearTimeout(timer);pendingBooking=null;}
+        await page.evaluate(()=>new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve))));
+      }
+    }});
     return {page, executor, record:()=>app.getRecord(id), close:()=>browser.close()};
   } catch(error) {await browser.close();throw error;}
 }

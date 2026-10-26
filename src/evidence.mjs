@@ -8,7 +8,7 @@ export function matchesBooking(record) {
 }
 
 async function active(page) {
-  return page.evaluate(()=>{const el=document.activeElement;return {id:el?.id||null,tag:el?.tagName||null,name:el?.getAttribute('aria-label')||el?.labels?.[0]?.textContent||el?.textContent?.trim().slice(0,120)||''};});
+  return page.evaluate(()=>{const el=document.activeElement;return {id:el?.id||null,tag:el?.tagName||null,role:el?.getAttribute('role')||null,name:el?.getAttribute('aria-label')||el?.labels?.[0]?.textContent||el?.textContent?.trim().slice(0,160)||'',value:el&&'value'in el?el.value:null};});
 }
 
 // This inventory is evidence, never an exhaustive operability verdict.
@@ -88,7 +88,7 @@ export function summarizeComparisons(observed,control) {
   const codes=[...new Set(observed.flatMap(item=>item.findings.map(f=>f.code)))];
   const findings=codes.map(code=>{
     const occurrences=observed.filter(item=>item.findings.some(f=>f.code===code)).length;
-    return {code,occurrences,runs:observed.length,reproduced:occurrences===observed.length,correctedControlClean:controlsClean,confirmedInControlledFixture:occurrences===observed.length&&controlsClean};
+    return {code,occurrences,runs:observed.length,reproduced:occurrences===observed.length,correctedControlClean:controlsClean,confirmedInControlledFixture:observed.length>=3&&control.length>=3&&occurrences===observed.length&&controlsClean};
   });
   return {findings,controlsClean,observedRuns:observed.length,controlRuns:control.length,scope:'Fixture-specific deterministic contract checks; not a general WCAG verdict and not model detection metrics.'};
 }
@@ -113,9 +113,11 @@ export async function replayTrace(app,variant,steps,{directory}={}) {
     for(const [index,step] of steps.entries()){
       await session.executor.execute(step.action);
       const focus=await active(session.page);
-      replay.push({index:index+1,focus,matchesOriginalFocus:!step.focusAfter||step.focusAfter.id===focus.id&&step.focusAfter.tag===focus.tag});
+      replay.push({index:index+1,focus,matchesOriginalFocus:step.focusAfter?focusMatches(step.focusAfter,focus):null});
     }
     const observation=await observe(session.page,directory&&resolve(directory,'replay-final.png'));
-    return {taskCompleted:matchesBooking(session.record()),record:session.record(),focusPathMatches:replay.every(step=>step.matchesOriginalFocus),steps:replay,finalFocus:observation.focus};
+    return {taskCompleted:matchesBooking(session.record()),record:session.record(),focusPathMatches:replay.length?replay.every(step=>step.matchesOriginalFocus===true):null,steps:replay,finalFocus:observation.focus};
   }finally{await session.close();}
 }
+
+export function focusMatches(a,b){return ['id','tag','role','name','value'].every(key=>(a[key]??null)===(b[key]??null));}

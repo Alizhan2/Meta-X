@@ -29,6 +29,8 @@ The suite does not yet run five AI trials for each of five conditions. No aggreg
 
 Saved examples: [blocked run](examples/blocked-run.json), [fresh corrected run](examples/corrected-run.json), and [deterministic probe summary](examples/fixture-probe-summary.json). These records contain synthetic form inputs, tool actions and checks, not API keys or model reasoning.
 
+Audit note: these historical AI examples predate browser/build configuration logging. The completion and failure observations above remain recorded facts, but the new strict comparison marks this old pair unverified (`missing_run_configuration`). The screenshot below shows the earlier report before that audit downgrade; it is not a current benchmark claim. See [review fixes](review-fixes.md).
+
 ![Evidence report with a fresh successful corrected run](assets/evidence-report.png)
 
 ## Reproduce

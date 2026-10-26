@@ -1369,7 +1369,8 @@
   "correctedComparison": {
     "run": "agent-1793031565589",
     "steps": 15,
-    "verified": true,
+    "verified": false,
+    "reason": "missing_run_configuration",
     "source": "Fresh adaptive Meta agent run; separate from exact-key replay."
   }
 }
