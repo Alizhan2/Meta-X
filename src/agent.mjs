@@ -19,7 +19,7 @@ export async function runAgent(session,report,{observeStep,decide=nextAction,onS
     let decision;
     try{
       signal?.throwIfAborted();
-      decision=await decide(history,observation,report.task,{signal,onResponse:metadata=>{
+      decision=await decide(history,observation,report.task,{signal,allowCompletion:report.targetKind==='custom',onResponse:metadata=>{
         Object.assign(attempt,metadata);
         if(metadata.usage)report.usage.push(metadata.usage);
         if(metadata.model)report.model=metadata.model;
@@ -29,6 +29,12 @@ export async function runAgent(session,report,{observeStep,decide=nextAction,onS
     }catch(error){attempt.state=signal?.aborted?'cancelled':'failed';attempt.reason=signal?.aborted?'user_stopped':error.message;onRequest(attempt);throw error;}
     signal?.throwIfAborted();
     report.model=decision.model;
+    if(decision.kind==='done'){
+      if(report.targetKind!=='custom')throw new Error('unverified_completion_not_allowed');
+      report.outcome='agent_reported_complete';report.reason='model_reported_completion';
+      report.stop={source:'model',reason:report.reason,atStep:report.steps.length,detail:decision.reason};
+      break;
+    }
     if(decision.kind==='stop'){
       report.reason='model_reported_blockage';
       report.stop={source:'model',reason:report.reason,atStep:report.steps.length,detail:decision.reason};

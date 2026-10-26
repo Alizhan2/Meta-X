@@ -4,7 +4,7 @@ export const stopPolicy=Object.freeze({version:1,unchangedActions:3,tabCycleMini
 
 export function observationKey(observation){
   // Ignore pixels (caret/animation noise); include observable selection and scroll.
-  return createHash('sha256').update(JSON.stringify({semantics:observation.semantics,focus:observation.focus,viewport:observation.viewport??null})).digest('hex');
+  return createHash('sha256').update(JSON.stringify({url:observation.url??null,semantics:observation.semantics,focus:observation.focus,viewport:observation.viewport??null})).digest('hex');
 }
 
 export function createProgressMonitor(initial){

@@ -1,0 +1,18 @@
+{
+  "scope": "Custom URL/task UI and real HTTP browser/proxy integration; scripted decisions, no Meta API calls.",
+  "targetUrl": "http://127.0.0.1:58778/",
+  "task": "Найди мастер-класс по керамике через поиск.",
+  "completed": {
+    "id": "agent-1793040534253334696",
+    "actions": 4,
+    "outcome": "agent_reported_complete",
+    "independentlyVerified": false
+  },
+  "cancelled": {
+    "id": "agent-1793040535875364399",
+    "actions": 0
+  },
+  "formSubmissions": 1,
+  "blockedPrivateRequests": true,
+  "pageErrors": []
+}

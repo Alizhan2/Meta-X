@@ -26,7 +26,13 @@
 
     <section class="run-controls" aria-label="Run controls">
       <form id="start-form">
-        <div class="condition-control"><label for="condition">Test condition</label><select id="condition" name="variant"><option value="correct">Corrected form</option><option value="unreachable_button">Unreachable confirm button</option><option value="calendar_keyboard">Calendar keyboard barrier</option><option value="modal_dismissal">Review window cannot close</option><option value="focus_loss">Unexpected focus return</option></select></div>
+        <div class="condition-control mode-control"><label for="target-mode">Run on</label><select id="target-mode"><option value="fixture">Test fixture</option><option value="custom">Your website</option></select></div>
+        <div class="condition-control" id="fixture-controls"><label for="condition">Test condition</label><select id="condition" name="variant"><option value="correct">Corrected form</option><option value="unreachable_button">Unreachable confirm button</option><option value="calendar_keyboard">Calendar keyboard barrier</option><option value="modal_dismissal">Review window cannot close</option><option value="focus_loss">Unexpected focus return</option></select></div>
+        <div class="custom-controls" id="custom-controls" hidden>
+          <div class="custom-field"><label for="site-url">Website URL</label><input id="site-url" name="targetUrl" type="url" placeholder="https://your-site.com" aria-describedby="site-help" autocomplete="url" disabled><p id="site-help">Enter an HTTP or HTTPS URL. The agent stays on the same site and navigates with the keyboard.</p></div>
+          <div class="custom-field"><label for="custom-task">Task to attempt</label><textarea id="custom-task" name="task" rows="3" minlength="1" maxlength="2000" placeholder="For example: Find the contact form and draft a message without sending it." aria-describedby="custom-help" disabled></textarea><p id="custom-help">A fresh browser starts without your existing logins. Describe the intended stopping point.</p></div>
+          <p class="privacy-note">Screenshots and page text are sent to Meta. Use a test account for private pages.</p>
+        </div>
         <div class="control-buttons"><button class="button button-primary" id="start" type="submit" disabled><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="m4 2 9 6-9 6z" fill="currentColor"/></svg><span id="start-label">Start agent</span></button><button class="button button-stop" id="stop" type="button" disabled><svg viewBox="0 0 16 16" width="15" height="15" aria-hidden="true"><rect x="3" y="3" width="10" height="10" rx="1" fill="currentColor"/></svg>Stop</button></div><p class="credit-note">Live Meta runs use API credits.</p>
       </form>
       <div class="service-state"><span class="status-mark" id="status-mark" data-state="connecting" aria-hidden="true"></span><span id="service-status" role="status" aria-live="polite">Connecting to the run service</span><p id="control-note">Checking whether the agent is ready.</p></div>
@@ -34,7 +40,7 @@
 
     <div id="notice" class="notice" role="alert" hidden><span id="notice-text"></span><button id="retry" class="text-button" type="button" hidden>Retry connection</button></div>
 
-    <section class="task-brief" aria-labelledby="task-title"><div><h2 id="task-title">The task</h2><p>Book a studio introduction for <strong>Alex Tester</strong>, using <span class="email">alex@example.test</span>. Review the details, close the review, then confirm.</p></div><dl><div><dt>Date</dt><dd>October 30, 2026</dd></div><div><dt>Time</dt><dd>15:00 Aqtobe</dd></div></dl></section>
+    <section class="task-brief" aria-labelledby="task-title"><div><h2 id="task-title">The task</h2><p id="task-description">Book a studio introduction for <strong>Alex Tester</strong>, using <span class="email">alex@example.test</span>. Review the details, close the review, then confirm.</p></div><dl id="fixture-schedule"><div><dt>Date</dt><dd>October 30, 2026</dd></div><div><dt>Time</dt><dd>15:00 Aqtobe</dd></div></dl></section>
 
     <section id="workbench" class="workbench" aria-label="Agent workbench" tabindex="-1">
       <section class="screen-panel" aria-labelledby="screen-title">
@@ -60,7 +66,7 @@
 
     <section class="history-section" aria-labelledby="history-title"><div class="history-heading"><div><h2 id="history-title">Run history</h2><p id="history-note">Only real runs are listed here.</p></div><button class="text-button" type="button" id="refresh-history">Refresh</button></div><p id="history-empty" class="history-empty">No runs yet. Your first run will stay here for comparison.</p><ul id="run-history" class="history-list" aria-label="Previous runs"></ul></section>
 
-    <footer class="app-footer"><p>Controlled booking fixture. A successful task does not prove full accessibility.</p><p>Keyboard actions. Independent evidence checks.</p></footer>
+    <footer class="app-footer"><p id="scope-note">Controlled booking fixture. A successful task does not prove full accessibility.</p><p id="evidence-note">Keyboard actions. Independent evidence checks.</p></footer>
   </main>
   <noscript><p class="notice">Enable JavaScript to control and inspect agent runs.</p></noscript>
 </body>
