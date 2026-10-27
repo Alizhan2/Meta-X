@@ -43,3 +43,59 @@ test('run history survives manager restart and missing credentials cannot start 
     await manager.close();
   }finally{await rm(root,{recursive:true,force:true});}
 });
+test('list omits step detail but reports step counts; get keeps the full action record',async()=>{
+  const root=await mkdtemp(join(tmpdir(),'tabproof-summary-'));
+  try{
+    await mkdir(join(root,'agent-456'));
+    const steps=[{index:1,action:{name:'press_key',arguments:{key:'Tab'}},focusBefore:{id:'a'},focusAfter:{id:'b'}}];
+    await writeFile(join(root,'agent-456','report.json'),JSON.stringify({runId:'agent-456',variant:'correct',startedAt:'2026-10-26T00:00:00Z',steps,requests:[],agentResult:{valid:true}}));
+    const manager=await createRunManager({root,configured:()=>true});
+    const [summary]=manager.list().runs;
+    assert.equal(summary.stepCount,1);assert.equal('steps' in summary,false);
+    assert.equal(manager.get('agent-456').steps.length,1);
+    await manager.close();
+  }finally{await rm(root,{recursive:true,force:true});}
+});
+test('live screenshot is tracked on the run record without being written into the saved report',async()=>{
+  const root=await mkdtemp(join(tmpdir(),'tabproof-shot-'));
+  try{
+    let report;
+    const manager=await createRunManager({root,configured:()=>true,execute:async({id,variant,onUpdate})=>{
+      report={runId:id,variant,startedAt:new Date().toISOString(),steps:[],requests:[],agentResult:{valid:true}};
+      onUpdate({phase:'running',report,screenshot:'00.png'});
+      return {report};
+    }});
+    const {id}=manager.start('correct');
+    while(manager.list().activeId)await delay(5);
+    assert.equal(manager.get(id).latestScreenshot,`/reports/${id}/00.png`);
+    assert.equal('latestScreenshot' in report,false);
+    await manager.close();
+  }finally{await rm(root,{recursive:true,force:true});}
+});
+test('in-memory history is capped, and stop/close work when detached from the manager',async()=>{
+  const root=await mkdtemp(join(tmpdir(),'tabproof-cap-'));
+  try{
+    const manager=await createRunManager({root,configured:()=>true,execute:async({id,variant,onUpdate})=>{
+      const report={runId:id,variant,startedAt:new Date().toISOString(),finishedAt:new Date().toISOString(),steps:[],requests:[],agentResult:{valid:true}};
+      onUpdate({phase:'finished',report});return {report};
+    }});
+    let last;
+    for(let i=0;i<105;i++){last=manager.start('correct').id;while(manager.list().activeId)await delay(1);}
+    assert.equal(manager.list().runs.length,100);
+    assert.equal(manager.get(last).state,'completed');
+    const {stop,close}=manager;
+    assert.equal(stop(last).state,'completed');
+    await close();
+    assert.throws(()=>manager.start('correct'),error=>error.status===503);
+  }finally{await rm(root,{recursive:true,force:true});}
+});
+test('restored history uses the screenshot recorded in the saved report',async()=>{
+  const root=await mkdtemp(join(tmpdir(),'tabproof-restore-shot-'));
+  try{
+    await mkdir(join(root,'agent-789'));
+    await writeFile(join(root,'agent-789','report.json'),JSON.stringify({runId:'agent-789',variant:'correct',startedAt:'2026-10-26T00:00:00Z',steps:[],requests:[],latestScreenshot:'00.png',agentResult:{valid:true}}));
+    const manager=await createRunManager({root,configured:()=>false});
+    assert.equal(manager.get('agent-789').latestScreenshot,'/reports/agent-789/00.png');
+    await manager.close();
+  }finally{await rm(root,{recursive:true,force:true});}
+});
