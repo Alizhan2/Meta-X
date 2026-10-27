@@ -1,0 +1,418 @@
+{
+  "condition": "corrected",
+  "version": "1.2.20",
+  "runId": "agent-1793044745859339841",
+  "scope": "Read-only DOM/focus measurements of the actual live session; never passed to the model. Example-specific oracle, not universal website diagnosis.",
+  "contract": {
+    "startedWithThree": true,
+    "oneEscapeOnDraft": true,
+    "draftDismissed": true,
+    "otherNotificationsPreserved": true,
+    "onlyDraftRemoved": true,
+    "noDismissButtonActivation": true
+  },
+  "taskVerified": true,
+  "initial": {
+    "focusId": null,
+    "focusTag": "BODY",
+    "focusedToast": null,
+    "open": [
+      "draft",
+      "sync",
+      "upload"
+    ]
+  },
+  "final": {
+    "focusId": null,
+    "focusTag": "OL",
+    "focusedToast": null,
+    "open": [
+      "sync",
+      "upload"
+    ]
+  },
+  "actions": [
+    {
+      "index": 1,
+      "action": {
+        "name": "press_key",
+        "arguments": {
+          "key": "Tab"
+        }
+      },
+      "before": {
+        "focusId": null,
+        "focusTag": "BODY",
+        "focusedToast": null,
+        "open": [
+          "draft",
+          "sync",
+          "upload"
+        ]
+      },
+      "after": {
+        "focusId": "inbox-home",
+        "focusTag": "BUTTON",
+        "focusedToast": null,
+        "open": [
+          "draft",
+          "sync",
+          "upload"
+        ]
+      }
+    },
+    {
+      "index": 2,
+      "action": {
+        "name": "press_key",
+        "arguments": {
+          "key": "Tab"
+        }
+      },
+      "before": {
+        "focusId": "inbox-home",
+        "focusTag": "BUTTON",
+        "focusedToast": null,
+        "open": [
+          "draft",
+          "sync",
+          "upload"
+        ]
+      },
+      "after": {
+        "focusId": "toast-sync",
+        "focusTag": "LI",
+        "focusedToast": "sync",
+        "open": [
+          "draft",
+          "sync",
+          "upload"
+        ]
+      }
+    },
+    {
+      "index": 3,
+      "action": {
+        "name": "press_key",
+        "arguments": {
+          "key": "Tab"
+        }
+      },
+      "before": {
+        "focusId": "toast-sync",
+        "focusTag": "LI",
+        "focusedToast": "sync",
+        "open": [
+          "draft",
+          "sync",
+          "upload"
+        ]
+      },
+      "after": {
+        "focusId": null,
+        "focusTag": "BUTTON",
+        "focusedToast": "sync",
+        "open": [
+          "draft",
+          "sync",
+          "upload"
+        ]
+      }
+    },
+    {
+      "index": 4,
+      "action": {
+        "name": "press_key",
+        "arguments": {
+          "key": "Tab"
+        }
+      },
+      "before": {
+        "focusId": null,
+        "focusTag": "BUTTON",
+        "focusedToast": "sync",
+        "open": [
+          "draft",
+          "sync",
+          "upload"
+        ]
+      },
+      "after": {
+        "focusId": "toast-upload",
+        "focusTag": "LI",
+        "focusedToast": "upload",
+        "open": [
+          "draft",
+          "sync",
+          "upload"
+        ]
+      }
+    },
+    {
+      "index": 5,
+      "action": {
+        "name": "press_key",
+        "arguments": {
+          "key": "Tab"
+        }
+      },
+      "before": {
+        "focusId": "toast-upload",
+        "focusTag": "LI",
+        "focusedToast": "upload",
+        "open": [
+          "draft",
+          "sync",
+          "upload"
+        ]
+      },
+      "after": {
+        "focusId": null,
+        "focusTag": "BUTTON",
+        "focusedToast": "upload",
+        "open": [
+          "draft",
+          "sync",
+          "upload"
+        ]
+      }
+    },
+    {
+      "index": 6,
+      "action": {
+        "name": "press_key",
+        "arguments": {
+          "key": "Tab"
+        }
+      },
+      "before": {
+        "focusId": null,
+        "focusTag": "BUTTON",
+        "focusedToast": "upload",
+        "open": [
+          "draft",
+          "sync",
+          "upload"
+        ]
+      },
+      "after": {
+        "focusId": "toast-draft",
+        "focusTag": "LI",
+        "focusedToast": "draft",
+        "open": [
+          "draft",
+          "sync",
+          "upload"
+        ]
+      }
+    },
+    {
+      "index": 7,
+      "action": {
+        "name": "press_key",
+        "arguments": {
+          "key": "Escape"
+        }
+      },
+      "before": {
+        "focusId": "toast-draft",
+        "focusTag": "LI",
+        "focusedToast": "draft",
+        "open": [
+          "draft",
+          "sync",
+          "upload"
+        ]
+      },
+      "after": {
+        "focusId": null,
+        "focusTag": "OL",
+        "focusedToast": null,
+        "open": [
+          "sync",
+          "upload"
+        ]
+      }
+    }
+  ],
+  "observations": [
+    {
+      "index": 0,
+      "after": false,
+      "focusId": null,
+      "focusTag": "BODY",
+      "focusedToast": null,
+      "open": [
+        "draft",
+        "sync",
+        "upload"
+      ]
+    },
+    {
+      "index": 0,
+      "after": true,
+      "focusId": "inbox-home",
+      "focusTag": "BUTTON",
+      "focusedToast": null,
+      "open": [
+        "draft",
+        "sync",
+        "upload"
+      ]
+    },
+    {
+      "index": 1,
+      "after": false,
+      "focusId": "inbox-home",
+      "focusTag": "BUTTON",
+      "focusedToast": null,
+      "open": [
+        "draft",
+        "sync",
+        "upload"
+      ]
+    },
+    {
+      "index": 1,
+      "after": true,
+      "focusId": "toast-sync",
+      "focusTag": "LI",
+      "focusedToast": "sync",
+      "open": [
+        "draft",
+        "sync",
+        "upload"
+      ]
+    },
+    {
+      "index": 2,
+      "after": false,
+      "focusId": "toast-sync",
+      "focusTag": "LI",
+      "focusedToast": "sync",
+      "open": [
+        "draft",
+        "sync",
+        "upload"
+      ]
+    },
+    {
+      "index": 2,
+      "after": true,
+      "focusId": null,
+      "focusTag": "BUTTON",
+      "focusedToast": "sync",
+      "open": [
+        "draft",
+        "sync",
+        "upload"
+      ]
+    },
+    {
+      "index": 3,
+      "after": false,
+      "focusId": null,
+      "focusTag": "BUTTON",
+      "focusedToast": "sync",
+      "open": [
+        "draft",
+        "sync",
+        "upload"
+      ]
+    },
+    {
+      "index": 3,
+      "after": true,
+      "focusId": "toast-upload",
+      "focusTag": "LI",
+      "focusedToast": "upload",
+      "open": [
+        "draft",
+        "sync",
+        "upload"
+      ]
+    },
+    {
+      "index": 4,
+      "after": false,
+      "focusId": "toast-upload",
+      "focusTag": "LI",
+      "focusedToast": "upload",
+      "open": [
+        "draft",
+        "sync",
+        "upload"
+      ]
+    },
+    {
+      "index": 4,
+      "after": true,
+      "focusId": null,
+      "focusTag": "BUTTON",
+      "focusedToast": "upload",
+      "open": [
+        "draft",
+        "sync",
+        "upload"
+      ]
+    },
+    {
+      "index": 5,
+      "after": false,
+      "focusId": null,
+      "focusTag": "BUTTON",
+      "focusedToast": "upload",
+      "open": [
+        "draft",
+        "sync",
+        "upload"
+      ]
+    },
+    {
+      "index": 5,
+      "after": true,
+      "focusId": "toast-draft",
+      "focusTag": "LI",
+      "focusedToast": "draft",
+      "open": [
+        "draft",
+        "sync",
+        "upload"
+      ]
+    },
+    {
+      "index": 6,
+      "after": false,
+      "focusId": "toast-draft",
+      "focusTag": "LI",
+      "focusedToast": "draft",
+      "open": [
+        "draft",
+        "sync",
+        "upload"
+      ]
+    },
+    {
+      "index": 6,
+      "after": true,
+      "focusId": null,
+      "focusTag": "OL",
+      "focusedToast": null,
+      "open": [
+        "sync",
+        "upload"
+      ]
+    },
+    {
+      "index": 7,
+      "after": false,
+      "focusId": null,
+      "focusTag": "OL",
+      "focusedToast": null,
+      "open": [
+        "sync",
+        "upload"
+      ]
+    }
+  ]
+}

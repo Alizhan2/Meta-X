@@ -1,0 +1,144 @@
+{
+  "schema": 1,
+  "checkedAt": "2026-10-26T19:59:38.387Z",
+  "task": "Using only the keyboard, focus the Draft saved notification and press Escape once to dismiss only that notification. Keep Upload complete and Sync finished open. Do not activate a Dismiss button. Stop when the task is complete, or report blockage if another notification disappears.",
+  "scope": "One fresh real-Meta session per version. Same URL/task/model/host/agent; dependency upgrade is the intentional variable. All attempts retained, not a reliability benchmark.",
+  "comparable": true,
+  "passed": true,
+  "originalFalseCompletion": false,
+  "sources": {
+    "examples/radix-toast/app.jsx": "63e1d1ee9c5425b513e1f27fd50d993ff23e430313d2bc939dda7de08c9bf031",
+    "examples/radix-toast/style.css": "cc37d68e626eb1e9cdff9798c40c6d63d47b97377746995aecf0653d39ff23ba",
+    "examples/radix-toast/server.mjs": "b5728a8b96f29597283d780bbe6f533a46910a1a1831344c6cf8fd915d41b78a",
+    "examples/radix-toast/package-lock.json": "5d8c1b3edf87444cf195dd19812995d057dbd13b69a4f6077f6af5a777d8f84b",
+    "scripts/radix-toast-contract.mjs": "243eefaf15511fdac15683a146c62b6b0d3667d57dd911536ca7dfd5d2944aeb",
+    "scripts/check-radix-toast-agent.mjs": "370ec56a4f587640823af4205cd5ae4d8be146cbf5cbd0b040e7b69034c2b33c"
+  },
+  "attempts": [
+    {
+      "condition": "original",
+      "version": "1.2.19",
+      "runId": "agent-1793044691579268206",
+      "output": "/Users/ali/Desktop/meta hack/output/playwright/agent-1793044691579268206",
+      "model": "muse-spark-1.3",
+      "configuration": {
+        "schema": 1,
+        "fixtureAndAgentBuild": "6f1a17ab9d07d1e1c4fd57a8a5240154f41fe05092cfcef6695ea294684629ce",
+        "browserVersion": "156.0.8078.4",
+        "playwrightVersion": "1.64.1",
+        "platform": "darwin",
+        "architecture": "arm64",
+        "seed": null,
+        "requestedModel": "muse-spark-1.3",
+        "inputTokenLimit": 64000,
+        "modelSettings": {
+          "tool_choice": "auto",
+          "parallel_tool_calls": false,
+          "max_output_tokens": 2048,
+          "store": false
+        },
+        "contextPolicy": {
+          "version": 3,
+          "observations": "current-screenshot-and-page",
+          "memory": "complete-action-ledger-and-bounded-page-excerpts",
+          "recentToolTurns": 1,
+          "reasoning": "latest-encrypted-turn-in-memory-only",
+          "maxActions": 25,
+          "maxPageExcerpts": 3,
+          "maxExcerptCharacters": 12000
+        },
+        "targetKind": "custom",
+        "completionVerification": "model-reported"
+      },
+      "sources": {
+        "examples/radix-toast/app.jsx": "63e1d1ee9c5425b513e1f27fd50d993ff23e430313d2bc939dda7de08c9bf031",
+        "examples/radix-toast/style.css": "cc37d68e626eb1e9cdff9798c40c6d63d47b97377746995aecf0653d39ff23ba",
+        "examples/radix-toast/server.mjs": "b5728a8b96f29597283d780bbe6f533a46910a1a1831344c6cf8fd915d41b78a",
+        "examples/radix-toast/package-lock.json": "5d8c1b3edf87444cf195dd19812995d057dbd13b69a4f6077f6af5a777d8f84b",
+        "scripts/radix-toast-contract.mjs": "243eefaf15511fdac15683a146c62b6b0d3667d57dd911536ca7dfd5d2944aeb",
+        "scripts/check-radix-toast-agent.mjs": "370ec56a4f587640823af4205cd5ae4d8be146cbf5cbd0b040e7b69034c2b33c"
+      },
+      "sourcesStable": true,
+      "valid": true,
+      "outcome": "agent_inconclusive",
+      "reason": "model_reported_blockage",
+      "actions": 7,
+      "contract": {
+        "startedWithThree": true,
+        "oneEscapeOnDraft": true,
+        "draftDismissed": true,
+        "otherNotificationsPreserved": false,
+        "onlyDraftRemoved": false,
+        "noDismissButtonActivation": true
+      },
+      "taskVerified": false,
+      "remaining": [
+        "upload"
+      ],
+      "knownTokens": 29612
+    },
+    {
+      "condition": "corrected",
+      "version": "1.2.20",
+      "runId": "agent-1793044745859339841",
+      "output": "/Users/ali/Desktop/meta hack/output/playwright/agent-1793044745859339841",
+      "model": "muse-spark-1.3",
+      "configuration": {
+        "schema": 1,
+        "fixtureAndAgentBuild": "6f1a17ab9d07d1e1c4fd57a8a5240154f41fe05092cfcef6695ea294684629ce",
+        "browserVersion": "156.0.8078.4",
+        "playwrightVersion": "1.64.1",
+        "platform": "darwin",
+        "architecture": "arm64",
+        "seed": null,
+        "requestedModel": "muse-spark-1.3",
+        "inputTokenLimit": 64000,
+        "modelSettings": {
+          "tool_choice": "auto",
+          "parallel_tool_calls": false,
+          "max_output_tokens": 2048,
+          "store": false
+        },
+        "contextPolicy": {
+          "version": 3,
+          "observations": "current-screenshot-and-page",
+          "memory": "complete-action-ledger-and-bounded-page-excerpts",
+          "recentToolTurns": 1,
+          "reasoning": "latest-encrypted-turn-in-memory-only",
+          "maxActions": 25,
+          "maxPageExcerpts": 3,
+          "maxExcerptCharacters": 12000
+        },
+        "targetKind": "custom",
+        "completionVerification": "model-reported"
+      },
+      "sources": {
+        "examples/radix-toast/app.jsx": "63e1d1ee9c5425b513e1f27fd50d993ff23e430313d2bc939dda7de08c9bf031",
+        "examples/radix-toast/style.css": "cc37d68e626eb1e9cdff9798c40c6d63d47b97377746995aecf0653d39ff23ba",
+        "examples/radix-toast/server.mjs": "b5728a8b96f29597283d780bbe6f533a46910a1a1831344c6cf8fd915d41b78a",
+        "examples/radix-toast/package-lock.json": "5d8c1b3edf87444cf195dd19812995d057dbd13b69a4f6077f6af5a777d8f84b",
+        "scripts/radix-toast-contract.mjs": "243eefaf15511fdac15683a146c62b6b0d3667d57dd911536ca7dfd5d2944aeb",
+        "scripts/check-radix-toast-agent.mjs": "370ec56a4f587640823af4205cd5ae4d8be146cbf5cbd0b040e7b69034c2b33c"
+      },
+      "sourcesStable": true,
+      "valid": true,
+      "outcome": "agent_reported_complete",
+      "reason": "model_reported_completion",
+      "actions": 7,
+      "contract": {
+        "startedWithThree": true,
+        "oneEscapeOnDraft": true,
+        "draftDismissed": true,
+        "otherNotificationsPreserved": true,
+        "onlyDraftRemoved": true,
+        "noDismissButtonActivation": true
+      },
+      "taskVerified": true,
+      "remaining": [
+        "sync",
+        "upload"
+      ],
+      "knownTokens": 29761
+    }
+  ]
+}

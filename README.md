@@ -24,6 +24,28 @@ Open http://127.0.0.1:3000 for the agent workbench. Choose a condition and press
 
 To test your own site, choose **Run on → Your website**, paste a complete HTTP(S) address, and write the task in **Task to attempt**. Press **Start agent**. Public websites and a separate localhost development server are supported. The agent starts in a fresh browser and stays on the same site. Screenshots and page text are sent to Meta; use test data for private pages.
 
+The final build was checked on the unmodified official Python documentation: opening Tutorial took 14 actions and searching for `venv` took 15. Separate read-only replays verified the resulting URLs, page headings/results and focus paths. Earlier context-limit and navigation-loop failures are retained alongside the fixes. See [all public-site attempts and verification](docs/public-sites-2026-10-27/README.md).
+
+A third-party keyboard barrier is now reproduced with the actual, unmodified **React Aria Components 1.19.0** package: a modal skips its scrollable reading panel. An identical keyboard test fails on the original integration in 3/3 sessions and passes after adding `tabIndex={0}` in 3/3, with pointer and native-browser controls. In a valid real-Meta comparison the agent stops on the original after 4 actions and completes the corrected task in 7; separate read-only live-session measurements confirm the results. An earlier API timeout is retained. This reproduces known upstream issue #10395 locally; it is an integration workaround, not an original upstream discovery or library patch. See [the before/after report and all attempts](docs/react-aria-2026-10-27/README.md).
+
+```sh
+npm ci --prefix examples/react-aria-scroll --ignore-scripts
+npm run check:third-party
+npm run demo:third-party
+```
+
+The deterministic check makes no Meta calls. The demo opens at http://127.0.0.1:4187/ with screenshots, measurements and links to the original/corrected integrations.
+
+A second, independent example uses **Radix Toast 1.2.19 → 1.2.20**. On the old version one Escape dismisses both the focused notification and an unrelated notification; after the actual upstream dependency upgrade it dismisses only the focused one. The same keyboard test fails in 3/3 original sessions and passes in 3/3 corrected sessions. Two real Muse Spark attempts both take seven actions; the original reports blockage, while the corrected completes, with separate live-session measurements confirming the remaining notifications. Both complete dependency graphs are pinned; host JSX/CSS and agent runtime are unchanged. This is known upstream issue #2906, not a new original discovery. See [the Radix before/after evidence](docs/radix-toast-2026-10-27/README.md).
+
+```sh
+npm ci --prefix examples/radix-toast --ignore-scripts
+npm run check:radix-toast
+npm run demo:radix-toast
+```
+
+The second local evidence viewer is http://127.0.0.1:4197/. `check:radix-toast` makes no Meta calls; `check:radix-toast:agent` explicitly starts a fresh paid live pair.
+
 For a custom website, completion is explicitly **model-reported**, without an independent success oracle. Its report contains the actual URL, task, observed actions and screenshots. Fixture-specific contract checks and automatic replays never run against a custom site, so submitting a form is not repeated for evidence. See [custom website support and verification](docs/custom-targets.md).
 
 The server loads a local `.env` automatically. Without a configured `MODEL_API_KEY`, the workbench remains viewable and disables starting the agent. Keys stay on the server. The server accepts only `127.0.0.1:<port>` or `localhost:<port>` as the `Host` header (DNS-rebinding protection), so a forwarded port, devcontainer URL or reverse proxy answers `403 Invalid host`; open the workbench through a local address. This workbench binds only to the local computer; it is not a hosted multi-user service.

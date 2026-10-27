@@ -1,0 +1,74 @@
+{
+  "scope": "Separate read-only exact-key replay and DOM/URL audit on official public Python documentation. No model calls; original raw report is unchanged.",
+  "verifiedAt": "2026-10-26T19:18:11.048Z",
+  "runId": "agent-1793042156136961688",
+  "scenario": "tutorial",
+  "originalFinalUrl": "https://docs.python.org/3/tutorial/index.html",
+  "replayFinalUrl": "https://docs.python.org/3/tutorial/index.html",
+  "headings": [
+    "The Python Tutorial¶"
+  ],
+  "goalVerified": true,
+  "focusPathMatches": true,
+  "focusPath": [
+    {
+      "index": 1,
+      "matches": true
+    },
+    {
+      "index": 2,
+      "matches": true
+    },
+    {
+      "index": 3,
+      "matches": true
+    },
+    {
+      "index": 4,
+      "matches": true
+    },
+    {
+      "index": 5,
+      "matches": true
+    },
+    {
+      "index": 6,
+      "matches": true
+    },
+    {
+      "index": 7,
+      "matches": true
+    },
+    {
+      "index": 8,
+      "matches": true
+    },
+    {
+      "index": 9,
+      "matches": true
+    },
+    {
+      "index": 10,
+      "matches": true
+    },
+    {
+      "index": 11,
+      "matches": true
+    },
+    {
+      "index": 12,
+      "matches": true
+    },
+    {
+      "index": 13,
+      "matches": true
+    },
+    {
+      "index": 14,
+      "matches": true
+    }
+  ],
+  "httpMethods": [
+    "GET"
+  ]
+}

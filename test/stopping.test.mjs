@@ -9,6 +9,15 @@ const key=key=>({name:'press_key',arguments:{key}});
 const state=(id='a',semantics='page',extra={})=>({semantics,focus:{id,value:'',...extra},viewport:{scrollX:0,scrollY:0}});
 const report=()=>({task:'Synthetic task',budget:25,valid:true,outcome:'agent_inconclusive',reason:'action_budget_exhausted',steps:[],requests:[],usage:[]});
 
+test('alternating Tab directions stop after repeated navigation without discovering a control',()=>{
+  const monitor=createProgressMonitor(state('page'));
+  for(let i=1;i<=5;i++){
+    const result=monitor.afterAction(key(i%2?'Tab':'Shift+Tab'),state(i%2?'index':'page'),i);
+    if(i<5)assert.equal(result.stop,null);
+    else assert.equal(result.stop.reason,'repeated_navigation_states');
+  }
+});
+
 test('three unchanged observations stop; changing semantics, selection, value and scroll count as progress',()=>{
   const monitor=createProgressMonitor(state());
   assert.equal(monitor.afterAction(key('Escape'),state(),1).stop,null);

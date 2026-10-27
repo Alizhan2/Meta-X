@@ -1,0 +1,1689 @@
+{
+  "runId": "agent-1793041604991648360",
+  "targetKind": "custom",
+  "variant": "custom",
+  "targetUrl": "https://docs.python.org/3/",
+  "task": "Найди поле Quick search на главной странице документации Python, введи venv и выполни поиск. Остановись, когда появятся результаты со ссылкой на документацию модуля venv. Не открывай другие сайты.",
+  "startedAt": "2026-10-26T19:06:44.991Z",
+  "budget": 25,
+  "valid": true,
+  "outcome": "agent_inconclusive",
+  "reason": "action_budget_exhausted",
+  "steps": [
+    {
+      "index": 1,
+      "action": {
+        "name": "press_key",
+        "arguments": {
+          "key": "Tab"
+        }
+      },
+      "timestamp": "2026-10-26T19:06:52.533Z",
+      "focusBefore": {
+        "id": null,
+        "tag": "BODY",
+        "role": null,
+        "name": "Page",
+        "value": null,
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "focusAfter": {
+        "id": null,
+        "tag": "A",
+        "role": null,
+        "name": "index",
+        "value": null,
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "checkpoint": {
+        "before": "ec7d4c581298494d0428c6627915ca1a81ad41e769d36f887bde2b72b13c3d5e",
+        "after": "ab7ce5de9b9b1143022c8e9242af6b4fac62c7c1e7509c5f59b7f2540343b9a3",
+        "unchangedActions": 0
+      }
+    },
+    {
+      "index": 2,
+      "action": {
+        "name": "press_key",
+        "arguments": {
+          "key": "Shift+Tab"
+        }
+      },
+      "timestamp": "2026-10-26T19:06:57.734Z",
+      "focusBefore": {
+        "id": null,
+        "tag": "A",
+        "role": null,
+        "name": "index",
+        "value": null,
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "focusAfter": {
+        "id": null,
+        "tag": "BODY",
+        "role": null,
+        "name": "Page",
+        "value": null,
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "checkpoint": {
+        "before": "ab7ce5de9b9b1143022c8e9242af6b4fac62c7c1e7509c5f59b7f2540343b9a3",
+        "after": "ec7d4c581298494d0428c6627915ca1a81ad41e769d36f887bde2b72b13c3d5e",
+        "unchangedActions": 0
+      }
+    },
+    {
+      "index": 3,
+      "action": {
+        "name": "press_key",
+        "arguments": {
+          "key": "Tab"
+        }
+      },
+      "timestamp": "2026-10-26T19:07:07.617Z",
+      "focusBefore": {
+        "id": null,
+        "tag": "BODY",
+        "role": null,
+        "name": "Page",
+        "value": null,
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "focusAfter": {
+        "id": null,
+        "tag": "A",
+        "role": null,
+        "name": "index",
+        "value": null,
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "checkpoint": {
+        "before": "ec7d4c581298494d0428c6627915ca1a81ad41e769d36f887bde2b72b13c3d5e",
+        "after": "ab7ce5de9b9b1143022c8e9242af6b4fac62c7c1e7509c5f59b7f2540343b9a3",
+        "unchangedActions": 0
+      }
+    },
+    {
+      "index": 4,
+      "action": {
+        "name": "press_key",
+        "arguments": {
+          "key": "Shift+Tab"
+        }
+      },
+      "timestamp": "2026-10-26T19:07:14.185Z",
+      "focusBefore": {
+        "id": null,
+        "tag": "A",
+        "role": null,
+        "name": "index",
+        "value": null,
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "focusAfter": {
+        "id": null,
+        "tag": "BODY",
+        "role": null,
+        "name": "Page",
+        "value": null,
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "checkpoint": {
+        "before": "ab7ce5de9b9b1143022c8e9242af6b4fac62c7c1e7509c5f59b7f2540343b9a3",
+        "after": "ec7d4c581298494d0428c6627915ca1a81ad41e769d36f887bde2b72b13c3d5e",
+        "unchangedActions": 0
+      }
+    },
+    {
+      "index": 5,
+      "action": {
+        "name": "press_key",
+        "arguments": {
+          "key": "Tab"
+        }
+      },
+      "timestamp": "2026-10-26T19:07:22.783Z",
+      "focusBefore": {
+        "id": null,
+        "tag": "BODY",
+        "role": null,
+        "name": "Page",
+        "value": null,
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "focusAfter": {
+        "id": null,
+        "tag": "A",
+        "role": null,
+        "name": "index",
+        "value": null,
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "checkpoint": {
+        "before": "ec7d4c581298494d0428c6627915ca1a81ad41e769d36f887bde2b72b13c3d5e",
+        "after": "ab7ce5de9b9b1143022c8e9242af6b4fac62c7c1e7509c5f59b7f2540343b9a3",
+        "unchangedActions": 0
+      }
+    },
+    {
+      "index": 6,
+      "action": {
+        "name": "press_key",
+        "arguments": {
+          "key": "Shift+Tab"
+        }
+      },
+      "timestamp": "2026-10-26T19:07:28.556Z",
+      "focusBefore": {
+        "id": null,
+        "tag": "A",
+        "role": null,
+        "name": "index",
+        "value": null,
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "focusAfter": {
+        "id": null,
+        "tag": "BODY",
+        "role": null,
+        "name": "Page",
+        "value": null,
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "checkpoint": {
+        "before": "ab7ce5de9b9b1143022c8e9242af6b4fac62c7c1e7509c5f59b7f2540343b9a3",
+        "after": "ec7d4c581298494d0428c6627915ca1a81ad41e769d36f887bde2b72b13c3d5e",
+        "unchangedActions": 0
+      }
+    },
+    {
+      "index": 7,
+      "action": {
+        "name": "press_key",
+        "arguments": {
+          "key": "Tab"
+        }
+      },
+      "timestamp": "2026-10-26T19:07:33.984Z",
+      "focusBefore": {
+        "id": null,
+        "tag": "BODY",
+        "role": null,
+        "name": "Page",
+        "value": null,
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "focusAfter": {
+        "id": null,
+        "tag": "A",
+        "role": null,
+        "name": "index",
+        "value": null,
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "checkpoint": {
+        "before": "ec7d4c581298494d0428c6627915ca1a81ad41e769d36f887bde2b72b13c3d5e",
+        "after": "ab7ce5de9b9b1143022c8e9242af6b4fac62c7c1e7509c5f59b7f2540343b9a3",
+        "unchangedActions": 0
+      }
+    },
+    {
+      "index": 8,
+      "action": {
+        "name": "press_key",
+        "arguments": {
+          "key": "Shift+Tab"
+        }
+      },
+      "timestamp": "2026-10-26T19:07:39.131Z",
+      "focusBefore": {
+        "id": null,
+        "tag": "A",
+        "role": null,
+        "name": "index",
+        "value": null,
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "focusAfter": {
+        "id": null,
+        "tag": "BODY",
+        "role": null,
+        "name": "Page",
+        "value": null,
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "checkpoint": {
+        "before": "ab7ce5de9b9b1143022c8e9242af6b4fac62c7c1e7509c5f59b7f2540343b9a3",
+        "after": "ec7d4c581298494d0428c6627915ca1a81ad41e769d36f887bde2b72b13c3d5e",
+        "unchangedActions": 0
+      }
+    },
+    {
+      "index": 9,
+      "action": {
+        "name": "press_key",
+        "arguments": {
+          "key": "Tab"
+        }
+      },
+      "timestamp": "2026-10-26T19:07:45.735Z",
+      "focusBefore": {
+        "id": null,
+        "tag": "BODY",
+        "role": null,
+        "name": "Page",
+        "value": null,
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "focusAfter": {
+        "id": null,
+        "tag": "A",
+        "role": null,
+        "name": "index",
+        "value": null,
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "checkpoint": {
+        "before": "ec7d4c581298494d0428c6627915ca1a81ad41e769d36f887bde2b72b13c3d5e",
+        "after": "ab7ce5de9b9b1143022c8e9242af6b4fac62c7c1e7509c5f59b7f2540343b9a3",
+        "unchangedActions": 0
+      }
+    },
+    {
+      "index": 10,
+      "action": {
+        "name": "press_key",
+        "arguments": {
+          "key": "Tab"
+        }
+      },
+      "timestamp": "2026-10-26T19:07:54.666Z",
+      "focusBefore": {
+        "id": null,
+        "tag": "A",
+        "role": null,
+        "name": "index",
+        "value": null,
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "focusAfter": {
+        "id": null,
+        "tag": "A",
+        "role": null,
+        "name": "modules",
+        "value": null,
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "checkpoint": {
+        "before": "ab7ce5de9b9b1143022c8e9242af6b4fac62c7c1e7509c5f59b7f2540343b9a3",
+        "after": "96cbe1d671dc65241c843239a8cba7fd89b1a2ab639ed18eb4a7a90e32f24edf",
+        "unchangedActions": 0
+      }
+    },
+    {
+      "index": 11,
+      "action": {
+        "name": "press_key",
+        "arguments": {
+          "key": "Shift+Tab"
+        }
+      },
+      "timestamp": "2026-10-26T19:08:01.503Z",
+      "focusBefore": {
+        "id": null,
+        "tag": "A",
+        "role": null,
+        "name": "modules",
+        "value": null,
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "focusAfter": {
+        "id": null,
+        "tag": "A",
+        "role": null,
+        "name": "index",
+        "value": null,
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "checkpoint": {
+        "before": "96cbe1d671dc65241c843239a8cba7fd89b1a2ab639ed18eb4a7a90e32f24edf",
+        "after": "ab7ce5de9b9b1143022c8e9242af6b4fac62c7c1e7509c5f59b7f2540343b9a3",
+        "unchangedActions": 0
+      }
+    },
+    {
+      "index": 12,
+      "action": {
+        "name": "press_key",
+        "arguments": {
+          "key": "Tab"
+        }
+      },
+      "timestamp": "2026-10-26T19:08:06.612Z",
+      "focusBefore": {
+        "id": null,
+        "tag": "A",
+        "role": null,
+        "name": "index",
+        "value": null,
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "focusAfter": {
+        "id": null,
+        "tag": "A",
+        "role": null,
+        "name": "modules",
+        "value": null,
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "checkpoint": {
+        "before": "ab7ce5de9b9b1143022c8e9242af6b4fac62c7c1e7509c5f59b7f2540343b9a3",
+        "after": "96cbe1d671dc65241c843239a8cba7fd89b1a2ab639ed18eb4a7a90e32f24edf",
+        "unchangedActions": 0
+      }
+    },
+    {
+      "index": 13,
+      "action": {
+        "name": "press_key",
+        "arguments": {
+          "key": "Shift+Tab"
+        }
+      },
+      "timestamp": "2026-10-26T19:08:14.297Z",
+      "focusBefore": {
+        "id": null,
+        "tag": "A",
+        "role": null,
+        "name": "modules",
+        "value": null,
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "focusAfter": {
+        "id": null,
+        "tag": "A",
+        "role": null,
+        "name": "index",
+        "value": null,
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "checkpoint": {
+        "before": "96cbe1d671dc65241c843239a8cba7fd89b1a2ab639ed18eb4a7a90e32f24edf",
+        "after": "ab7ce5de9b9b1143022c8e9242af6b4fac62c7c1e7509c5f59b7f2540343b9a3",
+        "unchangedActions": 0
+      }
+    },
+    {
+      "index": 14,
+      "action": {
+        "name": "press_key",
+        "arguments": {
+          "key": "Tab"
+        }
+      },
+      "timestamp": "2026-10-26T19:08:20.198Z",
+      "focusBefore": {
+        "id": null,
+        "tag": "A",
+        "role": null,
+        "name": "index",
+        "value": null,
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "focusAfter": {
+        "id": null,
+        "tag": "A",
+        "role": null,
+        "name": "modules",
+        "value": null,
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "checkpoint": {
+        "before": "ab7ce5de9b9b1143022c8e9242af6b4fac62c7c1e7509c5f59b7f2540343b9a3",
+        "after": "96cbe1d671dc65241c843239a8cba7fd89b1a2ab639ed18eb4a7a90e32f24edf",
+        "unchangedActions": 0
+      }
+    },
+    {
+      "index": 15,
+      "action": {
+        "name": "press_key",
+        "arguments": {
+          "key": "Shift+Tab"
+        }
+      },
+      "timestamp": "2026-10-26T19:08:26.231Z",
+      "focusBefore": {
+        "id": null,
+        "tag": "A",
+        "role": null,
+        "name": "modules",
+        "value": null,
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "focusAfter": {
+        "id": null,
+        "tag": "A",
+        "role": null,
+        "name": "index",
+        "value": null,
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "checkpoint": {
+        "before": "96cbe1d671dc65241c843239a8cba7fd89b1a2ab639ed18eb4a7a90e32f24edf",
+        "after": "ab7ce5de9b9b1143022c8e9242af6b4fac62c7c1e7509c5f59b7f2540343b9a3",
+        "unchangedActions": 0
+      }
+    },
+    {
+      "index": 16,
+      "action": {
+        "name": "press_key",
+        "arguments": {
+          "key": "Shift+Tab"
+        }
+      },
+      "timestamp": "2026-10-26T19:08:31.532Z",
+      "focusBefore": {
+        "id": null,
+        "tag": "A",
+        "role": null,
+        "name": "index",
+        "value": null,
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "focusAfter": {
+        "id": null,
+        "tag": "BODY",
+        "role": null,
+        "name": "Page",
+        "value": null,
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "checkpoint": {
+        "before": "ab7ce5de9b9b1143022c8e9242af6b4fac62c7c1e7509c5f59b7f2540343b9a3",
+        "after": "ec7d4c581298494d0428c6627915ca1a81ad41e769d36f887bde2b72b13c3d5e",
+        "unchangedActions": 0
+      }
+    },
+    {
+      "index": 17,
+      "action": {
+        "name": "press_key",
+        "arguments": {
+          "key": "Tab"
+        }
+      },
+      "timestamp": "2026-10-26T19:08:36.583Z",
+      "focusBefore": {
+        "id": null,
+        "tag": "BODY",
+        "role": null,
+        "name": "Page",
+        "value": null,
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "focusAfter": {
+        "id": null,
+        "tag": "A",
+        "role": null,
+        "name": "index",
+        "value": null,
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "checkpoint": {
+        "before": "ec7d4c581298494d0428c6627915ca1a81ad41e769d36f887bde2b72b13c3d5e",
+        "after": "ab7ce5de9b9b1143022c8e9242af6b4fac62c7c1e7509c5f59b7f2540343b9a3",
+        "unchangedActions": 0
+      }
+    },
+    {
+      "index": 18,
+      "action": {
+        "name": "press_key",
+        "arguments": {
+          "key": "Tab"
+        }
+      },
+      "timestamp": "2026-10-26T19:08:41.961Z",
+      "focusBefore": {
+        "id": null,
+        "tag": "A",
+        "role": null,
+        "name": "index",
+        "value": null,
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "focusAfter": {
+        "id": null,
+        "tag": "A",
+        "role": null,
+        "name": "modules",
+        "value": null,
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "checkpoint": {
+        "before": "ab7ce5de9b9b1143022c8e9242af6b4fac62c7c1e7509c5f59b7f2540343b9a3",
+        "after": "96cbe1d671dc65241c843239a8cba7fd89b1a2ab639ed18eb4a7a90e32f24edf",
+        "unchangedActions": 0
+      }
+    },
+    {
+      "index": 19,
+      "action": {
+        "name": "press_key",
+        "arguments": {
+          "key": "Tab"
+        }
+      },
+      "timestamp": "2026-10-26T19:08:47.147Z",
+      "focusBefore": {
+        "id": null,
+        "tag": "A",
+        "role": null,
+        "name": "modules",
+        "value": null,
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "focusAfter": {
+        "id": null,
+        "tag": "A",
+        "role": null,
+        "name": "Python",
+        "value": null,
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "checkpoint": {
+        "before": "96cbe1d671dc65241c843239a8cba7fd89b1a2ab639ed18eb4a7a90e32f24edf",
+        "after": "69e1614807eae866e5194ec48468170e5d75584b35840c6c3e2978f24c040062",
+        "unchangedActions": 0
+      }
+    },
+    {
+      "index": 20,
+      "action": {
+        "name": "press_key",
+        "arguments": {
+          "key": "Tab"
+        }
+      },
+      "timestamp": "2026-10-26T19:08:50.875Z",
+      "focusBefore": {
+        "id": null,
+        "tag": "A",
+        "role": null,
+        "name": "Python",
+        "value": null,
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "focusAfter": {
+        "id": null,
+        "tag": "SELECT",
+        "role": null,
+        "name": "Language",
+        "value": "en",
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "checkpoint": {
+        "before": "69e1614807eae866e5194ec48468170e5d75584b35840c6c3e2978f24c040062",
+        "after": "13ddeed836cc894a07a87755ffafd63e6e17478aa60fc134bcedcd086724dc39",
+        "unchangedActions": 0
+      }
+    },
+    {
+      "index": 21,
+      "action": {
+        "name": "press_key",
+        "arguments": {
+          "key": "Tab"
+        }
+      },
+      "timestamp": "2026-10-26T19:08:56.792Z",
+      "focusBefore": {
+        "id": null,
+        "tag": "SELECT",
+        "role": null,
+        "name": "Language",
+        "value": "en",
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "focusAfter": {
+        "id": null,
+        "tag": "SELECT",
+        "role": null,
+        "name": "Python version",
+        "value": "3.15",
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "checkpoint": {
+        "before": "13ddeed836cc894a07a87755ffafd63e6e17478aa60fc134bcedcd086724dc39",
+        "after": "0fd036ba3312bf9fc234e030abb657b0e779a42381638fb6566f551923073d02",
+        "unchangedActions": 0
+      }
+    },
+    {
+      "index": 22,
+      "action": {
+        "name": "press_key",
+        "arguments": {
+          "key": "Tab"
+        }
+      },
+      "timestamp": "2026-10-26T19:09:01.643Z",
+      "focusBefore": {
+        "id": null,
+        "tag": "SELECT",
+        "role": null,
+        "name": "Python version",
+        "value": "3.15",
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "focusAfter": {
+        "id": null,
+        "tag": "A",
+        "role": null,
+        "name": "3.15.2 Documentation",
+        "value": null,
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "checkpoint": {
+        "before": "0fd036ba3312bf9fc234e030abb657b0e779a42381638fb6566f551923073d02",
+        "after": "ea5a3e782a30f612ad6241e6349192249f924a74c4f340c8b635e814b04c4d68",
+        "unchangedActions": 0
+      }
+    },
+    {
+      "index": 23,
+      "action": {
+        "name": "press_key",
+        "arguments": {
+          "key": "Tab"
+        }
+      },
+      "timestamp": "2026-10-26T19:09:08.248Z",
+      "focusBefore": {
+        "id": null,
+        "tag": "A",
+        "role": null,
+        "name": "3.15.2 Documentation",
+        "value": null,
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "focusAfter": {
+        "id": null,
+        "tag": "A",
+        "role": null,
+        "name": "",
+        "value": null,
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "checkpoint": {
+        "before": "ea5a3e782a30f612ad6241e6349192249f924a74c4f340c8b635e814b04c4d68",
+        "after": "f4d32e023c9279b054cf94584bff52e0c419716aaa090be5d3c5c408d817c99a",
+        "unchangedActions": 0
+      }
+    },
+    {
+      "index": 24,
+      "action": {
+        "name": "press_key",
+        "arguments": {
+          "key": "Tab"
+        }
+      },
+      "timestamp": "2026-10-26T19:09:12.530Z",
+      "focusBefore": {
+        "id": null,
+        "tag": "A",
+        "role": null,
+        "name": "",
+        "value": null,
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "focusAfter": {
+        "id": "search-box",
+        "tag": "INPUT",
+        "role": null,
+        "name": "Quick search",
+        "value": "",
+        "selectionStart": 0,
+        "selectionEnd": 0
+      },
+      "checkpoint": {
+        "before": "f4d32e023c9279b054cf94584bff52e0c419716aaa090be5d3c5c408d817c99a",
+        "after": "e4fad08de9a9fbc1282c2e1da6c6a7675561def6352848ff36845ed59e01dee4",
+        "unchangedActions": 0
+      }
+    },
+    {
+      "index": 25,
+      "action": {
+        "name": "type_text",
+        "arguments": {
+          "text": "venv"
+        }
+      },
+      "timestamp": "2026-10-26T19:09:16.481Z",
+      "focusBefore": {
+        "id": "search-box",
+        "tag": "INPUT",
+        "role": null,
+        "name": "Quick search",
+        "value": "",
+        "selectionStart": 0,
+        "selectionEnd": 0
+      },
+      "focusAfter": {
+        "id": "search-box",
+        "tag": "INPUT",
+        "role": null,
+        "name": "Quick search",
+        "value": "venv",
+        "selectionStart": 4,
+        "selectionEnd": 4
+      },
+      "checkpoint": {
+        "before": "e4fad08de9a9fbc1282c2e1da6c6a7675561def6352848ff36845ed59e01dee4",
+        "after": "f2c0b121374c80f2aeeeb23a82287cb394758de5eda08f8d72666018230852b7",
+        "unchangedActions": 0
+      }
+    }
+  ],
+  "usage": [
+    {
+      "input_tokens": 5774,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 336,
+      "output_tokens_details": {
+        "reasoning_tokens": 258
+      },
+      "total_tokens": 6110
+    },
+    {
+      "input_tokens": 5827,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 552,
+      "output_tokens_details": {
+        "reasoning_tokens": 478
+      },
+      "total_tokens": 6379
+    },
+    {
+      "input_tokens": 5881,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 360,
+      "output_tokens_details": {
+        "reasoning_tokens": 287
+      },
+      "total_tokens": 6241
+    },
+    {
+      "input_tokens": 5933,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 323,
+      "output_tokens_details": {
+        "reasoning_tokens": 248
+      },
+      "total_tokens": 6256
+    },
+    {
+      "input_tokens": 5987,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 452,
+      "output_tokens_details": {
+        "reasoning_tokens": 383
+      },
+      "total_tokens": 6439
+    },
+    {
+      "input_tokens": 6039,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 203,
+      "output_tokens_details": {
+        "reasoning_tokens": 132
+      },
+      "total_tokens": 6242
+    },
+    {
+      "input_tokens": 6093,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 484,
+      "output_tokens_details": {
+        "reasoning_tokens": 412
+      },
+      "total_tokens": 6577
+    },
+    {
+      "input_tokens": 6145,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 529,
+      "output_tokens_details": {
+        "reasoning_tokens": 453
+      },
+      "total_tokens": 6674
+    },
+    {
+      "input_tokens": 6199,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 412,
+      "output_tokens_details": {
+        "reasoning_tokens": 343
+      },
+      "total_tokens": 6611
+    },
+    {
+      "input_tokens": 6251,
+      "input_tokens_details": {
+        "cached_tokens": 753
+      },
+      "output_tokens": 1288,
+      "output_tokens_details": {
+        "reasoning_tokens": 1214
+      },
+      "total_tokens": 7539
+    },
+    {
+      "input_tokens": 6303,
+      "input_tokens_details": {
+        "cached_tokens": 753
+      },
+      "output_tokens": 280,
+      "output_tokens_details": {
+        "reasoning_tokens": 209
+      },
+      "total_tokens": 6583
+    },
+    {
+      "input_tokens": 6357,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 402,
+      "output_tokens_details": {
+        "reasoning_tokens": 329
+      },
+      "total_tokens": 6759
+    },
+    {
+      "input_tokens": 6409,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 379,
+      "output_tokens_details": {
+        "reasoning_tokens": 304
+      },
+      "total_tokens": 6788
+    },
+    {
+      "input_tokens": 6463,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 534,
+      "output_tokens_details": {
+        "reasoning_tokens": 461
+      },
+      "total_tokens": 6997
+    },
+    {
+      "input_tokens": 6515,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 504,
+      "output_tokens_details": {
+        "reasoning_tokens": 429
+      },
+      "total_tokens": 7019
+    },
+    {
+      "input_tokens": 6569,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 420,
+      "output_tokens_details": {
+        "reasoning_tokens": 349
+      },
+      "total_tokens": 6989
+    },
+    {
+      "input_tokens": 6623,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 318,
+      "output_tokens_details": {
+        "reasoning_tokens": 245
+      },
+      "total_tokens": 6941
+    },
+    {
+      "input_tokens": 6675,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 740,
+      "output_tokens_details": {
+        "reasoning_tokens": 663
+      },
+      "total_tokens": 7415
+    },
+    {
+      "input_tokens": 6727,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 464,
+      "output_tokens_details": {
+        "reasoning_tokens": 395
+      },
+      "total_tokens": 7191
+    },
+    {
+      "input_tokens": 6779,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 204,
+      "output_tokens_details": {
+        "reasoning_tokens": 131
+      },
+      "total_tokens": 6983
+    },
+    {
+      "input_tokens": 6831,
+      "input_tokens_details": {
+        "cached_tokens": 753
+      },
+      "output_tokens": 501,
+      "output_tokens_details": {
+        "reasoning_tokens": 426
+      },
+      "total_tokens": 7332
+    },
+    {
+      "input_tokens": 6889,
+      "input_tokens_details": {
+        "cached_tokens": 753
+      },
+      "output_tokens": 187,
+      "output_tokens_details": {
+        "reasoning_tokens": 117
+      },
+      "total_tokens": 7076
+    },
+    {
+      "input_tokens": 6948,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 441,
+      "output_tokens_details": {
+        "reasoning_tokens": 367
+      },
+      "total_tokens": 7389
+    },
+    {
+      "input_tokens": 6991,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 183,
+      "output_tokens_details": {
+        "reasoning_tokens": 110
+      },
+      "total_tokens": 7174
+    },
+    {
+      "input_tokens": 7046,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 338,
+      "output_tokens_details": {
+        "reasoning_tokens": 266
+      },
+      "total_tokens": 7384
+    }
+  ],
+  "requests": [
+    {
+      "index": 1,
+      "startedAt": "2026-10-26T19:06:46.446Z",
+      "state": "validated",
+      "preflightInputTokens": 5917,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 5774,
+        "input_tokens_details": {
+          "cached_tokens": 0
+        },
+        "output_tokens": 336,
+        "output_tokens_details": {
+          "reasoning_tokens": 258
+        },
+        "total_tokens": 6110
+      }
+    },
+    {
+      "index": 2,
+      "startedAt": "2026-10-26T19:06:52.575Z",
+      "state": "validated",
+      "preflightInputTokens": 5970,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 5827,
+        "input_tokens_details": {
+          "cached_tokens": 0
+        },
+        "output_tokens": 552,
+        "output_tokens_details": {
+          "reasoning_tokens": 478
+        },
+        "total_tokens": 6379
+      }
+    },
+    {
+      "index": 3,
+      "startedAt": "2026-10-26T19:06:57.772Z",
+      "state": "validated",
+      "preflightInputTokens": 6024,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 5881,
+        "input_tokens_details": {
+          "cached_tokens": 0
+        },
+        "output_tokens": 360,
+        "output_tokens_details": {
+          "reasoning_tokens": 287
+        },
+        "total_tokens": 6241
+      }
+    },
+    {
+      "index": 4,
+      "startedAt": "2026-10-26T19:07:07.656Z",
+      "state": "validated",
+      "preflightInputTokens": 6076,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 5933,
+        "input_tokens_details": {
+          "cached_tokens": 0
+        },
+        "output_tokens": 323,
+        "output_tokens_details": {
+          "reasoning_tokens": 248
+        },
+        "total_tokens": 6256
+      }
+    },
+    {
+      "index": 5,
+      "startedAt": "2026-10-26T19:07:14.239Z",
+      "state": "validated",
+      "preflightInputTokens": 6130,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 5987,
+        "input_tokens_details": {
+          "cached_tokens": 0
+        },
+        "output_tokens": 452,
+        "output_tokens_details": {
+          "reasoning_tokens": 383
+        },
+        "total_tokens": 6439
+      }
+    },
+    {
+      "index": 6,
+      "startedAt": "2026-10-26T19:07:22.827Z",
+      "state": "validated",
+      "preflightInputTokens": 6182,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 6039,
+        "input_tokens_details": {
+          "cached_tokens": 0
+        },
+        "output_tokens": 203,
+        "output_tokens_details": {
+          "reasoning_tokens": 132
+        },
+        "total_tokens": 6242
+      }
+    },
+    {
+      "index": 7,
+      "startedAt": "2026-10-26T19:07:28.623Z",
+      "state": "validated",
+      "preflightInputTokens": 6236,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 6093,
+        "input_tokens_details": {
+          "cached_tokens": 0
+        },
+        "output_tokens": 484,
+        "output_tokens_details": {
+          "reasoning_tokens": 412
+        },
+        "total_tokens": 6577
+      }
+    },
+    {
+      "index": 8,
+      "startedAt": "2026-10-26T19:07:34.038Z",
+      "state": "validated",
+      "preflightInputTokens": 6288,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 6145,
+        "input_tokens_details": {
+          "cached_tokens": 0
+        },
+        "output_tokens": 529,
+        "output_tokens_details": {
+          "reasoning_tokens": 453
+        },
+        "total_tokens": 6674
+      }
+    },
+    {
+      "index": 9,
+      "startedAt": "2026-10-26T19:07:39.171Z",
+      "state": "validated",
+      "preflightInputTokens": 6342,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 6199,
+        "input_tokens_details": {
+          "cached_tokens": 0
+        },
+        "output_tokens": 412,
+        "output_tokens_details": {
+          "reasoning_tokens": 343
+        },
+        "total_tokens": 6611
+      }
+    },
+    {
+      "index": 10,
+      "startedAt": "2026-10-26T19:07:45.788Z",
+      "state": "validated",
+      "preflightInputTokens": 6394,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 6251,
+        "input_tokens_details": {
+          "cached_tokens": 753
+        },
+        "output_tokens": 1288,
+        "output_tokens_details": {
+          "reasoning_tokens": 1214
+        },
+        "total_tokens": 7539
+      }
+    },
+    {
+      "index": 11,
+      "startedAt": "2026-10-26T19:07:54.720Z",
+      "state": "validated",
+      "preflightInputTokens": 6446,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 6303,
+        "input_tokens_details": {
+          "cached_tokens": 753
+        },
+        "output_tokens": 280,
+        "output_tokens_details": {
+          "reasoning_tokens": 209
+        },
+        "total_tokens": 6583
+      }
+    },
+    {
+      "index": 12,
+      "startedAt": "2026-10-26T19:08:01.554Z",
+      "state": "validated",
+      "preflightInputTokens": 6500,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 6357,
+        "input_tokens_details": {
+          "cached_tokens": 0
+        },
+        "output_tokens": 402,
+        "output_tokens_details": {
+          "reasoning_tokens": 329
+        },
+        "total_tokens": 6759
+      }
+    },
+    {
+      "index": 13,
+      "startedAt": "2026-10-26T19:08:06.653Z",
+      "state": "validated",
+      "preflightInputTokens": 6552,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 6409,
+        "input_tokens_details": {
+          "cached_tokens": 0
+        },
+        "output_tokens": 379,
+        "output_tokens_details": {
+          "reasoning_tokens": 304
+        },
+        "total_tokens": 6788
+      }
+    },
+    {
+      "index": 14,
+      "startedAt": "2026-10-26T19:08:14.352Z",
+      "state": "validated",
+      "preflightInputTokens": 6606,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 6463,
+        "input_tokens_details": {
+          "cached_tokens": 0
+        },
+        "output_tokens": 534,
+        "output_tokens_details": {
+          "reasoning_tokens": 461
+        },
+        "total_tokens": 6997
+      }
+    },
+    {
+      "index": 15,
+      "startedAt": "2026-10-26T19:08:20.253Z",
+      "state": "validated",
+      "preflightInputTokens": 6658,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 6515,
+        "input_tokens_details": {
+          "cached_tokens": 0
+        },
+        "output_tokens": 504,
+        "output_tokens_details": {
+          "reasoning_tokens": 429
+        },
+        "total_tokens": 7019
+      }
+    },
+    {
+      "index": 16,
+      "startedAt": "2026-10-26T19:08:26.287Z",
+      "state": "validated",
+      "preflightInputTokens": 6712,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 6569,
+        "input_tokens_details": {
+          "cached_tokens": 0
+        },
+        "output_tokens": 420,
+        "output_tokens_details": {
+          "reasoning_tokens": 349
+        },
+        "total_tokens": 6989
+      }
+    },
+    {
+      "index": 17,
+      "startedAt": "2026-10-26T19:08:31.587Z",
+      "state": "validated",
+      "preflightInputTokens": 6766,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 6623,
+        "input_tokens_details": {
+          "cached_tokens": 0
+        },
+        "output_tokens": 318,
+        "output_tokens_details": {
+          "reasoning_tokens": 245
+        },
+        "total_tokens": 6941
+      }
+    },
+    {
+      "index": 18,
+      "startedAt": "2026-10-26T19:08:36.639Z",
+      "state": "validated",
+      "preflightInputTokens": 6818,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 6675,
+        "input_tokens_details": {
+          "cached_tokens": 0
+        },
+        "output_tokens": 740,
+        "output_tokens_details": {
+          "reasoning_tokens": 663
+        },
+        "total_tokens": 7415
+      }
+    },
+    {
+      "index": 19,
+      "startedAt": "2026-10-26T19:08:42.002Z",
+      "state": "validated",
+      "preflightInputTokens": 6870,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 6727,
+        "input_tokens_details": {
+          "cached_tokens": 0
+        },
+        "output_tokens": 464,
+        "output_tokens_details": {
+          "reasoning_tokens": 395
+        },
+        "total_tokens": 7191
+      }
+    },
+    {
+      "index": 20,
+      "startedAt": "2026-10-26T19:08:47.202Z",
+      "state": "validated",
+      "preflightInputTokens": 6922,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 6779,
+        "input_tokens_details": {
+          "cached_tokens": 0
+        },
+        "output_tokens": 204,
+        "output_tokens_details": {
+          "reasoning_tokens": 131
+        },
+        "total_tokens": 6983
+      }
+    },
+    {
+      "index": 21,
+      "startedAt": "2026-10-26T19:08:50.918Z",
+      "state": "validated",
+      "preflightInputTokens": 6974,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 6831,
+        "input_tokens_details": {
+          "cached_tokens": 753
+        },
+        "output_tokens": 501,
+        "output_tokens_details": {
+          "reasoning_tokens": 426
+        },
+        "total_tokens": 7332
+      }
+    },
+    {
+      "index": 22,
+      "startedAt": "2026-10-26T19:08:56.835Z",
+      "state": "validated",
+      "preflightInputTokens": 7032,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 6889,
+        "input_tokens_details": {
+          "cached_tokens": 753
+        },
+        "output_tokens": 187,
+        "output_tokens_details": {
+          "reasoning_tokens": 117
+        },
+        "total_tokens": 7076
+      }
+    },
+    {
+      "index": 23,
+      "startedAt": "2026-10-26T19:09:01.684Z",
+      "state": "validated",
+      "preflightInputTokens": 7091,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 6948,
+        "input_tokens_details": {
+          "cached_tokens": 0
+        },
+        "output_tokens": 441,
+        "output_tokens_details": {
+          "reasoning_tokens": 367
+        },
+        "total_tokens": 7389
+      }
+    },
+    {
+      "index": 24,
+      "startedAt": "2026-10-26T19:09:08.300Z",
+      "state": "validated",
+      "preflightInputTokens": 7134,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 6991,
+        "input_tokens_details": {
+          "cached_tokens": 0
+        },
+        "output_tokens": 183,
+        "output_tokens_details": {
+          "reasoning_tokens": 110
+        },
+        "total_tokens": 7174
+      }
+    },
+    {
+      "index": 25,
+      "startedAt": "2026-10-26T19:09:12.585Z",
+      "state": "validated",
+      "preflightInputTokens": 7189,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 7046,
+        "input_tokens_details": {
+          "cached_tokens": 0
+        },
+        "output_tokens": 338,
+        "output_tokens_details": {
+          "reasoning_tokens": 266
+        },
+        "total_tokens": 7384
+      }
+    }
+  ],
+  "scope": "Website keyboard-task attempt; completion is model-reported, without an independent success oracle.",
+  "executionMode": "meta-live",
+  "configuration": {
+    "schema": 1,
+    "fixtureAndAgentBuild": "2c408c2bd66880032d8afa9059cd3f20515c4bcba3fc744f5220fc0b41026ab9",
+    "browserVersion": "156.0.8078.4",
+    "playwrightVersion": "1.64.1",
+    "platform": "darwin",
+    "architecture": "arm64",
+    "seed": null,
+    "requestedModel": "muse-spark-1.3",
+    "inputTokenLimit": 64000,
+    "modelSettings": {
+      "tool_choice": "auto",
+      "parallel_tool_calls": false,
+      "max_output_tokens": 2048,
+      "store": false
+    },
+    "contextPolicy": {
+      "version": 2,
+      "observations": "current-screenshot-and-page",
+      "memory": "complete-action-ledger-and-bounded-page-excerpts",
+      "maxActions": 25,
+      "maxPageExcerpts": 3,
+      "maxExcerptCharacters": 12000
+    },
+    "targetKind": "custom",
+    "completionVerification": "model-reported"
+  },
+  "finalUrl": "https://docs.python.org/3/",
+  "latestScreenshot": "24-after.png",
+  "stopPolicy": {
+    "version": 1,
+    "unchangedActions": 3,
+    "tabCycleMinimum": 2
+  },
+  "model": "muse-spark-1.3",
+  "executedActions": 25,
+  "agentResult": {
+    "outcome": "agent_inconclusive",
+    "reason": "action_budget_exhausted",
+    "valid": true
+  },
+  "evidenceSkipped": "custom_target",
+  "replaysSkipped": "custom_target",
+  "finishedAt": "2026-10-26T19:09:16.502Z"
+}

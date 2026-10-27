@@ -1,0 +1,785 @@
+{
+  "schema": 1,
+  "checkedAt": "2026-10-26T19:37:45.989Z",
+  "scope": "Known upstream React Aria issue 10395 reproduced with the unmodified pinned npm package; explicit tabIndex=0 is an application integration workaround, not an upstream library patch. Deterministic checks; no model calls.",
+  "upstreamIssue": "https://github.com/adobe/react-spectrum/issues/10395",
+  "browserVersion": "156.0.8078.4",
+  "nodeVersion": "v24.21.0",
+  "platform": "darwin",
+  "architecture": "arm64",
+  "component": {
+    "version": "1.19.0",
+    "resolved": "https://registry.npmjs.org/react-aria-components/-/react-aria-components-1.19.0.tgz",
+    "integrity": "sha512-2smSS5nqJ8cGYMQezuUXveZm7eMyHCqTN6mDpylQBYLYbdF5dxCCuW1DHn1VKLe1DybSfPvX/cZtJlDmvFfn8A==",
+    "license": "Apache-2.0",
+    "dependencies": {
+      "@internationalized/date": "^3.12.2",
+      "@react-types/shared": "^3.36.0",
+      "@swc/helpers": "^0.5.0",
+      "client-only": "^0.0.1",
+      "react-aria": "3.50.0",
+      "react-stately": "3.48.0"
+    },
+    "peerDependencies": {
+      "react": "^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0-rc.1",
+      "react-dom": "^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0-rc.1"
+    }
+  },
+  "sources": {
+    "app": "471b659ef14cfef2c2c4c9f1fb48c40ca55a5b55dd4253b5af68c82a1c5e3deb",
+    "lock": "3c000d8ea07d3fc00f51b2352df4e35e230570cca3ce1fe9f214f6b1fc8cefb8",
+    "contract": "9c6fe1b9604ff228a6fba3f40849191705e773575c5de913a4c3cbc0b7217b7b",
+    "test": "960c101bc46bf4952a377f02cddf1e45ff2ed191665f20eed3174d65f177f3ab"
+  },
+  "keyboardSequence": [
+    "Tab",
+    "Enter",
+    "Tab",
+    "End",
+    "Escape"
+  ],
+  "results": [
+    {
+      "condition": "original",
+      "repeat": 1,
+      "passed": false,
+      "contract": {
+        "panelReached": false,
+        "panelScrolled": false,
+        "endReached": false,
+        "dialogClosed": true
+      },
+      "actions": [
+        {
+          "index": 1,
+          "action": {
+            "name": "press_key",
+            "arguments": {
+              "key": "Tab"
+            }
+          },
+          "state": {
+            "focusId": "open-reading",
+            "focusTag": "BUTTON",
+            "dialogOpen": false,
+            "panelPresent": false,
+            "panelFocused": false,
+            "scrollTop": null,
+            "scrollHeight": null,
+            "clientHeight": null,
+            "atEnd": false,
+            "endVisible": false
+          }
+        },
+        {
+          "index": 2,
+          "action": {
+            "name": "press_key",
+            "arguments": {
+              "key": "Enter"
+            }
+          },
+          "state": {
+            "focusId": "react-aria9341678167-:r0:",
+            "focusTag": "SECTION",
+            "dialogOpen": true,
+            "panelPresent": true,
+            "panelFocused": false,
+            "scrollTop": 0,
+            "scrollHeight": 2796,
+            "clientHeight": 536,
+            "atEnd": false,
+            "endVisible": false
+          }
+        },
+        {
+          "index": 3,
+          "action": {
+            "name": "press_key",
+            "arguments": {
+              "key": "Tab"
+            }
+          },
+          "state": {
+            "focusId": "close-reading",
+            "focusTag": "BUTTON",
+            "dialogOpen": true,
+            "panelPresent": true,
+            "panelFocused": false,
+            "scrollTop": 0,
+            "scrollHeight": 2796,
+            "clientHeight": 536,
+            "atEnd": false,
+            "endVisible": false
+          }
+        },
+        {
+          "index": 4,
+          "action": {
+            "name": "press_key",
+            "arguments": {
+              "key": "End"
+            }
+          },
+          "state": {
+            "focusId": "close-reading",
+            "focusTag": "BUTTON",
+            "dialogOpen": true,
+            "panelPresent": true,
+            "panelFocused": false,
+            "scrollTop": 0,
+            "scrollHeight": 2796,
+            "clientHeight": 536,
+            "atEnd": false,
+            "endVisible": false
+          }
+        },
+        {
+          "index": 5,
+          "action": {
+            "name": "press_key",
+            "arguments": {
+              "key": "Escape"
+            }
+          },
+          "state": {
+            "focusId": "open-reading",
+            "focusTag": "BUTTON",
+            "dialogOpen": false,
+            "panelPresent": false,
+            "panelFocused": false,
+            "scrollTop": null,
+            "scrollHeight": null,
+            "clientHeight": null,
+            "atEnd": false,
+            "endVisible": false
+          }
+        }
+      ],
+      "errors": [],
+      "pointerControl": {
+        "scrollTop": 900,
+        "passed": true
+      }
+    },
+    {
+      "condition": "original",
+      "repeat": 2,
+      "passed": false,
+      "contract": {
+        "panelReached": false,
+        "panelScrolled": false,
+        "endReached": false,
+        "dialogClosed": true
+      },
+      "actions": [
+        {
+          "index": 1,
+          "action": {
+            "name": "press_key",
+            "arguments": {
+              "key": "Tab"
+            }
+          },
+          "state": {
+            "focusId": "open-reading",
+            "focusTag": "BUTTON",
+            "dialogOpen": false,
+            "panelPresent": false,
+            "panelFocused": false,
+            "scrollTop": null,
+            "scrollHeight": null,
+            "clientHeight": null,
+            "atEnd": false,
+            "endVisible": false
+          }
+        },
+        {
+          "index": 2,
+          "action": {
+            "name": "press_key",
+            "arguments": {
+              "key": "Enter"
+            }
+          },
+          "state": {
+            "focusId": "react-aria2784391209-:r0:",
+            "focusTag": "SECTION",
+            "dialogOpen": true,
+            "panelPresent": true,
+            "panelFocused": false,
+            "scrollTop": 0,
+            "scrollHeight": 2796,
+            "clientHeight": 536,
+            "atEnd": false,
+            "endVisible": false
+          }
+        },
+        {
+          "index": 3,
+          "action": {
+            "name": "press_key",
+            "arguments": {
+              "key": "Tab"
+            }
+          },
+          "state": {
+            "focusId": "close-reading",
+            "focusTag": "BUTTON",
+            "dialogOpen": true,
+            "panelPresent": true,
+            "panelFocused": false,
+            "scrollTop": 0,
+            "scrollHeight": 2796,
+            "clientHeight": 536,
+            "atEnd": false,
+            "endVisible": false
+          }
+        },
+        {
+          "index": 4,
+          "action": {
+            "name": "press_key",
+            "arguments": {
+              "key": "End"
+            }
+          },
+          "state": {
+            "focusId": "close-reading",
+            "focusTag": "BUTTON",
+            "dialogOpen": true,
+            "panelPresent": true,
+            "panelFocused": false,
+            "scrollTop": 0,
+            "scrollHeight": 2796,
+            "clientHeight": 536,
+            "atEnd": false,
+            "endVisible": false
+          }
+        },
+        {
+          "index": 5,
+          "action": {
+            "name": "press_key",
+            "arguments": {
+              "key": "Escape"
+            }
+          },
+          "state": {
+            "focusId": "open-reading",
+            "focusTag": "BUTTON",
+            "dialogOpen": false,
+            "panelPresent": false,
+            "panelFocused": false,
+            "scrollTop": null,
+            "scrollHeight": null,
+            "clientHeight": null,
+            "atEnd": false,
+            "endVisible": false
+          }
+        }
+      ],
+      "errors": [],
+      "pointerControl": {
+        "scrollTop": 900,
+        "passed": true
+      }
+    },
+    {
+      "condition": "original",
+      "repeat": 3,
+      "passed": false,
+      "contract": {
+        "panelReached": false,
+        "panelScrolled": false,
+        "endReached": false,
+        "dialogClosed": true
+      },
+      "actions": [
+        {
+          "index": 1,
+          "action": {
+            "name": "press_key",
+            "arguments": {
+              "key": "Tab"
+            }
+          },
+          "state": {
+            "focusId": "open-reading",
+            "focusTag": "BUTTON",
+            "dialogOpen": false,
+            "panelPresent": false,
+            "panelFocused": false,
+            "scrollTop": null,
+            "scrollHeight": null,
+            "clientHeight": null,
+            "atEnd": false,
+            "endVisible": false
+          }
+        },
+        {
+          "index": 2,
+          "action": {
+            "name": "press_key",
+            "arguments": {
+              "key": "Enter"
+            }
+          },
+          "state": {
+            "focusId": "react-aria9213611805-:r0:",
+            "focusTag": "SECTION",
+            "dialogOpen": true,
+            "panelPresent": true,
+            "panelFocused": false,
+            "scrollTop": 0,
+            "scrollHeight": 2796,
+            "clientHeight": 536,
+            "atEnd": false,
+            "endVisible": false
+          }
+        },
+        {
+          "index": 3,
+          "action": {
+            "name": "press_key",
+            "arguments": {
+              "key": "Tab"
+            }
+          },
+          "state": {
+            "focusId": "close-reading",
+            "focusTag": "BUTTON",
+            "dialogOpen": true,
+            "panelPresent": true,
+            "panelFocused": false,
+            "scrollTop": 0,
+            "scrollHeight": 2796,
+            "clientHeight": 536,
+            "atEnd": false,
+            "endVisible": false
+          }
+        },
+        {
+          "index": 4,
+          "action": {
+            "name": "press_key",
+            "arguments": {
+              "key": "End"
+            }
+          },
+          "state": {
+            "focusId": "close-reading",
+            "focusTag": "BUTTON",
+            "dialogOpen": true,
+            "panelPresent": true,
+            "panelFocused": false,
+            "scrollTop": 0,
+            "scrollHeight": 2796,
+            "clientHeight": 536,
+            "atEnd": false,
+            "endVisible": false
+          }
+        },
+        {
+          "index": 5,
+          "action": {
+            "name": "press_key",
+            "arguments": {
+              "key": "Escape"
+            }
+          },
+          "state": {
+            "focusId": "open-reading",
+            "focusTag": "BUTTON",
+            "dialogOpen": false,
+            "panelPresent": false,
+            "panelFocused": false,
+            "scrollTop": null,
+            "scrollHeight": null,
+            "clientHeight": null,
+            "atEnd": false,
+            "endVisible": false
+          }
+        }
+      ],
+      "errors": [],
+      "pointerControl": {
+        "scrollTop": 900,
+        "passed": true
+      }
+    },
+    {
+      "condition": "native-control",
+      "passed": true,
+      "state": {
+        "focusId": "reading-panel",
+        "focusTag": "DIV",
+        "dialogOpen": false,
+        "panelPresent": true,
+        "panelFocused": true,
+        "scrollTop": 2436,
+        "scrollHeight": 2796,
+        "clientHeight": 360,
+        "atEnd": true,
+        "endVisible": true
+      }
+    },
+    {
+      "condition": "corrected",
+      "repeat": 1,
+      "passed": true,
+      "contract": {
+        "panelReached": true,
+        "panelScrolled": true,
+        "endReached": true,
+        "dialogClosed": true
+      },
+      "actions": [
+        {
+          "index": 1,
+          "action": {
+            "name": "press_key",
+            "arguments": {
+              "key": "Tab"
+            }
+          },
+          "state": {
+            "focusId": "open-reading",
+            "focusTag": "BUTTON",
+            "dialogOpen": false,
+            "panelPresent": false,
+            "panelFocused": false,
+            "scrollTop": null,
+            "scrollHeight": null,
+            "clientHeight": null,
+            "atEnd": false,
+            "endVisible": false
+          }
+        },
+        {
+          "index": 2,
+          "action": {
+            "name": "press_key",
+            "arguments": {
+              "key": "Enter"
+            }
+          },
+          "state": {
+            "focusId": "react-aria511530739-:r0:",
+            "focusTag": "SECTION",
+            "dialogOpen": true,
+            "panelPresent": true,
+            "panelFocused": false,
+            "scrollTop": 0,
+            "scrollHeight": 2796,
+            "clientHeight": 536,
+            "atEnd": false,
+            "endVisible": false
+          }
+        },
+        {
+          "index": 3,
+          "action": {
+            "name": "press_key",
+            "arguments": {
+              "key": "Tab"
+            }
+          },
+          "state": {
+            "focusId": "reading-panel",
+            "focusTag": "DIV",
+            "dialogOpen": true,
+            "panelPresent": true,
+            "panelFocused": true,
+            "scrollTop": 0,
+            "scrollHeight": 2796,
+            "clientHeight": 536,
+            "atEnd": false,
+            "endVisible": false
+          }
+        },
+        {
+          "index": 4,
+          "action": {
+            "name": "press_key",
+            "arguments": {
+              "key": "End"
+            }
+          },
+          "state": {
+            "focusId": "reading-panel",
+            "focusTag": "DIV",
+            "dialogOpen": true,
+            "panelPresent": true,
+            "panelFocused": true,
+            "scrollTop": 2260,
+            "scrollHeight": 2796,
+            "clientHeight": 536,
+            "atEnd": true,
+            "endVisible": true
+          }
+        },
+        {
+          "index": 5,
+          "action": {
+            "name": "press_key",
+            "arguments": {
+              "key": "Escape"
+            }
+          },
+          "state": {
+            "focusId": "open-reading",
+            "focusTag": "BUTTON",
+            "dialogOpen": false,
+            "panelPresent": false,
+            "panelFocused": false,
+            "scrollTop": null,
+            "scrollHeight": null,
+            "clientHeight": null,
+            "atEnd": false,
+            "endVisible": false
+          }
+        }
+      ],
+      "errors": []
+    },
+    {
+      "condition": "corrected",
+      "repeat": 2,
+      "passed": true,
+      "contract": {
+        "panelReached": true,
+        "panelScrolled": true,
+        "endReached": true,
+        "dialogClosed": true
+      },
+      "actions": [
+        {
+          "index": 1,
+          "action": {
+            "name": "press_key",
+            "arguments": {
+              "key": "Tab"
+            }
+          },
+          "state": {
+            "focusId": "open-reading",
+            "focusTag": "BUTTON",
+            "dialogOpen": false,
+            "panelPresent": false,
+            "panelFocused": false,
+            "scrollTop": null,
+            "scrollHeight": null,
+            "clientHeight": null,
+            "atEnd": false,
+            "endVisible": false
+          }
+        },
+        {
+          "index": 2,
+          "action": {
+            "name": "press_key",
+            "arguments": {
+              "key": "Enter"
+            }
+          },
+          "state": {
+            "focusId": "react-aria5439640867-:r0:",
+            "focusTag": "SECTION",
+            "dialogOpen": true,
+            "panelPresent": true,
+            "panelFocused": false,
+            "scrollTop": 0,
+            "scrollHeight": 2796,
+            "clientHeight": 536,
+            "atEnd": false,
+            "endVisible": false
+          }
+        },
+        {
+          "index": 3,
+          "action": {
+            "name": "press_key",
+            "arguments": {
+              "key": "Tab"
+            }
+          },
+          "state": {
+            "focusId": "reading-panel",
+            "focusTag": "DIV",
+            "dialogOpen": true,
+            "panelPresent": true,
+            "panelFocused": true,
+            "scrollTop": 0,
+            "scrollHeight": 2796,
+            "clientHeight": 536,
+            "atEnd": false,
+            "endVisible": false
+          }
+        },
+        {
+          "index": 4,
+          "action": {
+            "name": "press_key",
+            "arguments": {
+              "key": "End"
+            }
+          },
+          "state": {
+            "focusId": "reading-panel",
+            "focusTag": "DIV",
+            "dialogOpen": true,
+            "panelPresent": true,
+            "panelFocused": true,
+            "scrollTop": 2260,
+            "scrollHeight": 2796,
+            "clientHeight": 536,
+            "atEnd": true,
+            "endVisible": true
+          }
+        },
+        {
+          "index": 5,
+          "action": {
+            "name": "press_key",
+            "arguments": {
+              "key": "Escape"
+            }
+          },
+          "state": {
+            "focusId": "open-reading",
+            "focusTag": "BUTTON",
+            "dialogOpen": false,
+            "panelPresent": false,
+            "panelFocused": false,
+            "scrollTop": null,
+            "scrollHeight": null,
+            "clientHeight": null,
+            "atEnd": false,
+            "endVisible": false
+          }
+        }
+      ],
+      "errors": []
+    },
+    {
+      "condition": "corrected",
+      "repeat": 3,
+      "passed": true,
+      "contract": {
+        "panelReached": true,
+        "panelScrolled": true,
+        "endReached": true,
+        "dialogClosed": true
+      },
+      "actions": [
+        {
+          "index": 1,
+          "action": {
+            "name": "press_key",
+            "arguments": {
+              "key": "Tab"
+            }
+          },
+          "state": {
+            "focusId": "open-reading",
+            "focusTag": "BUTTON",
+            "dialogOpen": false,
+            "panelPresent": false,
+            "panelFocused": false,
+            "scrollTop": null,
+            "scrollHeight": null,
+            "clientHeight": null,
+            "atEnd": false,
+            "endVisible": false
+          }
+        },
+        {
+          "index": 2,
+          "action": {
+            "name": "press_key",
+            "arguments": {
+              "key": "Enter"
+            }
+          },
+          "state": {
+            "focusId": "react-aria3529120336-:r0:",
+            "focusTag": "SECTION",
+            "dialogOpen": true,
+            "panelPresent": true,
+            "panelFocused": false,
+            "scrollTop": 0,
+            "scrollHeight": 2796,
+            "clientHeight": 536,
+            "atEnd": false,
+            "endVisible": false
+          }
+        },
+        {
+          "index": 3,
+          "action": {
+            "name": "press_key",
+            "arguments": {
+              "key": "Tab"
+            }
+          },
+          "state": {
+            "focusId": "reading-panel",
+            "focusTag": "DIV",
+            "dialogOpen": true,
+            "panelPresent": true,
+            "panelFocused": true,
+            "scrollTop": 0,
+            "scrollHeight": 2796,
+            "clientHeight": 536,
+            "atEnd": false,
+            "endVisible": false
+          }
+        },
+        {
+          "index": 4,
+          "action": {
+            "name": "press_key",
+            "arguments": {
+              "key": "End"
+            }
+          },
+          "state": {
+            "focusId": "reading-panel",
+            "focusTag": "DIV",
+            "dialogOpen": true,
+            "panelPresent": true,
+            "panelFocused": true,
+            "scrollTop": 2260,
+            "scrollHeight": 2796,
+            "clientHeight": 536,
+            "atEnd": true,
+            "endVisible": true
+          }
+        },
+        {
+          "index": 5,
+          "action": {
+            "name": "press_key",
+            "arguments": {
+              "key": "Escape"
+            }
+          },
+          "state": {
+            "focusId": "open-reading",
+            "focusTag": "BUTTON",
+            "dialogOpen": false,
+            "panelPresent": false,
+            "panelFocused": false,
+            "scrollTop": null,
+            "scrollHeight": null,
+            "clientHeight": null,
+            "atEnd": false,
+            "endVisible": false
+          }
+        }
+      ],
+      "errors": []
+    }
+  ]
+}

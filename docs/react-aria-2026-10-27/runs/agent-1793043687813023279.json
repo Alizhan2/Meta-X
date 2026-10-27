@@ -1,0 +1,363 @@
+{
+  "runId": "agent-1793043687813023279",
+  "targetKind": "custom",
+  "targetUrl": "http://127.0.0.1:59852/",
+  "task": "Open reading details, use the keyboard to focus the Reading panel and scroll that panel all the way to the end, then close the dialog.",
+  "startedAt": "2026-10-26T19:41:27.813Z",
+  "budget": 25,
+  "valid": true,
+  "outcome": "agent_inconclusive",
+  "reason": "model_reported_blockage",
+  "steps": [
+    {
+      "index": 1,
+      "action": {
+        "name": "press_key",
+        "arguments": {
+          "key": "Tab"
+        }
+      },
+      "timestamp": "2026-10-26T19:41:33.145Z",
+      "focusBefore": {
+        "id": null,
+        "tag": "BODY",
+        "role": null,
+        "name": "Page",
+        "value": null,
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "focusAfter": {
+        "id": "open-reading",
+        "tag": "BUTTON",
+        "role": null,
+        "name": "Open reading details",
+        "value": "",
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "checkpoint": {
+        "before": "d354c75c1ec6b6b1633d7c572fc9f63d1988b57f190a026117dcb1391fe3b751",
+        "after": "f439098be1db491d7383f2e278894f5728eb5e6ab5a33abde54ed02ed17b0e1c",
+        "unchangedActions": 0
+      }
+    },
+    {
+      "index": 2,
+      "action": {
+        "name": "press_key",
+        "arguments": {
+          "key": "Enter"
+        }
+      },
+      "timestamp": "2026-10-26T19:41:36.672Z",
+      "focusBefore": {
+        "id": "open-reading",
+        "tag": "BUTTON",
+        "role": null,
+        "name": "Open reading details",
+        "value": "",
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "focusAfter": {
+        "id": "react-aria9108445576-:r0:",
+        "tag": "SECTION",
+        "role": "dialog",
+        "name": "Reading details\n\nThe reading panel below contains the complete document.\n\nSection 1\n\nThis document demonstrates a scrollable region inside a third-party modal. ",
+        "value": null,
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "checkpoint": {
+        "before": "f439098be1db491d7383f2e278894f5728eb5e6ab5a33abde54ed02ed17b0e1c",
+        "after": "914cce01770d5efd7fa4ed70a8be8560e6400f3eacacbb6fc2e1b9b1dd63b838",
+        "unchangedActions": 0
+      }
+    },
+    {
+      "index": 3,
+      "action": {
+        "name": "press_key",
+        "arguments": {
+          "key": "Tab"
+        }
+      },
+      "timestamp": "2026-10-26T19:41:42.240Z",
+      "focusBefore": {
+        "id": "react-aria9108445576-:r0:",
+        "tag": "SECTION",
+        "role": "dialog",
+        "name": "Reading details\n\nThe reading panel below contains the complete document.\n\nSection 1\n\nThis document demonstrates a scrollable region inside a third-party modal. ",
+        "value": null,
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "focusAfter": {
+        "id": "close-reading",
+        "tag": "BUTTON",
+        "role": null,
+        "name": "Close reading details",
+        "value": "",
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "checkpoint": {
+        "before": "914cce01770d5efd7fa4ed70a8be8560e6400f3eacacbb6fc2e1b9b1dd63b838",
+        "after": "7709163b56eb333d0c495cbf081446581f801f61bf563c3bcf4e9cb64003b3e3",
+        "unchangedActions": 0
+      }
+    },
+    {
+      "index": 4,
+      "action": {
+        "name": "press_key",
+        "arguments": {
+          "key": "Shift+Tab"
+        }
+      },
+      "timestamp": "2026-10-26T19:41:49.373Z",
+      "focusBefore": {
+        "id": "close-reading",
+        "tag": "BUTTON",
+        "role": null,
+        "name": "Close reading details",
+        "value": "",
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "focusAfter": {
+        "id": "close-reading",
+        "tag": "BUTTON",
+        "role": null,
+        "name": "Close reading details",
+        "value": "",
+        "selectionStart": null,
+        "selectionEnd": null
+      },
+      "checkpoint": {
+        "before": "7709163b56eb333d0c495cbf081446581f801f61bf563c3bcf4e9cb64003b3e3",
+        "after": "7709163b56eb333d0c495cbf081446581f801f61bf563c3bcf4e9cb64003b3e3",
+        "unchangedActions": 1
+      }
+    }
+  ],
+  "usage": [
+    {
+      "input_tokens": 2691,
+      "input_tokens_details": {
+        "cached_tokens": 881
+      },
+      "output_tokens": 112,
+      "output_tokens_details": {
+        "reasoning_tokens": 41
+      },
+      "total_tokens": 2803
+    },
+    {
+      "input_tokens": 2914,
+      "input_tokens_details": {
+        "cached_tokens": 881
+      },
+      "output_tokens": 80,
+      "output_tokens_details": {
+        "reasoning_tokens": 16
+      },
+      "total_tokens": 2994
+    },
+    {
+      "input_tokens": 4284,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 315,
+      "output_tokens_details": {
+        "reasoning_tokens": 240
+      },
+      "total_tokens": 4599
+    },
+    {
+      "input_tokens": 4489,
+      "input_tokens_details": {
+        "cached_tokens": 881
+      },
+      "output_tokens": 515,
+      "output_tokens_details": {
+        "reasoning_tokens": 433
+      },
+      "total_tokens": 5004
+    },
+    {
+      "input_tokens": 4746,
+      "input_tokens_details": {
+        "cached_tokens": 881
+      },
+      "output_tokens": 774,
+      "output_tokens_details": {
+        "reasoning_tokens": 733
+      },
+      "total_tokens": 5520
+    }
+  ],
+  "requests": [
+    {
+      "index": 1,
+      "startedAt": "2026-10-26T19:41:28.360Z",
+      "state": "validated",
+      "preflightInputTokens": 2834,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 2691,
+        "input_tokens_details": {
+          "cached_tokens": 881
+        },
+        "output_tokens": 112,
+        "output_tokens_details": {
+          "reasoning_tokens": 41
+        },
+        "total_tokens": 2803
+      }
+    },
+    {
+      "index": 2,
+      "startedAt": "2026-10-26T19:41:33.171Z",
+      "state": "validated",
+      "preflightInputTokens": 3057,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 2914,
+        "input_tokens_details": {
+          "cached_tokens": 881
+        },
+        "output_tokens": 80,
+        "output_tokens_details": {
+          "reasoning_tokens": 16
+        },
+        "total_tokens": 2994
+      }
+    },
+    {
+      "index": 3,
+      "startedAt": "2026-10-26T19:41:36.733Z",
+      "state": "validated",
+      "preflightInputTokens": 4427,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 4284,
+        "input_tokens_details": {
+          "cached_tokens": 0
+        },
+        "output_tokens": 315,
+        "output_tokens_details": {
+          "reasoning_tokens": 240
+        },
+        "total_tokens": 4599
+      }
+    },
+    {
+      "index": 4,
+      "startedAt": "2026-10-26T19:41:42.297Z",
+      "state": "validated",
+      "preflightInputTokens": 4632,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 4489,
+        "input_tokens_details": {
+          "cached_tokens": 881
+        },
+        "output_tokens": 515,
+        "output_tokens_details": {
+          "reasoning_tokens": 433
+        },
+        "total_tokens": 5004
+      }
+    },
+    {
+      "index": 5,
+      "startedAt": "2026-10-26T19:41:49.428Z",
+      "state": "validated",
+      "preflightInputTokens": 4889,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 4746,
+        "input_tokens_details": {
+          "cached_tokens": 881
+        },
+        "output_tokens": 774,
+        "output_tokens_details": {
+          "reasoning_tokens": 733
+        },
+        "total_tokens": 5520
+      }
+    }
+  ],
+  "executionMode": "meta-live",
+  "scope": "Real Meta/TabProof attempt on pinned third-party React Aria; generic completion remains model-reported. Separate example-specific read-only audit is saved beside this report.",
+  "configuration": {
+    "schema": 1,
+    "fixtureAndAgentBuild": "6f1a17ab9d07d1e1c4fd57a8a5240154f41fe05092cfcef6695ea294684629ce",
+    "browserVersion": "156.0.8078.4",
+    "playwrightVersion": "1.64.1",
+    "platform": "darwin",
+    "architecture": "arm64",
+    "seed": null,
+    "requestedModel": "muse-spark-1.3",
+    "inputTokenLimit": 64000,
+    "modelSettings": {
+      "tool_choice": "auto",
+      "parallel_tool_calls": false,
+      "max_output_tokens": 2048,
+      "store": false
+    },
+    "contextPolicy": {
+      "version": 3,
+      "observations": "current-screenshot-and-page",
+      "memory": "complete-action-ledger-and-bounded-page-excerpts",
+      "recentToolTurns": 1,
+      "reasoning": "latest-encrypted-turn-in-memory-only",
+      "maxActions": 25,
+      "maxPageExcerpts": 3,
+      "maxExcerptCharacters": 12000
+    },
+    "targetKind": "custom",
+    "completionVerification": "model-reported"
+  },
+  "finalUrl": "http://127.0.0.1:59852/",
+  "stopPolicy": {
+    "version": 2,
+    "unchangedActions": 3,
+    "tabCycleMinimum": 2,
+    "repeatedNavigationActions": 4
+  },
+  "model": "muse-spark-1.3",
+  "stop": {
+    "source": "model",
+    "reason": "model_reported_blockage",
+    "atStep": 4,
+    "detail": "Reading panel not keyboard-focusable: Tab skips to Close, Shift+Tab stays on Close, panel never receives focus"
+  },
+  "executedActions": 4,
+  "agentResult": {
+    "outcome": "agent_inconclusive",
+    "reason": "model_reported_blockage",
+    "valid": true
+  },
+  "evidenceSkipped": "custom_target",
+  "replaysSkipped": "custom_target",
+  "finishedAt": "2026-10-26T19:41:56.159Z"
+}
