@@ -69,14 +69,14 @@ export function allowsTargetNavigation(target,candidate){
   return base(initial.hostname)===base(next.hostname)&&!initial.port&&!next.port&&(initial.protocol===next.protocol||initial.protocol==='http:'&&next.protocol==='https:');
 }
 
-export async function openWebsiteSession(targetUrl,{budget=25,signal,controlOrigins=[]}={}){
+export async function openWebsiteSession(targetUrl,{budget=25,signal,controlOrigins=[],closeOnAbort=true}={}){
   signal?.throwIfAborted();
   const proxy=await createTargetProxy({targetUrl,controlOrigins,signal});
   let browser;
   const abort=()=>{void browser?.close().catch(()=>{});};
   try{
     browser=await chromium.launch({headless:true,proxy:{server:proxy.server,bypass:'<-loopback>'},args:['--disable-quic','--force-webrtc-ip-handling-policy=disable_non_proxied_udp','--webrtc-ip-handling-policy=disable_non_proxied_udp'],...(process.env.BROWSER_EXECUTABLE_PATH?{executablePath:process.env.BROWSER_EXECUTABLE_PATH}:{})});
-    signal?.addEventListener('abort',abort,{once:true});signal?.throwIfAborted();
+    if(closeOnAbort)signal?.addEventListener('abort',abort,{once:true});signal?.throwIfAborted();
     const context=await browser.newContext({viewport:{width:1180,height:960},reducedMotion:'reduce',serviceWorkers:'block',acceptDownloads:false});
     const page=await context.newPage();page.setDefaultTimeout(10000);
     let scopeOrigin=null;

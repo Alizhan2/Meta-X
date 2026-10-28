@@ -1,0 +1,347 @@
+{
+  "scope": "User-supplied two-URL dialog contract comparison, not a general accessibility detector or reliability estimate.",
+  "unitTestsPassed": 62,
+  "records": {
+    "freeAndScripted": {
+      "path": "output/playwright/website-comparison-check-1793180011484/summary.json",
+      "summary": {
+        "scope": "Real UI/API/Chromium comparison of arbitrary user URLs and CSS contracts. Deterministic checks are real; agent decisions are injected and labelled scripted-test. No Meta calls.",
+        "results": [
+          {
+            "case": "different-origin original/fixed",
+            "id": "agent-1793180011898672312",
+            "verified": true,
+            "originalFailed": 3,
+            "correctedPassed": 3
+          },
+          {
+            "case": "both clean",
+            "id": "agent-1793180020769669724",
+            "verified": false,
+            "reason": "original_failure_not_reproduced"
+          },
+          {
+            "case": "still broken",
+            "id": "agent-1793180023641111503",
+            "verified": false,
+            "reason": "corrected_contract_failed"
+          },
+          {
+            "case": "focus restoration defect",
+            "id": "agent-1793180036966128825",
+            "verified": true,
+            "reason": "dialog_contract_improvement"
+          },
+          {
+            "case": "invalid CSS",
+            "id": "agent-1793180044791990194",
+            "verified": false,
+            "reason": "independent_checks_incomplete"
+          },
+          {
+            "case": "scripted agent plus independent Chromium checks",
+            "id": "agent-1793180053932026777",
+            "verified": true
+          }
+        ],
+        "exported": {
+          "id": "agent-1793180011898672312",
+          "images": 2,
+          "offline": true,
+          "networkRequests": 0,
+          "pageErrors": [],
+          "rawReportIncluded": true,
+          "missingEvidenceNotice": false
+        },
+        "cancelledId": "agent-1793180045851581179",
+        "cancelledDuringFinalWriteId": "agent-1793180046183738589",
+        "unexercisedAgentId": "agent-1793180064610516539",
+        "failedAgentId": "agent-1793180073287173627",
+        "scriptedModelCalls": 15,
+        "pageErrors": []
+      }
+    },
+    "live": {
+      "path": "output/playwright/website-comparison-live-1793179723769/summary.json",
+      "summary": {
+        "scope": "Real main-console buttons \u2192 two actual Meta agent sessions \u2192 six independent keyboard probes \u2192 persisted comparison \u2192 offline download. No scripted decisions.",
+        "id": "agent-1793179724352159542",
+        "verified": true,
+        "original": {
+          "actions": 3,
+          "contract": {
+            "valid": true,
+            "passed": false,
+            "reason": "escape_did_not_close",
+            "attempts": [
+              {
+                "before": {
+                  "valid": true,
+                  "dialogVisible": true,
+                  "focusInside": true,
+                  "triggerFocused": false,
+                  "triggerVisible": true,
+                  "focus": {
+                    "id": "close-details",
+                    "tag": "BUTTON",
+                    "name": "Close details"
+                  }
+                },
+                "after": {
+                  "valid": true,
+                  "dialogVisible": true,
+                  "focusInside": true,
+                  "triggerFocused": false,
+                  "triggerVisible": true,
+                  "focus": {
+                    "id": "close-details",
+                    "tag": "BUTTON",
+                    "name": "Close details"
+                  }
+                },
+                "valid": true,
+                "passed": false,
+                "reason": "escape_did_not_close"
+              }
+            ]
+          },
+          "independentFailed": 3
+        },
+        "corrected": {
+          "actions": 3,
+          "contract": {
+            "valid": true,
+            "passed": true,
+            "reason": "dialog_contract_passed",
+            "attempts": [
+              {
+                "before": {
+                  "valid": true,
+                  "dialogVisible": true,
+                  "focusInside": true,
+                  "triggerFocused": false,
+                  "triggerVisible": true,
+                  "focus": {
+                    "id": "close-details",
+                    "tag": "BUTTON",
+                    "name": "Close details"
+                  }
+                },
+                "after": {
+                  "valid": true,
+                  "dialogVisible": false,
+                  "focusInside": false,
+                  "triggerFocused": true,
+                  "triggerVisible": true,
+                  "focus": {
+                    "id": "open-details",
+                    "tag": "BUTTON",
+                    "name": "Open Keyboard details"
+                  }
+                },
+                "valid": true,
+                "passed": true,
+                "reason": "dialog_contract_passed"
+              }
+            ]
+          },
+          "independentPassed": 3
+        },
+        "exported": {
+          "id": "agent-1793179724352159542",
+          "images": 2,
+          "offline": true,
+          "networkRequests": 0,
+          "pageErrors": [],
+          "rawReportIncluded": true,
+          "missingEvidenceNotice": false
+        },
+        "pageErrors": []
+      }
+    },
+    "examplesRegression": {
+      "path": "output/playwright/console-examples-check-1793179438220/summary.json",
+      "summary": {
+        "scope": "Real UI/API/Chromium checks of both third-party examples; configured=false and no Meta calls.",
+        "checks": [
+          "published reference labels",
+          "free checks without key",
+          "Meta mode requires key",
+          "cross-origin rejection",
+          "invalid example rejection",
+          "shared run lock",
+          "both real deterministic comparisons",
+          "fresh screenshots and reports",
+          "URL reload restoration",
+          "cancel after first repeat",
+          "no corrected attempt after stop",
+          "partial persistence",
+          "server restart",
+          "mobile390",
+          "reference traversal rejection",
+          "offline downloads for both examples and stopped comparison",
+          "active export rejected"
+        ],
+        "completed": [
+          {
+            "id": "agent-1793179438470265658",
+            "exampleId": "react-aria-scroll",
+            "original": 3,
+            "corrected": 3
+          },
+          {
+            "id": "agent-1793179445190380057",
+            "exampleId": "radix-toast",
+            "original": 3,
+            "corrected": 3
+          }
+        ],
+        "stoppedId": "agent-1793179449045070322",
+        "pageErrors": [],
+        "offlineExports": [
+          {
+            "id": "agent-1793179438470265658",
+            "images": 2,
+            "offline": true,
+            "networkRequests": 0,
+            "pageErrors": [],
+            "rawReportIncluded": true,
+            "missingEvidenceNotice": false
+          },
+          {
+            "id": "agent-1793179445190380057",
+            "images": 2,
+            "offline": true,
+            "networkRequests": 0,
+            "pageErrors": [],
+            "rawReportIncluded": true,
+            "missingEvidenceNotice": false
+          },
+          {
+            "id": "agent-1793179449045070322",
+            "images": 1,
+            "offline": true,
+            "networkRequests": 0,
+            "pageErrors": [],
+            "rawReportIncluded": true,
+            "missingEvidenceNotice": false
+          }
+        ]
+      }
+    },
+    "customRegression": {
+      "path": "output/playwright/custom-check-1793179437468/summary.json",
+      "summary": {
+        "scope": "Custom URL/task UI and real HTTP browser/proxy integration; scripted decisions, no Meta API calls.",
+        "targetUrl": "http://127.0.0.1:57627/",
+        "task": "\u041d\u0430\u0439\u0434\u0438 \u043c\u0430\u0441\u0442\u0435\u0440-\u043a\u043b\u0430\u0441\u0441 \u043f\u043e \u043a\u0435\u0440\u0430\u043c\u0438\u043a\u0435 \u0447\u0435\u0440\u0435\u0437 \u043f\u043e\u0438\u0441\u043a.",
+        "completed": {
+          "id": "agent-1793179441090367368",
+          "actions": 4,
+          "outcome": "agent_reported_complete",
+          "independentlyVerified": false
+        },
+        "cancelled": {
+          "id": "agent-1793179443009410165",
+          "actions": 0
+        },
+        "formSubmissions": 1,
+        "blockedPrivateRequests": true,
+        "pageErrors": [],
+        "offlineExport": {
+          "id": "agent-1793179441090367368",
+          "images": 5,
+          "offline": true,
+          "networkRequests": 0,
+          "pageErrors": [],
+          "rawReportIncluded": true,
+          "missingEvidenceNotice": false
+        }
+      }
+    },
+    "consoleRegression": {
+      "path": "output/playwright/console-check-1793179437503/summary.json",
+      "summary": {
+        "scope": "UI/API/real Chromium fixture integration using injected scripted decisions; no Meta calls or credits.",
+        "checks": [
+          "start",
+          "duplicate rejected",
+          "live actions and screenshot",
+          "stop",
+          "partial report",
+          "restart",
+          "task completion",
+          "report link",
+          "mobile",
+          "history refresh",
+          "cancel during evidence",
+          "immediate stop",
+          "cross-origin rejection",
+          "offline downloads for stopped and completed runs"
+        ],
+        "runs": [
+          {
+            "id": "agent-1793179457918890661",
+            "state": "stopped",
+            "actions": 0,
+            "taskCompleted": false
+          },
+          {
+            "id": "agent-1793179450182389418",
+            "state": "stopped",
+            "actions": 15,
+            "taskCompleted": true
+          },
+          {
+            "id": "agent-1793179439253417274",
+            "state": "completed",
+            "actions": 15,
+            "taskCompleted": true
+          },
+          {
+            "id": "agent-1793179437767279596",
+            "state": "stopped",
+            "actions": 2,
+            "taskCompleted": false
+          }
+        ],
+        "pageErrors": []
+      }
+    },
+    "selectorPreconditions": {
+      "path": "output/playwright/dialog-selector-preconditions-1793180274586/summary.json",
+      "summary": {
+        "scope": "Real Chromium read-only selector precondition checks; no actions or model calls when opener is absent or ambiguous.",
+        "results": [
+          {
+            "path": "/missing",
+            "valid": false,
+            "passed": null,
+            "reason": "elements_not_unique",
+            "actions": 0
+          },
+          {
+            "path": "/ambiguous",
+            "valid": false,
+            "passed": null,
+            "reason": "elements_not_unique",
+            "actions": 0
+          }
+        ]
+      }
+    },
+    "finalServiceRestoreAndExport": {
+      "path": "output/playwright/website-comparison-final-1793180417890/summary.json",
+      "summary": {
+        "scope": "Final service restart, restored real-Meta comparison, UI screenshot and offline export; no new model requests.",
+        "id": "agent-1793179724352159542",
+        "images": 2,
+        "offline": true,
+        "networkRequests": 0,
+        "pageErrors": [],
+        "rawReportIncluded": true,
+        "missingEvidenceNotice": false
+      }
+    }
+  }
+}

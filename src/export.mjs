@@ -3,6 +3,7 @@ import {resolve,relative,isAbsolute} from 'node:path';
 import {createHash} from 'node:crypto';
 import {renderReport} from './report.mjs';
 import {renderExampleReport} from './examples.mjs';
+import {renderWebsiteComparisonReport} from './website-report.mjs';
 
 const escape=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const fail=(status,code)=>Object.assign(new Error(code),{status,code});
@@ -33,7 +34,7 @@ export async function exportOfflineReport(root,id){
   if(report.runId!==id||!Array.isArray(report.steps))throw fail(422,'invalid_report');
   if(!report.finishedAt)throw fail(409,'run_not_finished');
   const hash=createHash('sha256').update(raw).digest('hex');
-  let html=report.targetKind==='example'?renderExampleReport(report):renderReport(report);
+  let html=report.targetKind==='example'?renderExampleReport(report):report.targetKind==='website-comparison'?renderWebsiteComparisonReport(report):renderReport(report);
   const localName=ref=>{
     const prefix=`/reports/${id}/`;
     const name=(ref.startsWith(prefix)?ref.slice(prefix.length):ref).split('?')[0];

@@ -24,7 +24,10 @@
     "check:benchmark-replays": "node scripts/check-benchmark-replays.mjs",
     "compare": "node scripts/compare-runs.mjs",
     "agent": "node --env-file=.env scripts/run-agent.mjs",
-    "benchmark": "node scripts/benchmark.mjs"
+    "benchmark": "node scripts/benchmark.mjs",
+    "check:website-comparison": "node scripts/check-website-comparison.mjs",
+    "demo:website-comparison": "node scripts/serve-dialog-comparison.mjs",
+    "check:website-comparison:live": "node scripts/check-website-comparison-live.mjs"
   },
   "dependencies": {
     "playwright": "^1.64.1"

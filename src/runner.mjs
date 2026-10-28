@@ -13,7 +13,7 @@ import {runConfiguration} from './comparison.mjs';
 export const task='Book a studio introduction for Alex Tester, email alex@example.test, on October 30, 2026 at 15:00. Review the details, close the review window, then confirm the booking.';
 export const newRunId=()=>`agent-${Date.now()}${String(randomInt(1000000)).padStart(6,'0')}`;
 
-export async function executeRun({variant='correct',targetUrl,task:customTask,controlOrigins=[],id=newRunId(),root=resolve('output/playwright'),signal,onUpdate=()=>{},decide}={}){
+export async function executeRun({variant='correct',targetUrl,task:customTask,controlOrigins=[],id=newRunId(),root=resolve('output/playwright'),signal,onUpdate=()=>{},decide,inspectObservation}={}){
   const target=targetUrl!==undefined?normalizeCustomTarget({targetUrl,task:customTask},{controlOrigins}):{targetKind:'fixture',variant,task};
   if(target.targetKind==='fixture'&&!variants.includes(variant)||!/^agent-\d+$/.test(id))throw new Error('invalid_run');
   variant=target.variant;
@@ -34,6 +34,7 @@ export async function executeRun({variant='correct',targetUrl,task:customTask,co
     await runAgent(session,report,{
       signal,...(decide?{decide}:{}),
       observeStep:async(i,after)=>{
+        await inspectObservation?.({page:session.page,index:i,after,action:after?report.pendingAction?.action:null});
         const file=`${String(i).padStart(2,'0')}${after?'-after':''}.png`;
         const observation=await observe(session.page,resolve(output,file));
         report.finalUrl=observation.url;

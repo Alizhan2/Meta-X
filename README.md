@@ -42,6 +42,22 @@ An example without installed dependencies remains viewable as a saved reference 
 
 To test your own site, choose **Run on → Your website**, paste a complete HTTP(S) address, and write the task in **Task to attempt**. Press **Start agent**. Public websites and a separate localhost development server are supported. The agent starts in a fresh browser and stays on the same site. Screenshots and page text are sent to Meta; use test data for private pages.
 
+To compare your own versions, choose **Run on → Your website · before and after**. Enter two different test-page URLs, the same task, and two plain CSS selectors: the dialog opener and the dialog itself. Selectors must work on both versions. The current independent contract is deliberately narrow: Tab reaches the opener, Enter opens the dialog with focus inside, Escape closes it, and focus returns to the opener. Selectors are read-only harness inputs and are not added to the agent’s instructions. The agent still has only keyboard/text tools.
+
+**Independent keyboard checks · free** creates three fresh browser sessions per version without model calls. **Meta agent + independent checks** additionally creates two fresh model sessions and observes their Escape behavior read-only. Before/after verification requires three matching valid original failures, three corrected passes, matching browser/build metadata, and—in agent mode—valid comparable model sessions that actually exercised the contract. Missing or ambiguous elements, an unopened dialog, an API error, cancellation, two passing versions, or a still-failing corrected version cannot verify a fix. The task’s other requirements remain unverified. The submitted URLs do not establish source-code equivalence or prove that only one source change caused the observed difference.
+
+The comparison shares Stop, saved history and offline report downloads with the other modes. Localhost test servers are supported; the TabProof control server and private network destinations remain excluded. Fresh sessions have no existing login. This first contract supports one main-frame dialog, Enter activation and a maximum of 50 Tab steps; it does not support iframes or arbitrary user test code. See [implementation and verification](docs/website-comparison.md).
+
+For a separate demonstration website:
+
+```sh
+npm run demo:website-comparison
+# Before: http://127.0.0.1:4207/before
+# After:  http://127.0.0.1:4207/after
+# Opener: #open-details
+# Dialog: #details-dialog
+```
+
 The final build was checked on the unmodified official Python documentation: opening Tutorial took 14 actions and searching for `venv` took 15. Separate read-only replays verified the resulting URLs, page headings/results and focus paths. Earlier context-limit and navigation-loop failures are retained alongside the fixes. See [all public-site attempts and verification](docs/public-sites-2026-10-27/README.md).
 
 A third-party keyboard barrier is now reproduced with the actual, unmodified **React Aria Components 1.19.0** package: a modal skips its scrollable reading panel. An identical keyboard test fails on the original integration in 3/3 sessions and passes after adding `tabIndex={0}` in 3/3, with pointer and native-browser controls. In a valid real-Meta comparison the agent stops on the original after 4 actions and completes the corrected task in 7; separate read-only live-session measurements confirm the results. An earlier API timeout is retained. This reproduces known upstream issue #10395 locally; it is an integration workaround, not an original upstream discovery or library patch. See [the before/after report and all attempts](docs/react-aria-2026-10-27/README.md).
@@ -78,6 +94,7 @@ npm run check:regressions
 npm run check:stopping
 npm run check:console
 npm run check:custom
+npm run check:website-comparison
 ```
 
 For a live Meta run, copy `.env.example` to `.env` and fill your own `MODEL_API_KEY` and `META_MODEL` locally. The validated model is `muse-spark-1.3`. Never paste keys into issues, chat, screenshots, or committed files. Then run:

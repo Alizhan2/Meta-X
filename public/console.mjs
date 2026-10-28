@@ -2,10 +2,14 @@ const $=id=>document.getElementById(id);
 const ui={form:$('start-form'),mode:$('target-mode'),fixtureControls:$('fixture-controls'),customControls:$('custom-controls'),url:$('site-url'),task:$('custom-task'),taskDescription:$('task-description'),schedule:$('fixture-schedule'),scopeNote:$('scope-note'),evidenceNote:$('evidence-note'),condition:$('condition'),start:$('start'),startLabel:$('start-label'),stop:$('stop'),service:$('service-status'),mark:$('status-mark'),note:$('control-note'),notice:$('notice'),noticeText:$('notice-text'),retry:$('retry'),selectedLabel:$('selected-run-label'),selectedState:$('selected-run-state'),empty:$('screen-empty'),emptyTitle:$('empty-title'),emptyDescription:$('empty-description'),image:$('screen-image'),imageError:$('image-error'),focus:$('focus-caption'),screenMeta:$('screen-caption-meta'),count:$('action-count'),actionEmpty:$('action-empty'),timeline:$('timeline'),scroll:$('action-scroll'),detail:$('run-detail'),report:$('report-link'),history:$('run-history'),historyEmpty:$('history-empty'),historyNote:$('history-note'),refresh:$('refresh-history')};
 const fixtureTask=ui.taskDescription.textContent;
 Object.assign(ui,{exampleControls:$('example-controls'),exampleId:$('example-id'),checkMode:$('example-check-mode'),comparison:$('comparison-view'),workbench:$('workbench'),creditNote:document.querySelector('.credit-note')});
+const comparisonFields=['before-url','after-url','comparison-task','comparison-method','trigger-selector','dialog-selector'];
+const isWebsiteComparison=run=>run?.targetKind==='website-comparison';
+const isPair=run=>isExample(run)||isWebsiteComparison(run);
+const freeMode=()=>ui.mode.value==='compare'?$('comparison-method').value==='deterministic':ui.mode.value==='examples'&&ui.checkMode.value==='deterministic';
 const examples=new Map();
 let catalogReady=false,catalogError='',catalogBusy=false,comparisonActions={};
-try{const draft=JSON.parse(sessionStorage.getItem('tabproof-example-draft')||'null');if(draft&&['fixture','custom','examples'].includes(draft.mode)){ui.mode.value=draft.mode;if(['react-aria-scroll','radix-toast'].includes(draft.exampleId))ui.exampleId.value=draft.exampleId;if(['deterministic','agent'].includes(draft.checkMode))ui.checkMode.value=draft.checkMode;}}catch{}
-function saveExampleDraft(){try{sessionStorage.setItem('tabproof-example-draft',JSON.stringify({mode:ui.mode.value,exampleId:ui.exampleId.value,checkMode:ui.checkMode.value}));}catch{}}
+try{const draft=JSON.parse(sessionStorage.getItem('tabproof-example-draft')||'null');if(draft&&['fixture','custom','examples','compare'].includes(draft.mode)){ui.mode.value=draft.mode;if(['react-aria-scroll','radix-toast'].includes(draft.exampleId))ui.exampleId.value=draft.exampleId;if(['deterministic','agent'].includes(draft.checkMode))ui.checkMode.value=draft.checkMode;for(const id of comparisonFields)if(typeof draft[id]==='string')$(id).value=draft[id];}}catch{}
+function saveExampleDraft(){try{sessionStorage.setItem('tabproof-example-draft',JSON.stringify({mode:ui.mode.value,exampleId:ui.exampleId.value,checkMode:ui.checkMode.value,...Object.fromEntries(comparisonFields.map(id=>[id,$(id).value]))}));}catch{}}
 const conditions={correct:'Corrected form',unreachable_button:'Unreachable confirm button',calendar_keyboard:'Calendar keyboard barrier',modal_dismissal:'Review window cannot close',focus_loss:'Unexpected focus return'};
 const states={starting:'Starting',waiting:'Waiting',running:'Running',stopping:'Stopping',checking:'Checking evidence',completed:'Finished',finished:'Finished',stopped:'Stopped',failed:'Failed'};
 const activeStates=new Set(['starting','running','stopping','checking']);
@@ -21,8 +25,8 @@ const conditionName=variant=>conditions[variant]||String(variant||'Unknown condi
 const stateName=state=>states[state]||String(state||'Unknown state').replaceAll('_',' ');
 const isCustom=run=>run?.targetKind==='custom'||run?.variant==='custom';
 const isExample=run=>run?.targetKind==='example';
-function runLabel(run){if(isExample(run))return run.exampleTitle||examples.get(run.exampleId)?.title||run.exampleId||'Third-party example';if(!isCustom(run))return conditionName(run.variant);try{return new URL(run.targetUrl).hostname;}catch{return 'Your website';}}
-function runState(run){if(isExample(run)&&run.state==='completed'&&run.comparison?.verified&&run.outcome==='comparison_verified')return 'Comparison verified';return isCustom(run)&&run.outcome==='agent_reported_complete'?'Model reported completion':stateName(run.state);}
+function runLabel(run){if(isWebsiteComparison(run))return 'Your website · before and after';if(isExample(run))return run.exampleTitle||examples.get(run.exampleId)?.title||run.exampleId||'Third-party example';if(!isCustom(run))return conditionName(run.variant);try{return new URL(run.targetUrl).hostname;}catch{return 'Your website';}}
+function runState(run){if(isWebsiteComparison(run)&&run.state==='completed')return run.comparison?.verified?'Contract improvement verified':'No improvement verified';if(isExample(run)&&run.state==='completed'&&run.comparison?.verified&&run.outcome==='comparison_verified')return 'Comparison verified';return isCustom(run)&&run.outcome==='agent_reported_complete'?'Model reported completion':stateName(run.state);}
 function readableReason(run){if(!run)return ui.mode.value==='custom'?'Enter a website and a task to begin.':'Choose a test condition to begin.';if(activeStates.has(run.state))return run.phase?String(run.phase).replaceAll('_',' '):'Waiting for the next observed action.';if(isCustom(run)){if(run.outcome==='agent_reported_complete'||run.reason==='model_reported_completion')return reasons.model_reported_completion;if(['model_reported_blockage','model_reported_blocked','model_stopped'].includes(run.reason))return 'The model ended its attempt and reported an obstacle. This is not an independently verified site defect.';return run.reason?(reasons[run.reason]||String(run.reason).replaceAll('_',' ')):'Open the report to inspect the attempt. Task completion has not been independently verified.';}if(run.reason)return reasons[run.reason]||String(run.reason).replaceAll('_',' ');return run.taskCompleted?'The stored booking matches the task.':'Open the report to inspect this attempt.';}
 function dateLabel(value){const date=new Date(value);return Number.isNaN(date.valueOf())?'Time unavailable':new Intl.DateTimeFormat('en',{month:'short',day:'numeric',hour:'2-digit',minute:'2-digit',hour12:false}).format(date);}
 function notice(message,{retry=false}={}){setText(ui.noticeText,message);ui.notice.hidden=!message;ui.retry.hidden=!retry;}
@@ -47,18 +51,18 @@ function selected(){return runs.get(selectedId)||null;}
 function setSelection(id,{persist=false}={}){selectedId=id;referenceSelected=false;timelineSignature='';previewKey='';if(persist){const url=new URL(location.href);url.searchParams.set('run',id);history.replaceState(null,'',url);}render();}
 function renderControls(){
   const active=runs.get(activeId);
-  const custom=ui.mode.value==='custom',example=ui.mode.value==='examples',free=example&&ui.checkMode.value==='deterministic',entry=examples.get(ui.exampleId.value);
-  ui.fixtureControls.hidden=custom||example;ui.customControls.hidden=!custom;ui.exampleControls.hidden=!example;
+  const custom=ui.mode.value==='custom',example=ui.mode.value==='examples',compare=ui.mode.value==='compare',free=freeMode(),entry=examples.get(ui.exampleId.value);
+  ui.fixtureControls.hidden=custom||example||compare;$('website-comparison-controls').hidden=!compare;for(const id of comparisonFields){$(id).disabled=mutating||!compare;$(id).required=compare;}ui.customControls.hidden=!custom;ui.exampleControls.hidden=!example;
   ui.exampleId.disabled=mutating;ui.checkMode.disabled=mutating;
   ui.mode.disabled=mutating;
   ui.url.required=custom;ui.task.required=custom;
   ui.url.disabled=mutating||!custom;ui.task.disabled=mutating||!custom;
   ui.start.disabled=!connected||(!free&&!configured)||!!activeId||mutating||(example&&(!catalogReady||entry?.available!==true));
-  ui.condition.disabled=mutating||custom||example;
+  ui.condition.disabled=mutating||custom||example||compare;
   ui.stop.disabled=!activeId||mutating||active?.state==='stopping'||!!(active&&!activeStates.has(active.state));
   ui.stop.setAttribute('aria-label',active?`Stop active run: ${runLabel(active)}`:'Stop active run');
-  setText(ui.startLabel,mutating&&ui.start.dataset.pending==='true'?'Starting…':free?'Run checks':example?'Run agent comparison':'Start agent');
-  setText(ui.creditNote,free?'Deterministic checks run locally and use no Meta API credits.':example?'Two live Meta runs compare both versions and use API credits.':'Live Meta runs use API credits.');
+  setText(ui.startLabel,mutating&&ui.start.dataset.pending==='true'?'Starting…':free?'Run checks':example||compare?'Run agent comparison':'Start agent');
+  setText(ui.creditNote,free?'Deterministic checks run locally and use no Meta API credits.':example||compare?'Two live Meta runs compare both versions and use API credits.':'Live Meta runs use API credits.');
   if(!connected){setText(ui.service,'Run service unavailable');ui.mark.dataset.state='failed';setText(ui.note,'Reconnect to start a run.');return;}
   if(activeId){setText(ui.service,active?stateName(active.state):'Agent active');ui.mark.dataset.state=active?.state||'running';setText(ui.note,`${active?runLabel(active):'Another run'}${selectedId&&selectedId!==activeId?' · viewing a previous run':''}`);return;}
   if(example&&(!catalogReady||entry?.available!==true)){setText(ui.service,catalogReady?'Example unavailable':catalogError?'Examples unavailable':'Loading examples');ui.mark.dataset.state='idle';setText(ui.note,catalogError||'This example is not installed locally. A saved reference may still be available.');return;}
@@ -66,6 +70,7 @@ function renderControls(){
   setText(ui.service,mutating?'Starting a run':'Ready to run');ui.mark.dataset.state=mutating?'starting':'idle';setText(ui.note,'One run at a time. Nothing starts automatically.');
 }
 function renderTask(run){
+  if(isWebsiteComparison(run)||!run&&ui.mode.value==='compare'){setText(ui.taskDescription,run?.task||$('comparison-task').value.trim()||'Compare the same dialog task on your original and corrected pages.');ui.schedule.hidden=true;setText(ui.scopeNote,'The configured dialog contract is checked independently. Whole-task completion and accessibility conformance are not verified.');setText(ui.evidenceNote,'Three independent checks per version. AI attempts are reported separately.');return;}
   const example=isExample(run)||(!run&&ui.mode.value==='examples');
   if(example){const entry=examples.get(run?.exampleId||ui.exampleId.value);setText(ui.taskDescription,entry?.description||'Compare the original third-party example with its corrected version using the same keyboard checks.');ui.schedule.hidden=true;setText(ui.scopeNote,'Third-party examples are checked in a local, pinned reproduction. Results describe the tested behavior.');setText(ui.evidenceNote,'Original and corrected versions. Separate recorded results.');return;}
   const custom=run?isCustom(run):ui.mode.value==='custom';
@@ -123,17 +128,18 @@ function renderHistory(){
   for(const run of ordered){const li=document.createElement('li'),button=document.createElement('button'),name=document.createElement('span'),time=document.createElement('span'),state=document.createElement('span');button.type='button';button.dataset.runId=run.id;button.setAttribute('aria-pressed',String(run.id===selectedId));button.setAttribute('aria-label',`${runLabel(run)}, ${dateLabel(run.startedAt)}, ${runState(run)}`);name.className='history-name';time.className='history-time';state.className='history-state';setText(name,runLabel(run));setText(time,dateLabel(run.startedAt));setText(state,runState(run));button.append(name,time,state);button.addEventListener('click',()=>{setSelection(run.id,{persist:true});void refreshRun(run.id);});li.append(button);fragment.append(li);}
   const position=ui.history.scrollTop;ui.history.replaceChildren(fragment);ui.history.scrollTop=position;if(focusedRunId){const target=[...ui.history.querySelectorAll('button')].find(button=>button.dataset.runId===focusedRunId);target?.focus({preventScroll:true});}
 }
-function render(){const run=selected(),comparison=isExample(run)||(!run&&ui.mode.value==='examples');renderControls();renderTask(run);ui.workbench.hidden=comparison;ui.comparison.hidden=!comparison;document.querySelector('.skip-link').href=comparison?'#comparison-view':'#workbench';if(comparison)renderComparison(run);else{renderTimeline(run);renderPreview(run);}renderHistory();}
+function render(){const run=selected(),comparison=isPair(run)||(!run&&['examples','compare'].includes(ui.mode.value));renderControls();renderTask(run);ui.workbench.hidden=comparison;ui.comparison.hidden=!comparison;document.querySelector('.skip-link').href=comparison?'#comparison-view':'#workbench';if(comparison)renderComparison(run);else{renderTimeline(run);renderPreview(run);}renderHistory();}
 function safeExampleImage(value){
   if(typeof value!=='string')return null;
   try{const url=new URL(value,location.origin);if(url.origin!==location.origin)return null;if(!/^\/reports\/agent-\d+\/(?:original|corrected)\.png$/.test(url.pathname)&&!/^\/examples\/(?:react-aria-scroll|radix-toast)\/reference\/(?:original|corrected)\.png$/.test(url.pathname))return null;return url.pathname+url.search;}catch{return null;}
 }
 function externalLink(node,value){let href;try{const url=new URL(value);if(['http:','https:'].includes(url.protocol)&&!url.username&&!url.password)href=url.href;}catch{}node.hidden=!href;if(href)node.href=href;else node.removeAttribute('href');}
 function renderComparison(run){
-  const entry=examples.get(run?.exampleId||ui.exampleId.value),reference=!run,record=run||entry?.reference,comparison=record?.comparison;
-  setText($('comparison-kind'),reference?'Saved reference':`${run.checkMode==='deterministic'?'Fresh deterministic check':'Fresh Meta agent run'} · ${dateLabel(run.startedAt)}`);
+  const website=isWebsiteComparison(run)||!run&&ui.mode.value==='compare';
+  const entry=website?{title:'Your website · before and after',description:run?.task||'Compare the same dialog contract on two test-site versions.',correction:run?.contract?`Enter opens ${run.contract.dialogSelector}; Escape must close it and return focus to ${run.contract.triggerSelector}.`:''}:examples.get(run?.exampleId||ui.exampleId.value),reference=!run&&!website,record=run||entry?.reference,comparison=record?.comparison;
+  setText($('comparison-kind'),reference?'Saved reference':!run?'New website comparison':`${run.executionMode==='scripted-test'?'Scripted agent test':run.checkMode==='deterministic'?'Fresh deterministic check':'Fresh Meta agent run'} · ${dateLabel(run.startedAt)}`);
   setText($('comparison-title'),run?.exampleTitle||entry?.title||'Third-party example');setText($('comparison-description'),entry?.description||'');
-  setText($('comparison-state'),reference?comparison?'Published result':'No saved reference':runState(run));
+  setText($('comparison-state'),reference?comparison?'Published result':'No saved reference':!run?'Not started':runState(run));
   $('comparison-reference-note').hidden=!reference;setText($('comparison-reference-note'),comparison?'This is a saved published reference. Start a check to collect a fresh result.':'No published reference is available yet. Start a check to record a fresh comparison.');
   for(const side of ['original','corrected']){
     const data=comparison?.[side],image=$(side+'-image'),empty=$(side+'-empty');
@@ -144,7 +150,7 @@ function renderComparison(run){
     else if(!source){image.removeAttribute('src');delete image.dataset.version;}
     setText(empty,data?.state==='failed'?'A screenshot was not recorded before this side failed.':data?.state==='stopped'?'Stopped before a screenshot was recorded.':'Waiting for a recorded screenshot.');
     const number=value=>Number.isFinite(value)&&value>=0?value:0;
-    setText($(side+'-counts'),data?`${number(data.completed)} of ${number(data.total)} checks completed · ${number(data.passed)} passed · ${number(data.failed)} failed`:'Waiting for results.');
+    setText($(side+'-counts'),data?`${number(data.completed)} of ${number(data.total)} checks completed · ${number(data.passed)} passed · ${number(data.failed)} failed${website?' · '+number(data.inconclusive)+' inconclusive':''}`:'Waiting for results.');
     const summary=typeof data?.summary==='string'?data.summary:typeof data?.result==='string'?data.result:'';
     setText($(side+'-summary'),summary||((data?.state==='finished'&&data.taskVerified===true)?'The task condition was verified in this recorded check.':data?.state==='running'?'Checks are in progress.':data?.state==='stopped'?'Partial result: this side was stopped.':data?.state==='failed'?'This side could not finish its checks.':''));
     const steps=Array.isArray(data?.steps)?data.steps:[],signature=JSON.stringify([run?.id||entry?.id,steps]);
@@ -152,14 +158,14 @@ function renderComparison(run){
     if(comparisonActions[side]!==signature){comparisonActions[side]=signature;const fragment=document.createDocumentFragment();for(const step of steps){const li=document.createElement('li'),action=step.action||step;let text=action.name==='press_key'?`Press ${action.arguments?.key||'key'}`:action.name==='type_text'?`Type “${String(action.arguments?.text||'').slice(0,256)}”`:action.name||step.label||'Recorded keyboard action';if(step.focusBefore||step.focusAfter)text+=` · ${focusName(step.focusBefore)} → ${focusName(step.focusAfter)}`;setText(li,text);fragment.append(li);}if(!steps.length){const li=document.createElement('li');setText(li,'No individual keyboard actions were included in this result.');fragment.append(li);}$(side+'-actions').replaceChildren(fragment);}
   }
   const verified=comparison?.verified===true&&comparison.original?.state==='finished'&&comparison.corrected?.state==='finished'&&(reference||run.state==='completed'&&run.outcome==='comparison_verified');
-  setText($('comparison-result'),verified?'The original and corrected results reproduce the expected difference.':run?.state==='stopped'?'Stopped at your request. These partial results do not verify a comparison.':run?.state==='failed'?'The run could not finish. These results do not verify a comparison.':reference?'Saved results do not establish a verified comparison.':activeStates.has(run?.state)?'Collecting both sides. The comparison is not complete.':'This run did not establish a verified comparison.');
+  setText($('comparison-result'),website?(comparison?.summary||'Start a comparison to collect independent evidence from both versions.'):verified?'The original and corrected results reproduce the expected difference.':run?.state==='stopped'?'Stopped at your request. These partial results do not verify a comparison.':run?.state==='failed'?'The run could not finish. These results do not verify a comparison.':reference?'Saved results do not establish a verified comparison.':activeStates.has(run?.state)?'Collecting both sides. The comparison is not complete.':'This run did not establish a verified comparison.');
   setText($('comparison-correction'),entry?.correction||'');setText($('comparison-scope'),comparison?.scope||'Results apply to this pinned local reproduction and the recorded keyboard checks.');
   externalLink($('comparison-source'),entry?.sourceUrl);externalLink($('comparison-fix'),entry?.fixUrl);
   const report=safeReportPath(run?.reportUrl);$('comparison-report').hidden=!report;if(report)$('comparison-report').href=report;else $('comparison-report').removeAttribute('href');
   renderDownload($('comparison-download'),run);
 }
-function serviceNotice(){if(!configured&&!(ui.mode.value==='examples'&&ui.checkMode.value==='deterministic'))notice('The Meta API key is not configured on this server. Add it locally before starting a run.');else notice(formError);}
-function restoreRunDraft(run){if(draftRestored||!run&&selectedId)return;if(isCustom(run)){ui.mode.value='custom';ui.url.value=run.targetUrl||'';ui.task.value=run.task||'';}else if(isExample(run)){ui.mode.value='examples';if(run.exampleId)ui.exampleId.value=run.exampleId;if(['deterministic','agent'].includes(run.checkMode))ui.checkMode.value=run.checkMode;}draftRestored=true;saveExampleDraft();}
+function serviceNotice(){if(!configured&&!freeMode())notice('The Meta API key is not configured on this server. Add it locally before starting a run.');else notice(formError);}
+function restoreRunDraft(run){if(draftRestored||!run&&selectedId)return;if(isWebsiteComparison(run)){ui.mode.value='compare';const values={'before-url':run.beforeUrl,'after-url':run.afterUrl,'comparison-task':run.task,'comparison-method':run.checkMode,'trigger-selector':run.contract?.triggerSelector,'dialog-selector':run.contract?.dialogSelector};for(const id of comparisonFields)$(id).value=values[id]||'';}else if(isCustom(run)){ui.mode.value='custom';ui.url.value=run.targetUrl||'';ui.task.value=run.task||'';}else if(isExample(run)){ui.mode.value='examples';if(run.exampleId)ui.exampleId.value=run.exampleId;if(['deterministic','agent'].includes(run.checkMode))ui.checkMode.value=run.checkMode;}draftRestored=true;saveExampleDraft();}
 async function refreshExamples(){
   if(catalogBusy)return;catalogBusy=true;
   try{const data=await api('/api/examples');if(!Array.isArray(data.examples))throw new Error('The example catalog could not be read.');examples.clear();for(const entry of data.examples){if(!entry||typeof entry.id!=='string')continue;examples.set(entry.id,entry);const option=[...ui.exampleId.options].find(option=>option.value===entry.id);if(option)setText(option,entry.title||entry.id);}catalogReady=true;catalogError='';}
@@ -179,7 +185,7 @@ async function refreshList(){
     if(!Array.isArray(data.runs)||typeof data.configured!=='boolean'||!(data.activeId===null||typeof data.activeId==='string'))throw new Error('The run service returned an unreadable state.');
     for(const run of data.runs)storeSummary(run);
     configured=data.configured;activeId=data.activeId;connected=true;lastListAt=Date.now();
-    if(!selectedId){selectedId=ui.mode.value==='examples'?(!referenceSelected&&isExample(runs.get(activeId))?activeId:null):(activeId||newest()[0]?.id||null);}
+    if(!selectedId){selectedId=['examples','compare'].includes(ui.mode.value)?(!referenceSelected&&isPair(runs.get(activeId))?activeId:null):(activeId||newest()[0]?.id||null);}
     restoreRunDraft(runs.get(selectedId));serviceNotice();
     render();
     if(selectedId&&(!runs.has(selectedId)||(needsDetail(runs.get(selectedId))&&selectedId!==activeId)))void refreshRun(selectedId);
@@ -209,17 +215,18 @@ ui.form.addEventListener('submit',async event=>{
     if(ui.task.value.trim().length>2000)ui.task.setCustomValidity('Keep the task within 2,000 characters.');
   }
   if(!ui.form.reportValidity())return;
-  const payload=custom?{targetUrl:ui.url.value.trim(),task:ui.task.value.trim()}:ui.mode.value==='examples'?{exampleId:ui.exampleId.value,checkMode:ui.checkMode.value}:{variant:ui.condition.value};
+  const payload=ui.mode.value==='compare'?{beforeUrl:$('before-url').value.trim(),afterUrl:$('after-url').value.trim(),task:$('comparison-task').value.trim(),checkMode:$('comparison-method').value,contract:{type:'dialog_escape_focus',triggerSelector:$('trigger-selector').value.trim(),dialogSelector:$('dialog-selector').value.trim()}}:custom?{targetUrl:ui.url.value.trim(),task:ui.task.value.trim()}:ui.mode.value==='examples'?{exampleId:ui.exampleId.value,checkMode:ui.checkMode.value}:{variant:ui.condition.value};
   formError='';mutating=true;mutationVersion++;ui.start.dataset.pending='true';notice('');renderControls();
   try{const data=await api('/api/runs',{method:'POST',body:JSON.stringify(payload)});const run=store(data.run);activeId=activeStates.has(run.state)?run.id:null;selectedId=run.id;referenceSelected=false;timelineSignature='';previewKey='';const url=new URL(location.href);url.searchParams.set('run',run.id);history.replaceState(null,'',url);render();}
-  catch(error){formError=({example_dependencies_missing:'This example is not installed locally. Install its dependencies before running a fresh check.',invalid_example:'This example is unavailable. Choose another example or refresh the catalog.',model_not_configured:'The Meta API key is not configured on this server. Choose deterministic checks to run without API credits.',invalid_target_url:'Enter a full HTTP or HTTPS website address without a username or password.',invalid_task:'Write a task using up to 2,000 characters.',target_not_allowed:'Use a public website or a separate localhost test server. Private network addresses and this control panel cannot be tested.',run_already_active:'Another agent is already running. Stop it or wait for it to finish.'}[error.code]||`The run could not be started. ${error.message}`);notice(formError,{retry:!error.status});if(!error.status)connected=false;}
+  catch(error){formError=({invalid_comparison:'Enter two different test-page URLs, one task and a supported check method.',identical_comparison_urls:'Before and after must use different URLs.',invalid_contract:'Provide two different plain CSS selectors, up to 200 characters each.',example_dependencies_missing:'This example is not installed locally. Install its dependencies before running a fresh check.',invalid_example:'This example is unavailable. Choose another example or refresh the catalog.',model_not_configured:'The Meta API key is not configured on this server. Choose deterministic checks to run without API credits.',invalid_target_url:'Enter a full HTTP or HTTPS website address without a username or password.',invalid_task:'Write a task using up to 2,000 characters.',target_not_allowed:'Use a public website or a separate localhost test server. Private network addresses and this control panel cannot be tested.',run_already_active:'Another agent is already running. Stop it or wait for it to finish.'}[error.code]||`The run could not be started. ${error.message}`);notice(formError,{retry:!error.status});if(!error.status)connected=false;}
   finally{mutating=false;ui.start.dataset.pending='false';lastListAt=0;render();void tick();}
 });
-ui.mode.addEventListener('change',()=>{draftRestored=true;referenceSelected=ui.mode.value==='examples';if(ui.mode.value==='examples'||isExample(selected())){selectedId=null;const url=new URL(location.href);url.searchParams.delete('run');history.replaceState(null,'',url);}ui.url.setCustomValidity('');ui.task.setCustomValidity('');formError='';saveExampleDraft();serviceNotice();render();});
+ui.mode.addEventListener('change',()=>{draftRestored=true;referenceSelected=ui.mode.value==='examples';if(['examples','compare'].includes(ui.mode.value)||isPair(selected())){selectedId=null;const url=new URL(location.href);url.searchParams.delete('run');history.replaceState(null,'',url);}ui.url.setCustomValidity('');ui.task.setCustomValidity('');formError='';saveExampleDraft();serviceNotice();render();});
 ui.exampleId.addEventListener('change',()=>{selectedId=null;referenceSelected=true;formError='';const url=new URL(location.href);url.searchParams.delete('run');history.replaceState(null,'',url);saveExampleDraft();serviceNotice();render();});
 ui.checkMode.addEventListener('change',()=>{formError='';saveExampleDraft();serviceNotice();render();});
 ui.url.addEventListener('input',()=>{ui.url.setCustomValidity('');if(formError){formError='';notice('');}});
 ui.task.addEventListener('input',()=>{ui.task.setCustomValidity('');if(formError){formError='';notice('');}if(!selected())renderTask(null);});
+for(const id of comparisonFields)$(id).addEventListener(id==='comparison-method'?'change':'input',()=>{formError='';saveExampleDraft();serviceNotice();renderControls();if(!selected())renderTask(null);});
 ui.stop.addEventListener('click',async()=>{
   if(ui.stop.disabled||!activeId||mutating)return;
   const id=activeId;mutating=true;mutationVersion++;notice('');renderControls();

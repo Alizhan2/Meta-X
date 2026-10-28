@@ -6,7 +6,7 @@ import {matchesBooking} from './evidence.mjs';
 
 export async function runConfiguration(browserVersion){
   const hash=createHash('sha256');
-  for(const file of ['fixture.mjs','keyboard.mjs','browser.mjs','target.mjs','meta.mjs','agent.mjs','stopping.mjs','runner.mjs','runs.mjs','examples.mjs','server.mjs','evidence.mjs','report.mjs','comparison.mjs','../scripts/run-agent.mjs','../public/style.css'])hash.update(file).update(await readFile(new URL(file,import.meta.url)));
+  for(const file of ['fixture.mjs','keyboard.mjs','browser.mjs','target.mjs','meta.mjs','agent.mjs','stopping.mjs','runner.mjs','runs.mjs','examples.mjs','dialog-contract.mjs','website-comparison.mjs','website-report.mjs','server.mjs','evidence.mjs','report.mjs','comparison.mjs','../scripts/run-agent.mjs','../public/style.css'])hash.update(file).update(await readFile(new URL(file,import.meta.url)));
   return {schema:1,fixtureAndAgentBuild:hash.digest('hex'),browserVersion,playwrightVersion:createRequire(import.meta.url)('playwright/package.json').version,platform:process.platform,architecture:process.arch,seed:'booking-v1',requestedModel:process.env.META_MODEL||'muse-spark-1.3',inputTokenLimit,modelSettings,contextPolicy};
 }
 

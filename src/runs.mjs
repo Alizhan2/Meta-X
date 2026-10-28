@@ -4,17 +4,20 @@ import {executeRun,newRunId,task} from './runner.mjs';
 import {variants} from './fixture.mjs';
 import {normalizeCustomTarget} from './target.mjs';
 import {executeExampleComparison,loadExamples,readExampleReference,exampleDefinition,newExampleComparison,renderExampleReport} from './examples.mjs';
+import {normalizeWebsiteComparison} from './dialog-contract.mjs';
+import {executeWebsiteComparison,newWebsiteComparison} from './website-comparison.mjs';
+import {renderWebsiteComparisonReport} from './website-report.mjs';
 
 const fail=(status,code)=>Object.assign(new Error(code),{status,code});
 function project(report,liveScreenshot=null){
   const screenshot=liveScreenshot||report.latestScreenshot||(report.steps.length?`${String(report.steps.length-1).padStart(2,'0')}-after.png`:null);
-  return {id:report.runId,variant:report.variant,targetKind:report.targetKind||'fixture',targetUrl:report.targetUrl,finalUrl:report.finalUrl,exampleId:report.exampleId,exampleTitle:report.exampleTitle,checkMode:report.checkMode,comparison:report.comparison?structuredClone(report.comparison):undefined,startedAt:report.startedAt,finishedAt:report.finishedAt,steps:report.steps,stepCount:report.steps.length,requests:report.requests?.length??0,reason:report.reason,outcome:report.outcome,taskCompleted:report.agentResult?.outcome==='task_completed',latestScreenshot:screenshot?`/reports/${report.runId}/${screenshot}`:null,task:report.task,executionMode:report.executionMode||'meta-live',model:report.model,interruptedAction:report.interruptedAction,executedActions:report.executedActions};
+  return {id:report.runId,variant:report.variant,targetKind:report.targetKind||'fixture',targetUrl:report.targetUrl,finalUrl:report.finalUrl,beforeUrl:report.beforeUrl,afterUrl:report.afterUrl,contract:report.contract,exampleId:report.exampleId,exampleTitle:report.exampleTitle,checkMode:report.checkMode,comparison:report.comparison?structuredClone(report.comparison):undefined,startedAt:report.startedAt,finishedAt:report.finishedAt,steps:report.steps,stepCount:report.steps.length,requests:report.requests?.length??0,reason:report.reason,outcome:report.outcome,taskCompleted:report.agentResult?.outcome==='task_completed',latestScreenshot:screenshot?`/reports/${report.runId}/${screenshot}`:null,task:report.task,executionMode:report.executionMode||'meta-live',model:report.model,interruptedAction:report.interruptedAction,executedActions:report.executedActions};
 }
 function finalState(report){return report.cancelled?'stopped':report.agentResult?.valid===false?'failed':'completed';}
 
 const maxRecords=100;
 
-export async function createRunManager({execute=executeRun,executeExample=executeExampleComparison,examplesCatalog,root=resolve('output/playwright'),configured=()=>!!process.env.MODEL_API_KEY}={}){
+export async function createRunManager({execute=executeRun,executeExample=executeExampleComparison,executeComparison=executeWebsiteComparison,examplesCatalog,root=resolve('output/playwright'),configured=()=>!!process.env.MODEL_API_KEY}={}){
   const catalog=examplesCatalog||await loadExamples();
   const records=new Map(),controlOrigins=new Set();let active=null,closing=false;
   let folders=[];try{folders=await readdir(root);}catch{}
@@ -22,12 +25,12 @@ export async function createRunManager({execute=executeRun,executeExample=execut
     try{
       let report=JSON.parse(await readFile(resolve(root,folder,'report.json'),'utf8'));
       if(report.runId!==folder||!Array.isArray(report.steps)||typeof report.startedAt!=='string')continue;
-      if(report.targetKind==='example'&&!report.finishedAt){
+      if(['example','website-comparison'].includes(report.targetKind)&&!report.finishedAt){
         const comparison={...report.comparison,verified:false,phase:'failed'};
         for(const side of ['original','corrected'])if(comparison[side]&&comparison[side].state!=='finished')comparison[side]={...comparison[side],state:'failed'};
         report={...report,valid:false,finishedAt:new Date().toISOString(),reason:'comparison_interrupted_by_restart',outcome:'agent_inconclusive',agentResult:{valid:false},comparison};
         await writeFile(resolve(root,folder,'report.json'),JSON.stringify(report,null,2)+'\n');
-        await writeFile(resolve(root,folder,'report.html'),renderExampleReport(report));
+        await writeFile(resolve(root,folder,'report.html'),report.targetKind==='website-comparison'?renderWebsiteComparisonReport(report):renderExampleReport(report));
       }
       records.set(folder,{...project(report),state:finalState(report),phase:'finished',reportUrl:`/reports/${folder}/report.html`});
     }catch{}
@@ -57,6 +60,7 @@ export async function createRunManager({execute=executeRun,executeExample=execut
         if(!variants.includes(body.variant))throw fail(400,'invalid_condition');
         spec={variant:body.variant,targetKind:'fixture',task};
       }else if(keys==='targetUrl,task')spec=normalizeCustomTarget(body,{controlOrigins:[...controlOrigins]});
+      else if(keys==='afterUrl,beforeUrl,checkMode,contract,task')spec=normalizeWebsiteComparison(body,{controlOrigins:[...controlOrigins]});
       else if(keys==='checkMode,exampleId'){
         const definition=exampleDefinition(body.exampleId);
         if(typeof body.exampleId!=='string'||!definition||!['deterministic','agent'].includes(body.checkMode))throw fail(400,'invalid_example');
@@ -65,13 +69,14 @@ export async function createRunManager({execute=executeRun,executeExample=execut
       }
       else throw fail(400,'invalid_request');
       if(active)throw fail(409,'run_already_active');
-      if(!configured()&&!(spec.targetKind==='example'&&spec.checkMode==='deterministic'))throw fail(503,'model_not_configured');
+      const free=['example','website-comparison'].includes(spec.targetKind)&&spec.checkMode==='deterministic';
+      if(!configured()&&!free)throw fail(503,'model_not_configured');
       const id=newRunId(),controller=new AbortController();
-      const run={id,...spec,state:'starting',phase:'starting',steps:[],stepCount:0,requests:0,latestScreenshot:null,reportUrl:null,startedAt:new Date().toISOString(),taskCompleted:false,executionMode:spec.targetKind==='example'&&spec.checkMode==='deterministic'?'deterministic':'meta-live',...(spec.targetKind==='example'?{comparison:newExampleComparison(exampleDefinition(spec.exampleId),spec.checkMode)}:{})};
+      const run={id,...spec,state:'starting',phase:'starting',steps:[],stepCount:0,requests:0,latestScreenshot:null,reportUrl:null,startedAt:new Date().toISOString(),taskCompleted:false,executionMode:free?'deterministic':'meta-live',...(spec.targetKind==='example'?{comparison:newExampleComparison(exampleDefinition(spec.exampleId),spec.checkMode)}:spec.targetKind==='website-comparison'?{comparison:newWebsiteComparison(spec)}:{})};
       records.set(id,run);
       active={id,controller,promise:null};prune();
       const job=active;let liveScreenshot=null;
-      job.promise=Promise.resolve().then(()=>(spec.targetKind==='example'?executeExample:execute)({...spec,id,root,controlOrigins:[...controlOrigins],signal:controller.signal,onUpdate:({phase,report,screenshot})=>{
+      job.promise=Promise.resolve().then(()=>(spec.targetKind==='example'?executeExample:spec.targetKind==='website-comparison'?executeComparison:execute)({...spec,id,root,controlOrigins:[...controlOrigins],signal:controller.signal,onUpdate:({phase,report,screenshot})=>{
         if(screenshot)liveScreenshot=screenshot;
         Object.assign(run,project(report,liveScreenshot));
         run.phase=phase;
