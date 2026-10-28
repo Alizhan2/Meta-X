@@ -29,6 +29,8 @@ Both third-party examples are also available directly in this main workbench. Ch
 
 The before/after view shows fresh screenshots, counts, keyboard actions, the correction and a saved report. The initial **Saved reference** is explicitly labeled as previously published evidence; it is never presented as a new run. All run types share one lock and the same **Stop** button. Stopping keeps a partial comparison and does not certify a defect or completed fix. History and selection survive refresh; unfinished comparisons recovered after a service restart are marked failed rather than verified.
 
+After any finished or stopped run, **Download offline report** saves one HTML file containing the report, recorded screenshots and downloadable source JSON. It opens without the local server or internet. The same export works for fixture runs, custom websites and both third-party comparisons. A stopped attempt stays partial, custom-site completion stays model-reported, and missing artifacts are disclosed. The file contains captured page content and entered text: review it before sharing. Separate runs and browser traces are not bundled.
+
 Install the pinned example dependencies once, before starting the workbench:
 
 ```sh

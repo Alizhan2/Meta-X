@@ -10,3 +10,4 @@ test-results/
 artifacts/private/
 *.log
 output/playwright/
+output/credits-*/

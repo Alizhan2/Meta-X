@@ -7,6 +7,7 @@ import {chromium} from 'playwright';
 import {createFixtureServer} from '../src/server.mjs';
 import {createRunManager} from '../src/runs.mjs';
 import {executeRun} from '../src/runner.mjs';
+import {checkOfflineDownload} from './check-offline-helper.mjs';
 const root=resolve('output/playwright',`custom-check-${Date.now()}`);await mkdir(root,{recursive:true});
 let submissions=0,queries=[],forbiddenHits=0;
 const forbidden=http.createServer((req,res)=>{forbiddenHits++;res.end('should not reach');});
@@ -67,6 +68,7 @@ try{
   assert.equal(report.evidence,undefined);assert.equal(report.replays,undefined);assert.equal(report.evidenceSkipped,'custom_target');assert.equal(report.requests.length,5);
   const html=await fetch(app.origin+finished.reportUrl).then(r=>r.text());assert.ok(html.includes('Model reported completion'));assert.ok(!html.includes('Independent stored booking matches'));
   await page.screenshot({path:resolve(root,'custom-finished.png'),fullPage:true});
+  const exported=await checkOfflineDownload({page,browser,button:page.locator('#report-download'),path:resolve(root,'custom-offline.html'),id:finished.id,expectedText:'Task completion has not been independently verified.',screenshot:resolve(root,'custom-offline.png')});
   await page.setViewportSize({width:390,height:844});assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
   await page.screenshot({path:resolve(root,'custom-mobile.png'),fullPage:true});
   await page.reload();await until(()=>page.locator('#report-link').isVisible(),'restored custom run');assert.equal(await page.locator('#task-description').textContent(),task);
@@ -75,5 +77,6 @@ try{
   const stopped=await until(async()=>{const s=(await api('/api/runs')).data;return s.runs.find(r=>r.id!==finished.id&&r.state==='stopped');},'custom stop');assert.ok(stopped.reportUrl);assert.equal(stopped.taskCompleted,false);
   assert.equal(submissions,1);assert.deepEqual(errors,[]);
   const summary={scope:'Custom URL/task UI and real HTTP browser/proxy integration; scripted decisions, no Meta API calls.',targetUrl,task,completed:{id:finished.id,actions:finished.stepCount,outcome:finished.outcome,independentlyVerified:false},cancelled:{id:stopped.id,actions:stopped.stepCount},formSubmissions:submissions,blockedPrivateRequests:forbiddenHits===0,pageErrors:errors};
+  summary.offlineExport=exported;
   await writeFile(resolve(root,'summary.json'),JSON.stringify(summary,null,2));console.log(JSON.stringify({result:'PASS',output:root,...summary}));
 }finally{await runs.close();await browser.close();await app.close();await new Promise(resolve=>target.close(resolve));await new Promise(resolve=>forbidden.close(resolve));}

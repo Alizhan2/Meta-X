@@ -5,6 +5,7 @@ import {setTimeout as delay} from 'node:timers/promises';
 import {chromium} from 'playwright';
 import {createFixtureServer} from '../src/server.mjs';
 import {createRunManager} from '../src/runs.mjs';
+import {checkOfflineDownload} from './check-offline-helper.mjs';
 import {executeRun} from '../src/runner.mjs';
 const root=resolve('output/playwright',`console-check-${Date.now()}`);
 await mkdir(root,{recursive:true});
@@ -54,6 +55,7 @@ try{
   await page.reload();
   await until(()=>page.locator('#start').isEnabled(),'reload idle controls');
   await until(()=>page.locator('#report-link').isVisible(),'restored partial report');
+  await checkOfflineDownload({page,browser,button:page.locator('#report-download'),path:resolve(root,'stopped-offline.html'),id:first,expectedText:'Checks interrupted by the user.',minimumImages:1});
   await page.locator('#start').click();
   complete=await until(async()=>{const s=await status();return s.activeId&&s.activeId!==first?s.activeId:false;},'new run');
   await until(async()=>((await readRun(complete)).steps.length>=3),'live screenshot');
@@ -65,6 +67,7 @@ try{
   await until(async()=>await page.locator('#timeline li').count()===15,'all timeline steps rendered');
   const href=await page.locator('#report-link').getAttribute('href');assert.equal(href,completed.reportUrl);
   const report=await fetch(app.origin+href).then(r=>r.text());assert.ok(report.includes('Task completed'));
+  await checkOfflineDownload({page,browser,button:page.locator('#report-download'),path:resolve(root,'complete-offline.html'),id:complete,expectedText:'Task completed',minimumImages:15});
   const shot=await fetch(app.origin+completed.latestScreenshot);assert.equal(shot.status,200);assert.ok(shot.headers.get('content-type').includes('image/png'));
   await page.screenshot({path:resolve(root,'complete-desktop.png'),fullPage:true});
   await page.setViewportSize({width:390,height:844});
@@ -91,7 +94,7 @@ try{
   await until(async()=>((await readRun(immediate)).state==='stopped'),'immediate stop');
   assert.equal((await readRun(immediate)).steps.length,0);
   assert.deepEqual(errors,[]);
-  const summary={scope:'UI/API/real Chromium fixture integration using injected scripted decisions; no Meta calls or credits.',checks:['start','duplicate rejected','live actions and screenshot','stop','partial report','restart','task completion','report link','mobile','history refresh','cancel during evidence','immediate stop','cross-origin rejection'],runs:(await status()).runs.map(r=>({id:r.id,state:r.state,actions:r.stepCount,taskCompleted:r.taskCompleted})),pageErrors:errors};
+  const summary={scope:'UI/API/real Chromium fixture integration using injected scripted decisions; no Meta calls or credits.',checks:['start','duplicate rejected','live actions and screenshot','stop','partial report','restart','task completion','report link','mobile','history refresh','cancel during evidence','immediate stop','cross-origin rejection','offline downloads for stopped and completed runs'],runs:(await status()).runs.map(r=>({id:r.id,state:r.state,actions:r.stepCount,taskCompleted:r.taskCompleted})),pageErrors:errors};
   await writeFile(resolve(root,'summary.json'),JSON.stringify(summary,null,2));
   console.log(JSON.stringify({result:'PASS',output:root,...summary}));
 }finally{await runs.close();await browser.close();await app.close();}

@@ -5,6 +5,7 @@ import {setTimeout as delay} from 'node:timers/promises';
 import {chromium} from 'playwright';
 import {createFixtureServer} from '../src/server.mjs';
 import {createRunManager} from '../src/runs.mjs';
+import {checkOfflineDownload} from './check-offline-helper.mjs';
 
 const root=resolve('output/playwright',`console-examples-check-${Date.now()}`);await mkdir(root,{recursive:true});
 let runs=await createRunManager({root,configured:()=>false});
@@ -16,12 +17,13 @@ const list=()=>fetch(app.origin+'/api/runs').then(r=>r.json());
 const get=id=>fetch(app.origin+'/api/runs/'+id).then(r=>r.json()).then(r=>r.run);
 const post=(body,origin)=>fetch(app.origin+'/api/runs',{method:'POST',headers:{'Content-Type':'application/json',...(origin?{Origin:origin}:{})},body:JSON.stringify(body)});
 async function until(predicate,label){const end=Date.now()+60000;while(Date.now()<end){const value=await predicate();if(value)return value;await delay(80);}throw new Error('Timeout: '+label);}
-const completed=[];
+const completed=[],exports=[];
 try{
   await page.goto(app.origin);await page.locator('#target-mode').selectOption('examples');
   await until(()=>page.locator('#start').isEnabled(),'free checks enabled without Meta key');
   assert.equal((await list()).configured,false);assert.equal((await list()).runs.length,0);
   await until(async()=>((await page.locator('#comparison-kind').textContent()).includes('Saved reference')),'published reference label');
+  assert.equal(await page.locator('#comparison-download').isHidden(),true,'a saved reference is not a fresh run export');
   assert.equal((await post({exampleId:'radix-toast',checkMode:'deterministic'},'https://unrelated.test')).status,403);
   assert.equal((await post({exampleId:'other',checkMode:'deterministic'})).status,400);
   assert.equal((await post({exampleId:'radix-toast',checkMode:'agent'})).status,503);
@@ -33,6 +35,7 @@ try{
     await until(async()=>await page.locator('#original-image').evaluate(image=>image.complete&&image.naturalWidth>0),'reference image');
     await page.locator('#start').click();
     const id=await until(async()=>(await list()).activeId,'active '+exampleId);
+    assert.equal((await fetch(app.origin+'/reports/'+id+'/offline.html')).status,409,'active runs cannot be exported as final evidence');
     await until(()=>page.url().includes(id),'new run selection persisted in URL');
     assert.equal((await post({exampleId:'radix-toast',checkMode:'deterministic'})).status,409);
     assert.equal((await post({variant:'correct'})).status,409);
@@ -49,6 +52,7 @@ try{
     }
     const href=await page.locator('#comparison-report').getAttribute('href');assert.equal(href,result.reportUrl);
     const report=await fetch(app.origin+href).then(r=>r.text());assert.ok(report.includes('Before/after comparison verified'));
+    exports.push(await checkOfflineDownload({page,browser,button:page.locator('#comparison-download'),path:resolve(root,exampleId+'-offline.html'),id,expectedText:'Before/after comparison verified',minimumImages:2,screenshot:resolve(root,exampleId+'-offline.png')}));
     assert.equal((await fetch(app.origin+'/reports/'+id+'/details.json')).status,200);
     await page.screenshot({path:resolve(root,exampleId+'-desktop.png'),fullPage:true});
     await page.reload();await until(async()=>((await page.locator('#comparison-kind').textContent()).includes('Fresh deterministic')),'fresh run restored');
@@ -65,6 +69,7 @@ try{
   const raw=JSON.parse(await readFile(resolve(root,cancelledId,'report.json'),'utf8'));assert.equal(raw.cancelled,true);assert.equal(raw.outcome,'agent_inconclusive');
   const report=await fetch(app.origin+stopped.reportUrl).then(r=>r.text());assert.ok(report.includes('Comparison stopped'));assert.ok(report.includes('partial'));
   await until(async()=>((await page.locator('#comparison-result').innerText()).includes('partial')),'stopped UI');
+  exports.push(await checkOfflineDownload({page,browser,button:page.locator('#comparison-download'),path:resolve(root,'stopped-offline.html'),id:cancelledId,expectedText:'Comparison stopped',minimumImages:1}));
   const snapshot=JSON.stringify(stopped.comparison);await delay(250);assert.equal(JSON.stringify((await get(cancelledId)).comparison),snapshot,'no background progress after Stop');
   await page.setViewportSize({width:390,height:844});await page.screenshot({path:resolve(root,'stopped-mobile.png'),fullPage:true});
   assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
@@ -77,8 +82,10 @@ try{
   assert.equal(await page.locator('#example-id').inputValue(),'radix-toast');
   assert.equal((await get(cancelledId)).state,'stopped');assert.equal((await get(restoredId)).comparison.verified,true);
   const unsafe=await fetch(app.origin+'/examples/radix-toast/reference/%2e%2e%2f.env');assert.equal(unsafe.status,404);
+  assert.equal((await fetch(app.origin+'/reports/agent-0/offline.html')).status,404);
   assert.deepEqual(errors,[]);
-  const summary={scope:'Real UI/API/Chromium checks of both third-party examples; configured=false and no Meta calls.',checks:['published reference labels','free checks without key','Meta mode requires key','cross-origin rejection','invalid example rejection','shared run lock','both real deterministic comparisons','fresh screenshots and reports','URL reload restoration','cancel after first repeat','no corrected attempt after stop','partial persistence','server restart','mobile390','reference traversal rejection'],completed,stoppedId:cancelledId,pageErrors:errors};
+  const summary={scope:'Real UI/API/Chromium checks of both third-party examples; configured=false and no Meta calls.',checks:['published reference labels','free checks without key','Meta mode requires key','cross-origin rejection','invalid example rejection','shared run lock','both real deterministic comparisons','fresh screenshots and reports','URL reload restoration','cancel after first repeat','no corrected attempt after stop','partial persistence','server restart','mobile390','reference traversal rejection','offline downloads for both examples and stopped comparison','active export rejected'],completed,stoppedId:cancelledId,pageErrors:errors};
+  summary.offlineExports=exports;
   await writeFile(resolve(root,'summary.json'),JSON.stringify(summary,null,2)+'\n');console.log(JSON.stringify({result:'PASS',output:root,...summary}));
 }catch(error){
   await page.screenshot({path:resolve(root,'failure.png'),fullPage:true}).catch(()=>{});

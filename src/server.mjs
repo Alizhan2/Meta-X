@@ -3,6 +3,7 @@ import {readFile} from 'node:fs/promises';
 import {randomUUID} from 'node:crypto';
 import {resolve} from 'node:path';
 import {bookingPage, variants} from './fixture.mjs';
+import {exportOfflineReport} from './export.mjs';
 
 export async function createFixtureServer({port = 0,runs=null,artifactRoot=resolve('output/playwright')} = {}) {
   const sessions = new Map();
@@ -48,6 +49,15 @@ export async function createFixtureServer({port = 0,runs=null,artifactRoot=resol
       if(runs&&consoleFiles[url.pathname]&&req.method==='GET')return send(200,await readFile(new URL('../public/'+consoleFiles[url.pathname],import.meta.url)),url.pathname.endsWith('.css')?'text/css':url.pathname.endsWith('.mjs')?'text/javascript':'text/html');
       if (url.pathname === '/style.css') return send(200, css, 'text/css');
       if (url.pathname === '/favicon.ico') return send(204, '');
+      const download=/^\/reports\/(agent-\d+)\/offline\.html$/.exec(url.pathname);
+      if(download&&req.method==='GET'){
+        try{
+          const exported=await exportOfflineReport(artifactRoot,download[1]);
+          res.setHeader('Content-Disposition',`attachment; filename="${exported.filename}"`);
+          res.setHeader('Content-Security-Policy',"default-src 'none'; img-src data:; style-src 'unsafe-inline'; base-uri 'none'; form-action 'none'");
+          return send(200,exported.html);
+        }catch(error){return json(error.status||404,{error:error.code||'report_not_found'});}
+      }
       const artifact=/^\/reports\/(agent-\d+)\/(report\.(?:html|json)|details\.json|(?:original|corrected)\.png|\d{2}(?:-after)?\.png|evidence\/evidence\.json)$/.exec(url.pathname);
       if(artifact && req.method==='GET'){
         try{

@@ -31,6 +31,12 @@ function safeReportPath(value,{image=false}={}){
   try{const url=new URL(value,location.origin);if(url.origin!==location.origin||url.pathname.split('/').some(part=>part==='..')||!url.pathname.startsWith('/reports/'))return null;if(image?!url.pathname.endsWith('.png'):!url.pathname.endsWith('/report.html'))return null;return url.pathname+url.search;}catch{return null;}
 }
 function store(run){if(!run||typeof run.id!=='string'||!Array.isArray(run.steps))throw new Error('The run service returned an unreadable run.');runs.set(run.id,run);return run;}
+function renderDownload(element,run){
+  const report=safeReportPath(run?.reportUrl);
+  element.hidden=!report||activeStates.has(run?.state);
+  if(!element.hidden){element.href=report.replace(/report\.html$/,'offline.html');element.download=`tabproof-${run.id}.html`;}
+  else{element.removeAttribute('href');element.removeAttribute('download');}
+}
 function storeSummary(run){
   if(!run||typeof run.id!=='string'||!Number.isInteger(run.stepCount))throw new Error('The run service returned an unreadable run.');
   runs.set(run.id,{...run,steps:runs.get(run.id)?.steps??[]});
@@ -105,6 +111,7 @@ function renderPreview(run){
   setText(ui.screenMeta,steps.length?`After action ${steps.length}`:source?'Initial page':'');
   setText(ui.detail,readableReason(run)+(run?.interruptedAction?' An action was interrupted before its resulting page could be recorded.':''));
   const report=safeReportPath(run?.reportUrl);ui.report.hidden=!report;setText(ui.report,isCustom(run)?'Open run report ↗':'Open evidence report ↗');if(report)ui.report.href=report;else ui.report.removeAttribute('href');
+  renderDownload($('report-download'),run);
 }
 function renderHistory(){
   const ordered=newest();setText(ui.historyNote,ordered.length?`${ordered.length} ${ordered.length===1?'run':'runs'} saved locally. Select one to inspect it.`:'Only real runs are listed here.');
@@ -149,6 +156,7 @@ function renderComparison(run){
   setText($('comparison-correction'),entry?.correction||'');setText($('comparison-scope'),comparison?.scope||'Results apply to this pinned local reproduction and the recorded keyboard checks.');
   externalLink($('comparison-source'),entry?.sourceUrl);externalLink($('comparison-fix'),entry?.fixUrl);
   const report=safeReportPath(run?.reportUrl);$('comparison-report').hidden=!report;if(report)$('comparison-report').href=report;else $('comparison-report').removeAttribute('href');
+  renderDownload($('comparison-download'),run);
 }
 function serviceNotice(){if(!configured&&!(ui.mode.value==='examples'&&ui.checkMode.value==='deterministic'))notice('The Meta API key is not configured on this server. Add it locally before starting a run.');else notice(formError);}
 function restoreRunDraft(run){if(draftRestored||!run&&selectedId)return;if(isCustom(run)){ui.mode.value='custom';ui.url.value=run.targetUrl||'';ui.task.value=run.task||'';}else if(isExample(run)){ui.mode.value='examples';if(run.exampleId)ui.exampleId.value=run.exampleId;if(['deterministic','agent'].includes(run.checkMode))ui.checkMode.value=run.checkMode;}draftRestored=true;saveExampleDraft();}
