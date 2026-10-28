@@ -91,7 +91,7 @@ try{
   await until(async()=>((await readRun(immediate)).state==='stopped'),'immediate stop');
   assert.equal((await readRun(immediate)).steps.length,0);
   assert.deepEqual(errors,[]);
-  const summary={scope:'UI/API/real Chromium fixture integration using injected scripted decisions; no Meta calls or credits.',checks:['start','duplicate rejected','live actions and screenshot','stop','partial report','restart','task completion','report link','mobile','history refresh','cancel during evidence','immediate stop','cross-origin rejection'],runs:(await status()).runs.map(r=>({id:r.id,state:r.state,actions:r.steps.length,taskCompleted:r.taskCompleted})),pageErrors:errors};
+  const summary={scope:'UI/API/real Chromium fixture integration using injected scripted decisions; no Meta calls or credits.',checks:['start','duplicate rejected','live actions and screenshot','stop','partial report','restart','task completion','report link','mobile','history refresh','cancel during evidence','immediate stop','cross-origin rejection'],runs:(await status()).runs.map(r=>({id:r.id,state:r.state,actions:r.stepCount,taskCompleted:r.taskCompleted})),pageErrors:errors};
   await writeFile(resolve(root,'summary.json'),JSON.stringify(summary,null,2));
   console.log(JSON.stringify({result:'PASS',output:root,...summary}));
 }finally{await runs.close();await browser.close();await app.close();}

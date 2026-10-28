@@ -37,7 +37,7 @@
     "pageErrors": []
   },
   "live": {
-    "scope": "Actual main-console buttons → local API → real Meta/Chromium paired runs → independent example-specific audits → fresh comparison UI and reports. Both examples checked; no scripted model decisions.",
+    "scope": "Actual main-console buttons \u2192 local API \u2192 real Meta/Chromium paired runs \u2192 independent example-specific audits \u2192 fresh comparison UI and reports. Both examples checked; no scripted model decisions.",
     "attempts": [
       {
         "id": "agent-1793161145180178068",
@@ -57,5 +57,108 @@
       }
     ],
     "pageErrors": []
+  },
+  "postMerge": {
+    "unitTests": 55,
+    "free": {
+      "scope": "Real UI/API/Chromium checks of both third-party examples; configured=false and no Meta calls.",
+      "checks": [
+        "published reference labels",
+        "free checks without key",
+        "Meta mode requires key",
+        "cross-origin rejection",
+        "invalid example rejection",
+        "shared run lock",
+        "both real deterministic comparisons",
+        "fresh screenshots and reports",
+        "URL reload restoration",
+        "cancel after first repeat",
+        "no corrected attempt after stop",
+        "partial persistence",
+        "server restart",
+        "mobile390",
+        "reference traversal rejection"
+      ],
+      "completed": [
+        {
+          "id": "agent-1793161568228159954",
+          "exampleId": "react-aria-scroll",
+          "original": 3,
+          "corrected": 3
+        },
+        {
+          "id": "agent-1793161574799663399",
+          "exampleId": "radix-toast",
+          "original": 3,
+          "corrected": 3
+        }
+      ],
+      "stoppedId": "agent-1793161578491735680",
+      "pageErrors": []
+    },
+    "console": {
+      "scope": "UI/API/real Chromium fixture integration using injected scripted decisions; no Meta calls or credits.",
+      "checks": [
+        "start",
+        "duplicate rejected",
+        "live actions and screenshot",
+        "stop",
+        "partial report",
+        "restart",
+        "task completion",
+        "report link",
+        "mobile",
+        "history refresh",
+        "cancel during evidence",
+        "immediate stop",
+        "cross-origin rejection"
+      ],
+      "runs": [
+        {
+          "id": "agent-1793161588045491745",
+          "state": "stopped",
+          "actions": 0,
+          "taskCompleted": false
+        },
+        {
+          "id": "agent-1793161580411460614",
+          "state": "stopped",
+          "actions": 15,
+          "taskCompleted": true
+        },
+        {
+          "id": "agent-1793161569601562375",
+          "state": "completed",
+          "actions": 15,
+          "taskCompleted": true
+        },
+        {
+          "id": "agent-1793161568245495008",
+          "state": "stopped",
+          "actions": 2,
+          "taskCompleted": false
+        }
+      ],
+      "pageErrors": []
+    },
+    "custom": {
+      "scope": "Custom URL/task UI and real HTTP browser/proxy integration; scripted decisions, no Meta API calls.",
+      "targetUrl": "http://127.0.0.1:52388/",
+      "task": "\u041d\u0430\u0439\u0434\u0438 \u043c\u0430\u0441\u0442\u0435\u0440-\u043a\u043b\u0430\u0441\u0441 \u043f\u043e \u043a\u0435\u0440\u0430\u043c\u0438\u043a\u0435 \u0447\u0435\u0440\u0435\u0437 \u043f\u043e\u0438\u0441\u043a.",
+      "completed": {
+        "id": "agent-1793161627921994883",
+        "actions": 4,
+        "outcome": "agent_reported_complete",
+        "independentlyVerified": false
+      },
+      "cancelled": {
+        "id": "agent-1793161629559671070",
+        "actions": 0
+      },
+      "formSubmissions": 1,
+      "blockedPrivateRequests": true,
+      "pageErrors": []
+    },
+    "liveScope": "The live evidence above was recorded before merging concurrent workbench review fixes; no extra paid sessions were run for this merge."
   }
 }

@@ -6,17 +6,19 @@ import {normalizeCustomTarget} from './target.mjs';
 import {executeExampleComparison,loadExamples,readExampleReference,exampleDefinition,newExampleComparison,renderExampleReport} from './examples.mjs';
 
 const fail=(status,code)=>Object.assign(new Error(code),{status,code});
-function project(report){
-  const screenshot=report.latestScreenshot||(report.steps.length?`${String(report.steps.length-1).padStart(2,'0')}-after.png`:null);
-  return {id:report.runId,variant:report.variant,targetKind:report.targetKind||'fixture',targetUrl:report.targetUrl,finalUrl:report.finalUrl,exampleId:report.exampleId,exampleTitle:report.exampleTitle,checkMode:report.checkMode,comparison:report.comparison?structuredClone(report.comparison):undefined,startedAt:report.startedAt,finishedAt:report.finishedAt,steps:report.steps,requests:report.requests?.length??0,reason:report.reason,outcome:report.outcome,taskCompleted:report.agentResult?.outcome==='task_completed',latestScreenshot:screenshot?`/reports/${report.runId}/${screenshot}`:null,task:report.task,executionMode:report.executionMode||'meta-live',model:report.model,interruptedAction:report.interruptedAction,executedActions:report.executedActions};
+function project(report,liveScreenshot=null){
+  const screenshot=liveScreenshot||report.latestScreenshot||(report.steps.length?`${String(report.steps.length-1).padStart(2,'0')}-after.png`:null);
+  return {id:report.runId,variant:report.variant,targetKind:report.targetKind||'fixture',targetUrl:report.targetUrl,finalUrl:report.finalUrl,exampleId:report.exampleId,exampleTitle:report.exampleTitle,checkMode:report.checkMode,comparison:report.comparison?structuredClone(report.comparison):undefined,startedAt:report.startedAt,finishedAt:report.finishedAt,steps:report.steps,stepCount:report.steps.length,requests:report.requests?.length??0,reason:report.reason,outcome:report.outcome,taskCompleted:report.agentResult?.outcome==='task_completed',latestScreenshot:screenshot?`/reports/${report.runId}/${screenshot}`:null,task:report.task,executionMode:report.executionMode||'meta-live',model:report.model,interruptedAction:report.interruptedAction,executedActions:report.executedActions};
 }
 function finalState(report){return report.cancelled?'stopped':report.agentResult?.valid===false?'failed':'completed';}
+
+const maxRecords=100;
 
 export async function createRunManager({execute=executeRun,executeExample=executeExampleComparison,examplesCatalog,root=resolve('output/playwright'),configured=()=>!!process.env.MODEL_API_KEY}={}){
   const catalog=examplesCatalog||await loadExamples();
   const records=new Map(),controlOrigins=new Set();let active=null,closing=false;
   let folders=[];try{folders=await readdir(root);}catch{}
-  for(const folder of folders.filter(name=>/^agent-\d+$/.test(name)).sort().reverse().slice(0,100)){
+  for(const folder of folders.filter(name=>/^agent-\d+$/.test(name)).sort().reverse().slice(0,maxRecords)){
     try{
       let report=JSON.parse(await readFile(resolve(root,folder,'report.json'),'utf8'));
       if(report.runId!==folder||!Array.isArray(report.steps)||typeof report.startedAt!=='string')continue;
@@ -31,8 +33,17 @@ export async function createRunManager({execute=executeRun,executeExample=execut
     }catch{}
   }
   const get=id=>{const run=records.get(id);if(!run)throw fail(404,'run_not_found');return structuredClone(run);};
+  const stop=id=>{
+    const run=records.get(id);if(!run)throw fail(404,'run_not_found');
+    if(active?.id===id&&!active.controller.signal.aborted){run.state='stopping';run.phase='stopping';active.controller.abort(new Error('user_stopped'));}
+    return get(id);
+  };
+  const prune=()=>{
+    const stale=[...records.values()].filter(run=>run.id!==active?.id).sort((a,b)=>a.startedAt.localeCompare(b.startedAt));
+    while(records.size>maxRecords&&stale.length)records.delete(stale.shift().id);
+  };
   return {
-    list(){return {runs:[...records.values()].sort((a,b)=>b.startedAt.localeCompare(a.startedAt)).map(run=>structuredClone(run)),configured:configured(),activeId:active?.id??null};},
+    list(){return {runs:[...records.values()].sort((a,b)=>b.startedAt.localeCompare(a.startedAt)).map(({steps,...summary})=>structuredClone(summary)),configured:configured(),activeId:active?.id??null};},
     get,
     examples(){return {examples:structuredClone(catalog)};},
     reference:readExampleReference,
@@ -56,28 +67,24 @@ export async function createRunManager({execute=executeRun,executeExample=execut
       if(active)throw fail(409,'run_already_active');
       if(!configured()&&!(spec.targetKind==='example'&&spec.checkMode==='deterministic'))throw fail(503,'model_not_configured');
       const id=newRunId(),controller=new AbortController();
-      const run={id,...spec,state:'starting',phase:'starting',steps:[],requests:0,latestScreenshot:null,reportUrl:null,startedAt:new Date().toISOString(),taskCompleted:false,executionMode:spec.targetKind==='example'&&spec.checkMode==='deterministic'?'deterministic':'meta-live',...(spec.targetKind==='example'?{comparison:newExampleComparison(exampleDefinition(spec.exampleId),spec.checkMode)}:{})};
+      const run={id,...spec,state:'starting',phase:'starting',steps:[],stepCount:0,requests:0,latestScreenshot:null,reportUrl:null,startedAt:new Date().toISOString(),taskCompleted:false,executionMode:spec.targetKind==='example'&&spec.checkMode==='deterministic'?'deterministic':'meta-live',...(spec.targetKind==='example'?{comparison:newExampleComparison(exampleDefinition(spec.exampleId),spec.checkMode)}:{})};
       records.set(id,run);
-      active={id,controller,promise:null};
-      const job=active;
+      active={id,controller,promise:null};prune();
+      const job=active;let liveScreenshot=null;
       job.promise=Promise.resolve().then(()=>(spec.targetKind==='example'?executeExample:execute)({...spec,id,root,controlOrigins:[...controlOrigins],signal:controller.signal,onUpdate:({phase,report,screenshot})=>{
-        if(screenshot)report.latestScreenshot=screenshot;
-        Object.assign(run,project(report));
+        if(screenshot)liveScreenshot=screenshot;
+        Object.assign(run,project(report,liveScreenshot));
         run.phase=phase;
         if(!controller.signal.aborted&&phase!=='finished')run.state=phase==='checking'?'checking':phase==='starting'?'starting':'running';
       }})).then(({report})=>{
-        Object.assign(run,project(report),{state:finalState(report),phase:'finished',reportUrl:`/reports/${id}/report.html`});
+        Object.assign(run,project(report,liveScreenshot),{state:finalState(report),phase:'finished',reportUrl:`/reports/${id}/report.html`});
       }).catch(()=>{
         // No raw exception/credential material is exposed through the control API.
         Object.assign(run,{state:controller.signal.aborted?'stopped':'failed',phase:'finished',reason:controller.signal.aborted?'user_stopped':'run_failed',finishedAt:new Date().toISOString()});
       }).finally(()=>{if(active===job)active=null;});
       return get(id);
     },
-    stop(id){
-      const run=records.get(id);if(!run)throw fail(404,'run_not_found');
-      if(active?.id===id&&!active.controller.signal.aborted){run.state='stopping';run.phase='stopping';active.controller.abort(new Error('user_stopped'));}
-      return get(id);
-    },
-    async close(){closing=true;const job=active;if(job){this.stop(job.id);await job.promise;}}
+    stop,
+    async close(){closing=true;const job=active;if(job){stop(job.id);await job.promise;}}
   };
 }

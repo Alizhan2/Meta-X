@@ -56,7 +56,8 @@ try{
   await page.locator('#start').click();
   const finished=await until(async()=>{const s=(await api('/api/runs')).data;const r=s.runs[0];return r?.state==='completed'?r:false;},'custom completed');
   assert.equal(finished.targetKind,'custom');assert.equal(finished.task,task);assert.equal(finished.targetUrl,targetUrl);
-  assert.equal(finished.outcome,'agent_reported_complete');assert.equal(finished.taskCompleted,false);assert.equal(finished.steps.length,4);
+  assert.equal(finished.outcome,'agent_reported_complete');assert.equal(finished.taskCompleted,false);assert.equal(finished.stepCount,4);assert.equal(finished.steps,undefined);
+  const detail=(await api(`/api/runs/${finished.id}`)).data.run;assert.equal(detail.steps.length,4);
   assert.equal(submissions,1,'no automatic probe/replay can repeat a real form submission');assert.deepEqual(queries,['керамика']);assert.equal(forbiddenHits,0,'loopback subrequest must pass proxy and be rejected');
   await until(()=>page.locator('#report-link').isVisible(),'report link');
   assert.equal(await page.locator('#fixture-schedule').isHidden(),true);
@@ -73,6 +74,6 @@ try{
   await until(async()=>!!(await api('/api/runs')).data.activeId,'second active');await page.locator('#stop').click();
   const stopped=await until(async()=>{const s=(await api('/api/runs')).data;return s.runs.find(r=>r.id!==finished.id&&r.state==='stopped');},'custom stop');assert.ok(stopped.reportUrl);assert.equal(stopped.taskCompleted,false);
   assert.equal(submissions,1);assert.deepEqual(errors,[]);
-  const summary={scope:'Custom URL/task UI and real HTTP browser/proxy integration; scripted decisions, no Meta API calls.',targetUrl,task,completed:{id:finished.id,actions:finished.steps.length,outcome:finished.outcome,independentlyVerified:false},cancelled:{id:stopped.id,actions:stopped.steps.length},formSubmissions:submissions,blockedPrivateRequests:forbiddenHits===0,pageErrors:errors};
+  const summary={scope:'Custom URL/task UI and real HTTP browser/proxy integration; scripted decisions, no Meta API calls.',targetUrl,task,completed:{id:finished.id,actions:finished.stepCount,outcome:finished.outcome,independentlyVerified:false},cancelled:{id:stopped.id,actions:stopped.stepCount},formSubmissions:submissions,blockedPrivateRequests:forbiddenHits===0,pageErrors:errors};
   await writeFile(resolve(root,'summary.json'),JSON.stringify(summary,null,2));console.log(JSON.stringify({result:'PASS',output:root,...summary}));
 }finally{await runs.close();await browser.close();await app.close();await new Promise(resolve=>target.close(resolve));await new Promise(resolve=>forbidden.close(resolve));}

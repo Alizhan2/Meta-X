@@ -54,7 +54,7 @@ These checkers know the two examples' contracts. Their results are not a generic
 
 ## Verification
 
-`npm test` passes **50 tests**, including key-free deterministic execution, the shared lock, invalid inputs, dependency availability, reference path restrictions, cancellation labels and recovery after restart.
+`npm test` passes **55 tests**, including key-free deterministic execution, the shared lock, invalid inputs, dependency availability, reference path restrictions, cancellation labels and recovery after restart.
 
 `npm run check:console-examples` exercises the actual UI → API → real Chromium → persisted report → UI flow for both examples with **configured=false**. No model decisions or outcomes are mocked. The successful run is saved in:
 
@@ -85,3 +85,7 @@ A separate successful full verification on October 28 is saved at `output/playwr
 All four real sessions used the current console's own API and shared manager. Both sides' fresh screenshots, action records, independent measurements, report links and history reloads were checked; no page errors were recorded. These four sessions demonstrate the integrated flow and are not a general reliability estimate. The earlier failed comparison remains in the history.
 
 Historical evidence folders for the two original third-party demonstrations remain unchanged. Refactoring their CLI modules creates new source fingerprints for future runs and does not rewrite the archived raw results.
+
+After merging the concurrent workbench review fixes on October 28, the complete 55-test suite and fresh free UI comparisons passed again (`output/playwright/console-examples-check-1793161567988/summary.json`). The ordinary console regression also passed (`output/playwright/console-check-1793161567922/summary.json`). The history list now carries counts instead of full action arrays; individual run endpoints retain the full actions. Live model evidence above predates this merge; it was not rerun merely to change the build fingerprint.
+
+The merged custom-site browser regression passed at `output/playwright/custom-check-1793161624340/summary.json`, including full individual-run actions, one actual form submission, cancellation and blocked private subrequests.

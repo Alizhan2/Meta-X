@@ -21,7 +21,10 @@ export async function executeRun({variant='correct',targetUrl,task:customTask,co
   const report={runId:id,...target,startedAt:new Date().toISOString(),budget:25,valid:true,outcome:'agent_inconclusive',reason:'action_budget_exhausted',steps:[],usage:[],requests:[],scope:target.targetKind==='custom'?'Website keyboard-task attempt; completion is model-reported, without an independent success oracle.':'Single controlled fixture run; not benchmark metrics.',executionMode:decide?'scripted-test':'meta-live'};
   let app,session;
   const update=(phase,extra={})=>onUpdate({phase,report,...extra});
-  const markCancelled=()=>{report.cancelled=true;report.reason='user_stopped';report.stop={source:'user',reason:'user_stopped',atStep:report.steps.length};};
+  const markCancelled=()=>{
+    if(report.cancelled)return;
+    if(report.stop)report.stopBeforeCancellation=report.stop;
+    report.cancelled=true;report.reason='user_stopped';report.stop={source:'user',reason:'user_stopped',atStep:report.steps.length};};
   try{
     signal?.throwIfAborted();update('starting');
     if(target.targetKind==='custom')session=await openWebsiteSession(target.targetUrl,{signal,controlOrigins});
@@ -34,6 +37,7 @@ export async function executeRun({variant='correct',targetUrl,task:customTask,co
         const file=`${String(i).padStart(2,'0')}${after?'-after':''}.png`;
         const observation=await observe(session.page,resolve(output,file));
         report.finalUrl=observation.url;
+        report.latestScreenshot=file;
         update('running',{screenshot:file,focus:observation.focus});return observation;
       },
       onRequest:()=>update('running'),onStep:()=>update('running')
@@ -45,7 +49,7 @@ export async function executeRun({variant='correct',targetUrl,task:customTask,co
     if(report.pendingAction){report.interruptedAction=report.pendingAction;delete report.pendingAction;}
     if(session)report.executedActions=session.executor.used;
     report.agentResult={outcome:report.outcome,reason:report.reason,valid:report.valid};
-    await session?.close();
+    await session?.close().catch(()=>{});
   }
   try{
     if(target.targetKind==='custom'){report.evidenceSkipped='custom_target';report.replaysSkipped='custom_target';}

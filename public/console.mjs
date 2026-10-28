@@ -9,7 +9,7 @@ function saveExampleDraft(){try{sessionStorage.setItem('tabproof-example-draft',
 const conditions={correct:'Corrected form',unreachable_button:'Unreachable confirm button',calendar_keyboard:'Calendar keyboard barrier',modal_dismissal:'Review window cannot close',focus_loss:'Unexpected focus return'};
 const states={starting:'Starting',waiting:'Waiting',running:'Running',stopping:'Stopping',checking:'Checking evidence',completed:'Finished',finished:'Finished',stopped:'Stopped',failed:'Failed'};
 const activeStates=new Set(['starting','running','stopping','checking']);
-const reasons={repeated_navigation_states:'The agent stopped after repeating the same controls without finding a new one.',input_token_limit:'The page content exceeded this run’s context limit. Recorded actions are saved.',model_reported_completion:'The model reported that the task was complete. Completion has not been independently verified.',unchanged_observation:'Repeated keyboard actions did not change the observed page.',focus_navigation_cycle:'The agent stopped after repeating a keyboard navigation path.',model_reported_blockage:'The model stopped and reported an obstacle. Independent checks determine what the evidence supports.',server_record_matches:'The stored booking matches the task.',reproduced_fixture_contract_violation:'An independent check reproduced a keyboard obstacle.',action_budget_exhausted:'The agent reached its action limit. The report keeps this separate from a site defect.',policy_no_progress:'The agent stopped after repeated actions made no progress.',policy_cycle:'The agent stopped after revisiting the same page state.',model_stopped:'The model ended its attempt. Independent checks determine what the evidence supports.',model_reported_blocked:'The model reported an obstacle. Independent checks determine what the evidence supports.',user_stopped:'Stopped at your request.',user_stop:'Stopped at your request.',stopped_by_user:'Stopped at your request.'};
+const reasons={repeated_navigation_states:'The agent stopped after repeating the same controls without finding a new one.',input_token_limit:'The page content exceeded this run’s context limit. Recorded actions are saved.',model_reported_completion:'The model reported that the task was complete. Completion has not been independently verified.',unchanged_observation:'Repeated keyboard actions did not change the observed page.',focus_navigation_cycle:'The agent stopped after repeating a keyboard navigation path.',model_reported_blockage:'The model stopped and reported an obstacle. Independent checks determine what the evidence supports.',server_record_matches:'The stored booking matches the task.',reproduced_fixture_contract_violation:'An independent check reproduced a keyboard obstacle.',action_budget_exhausted:'The agent reached its action limit. The report keeps this separate from a site defect.',policy_no_progress:'The agent stopped after repeated actions made no progress.',policy_cycle:'The agent stopped after revisiting the same page state.',model_stopped:'The model ended its attempt. Independent checks determine what the evidence supports.',model_reported_blocked:'The model reported an obstacle. Independent checks determine what the evidence supports.',user_stopped:'Stopped at your request.'};
 const runs=new Map();
 let formError='',draftRestored=false;
 let selectedId=new URL(location.href).searchParams.get('run');
@@ -31,6 +31,11 @@ function safeReportPath(value,{image=false}={}){
   try{const url=new URL(value,location.origin);if(url.origin!==location.origin||url.pathname.split('/').some(part=>part==='..')||!url.pathname.startsWith('/reports/'))return null;if(image?!url.pathname.endsWith('.png'):!url.pathname.endsWith('/report.html'))return null;return url.pathname+url.search;}catch{return null;}
 }
 function store(run){if(!run||typeof run.id!=='string'||!Array.isArray(run.steps))throw new Error('The run service returned an unreadable run.');runs.set(run.id,run);return run;}
+function storeSummary(run){
+  if(!run||typeof run.id!=='string'||!Number.isInteger(run.stepCount))throw new Error('The run service returned an unreadable run.');
+  runs.set(run.id,{...run,steps:runs.get(run.id)?.steps??[]});
+}
+const needsDetail=run=>!!run&&run.steps.length!==run.stepCount;
 function newest(){return [...runs.values()].sort((a,b)=>(Date.parse(b.startedAt)||0)-(Date.parse(a.startedAt)||0));}
 function selected(){return runs.get(selectedId)||null;}
 function setSelection(id,{persist=false}={}){selectedId=id;referenceSelected=false;timelineSignature='';previewKey='';if(persist){const url=new URL(location.href);url.searchParams.set('run',id);history.replaceState(null,'',url);}render();}
@@ -164,12 +169,12 @@ async function refreshList(){
   try{
     const data=await api('/api/runs');if(version!==mutationVersion){lastListAt=0;return;}
     if(!Array.isArray(data.runs)||typeof data.configured!=='boolean'||!(data.activeId===null||typeof data.activeId==='string'))throw new Error('The run service returned an unreadable state.');
-    for(const run of data.runs)store(run);
+    for(const run of data.runs)storeSummary(run);
     configured=data.configured;activeId=data.activeId;connected=true;lastListAt=Date.now();
     if(!selectedId){selectedId=ui.mode.value==='examples'?(!referenceSelected&&isExample(runs.get(activeId))?activeId:null):(activeId||newest()[0]?.id||null);}
     restoreRunDraft(runs.get(selectedId));serviceNotice();
     render();
-    if(selectedId&&!runs.has(selectedId))void refreshRun(selectedId);
+    if(selectedId&&(!runs.has(selectedId)||(needsDetail(runs.get(selectedId))&&selectedId!==activeId)))void refreshRun(selectedId);
   }catch(error){if(version===mutationVersion){connected=false;notice(`Cannot reach the run service. ${error.message}`,{retry:true});renderControls();}}
   finally{listBusy=false;ui.refresh.disabled=false;}
 }
