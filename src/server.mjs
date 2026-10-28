@@ -20,6 +20,12 @@ export async function createFixtureServer({port = 0,runs=null,artifactRoot=resol
     try {
       const actualPort=server.address().port;
       if(![`127.0.0.1:${actualPort}`,`localhost:${actualPort}`].includes(req.headers.host))return send(403,'Invalid host');
+      if(runs&&url.pathname==='/api/examples'&&req.method==='GET')return json(200,runs.examples());
+      const reference=/^\/examples\/(react-aria-scroll|radix-toast)\/reference\/(original\.png|corrected\.png|deterministic-results\.json|agent-summary\.json)$/.exec(url.pathname);
+      if(runs&&reference&&req.method==='GET'){
+        const file=await runs.reference(reference[1],reference[2]);
+        return file?send(200,file,reference[2].endsWith('.png')?'image/png':'application/json'):send(404,'Reference not found');
+      }
       if(url.pathname.startsWith('/api/runs')&&runs){
         if(req.method==='POST'){
           if(req.headers.origin&&req.headers.origin!==`http://${req.headers.host}`)return json(403,{error:'invalid_origin'});
@@ -42,7 +48,7 @@ export async function createFixtureServer({port = 0,runs=null,artifactRoot=resol
       if(runs&&consoleFiles[url.pathname]&&req.method==='GET')return send(200,await readFile(new URL('../public/'+consoleFiles[url.pathname],import.meta.url)),url.pathname.endsWith('.css')?'text/css':url.pathname.endsWith('.mjs')?'text/javascript':'text/html');
       if (url.pathname === '/style.css') return send(200, css, 'text/css');
       if (url.pathname === '/favicon.ico') return send(204, '');
-      const artifact=/^\/reports\/(agent-\d+)\/(report\.(?:html|json)|\d{2}(?:-after)?\.png|evidence\/evidence\.json)$/.exec(url.pathname);
+      const artifact=/^\/reports\/(agent-\d+)\/(report\.(?:html|json)|details\.json|(?:original|corrected)\.png|\d{2}(?:-after)?\.png|evidence\/evidence\.json)$/.exec(url.pathname);
       if(artifact && req.method==='GET'){
         try{
           const file=await readFile(resolve(artifactRoot,artifact[1],artifact[2]));
@@ -71,7 +77,7 @@ export async function createFixtureServer({port = 0,runs=null,artifactRoot=resol
   await new Promise((resolve,reject)=>{server.once('error',reject);server.listen(port,'127.0.0.1',resolve)});
   const origin = `http://127.0.0.1:${server.address().port}`;
   runs?.addControlOrigin?.(origin);
-  return {origin, createSession, getRecord(id) {return structuredClone(sessions.get(id)?.record ?? null)}, async close(){await new Promise((resolve,reject)=>server.close(e=>e?reject(e):resolve()))}};
+  return {origin, createSession, getRecord(id) {return structuredClone(sessions.get(id)?.record ?? null)}, async close(){await new Promise((resolve,reject)=>{server.close(e=>e?reject(e):resolve());server.closeAllConnections();});}};
 }
 
 async function readBody(req,limit=4096) {const chunks=[];let size=0;for await(const chunk of req){size+=chunk.length;if(size>limit)throw new Error('body_too_large');chunks.push(chunk);}return Buffer.concat(chunks).toString('utf8');}

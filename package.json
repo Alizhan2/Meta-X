@@ -11,6 +11,8 @@
     "check:regressions": "node scripts/check-regressions.mjs",
     "check:stopping": "node scripts/check-stopping.mjs",
     "check:console": "node scripts/check-console.mjs",
+    "check:console-examples": "node scripts/check-console-examples.mjs",
+    "check:console-examples:live": "node scripts/check-console-examples-live.mjs",
     "check:custom": "node scripts/check-custom.mjs",
     "check:public-run": "node scripts/check-public-run.mjs",
     "check:third-party": "node scripts/check-react-aria-scroll.mjs",

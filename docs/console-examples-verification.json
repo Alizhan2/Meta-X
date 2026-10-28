@@ -1,0 +1,61 @@
+{
+  "scope": "Integration verification only; not pooled reliability metrics. Historical failed attempts are not replaced.",
+  "free": {
+    "scope": "Real UI/API/Chromium checks of both third-party examples; configured=false and no Meta calls.",
+    "checks": [
+      "published reference labels",
+      "free checks without key",
+      "Meta mode requires key",
+      "cross-origin rejection",
+      "invalid example rejection",
+      "shared run lock",
+      "both real deterministic comparisons",
+      "fresh screenshots and reports",
+      "URL reload restoration",
+      "cancel after first repeat",
+      "no corrected attempt after stop",
+      "partial persistence",
+      "server restart",
+      "mobile390",
+      "reference traversal rejection"
+    ],
+    "completed": [
+      {
+        "id": "agent-1793078957431354363",
+        "exampleId": "react-aria-scroll",
+        "original": 3,
+        "corrected": 3
+      },
+      {
+        "id": "agent-1793078964046885901",
+        "exampleId": "radix-toast",
+        "original": 3,
+        "corrected": 3
+      }
+    ],
+    "stoppedId": "agent-1793078967773648874",
+    "pageErrors": []
+  },
+  "live": {
+    "scope": "Actual main-console buttons → local API → real Meta/Chromium paired runs → independent example-specific audits → fresh comparison UI and reports. Both examples checked; no scripted model decisions.",
+    "attempts": [
+      {
+        "id": "agent-1793161145180178068",
+        "exampleId": "react-aria-scroll",
+        "state": "completed",
+        "verified": true,
+        "originalActions": 5,
+        "correctedActions": 7
+      },
+      {
+        "id": "agent-1793161207720899449",
+        "exampleId": "radix-toast",
+        "state": "completed",
+        "verified": true,
+        "originalActions": 7,
+        "correctedActions": 7
+      }
+    ],
+    "pageErrors": []
+  }
+}

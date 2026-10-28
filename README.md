@@ -22,6 +22,22 @@ npm start
 
 Open http://127.0.0.1:3000 for the agent workbench. Choose a condition and press **Start agent**; **Stop** cancels the current attempt or evidence checks. The page updates the screenshot and action record as the agent works, then exposes **Open evidence report**. Only one run may be active; opening or refreshing the workbench never starts a run. Live runs use Meta API credits.
 
+Both third-party examples are also available directly in this main workbench. Choose **Run on → Third-party examples**, select **React Aria reading dialog** or **Radix notification dismissal**, then choose the method:
+
+- **Deterministic checks · free** runs the same keyboard contract three times on each version, plus the case's independent controls. It makes no model calls and works without a Meta key.
+- **Meta agent · API credits** starts a fresh original/corrected pair using the real agent and separate example-specific measurements. It uses Meta credits for two sessions.
+
+The before/after view shows fresh screenshots, counts, keyboard actions, the correction and a saved report. The initial **Saved reference** is explicitly labeled as previously published evidence; it is never presented as a new run. All run types share one lock and the same **Stop** button. Stopping keeps a partial comparison and does not certify a defect or completed fix. History and selection survive refresh; unfinished comparisons recovered after a service restart are marked failed rather than verified.
+
+Install the pinned example dependencies once, before starting the workbench:
+
+```sh
+npm ci --prefix examples/react-aria-scroll --ignore-scripts
+npm ci --prefix examples/radix-toast --ignore-scripts
+```
+
+An example without installed dependencies remains viewable as a saved reference but cannot start a fresh run. See [main-interface example integration and verification](docs/console-examples.md).
+
 To test your own site, choose **Run on → Your website**, paste a complete HTTP(S) address, and write the task in **Task to attempt**. Press **Start agent**. Public websites and a separate localhost development server are supported. The agent starts in a fresh browser and stays on the same site. Screenshots and page text are sent to Meta; use test data for private pages.
 
 The final build was checked on the unmodified official Python documentation: opening Tutorial took 14 actions and searching for `venv` took 15. Separate read-only replays verified the resulting URLs, page headings/results and focus paths. Earlier context-limit and navigation-loop failures are retained alongside the fixes. See [all public-site attempts and verification](docs/public-sites-2026-10-27/README.md).
