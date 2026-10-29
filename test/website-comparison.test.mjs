@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {mkdtemp,rm,mkdir,writeFile} from 'node:fs/promises';
 import {tmpdir} from 'node:os';
 import {join} from 'node:path';
-import {normalizeWebsiteComparison,escapeResult,contractDifference} from '../src/dialog-contract.mjs';
+import {normalizeWebsiteComparison,escapeResult,contractDifference,extractDiscoveredRoute,sameReplayFocus} from '../src/dialog-contract.mjs';
 import {newWebsiteComparison,evaluateWebsiteComparison} from '../src/website-comparison.mjs';
 import {createRunManager} from '../src/runs.mjs';
 import {renderWebsiteComparisonReport} from '../src/website-report.mjs';
@@ -11,8 +11,21 @@ const input={beforeUrl:'https://example.test/before',afterUrl:'https://example.t
 
 test('website comparison accepts only explicit two-URL contracts and applies target policy to both',()=>{
   assert.equal(normalizeWebsiteComparison(input).targetKind,'website-comparison');
+  assert.throws(()=>normalizeWebsiteComparison({...input,contract:{...input.contract,reach:'agent-route'}}),e=>e.code==='discovery_requires_agent');
+  assert.equal(normalizeWebsiteComparison({...input,checkMode:'agent',contract:{...input.contract,reach:'agent-route'}}).contract.reach,'agent-route');
   for(const body of [{...input,afterUrl:input.beforeUrl},{...input,afterUrl:'http://192.168.1.1/'},{...input,beforeUrl:'file:///tmp/page'},{...input,contract:{...input.contract,script:'alert(1)'}},{...input,contract:{...input.contract,dialogSelector:'#open'}},{...input,checkMode:'shell'},{...input,extra:true}])assert.throws(()=>normalizeWebsiteComparison(body),e=>e.status===400);
   assert.throws(()=>normalizeWebsiteComparison({...input,afterUrl:'http://localhost:3000/'},{controlOrigins:['http://127.0.0.1:3000']}),e=>e.code==='target_not_allowed');
+});
+
+test('discovered routes require an actual observed opening and Escape and preserve exact agent steps',()=>{
+  const steps=Array.from({length:5},(_,i)=>({action:{name:'press_key',arguments:{key:i===4?'Escape':'Tab'}},focusBefore:{tag:'BUTTON',id:String(i)},focusAfter:{tag:'BUTTON',id:String(i+1)}}));
+  const raw={runId:'agent-123',steps};
+  assert.equal(extractDiscoveredRoute(raw,{attempts:[{valid:true,actionIndex:4}]}),null,'a dialog already open at entry is not a discovered opening');
+  assert.equal(extractDiscoveredRoute(raw,{attempts:[{valid:false,actionIndex:4,openedAtIndex:3}]}),null);
+  const route=extractDiscoveredRoute(raw,{attempts:[{valid:true,actionIndex:4,openedAtIndex:3}]});assert.equal(route.sourceRunId,raw.runId);assert.deepEqual(route.steps,steps.slice(0,4));
+  route.steps[0].action.arguments.key='Enter';assert.equal(raw.steps[0].action.arguments.key,'Tab','route snapshot does not mutate the agent record');
+  assert.equal(sameReplayFocus({tag:'INPUT',id:'query',name:'Search',value:'Northstar'},{tag:'INPUT',id:'query',name:'Search',value:'Other'}),false);
+  assert.equal(sameReplayFocus({tag:'BUTTON',name:'Preview'},{tag:'BUTTON',name:'Apply'}),false);
 });
 
 test('Escape requires an observed open focused dialog and checks closure and focus separately',()=>{
@@ -36,6 +49,14 @@ test('independent attribution needs three valid repeated original failures and c
   comparison.original.agent={runId:'a',valid:true,model:'model',configuration,contract:{valid:true,passed:false}};comparison.corrected.agent={runId:'b',valid:true,model:'model',configuration,contract:{valid:true,passed:null}};
   assert.equal(evaluateWebsiteComparison(report),false,'unexercised Escape cannot establish an agent comparison');
   comparison.corrected.agent.contract.passed=true;assert.equal(evaluateWebsiteComparison(report),true);
+  report.contract={...report.contract,reach:'agent-route'};
+  comparison.discovery={sourceRunId:'a',steps:[{action:{name:'press_key',arguments:{key:'Tab'}}}]};
+  assert.equal(evaluateWebsiteComparison(report),false,'unattributed probes cannot establish discovered-route evidence');
+  for(const side of [comparison.original,comparison.corrected])for(const probe of side.probes)Object.assign(probe,{routeSourceRunId:'a',routeSteps:1});
+  assert.equal(evaluateWebsiteComparison(report),true);
+  comparison.corrected.probes[0].routeSourceRunId='b';assert.equal(evaluateWebsiteComparison(report),false,'corrected-agent route cannot replace the original route');
+  comparison.corrected.probes[0].routeSourceRunId='a';comparison.corrected.probes[0].routeSteps=2;assert.equal(evaluateWebsiteComparison(report),false,'a different prefix length cannot verify the shared route');
+  comparison.corrected.probes[0].routeSteps=1;
   comparison.corrected.agent.valid=false;assert.equal(evaluateWebsiteComparison(report),false,'invalid model attempt cannot verify comparison');
 });
 

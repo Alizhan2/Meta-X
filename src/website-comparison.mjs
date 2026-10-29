@@ -2,7 +2,7 @@ import {mkdir,writeFile,rename} from 'node:fs/promises';
 import {copyFileSync,renameSync,writeFileSync} from 'node:fs';
 import {resolve,relative,isAbsolute} from 'node:path';
 import {executeRun,newRunId} from './runner.mjs';
-import {probeDialogContract,createDialogAudit,contractDifference,contractScope} from './dialog-contract.mjs';
+import {probeDialogContract,createDialogAudit,extractDiscoveredRoute,contractDifference,contractScope} from './dialog-contract.mjs';
 import {renderWebsiteComparisonReport,reasonText} from './website-report.mjs';
 
 export function newWebsiteComparison(spec){
@@ -21,6 +21,7 @@ export function evaluateWebsiteComparison(report){
   comparison.independent=contractDifference(comparison);
   const sides=[comparison.original,comparison.corrected],probes=sides.flatMap(s=>s.probes);
   if(!sameConfiguration(probes.map(p=>p.configuration)))comparison.independent={verified:false,reason:'different_browser_or_build'};
+  if(report.contract?.reach==='agent-route'&&(!comparison.discovery||comparison.discovery.sourceRunId!==comparison.original.agent?.runId||probes.some(p=>p.routeSourceRunId!==comparison.discovery.sourceRunId||p.routeSteps!==comparison.discovery.steps.length)))comparison.independent={verified:false,reason:'discovered_route_not_shared'};
   if(report.checkMode==='agent'){
     const [a,b]=sides.map(side=>side.agent);
     comparison.agentComparability={verified:!!(a?.valid&&b?.valid&&a.runId!==b.runId&&a.model&&a.model===b.model&&sameConfiguration([a.configuration,b.configuration,...probes.map(p=>p.configuration)])),reason:'different_or_invalid_agent_runs'};
@@ -62,18 +63,25 @@ export async function executeWebsiteComparison({id,root,signal,onUpdate=()=>{},c
         const raw=child.report;side.agent={runId:raw.runId,valid:raw.agentResult.valid,model:raw.model,outcome:raw.outcome,reason:raw.reason,configuration:raw.configuration,contract:structuredClone(audit.audit)};report.model=raw.model;
         signal?.throwIfAborted();
         if(raw.agentResult.valid!==true)throw new Error('comparison_agent_failed');
+        if(spec.contract.reach==='agent-route'&&sideName==='original'){
+          report.comparison.discovery=extractDiscoveredRoute(raw,audit.audit);
+          if(!report.comparison.discovery)throw new Error('agent_route_not_found');
+          report.comparison.discovery.executionMode=report.executionMode;
+        }
       }
       persist('checking');
       for(let repeat=0;repeat<3;repeat++){
         signal?.throwIfAborted();
-        const result=await probeDialogContract({targetUrl:side.url,contract:spec.contract,signal,controlOrigins,capture:async page=>{
+        const result=await probeDialogContract({targetUrl:side.url,contract:spec.contract,signal,controlOrigins,route:report.comparison.discovery,capture:async page=>{
           const file=resolve(output,`${sideName}-probe.png.tmp`);await page.screenshot({path:file,type:'png'});await rename(file,resolve(output,sideName+'-probe.png'));
           copyShot(resolve(output,sideName+'-probe.png'),sideName,`Screenshot from independent check ${repeat+1} of 3`);
         },onStep:probe=>{
+          side.activeProbe={index:repeat+1,actions:structuredClone(probe.actions),routeSourceRunId:probe.routeSourceRunId};
+          if(report.comparison.discovery)side.summary=`Replaying the recorded route: ${probe.actions.length} of ${report.comparison.discovery.steps.length+1} actions in independent check ${repeat+1} of 3. No model calls are made during replay.`;
           if(spec.checkMode==='deterministic'){side.steps=structuredClone(probe.actions);side.actionsScope=`Independent check ${repeat+1} of 3`;}
           persist('checking');
         }});
-        side.probes.push(result);side.completed++;if(result.valid){if(result.passed)side.passed++;else side.failed++;}else side.inconclusive++;
+        side.probes.push(result);delete side.activeProbe;side.completed++;if(result.valid){if(result.passed)side.passed++;else side.failed++;}else side.inconclusive++;
         side.taskVerified=null;
         side.summary=`Dialog contract: ${side.passed} passed, ${side.failed} failed, ${side.inconclusive} inconclusive. ${reasonText(result.reason)} ${side.screenshotSource||''}. ${side.agent?`AI outcome: ${side.agent.outcome}. AI Escape audit: ${reasonText(side.agent.contract.reason)} `:''}Whole-task completion is not verified.`;
         persist('checking');
@@ -86,7 +94,7 @@ export async function executeWebsiteComparison({id,root,signal,onUpdate=()=>{},c
   }catch(error){
     report.comparison.verified=false;
     if(signal?.aborted){report.cancelled=true;report.reason='user_stopped';report.comparison.summary='Stopped at your request. These partial results do not verify a comparison.';}
-    else{report.valid=false;report.reason=error.message==='comparison_agent_failed'?'comparison_agent_failed':'comparison_check_failed';report.comparison.summary='The checks or model attempt could not finish. No completed comparison is verified.';}
+    else{report.valid=false;report.reason=['comparison_agent_failed','agent_route_not_found'].includes(error.message)?error.message:'comparison_check_failed';report.comparison.summary=report.reason==='agent_route_not_found'?'The agent did not discover and exercise the configured dialog. No route was invented or substituted.':'The checks or model attempt could not finish. No completed comparison is verified.';}
     for(const side of [report.comparison.original,report.comparison.corrected])if(side.state!=='finished')side.state=signal?.aborted?'stopped':'failed';
   }finally{
     details.original.probes=report.comparison.original.probes;details.corrected.probes=report.comparison.corrected.probes;

@@ -27,7 +27,10 @@
     "benchmark": "node scripts/benchmark.mjs",
     "check:website-comparison": "node scripts/check-website-comparison.mjs",
     "demo:website-comparison": "node scripts/serve-dialog-comparison.mjs",
-    "check:website-comparison:live": "node scripts/check-website-comparison-live.mjs"
+    "check:website-comparison:live": "node scripts/check-website-comparison-live.mjs",
+    "check:discovery": "node scripts/check-discovery.mjs",
+    "demo:dispatch": "node scripts/serve-dispatch.mjs",
+    "check:discovery:live": "node scripts/check-website-comparison-live.mjs http://127.0.0.1:3000 http://127.0.0.1:4217 dispatch"
   },
   "dependencies": {
     "playwright": "^1.64.1"

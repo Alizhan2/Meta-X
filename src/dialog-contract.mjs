@@ -1,5 +1,5 @@
 import {setTimeout as delay} from 'node:timers/promises';
-import {openWebsiteSession} from './browser.mjs';
+import {openWebsiteSession,readFocus} from './browser.mjs';
 import {normalizeCustomTarget} from './target.mjs';
 import {runConfiguration} from './comparison.mjs';
 
@@ -11,24 +11,25 @@ export function normalizeWebsiteComparison(body,{controlOrigins=[]}={}){
   const corrected=normalizeCustomTarget({targetUrl:body.afterUrl,task:body.task},{controlOrigins});
   if(original.targetUrl===corrected.targetUrl)throw fail('identical_comparison_urls');
   const c=body.contract;
-  if(!c||typeof c!=='object'||Array.isArray(c)||Object.keys(c).sort().join()!=='dialogSelector,triggerSelector,type'||c.type!=='dialog_escape_focus')throw fail('invalid_contract');
+  if(!c||typeof c!=='object'||Array.isArray(c)||!['dialogSelector,triggerSelector,type','dialogSelector,reach,triggerSelector,type'].includes(Object.keys(c).sort().join())||c.type!=='dialog_escape_focus'||c.reach!==undefined&&c.reach!=='agent-route')throw fail('invalid_contract');
+  if(c.reach==='agent-route'&&body.checkMode!=='agent')throw fail('discovery_requires_agent');
   // Plain CSS is evaluated read-only in the main frame, never as JS or Playwright selectors.
   const selector=value=>{if(typeof value!=='string'||!value.trim()||value.length>200||/[\x00-\x1f\x7f]/.test(value))throw fail('invalid_contract');return value.trim();};
-  const contract={type:c.type,triggerSelector:selector(c.triggerSelector),dialogSelector:selector(c.dialogSelector)};
+  const contract={type:c.type,triggerSelector:selector(c.triggerSelector),dialogSelector:selector(c.dialogSelector),...(c.reach?{reach:c.reach}:{})};
   if(contract.triggerSelector===contract.dialogSelector)throw fail('invalid_contract');
   return {targetKind:'website-comparison',beforeUrl:original.targetUrl,afterUrl:corrected.targetUrl,task:original.task,checkMode:body.checkMode,contract};
 }
 
-export async function readDialogState(page,contract){
-  return page.evaluate(({triggerSelector,dialogSelector})=>{
+export async function readDialogState(page,contract,{allowMissing=false}={}){
+  return page.evaluate(({triggerSelector,dialogSelector,allowMissing})=>{
     let triggers,dialogs;
     try{triggers=[...document.querySelectorAll(triggerSelector)];dialogs=[...document.querySelectorAll(dialogSelector)];}
     catch{return {valid:false,reason:'invalid_css_selector'};}
-    if(triggers.length!==1||dialogs.length>1)return {valid:false,reason:'elements_not_unique',triggerCount:triggers.length,dialogCount:dialogs.length};
+    if(triggers.length>1||dialogs.length>1||triggers.length===0&&!allowMissing)return {valid:false,reason:'elements_not_unique',triggerCount:triggers.length,dialogCount:dialogs.length};
     const trigger=triggers[0],dialog=dialogs[0],active=document.activeElement;
     const visible=el=>{if(!el||el.closest('[hidden],[inert]'))return false;const style=getComputedStyle(el);return style.display!=='none'&&style.visibility!=='hidden'&&style.visibility!=='collapse'&&el.getClientRects().length>0;};
-    return {valid:true,dialogVisible:visible(dialog),focusInside:!!dialog?.contains(active),triggerFocused:active===trigger,triggerVisible:visible(trigger),focus:{id:active?.id||null,tag:active?.tagName||null,name:active?.getAttribute('aria-label')||active?.innerText?.slice(0,100)||''}};
-  },contract);
+    return {valid:true,targetPresent:triggers.length===1,dialogVisible:visible(dialog),focusInside:!!dialog?.contains(active),triggerFocused:active===trigger,triggerVisible:visible(trigger),focus:{id:active?.id||null,tag:active?.tagName||null,name:active?.getAttribute('aria-label')||active?.innerText?.slice(0,100)||''}};
+  },{...contract,allowMissing});
 }
 
 export async function settleDialogState(page,contract,phase,signal){
@@ -50,11 +51,12 @@ export function escapeResult(before,after){
 export function createDialogAudit(contract,signal){
   let before=null;
   const audit={valid:true,passed:null,reason:'escape_not_exercised_in_dialog',attempts:[]};
-  return {audit,async observe({page,after,action}){
-    let state=after&&action?.name==='press_key'&&action.arguments.key==='Escape'&&before?.dialogVisible&&before?.focusInside?await settleDialogState(page,contract,'close',signal):await readDialogState(page,contract);
+  return {audit,async observe({page,index,after,action}){
+    let state=after&&action?.name==='press_key'&&action.arguments.key==='Escape'&&before?.dialogVisible&&before?.focusInside?await settleDialogState(page,contract,'close',signal):await readDialogState(page,contract,{allowMissing:contract.reach==='agent-route'});
     if(!state.valid){audit.valid=false;audit.passed=null;audit.reason=state.reason;throw new Error('invalid_contract_observation');}
+    if(after&&action?.name==='press_key'&&['Enter','Space'].includes(action.arguments.key)&&before?.triggerFocused&&!before.dialogVisible&&state.dialogVisible&&state.focusInside)audit.openedAtIndex=index;
     if(after&&action?.name==='press_key'&&action.arguments.key==='Escape'){
-      const result=escapeResult(before,state);audit.attempts.push({before,after:state,...result});
+      const result=escapeResult(before,state);audit.attempts.push({actionIndex:index,openedAtIndex:audit.openedAtIndex,before,after:state,...result});
       const exercised=audit.attempts.filter(attempt=>attempt.valid);
       if(audit.valid&&exercised.length){audit.passed=exercised.every(attempt=>attempt.passed);audit.reason=exercised.find(attempt=>!attempt.passed)?.reason||'dialog_contract_passed';}
     }
@@ -62,21 +64,51 @@ export function createDialogAudit(contract,signal){
   }};
 }
 
-export async function probeDialogContract({targetUrl,contract,signal,controlOrigins=[],capture=async()=>{},onStep=()=>{}}){
+export function extractDiscoveredRoute(report,audit){
+  const attempt=audit.attempts.find(a=>a.valid&&Number.isInteger(a.actionIndex)&&Number.isInteger(a.openedAtIndex)&&a.openedAtIndex<a.actionIndex);
+  if(!attempt||attempt.actionIndex>24)return null;
+  const steps=structuredClone(report.steps.slice(0,attempt.actionIndex));
+  if(steps.length!==attempt.actionIndex)return null;
+  return {sourceRunId:report.runId,source:'original-agent-actions',steps,escapeActionIndex:attempt.actionIndex,openedAtIndex:attempt.openedAtIndex};
+}
+
+export function sameReplayFocus(expected,actual){
+  const signature=f=>JSON.stringify(['tag','id','role','name','value'].map(key=>f?.[key]??null));
+  return !!expected&&!!actual&&signature(expected)===signature(actual);
+}
+
+export async function probeDialogContract({targetUrl,contract,signal,controlOrigins=[],route,capture=async()=>{},onStep=()=>{}}){
   let session;
   const result={valid:false,passed:null,reason:'probe_not_completed',actions:[],initialUrl:targetUrl};
   try{
     signal?.throwIfAborted();
     session=await openWebsiteSession(targetUrl,{budget:54,signal,controlOrigins,closeOnAbort:false});
     result.finalUrl=session.page.url();result.configuration=await runConfiguration(session.page.context().browser().version());
-    let state=await readDialogState(session.page,contract);
+    let state=await readDialogState(session.page,contract,{allowMissing:!!route});
     const press=async key=>{
       signal?.throwIfAborted();const prior=state;
       await session.executor.execute({name:'press_key',arguments:{key}});
       state=await readDialogState(session.page,contract);
       result.actions.push({action:{name:'press_key',arguments:{key}},focusBefore:prior.focus,focusAfter:state.focus});onStep(result);
     };
-    if(!state.valid)result.reason=state.reason;
+    if(route){
+      result.routeSourceRunId=route.sourceRunId;result.routeSteps=route.steps.length;
+      let drift=false;
+      for(const [index,step] of route.steps.entries()){
+        signal?.throwIfAborted();const focusBefore=await readFocus(session.page);
+        if(!sameReplayFocus(step.focusBefore,focusBefore)){result.divergence={index,phase:'before',expected:step.focusBefore,actual:focusBefore};drift=true;break;}
+        await session.executor.execute(step.action);const focusAfter=await readFocus(session.page);
+        result.actions.push({action:step.action,focusBefore,focusAfter});onStep(result);
+        if(!sameReplayFocus(step.focusAfter,focusAfter)){result.divergence={index,phase:'after',expected:step.focusAfter,actual:focusAfter};drift=true;break;}
+      }
+      if(drift)result.reason='discovered_route_diverged';
+      else{
+        state=await settleDialogState(session.page,contract,'open',signal);
+        if(!state.valid||!state.dialogVisible||!state.focusInside)result.reason='discovered_route_target_not_reached';
+        else{const before=state;await press('Escape');state=await settleDialogState(session.page,contract,'close',signal);Object.assign(result,escapeResult(before,state),{beforeEscape:before,afterEscape:state});}
+      }
+    }
+    else if(!state.valid)result.reason=state.reason;
     else if(state.dialogVisible)result.reason='dialog_already_open';
     else if(!state.triggerVisible)result.reason='trigger_not_visible';
     else{

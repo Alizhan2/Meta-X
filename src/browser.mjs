@@ -52,13 +52,17 @@ export async function openSession(app, variant, {budget = 25,signal} = {}) {
 
 export async function observe(page, screenshotPath) {
   const screenshot=await page.screenshot({path:screenshotPath});
-  const focus=await page.evaluate(()=>{
-    const el=document.activeElement;
-    return {id:el?.id||null,tag:el?.tagName||null,role:el?.getAttribute('role')||null,name:el?.tagName==='BODY'||el?.tagName==='HTML'?'Page':el?.getAttribute('aria-label')||el?.labels?.[0]?.innerText||el?.innerText?.trim().slice(0,160)||'',value:el && 'value' in el?el.value:null,selectionStart:el?.selectionStart??null,selectionEnd:el?.selectionEnd??null};
-  });
+  const focus=await readFocus(page);
   const semantics=await page.locator('body').ariaSnapshot();
   const viewport=await page.evaluate(()=>({scrollX,scrollY}));
   return {screenshot:screenshot.toString('base64'),focus,semantics,viewport,url:page.url()};
+}
+
+export async function readFocus(page){
+  return page.evaluate(()=>{
+    const el=document.activeElement;
+    return {id:el?.id||null,tag:el?.tagName||null,role:el?.getAttribute('role')||null,name:el?.tagName==='BODY'||el?.tagName==='HTML'?'Page':el?.getAttribute('aria-label')||el?.labels?.[0]?.innerText||el?.innerText?.trim().slice(0,160)||'',value:el && 'value' in el?el.value:null,selectionStart:el?.selectionStart??null,selectionEnd:el?.selectionEnd??null};
+  });
 }
 
 export function allowsTargetNavigation(target,candidate){

@@ -48,6 +48,19 @@ To compare your own versions, choose **Run on → Your website · before and aft
 
 The comparison shares Stop, saved history and offline report downloads with the other modes. Localhost test servers are supported; the TabProof control server and private network destinations remain excluded. Fresh sessions have no existing login. This first contract supports one main-frame dialog, Enter activation and a maximum of 50 Tab steps; it does not support iframes or arbitrary user test code. See [implementation and verification](docs/website-comparison.md).
 
+For a multistep workflow, choose **Route to the dialog → Meta discovers route · replay as evidence**. The opener may be absent until the agent navigates to it. Meta receives the task and normal page observations, with no authored navigation recipe. Once an observed opening and Escape identify the target, TabProof extracts the original agent's executed prefix and replays that **same** sequence on both versions in six fresh sessions. Focus/value mismatches make a replay inconclusive rather than changing the sequence or inventing a defect. The report keeps route provenance, actions and the source run ID. This method requires agent mode; it does not generate a route from an empty or failed attempt.
+
+The **DispatchDesk** controlled demo contains a customer search, similar customer names, different order statuses, order details, a delivery-date choice and a preview. The task specifies a customer, shipment status and proposed date, without naming a route or internal order ID. The target selectors additionally constrain the order/date, so reaching a different preview cannot verify the target contract. The two releases differ only by one cancel-event regression. This is a newly built synthetic scenario with an injected bug, not a newly discovered third-party vulnerability or evidence that the agent can find every keyboard defect.
+
+```sh
+npm run demo:dispatch
+# Before: http://127.0.0.1:4217/releases/r8x/
+# After:  http://127.0.0.1:4217/releases/q2z/
+npm run check:discovery
+```
+
+The last command checks real browsers and learned-route replay with explicitly injected test decisions and no model calls. `npm run check:discovery:live` is separate: it requires the configured main workbench and DispatchDesk, starts two actual Meta sessions from the UI and spends API credits. The recorded October 29 Meta pair found a 16-action route; first-Escape checks failed 3/3 before and passed 3/3 after. The original agent eventually recovered, and that recovery remains visible. See [the live evidence, discovery and scope](docs/dispatch-discovery.md).
+
 For a separate demonstration website:
 
 ```sh

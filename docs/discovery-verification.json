@@ -1,0 +1,982 @@
+{
+  "scope": "Controlled synthetic multistep dialog regression. One real Meta pair; replay checks measure only the configured dialog contract, not whole-task completion or general defect-detection accuracy. Scripted controls are separate.",
+  "date": "2026-10-29",
+  "unitTestsPassed": 63,
+  "records": {
+    "scriptedDiscovery": {
+      "path": "output/playwright/discovery-check-1793258441712/summary.json",
+      "summary": {
+        "scope": "Actual multistep site and Chromium/UI/API/replay checks. Agent decisions are injected and explicitly labelled scripted-test; no Meta calls.",
+        "id": "agent-1793258442276904084",
+        "sourceHashes": {
+          "before": "25ec463a387647e0b454bb69a61f1fd388672a630dab6d50dc33fbd9cbeb422c",
+          "after": "7aea6c5eb4bb7b546a356093498abeedd9e597942fa04016a4ec9b82aa7f496c",
+          "onlyDifference": "preview.addEventListener('cancel', event => event.preventDefault());"
+        },
+        "routeActions": 18,
+        "agentActions": 19,
+        "originalFailures": 3,
+        "correctedPasses": 3,
+        "drift": {
+          "valid": false,
+          "reason": "discovered_route_diverged",
+          "divergence": {
+            "index": 1,
+            "phase": "after",
+            "expected": {
+              "id": null,
+              "tag": "A",
+              "role": null,
+              "name": "Orders",
+              "value": null,
+              "selectionStart": null,
+              "selectionEnd": null
+            },
+            "actual": {
+              "id": null,
+              "tag": "A",
+              "role": null,
+              "name": "Announcements",
+              "value": null,
+              "selectionStart": null,
+              "selectionEnd": null
+            }
+          }
+        },
+        "withoutDiscoveredRoute": {
+          "valid": false,
+          "passed": null,
+          "reason": "elements_not_unique"
+        },
+        "wrongDestinationId": "agent-1793258465295603360",
+        "cancelledReplayId": "agent-1793258468065160933",
+        "pageErrors": []
+      }
+    },
+    "actualMetaDiscovery": {
+      "path": "output/playwright/discovery-live-1793258845776/summary.json",
+      "summary": {
+        "discovery": {
+          "sourceRunId": "agent-1793258846361667350",
+          "source": "original-agent-actions",
+          "steps": [
+            {
+              "index": 1,
+              "action": {
+                "name": "press_key",
+                "arguments": {
+                  "key": "Tab"
+                }
+              },
+              "timestamp": "2026-10-29T07:28:04.944Z",
+              "focusBefore": {
+                "id": null,
+                "tag": "BODY",
+                "role": null,
+                "name": "Page",
+                "value": null,
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "focusAfter": {
+                "id": null,
+                "tag": "A",
+                "role": null,
+                "name": "Overview",
+                "value": null,
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "checkpoint": {
+                "before": "80abab3ec40df5d47f244a8943f36dc29fbc7f40d92171142c9d81dde9bcd5f3",
+                "after": "9aecd0aa7db8c31e01ecf04a8212106d92c326b1319f82fb40efa096cb77e785",
+                "unchangedActions": 0
+              }
+            },
+            {
+              "index": 2,
+              "action": {
+                "name": "press_key",
+                "arguments": {
+                  "key": "Tab"
+                }
+              },
+              "timestamp": "2026-10-29T07:28:44.150Z",
+              "focusBefore": {
+                "id": null,
+                "tag": "A",
+                "role": null,
+                "name": "Overview",
+                "value": null,
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "focusAfter": {
+                "id": null,
+                "tag": "A",
+                "role": null,
+                "name": "Orders",
+                "value": null,
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "checkpoint": {
+                "before": "9aecd0aa7db8c31e01ecf04a8212106d92c326b1319f82fb40efa096cb77e785",
+                "after": "0b80b5bd17ee9cd43caf3ce42f1445fd6146687cdf5574561e0bde2aab9b54e6",
+                "unchangedActions": 0
+              }
+            },
+            {
+              "index": 3,
+              "action": {
+                "name": "press_key",
+                "arguments": {
+                  "key": "Enter"
+                }
+              },
+              "timestamp": "2026-10-29T07:28:52.887Z",
+              "focusBefore": {
+                "id": null,
+                "tag": "A",
+                "role": null,
+                "name": "Orders",
+                "value": null,
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "focusAfter": {
+                "id": null,
+                "tag": "H1",
+                "role": null,
+                "name": "Orders",
+                "value": null,
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "checkpoint": {
+                "before": "0b80b5bd17ee9cd43caf3ce42f1445fd6146687cdf5574561e0bde2aab9b54e6",
+                "after": "31aa7e87c77a91015d782371c74526f54c51ba7b52be0a26254121bcccfdae86",
+                "unchangedActions": 0
+              }
+            },
+            {
+              "index": 4,
+              "action": {
+                "name": "press_key",
+                "arguments": {
+                  "key": "Tab"
+                }
+              },
+              "timestamp": "2026-10-29T07:29:00.503Z",
+              "focusBefore": {
+                "id": null,
+                "tag": "H1",
+                "role": null,
+                "name": "Orders",
+                "value": null,
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "focusAfter": {
+                "id": "order-search",
+                "tag": "INPUT",
+                "role": null,
+                "name": "Find orders by customer",
+                "value": "",
+                "selectionStart": 0,
+                "selectionEnd": 0
+              },
+              "checkpoint": {
+                "before": "31aa7e87c77a91015d782371c74526f54c51ba7b52be0a26254121bcccfdae86",
+                "after": "b696c949f48eb4888072dad86e97d7dbd3d24a3ba3dcad96d4290b75de984203",
+                "unchangedActions": 0
+              }
+            },
+            {
+              "index": 5,
+              "action": {
+                "name": "press_key",
+                "arguments": {
+                  "key": "Tab"
+                }
+              },
+              "timestamp": "2026-10-29T07:29:06.453Z",
+              "focusBefore": {
+                "id": "order-search",
+                "tag": "INPUT",
+                "role": null,
+                "name": "Find orders by customer",
+                "value": "",
+                "selectionStart": 0,
+                "selectionEnd": 0
+              },
+              "focusAfter": {
+                "id": null,
+                "tag": "BUTTON",
+                "role": null,
+                "name": "Search orders",
+                "value": "",
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "checkpoint": {
+                "before": "b696c949f48eb4888072dad86e97d7dbd3d24a3ba3dcad96d4290b75de984203",
+                "after": "6861266ae1886c2f14914abae6b6cc5fea1217494b8c91f702b8d0413a155538",
+                "unchangedActions": 0
+              }
+            },
+            {
+              "index": 6,
+              "action": {
+                "name": "press_key",
+                "arguments": {
+                  "key": "Tab"
+                }
+              },
+              "timestamp": "2026-10-29T07:29:14.236Z",
+              "focusBefore": {
+                "id": null,
+                "tag": "BUTTON",
+                "role": null,
+                "name": "Search orders",
+                "value": "",
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "focusAfter": {
+                "id": "shipment-status",
+                "tag": "SELECT",
+                "role": null,
+                "name": "Shipment status",
+                "value": "All shipments",
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "checkpoint": {
+                "before": "6861266ae1886c2f14914abae6b6cc5fea1217494b8c91f702b8d0413a155538",
+                "after": "11113f03fda1ce3206ac5875aa4037ff2f61264e311a65947c312e201792a49e",
+                "unchangedActions": 0
+              }
+            },
+            {
+              "index": 7,
+              "action": {
+                "name": "press_key",
+                "arguments": {
+                  "key": "Tab"
+                }
+              },
+              "timestamp": "2026-10-29T07:29:25.236Z",
+              "focusBefore": {
+                "id": "shipment-status",
+                "tag": "SELECT",
+                "role": null,
+                "name": "Shipment status",
+                "value": "All shipments",
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "focusAfter": {
+                "id": null,
+                "tag": "BUTTON",
+                "role": null,
+                "name": "Open NE-6718 for Northstar Studio East, In transit",
+                "value": "",
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "checkpoint": {
+                "before": "11113f03fda1ce3206ac5875aa4037ff2f61264e311a65947c312e201792a49e",
+                "after": "9e70286c74d2e35757e685d7dbffffbf3faeccaefecf931cb4dcdd0960da97af",
+                "unchangedActions": 0
+              }
+            },
+            {
+              "index": 8,
+              "action": {
+                "name": "press_key",
+                "arguments": {
+                  "key": "Tab"
+                }
+              },
+              "timestamp": "2026-10-29T07:29:29.526Z",
+              "focusBefore": {
+                "id": null,
+                "tag": "BUTTON",
+                "role": null,
+                "name": "Open NE-6718 for Northstar Studio East, In transit",
+                "value": "",
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "focusAfter": {
+                "id": null,
+                "tag": "BUTTON",
+                "role": null,
+                "name": "Open NS-2841 for Northstar Studio, In transit",
+                "value": "",
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "checkpoint": {
+                "before": "9e70286c74d2e35757e685d7dbffffbf3faeccaefecf931cb4dcdd0960da97af",
+                "after": "ea5d5c5af73e2b6bbe344312083049dd994ba4609487bf866b4c821121bb8ffe",
+                "unchangedActions": 0
+              }
+            },
+            {
+              "index": 9,
+              "action": {
+                "name": "press_key",
+                "arguments": {
+                  "key": "Enter"
+                }
+              },
+              "timestamp": "2026-10-29T07:29:33.636Z",
+              "focusBefore": {
+                "id": null,
+                "tag": "BUTTON",
+                "role": null,
+                "name": "Open NS-2841 for Northstar Studio, In transit",
+                "value": "",
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "focusAfter": {
+                "id": null,
+                "tag": "H1",
+                "role": null,
+                "name": "Order NS-2841",
+                "value": null,
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "checkpoint": {
+                "before": "ea5d5c5af73e2b6bbe344312083049dd994ba4609487bf866b4c821121bb8ffe",
+                "after": "bc45a1a076f8f5b9cd4a8461cc5deb6191b3dd2fc71f722fa11301bf8fc3f401",
+                "unchangedActions": 0
+              }
+            },
+            {
+              "index": 10,
+              "action": {
+                "name": "press_key",
+                "arguments": {
+                  "key": "Tab"
+                }
+              },
+              "timestamp": "2026-10-29T07:29:38.580Z",
+              "focusBefore": {
+                "id": null,
+                "tag": "H1",
+                "role": null,
+                "name": "Order NS-2841",
+                "value": null,
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "focusAfter": {
+                "id": "invoice",
+                "tag": "BUTTON",
+                "role": null,
+                "name": "Request invoice",
+                "value": "",
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "checkpoint": {
+                "before": "bc45a1a076f8f5b9cd4a8461cc5deb6191b3dd2fc71f722fa11301bf8fc3f401",
+                "after": "151faa5fa20720653a52f8448a6fef022b837f3ba4a472ba8299c7787619f513",
+                "unchangedActions": 0
+              }
+            },
+            {
+              "index": 11,
+              "action": {
+                "name": "press_key",
+                "arguments": {
+                  "key": "Tab"
+                }
+              },
+              "timestamp": "2026-10-29T07:29:42.563Z",
+              "focusBefore": {
+                "id": "invoice",
+                "tag": "BUTTON",
+                "role": null,
+                "name": "Request invoice",
+                "value": "",
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "focusAfter": {
+                "id": "delivery-request",
+                "tag": "BUTTON",
+                "role": null,
+                "name": "Review delivery change",
+                "value": "",
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "checkpoint": {
+                "before": "151faa5fa20720653a52f8448a6fef022b837f3ba4a472ba8299c7787619f513",
+                "after": "fd728f0122d3524312076799d3f98ceae178cbbe6f4e835ea0abb289a3da94f5",
+                "unchangedActions": 0
+              }
+            },
+            {
+              "index": 12,
+              "action": {
+                "name": "press_key",
+                "arguments": {
+                  "key": "Enter"
+                }
+              },
+              "timestamp": "2026-10-29T07:29:48.205Z",
+              "focusBefore": {
+                "id": "delivery-request",
+                "tag": "BUTTON",
+                "role": null,
+                "name": "Review delivery change",
+                "value": "",
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "focusAfter": {
+                "id": null,
+                "tag": "H1",
+                "role": null,
+                "name": "Delivery change · NS-2841",
+                "value": null,
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "checkpoint": {
+                "before": "fd728f0122d3524312076799d3f98ceae178cbbe6f4e835ea0abb289a3da94f5",
+                "after": "cb097a9c52accb7eaa54a68de723b900033a1f48ab7d6028bf3f9bba7adb51cd",
+                "unchangedActions": 0
+              }
+            },
+            {
+              "index": 13,
+              "action": {
+                "name": "press_key",
+                "arguments": {
+                  "key": "Tab"
+                }
+              },
+              "timestamp": "2026-10-29T07:29:53.824Z",
+              "focusBefore": {
+                "id": null,
+                "tag": "H1",
+                "role": null,
+                "name": "Delivery change · NS-2841",
+                "value": null,
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "focusAfter": {
+                "id": null,
+                "tag": "INPUT",
+                "role": null,
+                "name": "Friday, November 6, 2026",
+                "value": "2026-11-06",
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "checkpoint": {
+                "before": "cb097a9c52accb7eaa54a68de723b900033a1f48ab7d6028bf3f9bba7adb51cd",
+                "after": "3634cbdc2d3021bd4e4a39855d2218977980eede8f61fac91f4959d0f93fbd53",
+                "unchangedActions": 0
+              }
+            },
+            {
+              "index": 14,
+              "action": {
+                "name": "press_key",
+                "arguments": {
+                  "key": "Space"
+                }
+              },
+              "timestamp": "2026-10-29T07:30:06.565Z",
+              "focusBefore": {
+                "id": null,
+                "tag": "INPUT",
+                "role": null,
+                "name": "Friday, November 6, 2026",
+                "value": "2026-11-06",
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "focusAfter": {
+                "id": null,
+                "tag": "INPUT",
+                "role": null,
+                "name": "Friday, November 6, 2026",
+                "value": "2026-11-06",
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "checkpoint": {
+                "before": "3634cbdc2d3021bd4e4a39855d2218977980eede8f61fac91f4959d0f93fbd53",
+                "after": "3f09ebf1e1b5360fdc6f6f628065c8261bcededce1ed0975dcb9f48c57246c0e",
+                "unchangedActions": 0
+              }
+            },
+            {
+              "index": 15,
+              "action": {
+                "name": "press_key",
+                "arguments": {
+                  "key": "Tab"
+                }
+              },
+              "timestamp": "2026-10-29T07:30:10.968Z",
+              "focusBefore": {
+                "id": null,
+                "tag": "INPUT",
+                "role": null,
+                "name": "Friday, November 6, 2026",
+                "value": "2026-11-06",
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "focusAfter": {
+                "id": "preview-change",
+                "tag": "BUTTON",
+                "role": null,
+                "name": "Preview change",
+                "value": "",
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "checkpoint": {
+                "before": "3f09ebf1e1b5360fdc6f6f628065c8261bcededce1ed0975dcb9f48c57246c0e",
+                "after": "873ed749ef1c398d4ee66bedd99e9fd73a610ec533d6ed3e51900c1e1cc1298c",
+                "unchangedActions": 0
+              }
+            },
+            {
+              "index": 16,
+              "action": {
+                "name": "press_key",
+                "arguments": {
+                  "key": "Enter"
+                }
+              },
+              "timestamp": "2026-10-29T07:30:16.974Z",
+              "focusBefore": {
+                "id": "preview-change",
+                "tag": "BUTTON",
+                "role": null,
+                "name": "Preview change",
+                "value": "",
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "focusAfter": {
+                "id": "preview-summary",
+                "tag": "DIV",
+                "role": null,
+                "name": "Northstar Studio · Order NS-2841 · Proposed delivery: Friday, November 6, 2026",
+                "value": null,
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "checkpoint": {
+                "before": "873ed749ef1c398d4ee66bedd99e9fd73a610ec533d6ed3e51900c1e1cc1298c",
+                "after": "9723f17ee4c0985535ed4a20a9178543d6edacd61408718ae9c46bebbe840d1e",
+                "unchangedActions": 0
+              }
+            }
+          ],
+          "escapeActionIndex": 16,
+          "openedAtIndex": 15,
+          "executionMode": "meta-live"
+        },
+        "sourceHashes": {
+          "before": "25ec463a387647e0b454bb69a61f1fd388672a630dab6d50dc33fbd9cbeb422c",
+          "after": "7aea6c5eb4bb7b546a356093498abeedd9e597942fa04016a4ec9b82aa7f496c",
+          "onlyDifference": "preview.addEventListener('cancel', event => event.preventDefault());"
+        },
+        "scope": "Real main-console buttons → two actual Meta agent sessions → six independent keyboard probes → persisted comparison → offline download. No scripted decisions.",
+        "id": "agent-1793258846358426913",
+        "verified": true,
+        "original": {
+          "actions": 20,
+          "contract": {
+            "valid": true,
+            "passed": false,
+            "reason": "escape_did_not_close",
+            "attempts": [
+              {
+                "actionIndex": 16,
+                "openedAtIndex": 15,
+                "before": {
+                  "valid": true,
+                  "targetPresent": true,
+                  "dialogVisible": true,
+                  "focusInside": true,
+                  "triggerFocused": false,
+                  "triggerVisible": true,
+                  "focus": {
+                    "id": "preview-summary",
+                    "tag": "DIV",
+                    "name": "Northstar Studio · Order NS-2841 · Proposed delivery: Friday, November 6, 2026"
+                  }
+                },
+                "after": {
+                  "valid": true,
+                  "targetPresent": true,
+                  "dialogVisible": true,
+                  "focusInside": true,
+                  "triggerFocused": false,
+                  "triggerVisible": true,
+                  "focus": {
+                    "id": "preview-summary",
+                    "tag": "DIV",
+                    "name": "Northstar Studio · Order NS-2841 · Proposed delivery: Friday, November 6, 2026"
+                  }
+                },
+                "valid": true,
+                "passed": false,
+                "reason": "escape_did_not_close"
+              },
+              {
+                "actionIndex": 17,
+                "openedAtIndex": 15,
+                "before": {
+                  "valid": true,
+                  "targetPresent": true,
+                  "dialogVisible": true,
+                  "focusInside": true,
+                  "triggerFocused": false,
+                  "triggerVisible": true,
+                  "focus": {
+                    "id": "preview-summary",
+                    "tag": "DIV",
+                    "name": "Northstar Studio · Order NS-2841 · Proposed delivery: Friday, November 6, 2026"
+                  }
+                },
+                "after": {
+                  "valid": true,
+                  "targetPresent": true,
+                  "dialogVisible": true,
+                  "focusInside": true,
+                  "triggerFocused": false,
+                  "triggerVisible": true,
+                  "focus": {
+                    "id": "preview-summary",
+                    "tag": "DIV",
+                    "name": "Northstar Studio · Order NS-2841 · Proposed delivery: Friday, November 6, 2026"
+                  }
+                },
+                "valid": true,
+                "passed": false,
+                "reason": "escape_did_not_close"
+              },
+              {
+                "actionIndex": 19,
+                "openedAtIndex": 15,
+                "before": {
+                  "valid": true,
+                  "targetPresent": true,
+                  "dialogVisible": true,
+                  "focusInside": true,
+                  "triggerFocused": false,
+                  "triggerVisible": true,
+                  "focus": {
+                    "id": "apply-change",
+                    "tag": "BUTTON",
+                    "name": "Apply delivery change"
+                  }
+                },
+                "after": {
+                  "valid": true,
+                  "targetPresent": true,
+                  "dialogVisible": false,
+                  "focusInside": false,
+                  "triggerFocused": true,
+                  "triggerVisible": true,
+                  "focus": {
+                    "id": "preview-change",
+                    "tag": "BUTTON",
+                    "name": "Preview change"
+                  }
+                },
+                "valid": true,
+                "passed": true,
+                "reason": "dialog_contract_passed"
+              }
+            ],
+            "openedAtIndex": 15
+          },
+          "independentFailed": 3
+        },
+        "corrected": {
+          "actions": 17,
+          "contract": {
+            "valid": true,
+            "passed": true,
+            "reason": "dialog_contract_passed",
+            "attempts": [
+              {
+                "actionIndex": 16,
+                "openedAtIndex": 15,
+                "before": {
+                  "valid": true,
+                  "targetPresent": true,
+                  "dialogVisible": true,
+                  "focusInside": true,
+                  "triggerFocused": false,
+                  "triggerVisible": true,
+                  "focus": {
+                    "id": "preview-summary",
+                    "tag": "DIV",
+                    "name": "Northstar Studio · Order NS-2841 · Proposed delivery: Friday, November 6, 2026"
+                  }
+                },
+                "after": {
+                  "valid": true,
+                  "targetPresent": true,
+                  "dialogVisible": false,
+                  "focusInside": false,
+                  "triggerFocused": true,
+                  "triggerVisible": true,
+                  "focus": {
+                    "id": "preview-change",
+                    "tag": "BUTTON",
+                    "name": "Preview change"
+                  }
+                },
+                "valid": true,
+                "passed": true,
+                "reason": "dialog_contract_passed"
+              }
+            ],
+            "openedAtIndex": 15
+          },
+          "independentPassed": 3
+        },
+        "exported": {
+          "id": "agent-1793258846358426913",
+          "images": 2,
+          "offline": true,
+          "networkRequests": 0,
+          "pageErrors": [],
+          "rawReportIncluded": true,
+          "missingEvidenceNotice": false
+        },
+        "pageErrors": []
+      }
+    },
+    "websiteComparisonRegression": {
+      "path": "output/playwright/website-comparison-check-1793258900095/summary.json",
+      "summary": {
+        "scope": "Real UI/API/Chromium comparison of arbitrary user URLs and CSS contracts. Deterministic checks are real; agent decisions are injected and labelled scripted-test. No Meta calls.",
+        "results": [
+          {
+            "case": "different-origin original/fixed",
+            "id": "agent-1793258900326377387",
+            "verified": true,
+            "originalFailed": 3,
+            "correctedPassed": 3
+          },
+          {
+            "case": "both clean",
+            "id": "agent-1793258908473611748",
+            "verified": false,
+            "reason": "original_failure_not_reproduced"
+          },
+          {
+            "case": "still broken",
+            "id": "agent-1793258911347511150",
+            "verified": false,
+            "reason": "corrected_contract_failed"
+          },
+          {
+            "case": "focus restoration defect",
+            "id": "agent-1793258924707874294",
+            "verified": true,
+            "reason": "dialog_contract_improvement"
+          },
+          {
+            "case": "invalid CSS",
+            "id": "agent-1793258932485471895",
+            "verified": false,
+            "reason": "independent_checks_incomplete"
+          },
+          {
+            "case": "scripted agent plus independent Chromium checks",
+            "id": "agent-1793258941626340905",
+            "verified": true
+          }
+        ],
+        "exported": {
+          "id": "agent-1793258900326377387",
+          "images": 2,
+          "offline": true,
+          "networkRequests": 0,
+          "pageErrors": [],
+          "rawReportIncluded": true,
+          "missingEvidenceNotice": false
+        },
+        "cancelledId": "agent-1793258933481828436",
+        "cancelledDuringFinalWriteId": "agent-1793258933814399929",
+        "unexercisedAgentId": "agent-1793258952512257563",
+        "failedAgentId": "agent-1793258961242745281",
+        "scriptedModelCalls": 15,
+        "pageErrors": []
+      }
+    },
+    "thirdPartyRegression": {
+      "path": "output/playwright/console-examples-check-1793258916658/summary.json",
+      "summary": {
+        "scope": "Real UI/API/Chromium checks of both third-party examples; configured=false and no Meta calls.",
+        "checks": [
+          "published reference labels",
+          "free checks without key",
+          "Meta mode requires key",
+          "cross-origin rejection",
+          "invalid example rejection",
+          "shared run lock",
+          "both real deterministic comparisons",
+          "fresh screenshots and reports",
+          "URL reload restoration",
+          "cancel after first repeat",
+          "no corrected attempt after stop",
+          "partial persistence",
+          "server restart",
+          "mobile390",
+          "reference traversal rejection",
+          "offline downloads for both examples and stopped comparison",
+          "active export rejected"
+        ],
+        "completed": [
+          {
+            "id": "agent-1793258916908748984",
+            "exampleId": "react-aria-scroll",
+            "original": 3,
+            "corrected": 3
+          },
+          {
+            "id": "agent-1793258923611207727",
+            "exampleId": "radix-toast",
+            "original": 3,
+            "corrected": 3
+          }
+        ],
+        "stoppedId": "agent-1793258927465720033",
+        "pageErrors": [],
+        "offlineExports": [
+          {
+            "id": "agent-1793258916908748984",
+            "images": 2,
+            "offline": true,
+            "networkRequests": 0,
+            "pageErrors": [],
+            "rawReportIncluded": true,
+            "missingEvidenceNotice": false
+          },
+          {
+            "id": "agent-1793258923611207727",
+            "images": 2,
+            "offline": true,
+            "networkRequests": 0,
+            "pageErrors": [],
+            "rawReportIncluded": true,
+            "missingEvidenceNotice": false
+          },
+          {
+            "id": "agent-1793258927465720033",
+            "images": 1,
+            "offline": true,
+            "networkRequests": 0,
+            "pageErrors": [],
+            "rawReportIncluded": true,
+            "missingEvidenceNotice": false
+          }
+        ]
+      }
+    },
+    "customUrlRegression": {
+      "path": "output/playwright/custom-check-1793258916690/summary.json",
+      "summary": {
+        "scope": "Custom URL/task UI and real HTTP browser/proxy integration; scripted decisions, no Meta API calls.",
+        "targetUrl": "http://127.0.0.1:52166/",
+        "task": "Найди мастер-класс по керамике через поиск.",
+        "completed": {
+          "id": "agent-1793258920301498847",
+          "actions": 4,
+          "outcome": "agent_reported_complete",
+          "independentlyVerified": false
+        },
+        "cancelled": {
+          "id": "agent-1793258922172463164",
+          "actions": 0
+        },
+        "formSubmissions": 1,
+        "blockedPrivateRequests": true,
+        "pageErrors": [],
+        "offlineExport": {
+          "id": "agent-1793258920301498847",
+          "images": 5,
+          "offline": true,
+          "networkRequests": 0,
+          "pageErrors": [],
+          "rawReportIncluded": true,
+          "missingEvidenceNotice": false
+        }
+      }
+    },
+    "finalScriptedDiscovery": {
+      "path": "output/playwright/discovery-check-1793267057686/summary.json",
+      "summary": {
+        "scope": "Actual multistep site and Chromium/UI/API/replay checks. Agent decisions are injected and explicitly labelled scripted-test; no Meta calls.",
+        "id": "agent-1793267058132005168",
+        "sourceHashes": {
+          "before": "25ec463a387647e0b454bb69a61f1fd388672a630dab6d50dc33fbd9cbeb422c",
+          "after": "7aea6c5eb4bb7b546a356093498abeedd9e597942fa04016a4ec9b82aa7f496c",
+          "onlyDifference": "preview.addEventListener('cancel', event => event.preventDefault());"
+        },
+        "routeActions": 18,
+        "agentActions": 19,
+        "originalFailures": 3,
+        "correctedPasses": 3,
+        "drift": {
+          "valid": false,
+          "reason": "discovered_route_diverged",
+          "divergence": {
+            "index": 1,
+            "phase": "after",
+            "expected": {
+              "id": null,
+              "tag": "A",
+              "role": null,
+              "name": "Orders",
+              "value": null,
+              "selectionStart": null,
+              "selectionEnd": null
+            },
+            "actual": {
+              "id": null,
+              "tag": "A",
+              "role": null,
+              "name": "Announcements",
+              "value": null,
+              "selectionStart": null,
+              "selectionEnd": null
+            }
+          }
+        },
+        "withoutDiscoveredRoute": {
+          "valid": false,
+          "passed": null,
+          "reason": "elements_not_unique"
+        },
+        "wrongDestinationId": "agent-1793267081201540184",
+        "cancelledReplayId": "agent-1793267084051034821",
+        "pageErrors": []
+      }
+    }
+  }
+}
