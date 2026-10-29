@@ -53,6 +53,7 @@ function renderControls(){
   const active=runs.get(activeId);
   const custom=ui.mode.value==='custom',example=ui.mode.value==='examples',compare=ui.mode.value==='compare',free=freeMode(),entry=examples.get(ui.exampleId.value);
   ui.fixtureControls.hidden=custom||example||compare;$('website-comparison-controls').hidden=!compare;for(const id of comparisonFields){$(id).disabled=mutating||!compare;$(id).required=compare;}ui.customControls.hidden=!custom;ui.exampleControls.hidden=!example;
+  $('load-dispatch').disabled=mutating||!compare;
   ui.exampleId.disabled=mutating;ui.checkMode.disabled=mutating;
   ui.mode.disabled=mutating;
   ui.url.required=custom;ui.task.required=custom;
@@ -232,6 +233,11 @@ ui.form.addEventListener('submit',async event=>{
 ui.mode.addEventListener('change',()=>{draftRestored=true;referenceSelected=ui.mode.value==='examples';if(['examples','compare'].includes(ui.mode.value)||isPair(selected())){selectedId=null;const url=new URL(location.href);url.searchParams.delete('run');history.replaceState(null,'',url);}ui.url.setCustomValidity('');ui.task.setCustomValidity('');formError='';saveExampleDraft();serviceNotice();render();});
 ui.exampleId.addEventListener('change',()=>{selectedId=null;referenceSelected=true;formError='';const url=new URL(location.href);url.searchParams.delete('run');history.replaceState(null,'',url);saveExampleDraft();serviceNotice();render();});
 ui.checkMode.addEventListener('change',()=>{formError='';saveExampleDraft();serviceNotice();render();});
+$('load-dispatch').addEventListener('click',()=>{
+  const values={'before-url':'http://127.0.0.1:4217/releases/r8x/','after-url':'http://127.0.0.1:4217/releases/q2z/','comparison-task':'Find Northstar Studio’s order that is currently in transit. Review its proposed delivery for Friday, November 6, 2026. Dismiss the preview with Escape without applying or submitting any changes.','comparison-method':'agent','route-mode':'agent-route','trigger-selector':'#preview-change[data-order-id="NS-2841"][data-date="2026-11-06"]','dialog-selector':'#delivery-preview[data-order-id="NS-2841"][data-date="2026-11-06"]'};
+  for(const [id,value] of Object.entries(values))$(id).value=value;
+  selectedId=null;draftRestored=true;const url=new URL(location.href);url.searchParams.delete('run');history.replaceState(null,'',url);formError='';notice('');saveExampleDraft();serviceNotice();render();
+});
 ui.url.addEventListener('input',()=>{ui.url.setCustomValidity('');if(formError){formError='';notice('');}});
 ui.task.addEventListener('input',()=>{ui.task.setCustomValidity('');if(formError){formError='';notice('');}if(!selected())renderTask(null);});
 for(const id of comparisonFields)$(id).addEventListener(id==='comparison-method'?'change':'input',()=>{if(id==='route-mode'&&$('route-mode').value==='agent-route')$('comparison-method').value='agent';if(id==='comparison-method'&&$('comparison-method').value==='deterministic')$('route-mode').value='tab';formError='';saveExampleDraft();serviceNotice();renderControls();if(!selected())renderTask(null);});

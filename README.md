@@ -52,6 +52,8 @@ For a multistep workflow, choose **Route to the dialog → Meta discovers route 
 
 The **DispatchDesk** controlled demo contains a customer search, similar customer names, different order statuses, order details, a delivery-date choice and a preview. The task specifies a customer, shipment status and proposed date, without naming a route or internal order ID. The target selectors additionally constrain the order/date, so reaching a different preview cannot verify the target contract. The two releases differ only by one cancel-event regression. This is a newly built synthetic scenario with an injected bug, not a newly discovered third-party vulnerability or evidence that the agent can find every keyboard defect.
 
+After starting the demo server, select **Your website · before and after → Load DispatchDesk demo** to fill the task, URLs and contract in one step. Loading the example does not start a run; starting the comparison uses Meta credits.
+
 ```sh
 npm run demo:dispatch
 # Before: http://127.0.0.1:4217/releases/r8x/
