@@ -1,0 +1,4 @@
+pair,run_id,route_actions,original_agent_actions,corrected_agent_actions,original_first_escape_passed,corrected_first_escape_passed,original_independent_failures,corrected_independent_passes,verified,model_requests
+1,agent-1793446729013523813,16,20,21,False,True,3,3,True,43
+2,agent-1793446893384801091,16,20,17,False,True,3,3,True,39
+3,agent-1793447041673720000,18,22,17,False,True,3,3,True,41

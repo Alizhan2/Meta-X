@@ -1,0 +1,6449 @@
+{
+  "runId": "agent-1793446893384801091",
+  "targetKind": "website-comparison",
+  "beforeUrl": "http://127.0.0.1:4217/releases/r8x/",
+  "afterUrl": "http://127.0.0.1:4217/releases/q2z/",
+  "task": "Find Northstar Studio’s order that is currently in transit. Review its proposed delivery for Friday, November 6, 2026. Dismiss the preview with Escape without applying or submitting any changes.",
+  "checkMode": "agent",
+  "contract": {
+    "type": "dialog_escape_focus",
+    "triggerSelector": "#preview-change[data-order-id=\"NS-2841\"][data-date=\"2026-11-06\"]",
+    "dialogSelector": "#delivery-preview[data-order-id=\"NS-2841\"][data-date=\"2026-11-06\"]",
+    "reach": "agent-route"
+  },
+  "startedAt": "2026-10-31T11:41:33.385Z",
+  "valid": true,
+  "outcome": "comparison_verified",
+  "reason": "dialog_contract_improvement",
+  "steps": [],
+  "requests": [
+    {
+      "index": 1,
+      "startedAt": "2026-10-31T11:41:33.576Z",
+      "state": "validated",
+      "preflightInputTokens": 2990,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 2847,
+        "input_tokens_details": {
+          "cached_tokens": 881
+        },
+        "output_tokens": 163,
+        "output_tokens_details": {
+          "reasoning_tokens": 89
+        },
+        "total_tokens": 3010
+      }
+    },
+    {
+      "index": 2,
+      "startedAt": "2026-10-31T11:41:36.935Z",
+      "state": "validated",
+      "preflightInputTokens": 3261,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 3118,
+        "input_tokens_details": {
+          "cached_tokens": 881
+        },
+        "output_tokens": 104,
+        "output_tokens_details": {
+          "reasoning_tokens": 23
+        },
+        "total_tokens": 3222
+      }
+    },
+    {
+      "index": 3,
+      "startedAt": "2026-10-31T11:41:40.004Z",
+      "state": "validated",
+      "preflightInputTokens": 3256,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 3113,
+        "input_tokens_details": {
+          "cached_tokens": 881
+        },
+        "output_tokens": 93,
+        "output_tokens_details": {
+          "reasoning_tokens": 16
+        },
+        "total_tokens": 3206
+      }
+    },
+    {
+      "index": 4,
+      "startedAt": "2026-10-31T11:41:42.975Z",
+      "state": "validated",
+      "preflightInputTokens": 4039,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 3896,
+        "input_tokens_details": {
+          "cached_tokens": 881
+        },
+        "output_tokens": 197,
+        "output_tokens_details": {
+          "reasoning_tokens": 117
+        },
+        "total_tokens": 4093
+      }
+    },
+    {
+      "index": 5,
+      "startedAt": "2026-10-31T11:41:46.127Z",
+      "state": "validated",
+      "preflightInputTokens": 4208,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 4065,
+        "input_tokens_details": {
+          "cached_tokens": 881
+        },
+        "output_tokens": 125,
+        "output_tokens_details": {
+          "reasoning_tokens": 50
+        },
+        "total_tokens": 4190
+      }
+    },
+    {
+      "index": 6,
+      "startedAt": "2026-10-31T11:41:48.207Z",
+      "state": "validated",
+      "preflightInputTokens": 4197,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 4054,
+        "input_tokens_details": {
+          "cached_tokens": 881
+        },
+        "output_tokens": 302,
+        "output_tokens_details": {
+          "reasoning_tokens": 227
+        },
+        "total_tokens": 4356
+      }
+    },
+    {
+      "index": 7,
+      "startedAt": "2026-10-31T11:41:51.709Z",
+      "state": "validated",
+      "preflightInputTokens": 4446,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 4303,
+        "input_tokens_details": {
+          "cached_tokens": 881
+        },
+        "output_tokens": 115,
+        "output_tokens_details": {
+          "reasoning_tokens": 39
+        },
+        "total_tokens": 4418
+      }
+    },
+    {
+      "index": 8,
+      "startedAt": "2026-10-31T11:41:54.508Z",
+      "state": "validated",
+      "preflightInputTokens": 4346,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 4203,
+        "input_tokens_details": {
+          "cached_tokens": 881
+        },
+        "output_tokens": 109,
+        "output_tokens_details": {
+          "reasoning_tokens": 36
+        },
+        "total_tokens": 4312
+      }
+    },
+    {
+      "index": 9,
+      "startedAt": "2026-10-31T11:41:57.942Z",
+      "state": "validated",
+      "preflightInputTokens": 4413,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 4270,
+        "input_tokens_details": {
+          "cached_tokens": 881
+        },
+        "output_tokens": 128,
+        "output_tokens_details": {
+          "reasoning_tokens": 51
+        },
+        "total_tokens": 4398
+      }
+    },
+    {
+      "index": 10,
+      "startedAt": "2026-10-31T11:42:00.805Z",
+      "state": "validated",
+      "preflightInputTokens": 4773,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 4630,
+        "input_tokens_details": {
+          "cached_tokens": 881
+        },
+        "output_tokens": 173,
+        "output_tokens_details": {
+          "reasoning_tokens": 100
+        },
+        "total_tokens": 4803
+      }
+    },
+    {
+      "index": 11,
+      "startedAt": "2026-10-31T11:42:03.706Z",
+      "state": "validated",
+      "preflightInputTokens": 4878,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 4735,
+        "input_tokens_details": {
+          "cached_tokens": 881
+        },
+        "output_tokens": 97,
+        "output_tokens_details": {
+          "reasoning_tokens": 24
+        },
+        "total_tokens": 4832
+      }
+    },
+    {
+      "index": 12,
+      "startedAt": "2026-10-31T11:42:06.471Z",
+      "state": "validated",
+      "preflightInputTokens": 4875,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 4732,
+        "input_tokens_details": {
+          "cached_tokens": 881
+        },
+        "output_tokens": 144,
+        "output_tokens_details": {
+          "reasoning_tokens": 71
+        },
+        "total_tokens": 4876
+      }
+    },
+    {
+      "index": 13,
+      "startedAt": "2026-10-31T11:42:08.804Z",
+      "state": "validated",
+      "preflightInputTokens": 5300,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 5157,
+        "input_tokens_details": {
+          "cached_tokens": 881
+        },
+        "output_tokens": 121,
+        "output_tokens_details": {
+          "reasoning_tokens": 42
+        },
+        "total_tokens": 5278
+      }
+    },
+    {
+      "index": 14,
+      "startedAt": "2026-10-31T11:42:11.288Z",
+      "state": "validated",
+      "preflightInputTokens": 5363,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 5220,
+        "input_tokens_details": {
+          "cached_tokens": 881
+        },
+        "output_tokens": 404,
+        "output_tokens_details": {
+          "reasoning_tokens": 333
+        },
+        "total_tokens": 5624
+      }
+    },
+    {
+      "index": 15,
+      "startedAt": "2026-10-31T11:42:15.853Z",
+      "state": "validated",
+      "preflightInputTokens": 5788,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 5645,
+        "input_tokens_details": {
+          "cached_tokens": 881
+        },
+        "output_tokens": 196,
+        "output_tokens_details": {
+          "reasoning_tokens": 127
+        },
+        "total_tokens": 5841
+      }
+    },
+    {
+      "index": 16,
+      "startedAt": "2026-10-31T11:42:19.139Z",
+      "state": "validated",
+      "preflightInputTokens": 5625,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 5482,
+        "input_tokens_details": {
+          "cached_tokens": 881
+        },
+        "output_tokens": 130,
+        "output_tokens_details": {
+          "reasoning_tokens": 59
+        },
+        "total_tokens": 5612
+      }
+    },
+    {
+      "index": 17,
+      "startedAt": "2026-10-31T11:42:22.007Z",
+      "state": "validated",
+      "preflightInputTokens": 5296,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 5153,
+        "input_tokens_details": {
+          "cached_tokens": 881
+        },
+        "output_tokens": 91,
+        "output_tokens_details": {
+          "reasoning_tokens": 23
+        },
+        "total_tokens": 5244
+      }
+    },
+    {
+      "index": 18,
+      "startedAt": "2026-10-31T11:42:26.208Z",
+      "state": "validated",
+      "preflightInputTokens": 5503,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 5360,
+        "input_tokens_details": {
+          "cached_tokens": 881
+        },
+        "output_tokens": 534,
+        "output_tokens_details": {
+          "reasoning_tokens": 464
+        },
+        "total_tokens": 5894
+      }
+    },
+    {
+      "index": 19,
+      "startedAt": "2026-10-31T11:42:32.206Z",
+      "state": "validated",
+      "preflightInputTokens": 6033,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 5890,
+        "input_tokens_details": {
+          "cached_tokens": 881
+        },
+        "output_tokens": 905,
+        "output_tokens_details": {
+          "reasoning_tokens": 826
+        },
+        "total_tokens": 6795
+      }
+    },
+    {
+      "index": 20,
+      "startedAt": "2026-10-31T11:42:39.888Z",
+      "state": "validated",
+      "preflightInputTokens": 6423,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 6280,
+        "input_tokens_details": {
+          "cached_tokens": 881
+        },
+        "output_tokens": 207,
+        "output_tokens_details": {
+          "reasoning_tokens": 130
+        },
+        "total_tokens": 6487
+      }
+    },
+    {
+      "index": 21,
+      "startedAt": "2026-10-31T11:42:44.470Z",
+      "state": "validated",
+      "preflightInputTokens": 5711,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 5568,
+        "input_tokens_details": {
+          "cached_tokens": 881
+        },
+        "output_tokens": 321,
+        "output_tokens_details": {
+          "reasoning_tokens": 280
+        },
+        "total_tokens": 5889
+      }
+    },
+    {
+      "index": 1,
+      "startedAt": "2026-10-31T11:42:57.839Z",
+      "state": "validated",
+      "preflightInputTokens": 2990,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 2847,
+        "input_tokens_details": {
+          "cached_tokens": 2801
+        },
+        "output_tokens": 145,
+        "output_tokens_details": {
+          "reasoning_tokens": 70
+        },
+        "total_tokens": 2992
+      }
+    },
+    {
+      "index": 2,
+      "startedAt": "2026-10-31T11:43:01.617Z",
+      "state": "validated",
+      "preflightInputTokens": 3242,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 3099,
+        "input_tokens_details": {
+          "cached_tokens": 881
+        },
+        "output_tokens": 94,
+        "output_tokens_details": {
+          "reasoning_tokens": 19
+        },
+        "total_tokens": 3193
+      }
+    },
+    {
+      "index": 3,
+      "startedAt": "2026-10-31T11:43:04.767Z",
+      "state": "validated",
+      "preflightInputTokens": 3252,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 3109,
+        "input_tokens_details": {
+          "cached_tokens": 881
+        },
+        "output_tokens": 91,
+        "output_tokens_details": {
+          "reasoning_tokens": 14
+        },
+        "total_tokens": 3200
+      }
+    },
+    {
+      "index": 4,
+      "startedAt": "2026-10-31T11:43:08.139Z",
+      "state": "validated",
+      "preflightInputTokens": 4037,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 3894,
+        "input_tokens_details": {
+          "cached_tokens": 881
+        },
+        "output_tokens": 305,
+        "output_tokens_details": {
+          "reasoning_tokens": 230
+        },
+        "total_tokens": 4199
+      }
+    },
+    {
+      "index": 5,
+      "startedAt": "2026-10-31T11:43:11.455Z",
+      "state": "validated",
+      "preflightInputTokens": 4321,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 4178,
+        "input_tokens_details": {
+          "cached_tokens": 881
+        },
+        "output_tokens": 155,
+        "output_tokens_details": {
+          "reasoning_tokens": 78
+        },
+        "total_tokens": 4333
+      }
+    },
+    {
+      "index": 6,
+      "startedAt": "2026-10-31T11:43:15.602Z",
+      "state": "validated",
+      "preflightInputTokens": 4225,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 4082,
+        "input_tokens_details": {
+          "cached_tokens": 881
+        },
+        "output_tokens": 217,
+        "output_tokens_details": {
+          "reasoning_tokens": 137
+        },
+        "total_tokens": 4299
+      }
+    },
+    {
+      "index": 7,
+      "startedAt": "2026-10-31T11:43:20.502Z",
+      "state": "validated",
+      "preflightInputTokens": 4356,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 4213,
+        "input_tokens_details": {
+          "cached_tokens": 881
+        },
+        "output_tokens": 131,
+        "output_tokens_details": {
+          "reasoning_tokens": 53
+        },
+        "total_tokens": 4344
+      }
+    },
+    {
+      "index": 8,
+      "startedAt": "2026-10-31T11:43:23.118Z",
+      "state": "validated",
+      "preflightInputTokens": 4360,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 4217,
+        "input_tokens_details": {
+          "cached_tokens": 881
+        },
+        "output_tokens": 91,
+        "output_tokens_details": {
+          "reasoning_tokens": 13
+        },
+        "total_tokens": 4308
+      }
+    },
+    {
+      "index": 9,
+      "startedAt": "2026-10-31T11:43:25.751Z",
+      "state": "validated",
+      "preflightInputTokens": 4390,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 4247,
+        "input_tokens_details": {
+          "cached_tokens": 881
+        },
+        "output_tokens": 90,
+        "output_tokens_details": {
+          "reasoning_tokens": 16
+        },
+        "total_tokens": 4337
+      }
+    },
+    {
+      "index": 10,
+      "startedAt": "2026-10-31T11:43:28.015Z",
+      "state": "validated",
+      "preflightInputTokens": 4738,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 4595,
+        "input_tokens_details": {
+          "cached_tokens": 881
+        },
+        "output_tokens": 247,
+        "output_tokens_details": {
+          "reasoning_tokens": 171
+        },
+        "total_tokens": 4842
+      }
+    },
+    {
+      "index": 11,
+      "startedAt": "2026-10-31T11:43:31.499Z",
+      "state": "validated",
+      "preflightInputTokens": 4949,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 4806,
+        "input_tokens_details": {
+          "cached_tokens": 881
+        },
+        "output_tokens": 92,
+        "output_tokens_details": {
+          "reasoning_tokens": 18
+        },
+        "total_tokens": 4898
+      }
+    },
+    {
+      "index": 12,
+      "startedAt": "2026-10-31T11:43:34.117Z",
+      "state": "validated",
+      "preflightInputTokens": 4869,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 4726,
+        "input_tokens_details": {
+          "cached_tokens": 881
+        },
+        "output_tokens": 104,
+        "output_tokens_details": {
+          "reasoning_tokens": 32
+        },
+        "total_tokens": 4830
+      }
+    },
+    {
+      "index": 13,
+      "startedAt": "2026-10-31T11:43:36.749Z",
+      "state": "validated",
+      "preflightInputTokens": 5261,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 5118,
+        "input_tokens_details": {
+          "cached_tokens": 881
+        },
+        "output_tokens": 240,
+        "output_tokens_details": {
+          "reasoning_tokens": 160
+        },
+        "total_tokens": 5358
+      }
+    },
+    {
+      "index": 14,
+      "startedAt": "2026-10-31T11:43:40.648Z",
+      "state": "validated",
+      "preflightInputTokens": 5481,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 5338,
+        "input_tokens_details": {
+          "cached_tokens": 881
+        },
+        "output_tokens": 298,
+        "output_tokens_details": {
+          "reasoning_tokens": 216
+        },
+        "total_tokens": 5636
+      }
+    },
+    {
+      "index": 15,
+      "startedAt": "2026-10-31T11:43:44.599Z",
+      "state": "validated",
+      "preflightInputTokens": 5671,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 5528,
+        "input_tokens_details": {
+          "cached_tokens": 881
+        },
+        "output_tokens": 161,
+        "output_tokens_details": {
+          "reasoning_tokens": 87
+        },
+        "total_tokens": 5689
+      }
+    },
+    {
+      "index": 16,
+      "startedAt": "2026-10-31T11:43:47.414Z",
+      "state": "validated",
+      "preflightInputTokens": 5585,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 5442,
+        "input_tokens_details": {
+          "cached_tokens": 881
+        },
+        "output_tokens": 81,
+        "output_tokens_details": {
+          "reasoning_tokens": 10
+        },
+        "total_tokens": 5523
+      }
+    },
+    {
+      "index": 17,
+      "startedAt": "2026-10-31T11:43:49.551Z",
+      "state": "validated",
+      "preflightInputTokens": 5247,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 5104,
+        "input_tokens_details": {
+          "cached_tokens": 881
+        },
+        "output_tokens": 223,
+        "output_tokens_details": {
+          "reasoning_tokens": 152
+        },
+        "total_tokens": 5327
+      }
+    },
+    {
+      "index": 18,
+      "startedAt": "2026-10-31T11:43:53.116Z",
+      "state": "validated",
+      "preflightInputTokens": 5486,
+      "inferenceSent": true,
+      "httpStatus": 200,
+      "providerStatus": "completed",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 5343,
+        "input_tokens_details": {
+          "cached_tokens": 881
+        },
+        "output_tokens": 282,
+        "output_tokens_details": {
+          "reasoning_tokens": 248
+        },
+        "total_tokens": 5625
+      }
+    }
+  ],
+  "usage": [
+    {
+      "input_tokens": 2847,
+      "input_tokens_details": {
+        "cached_tokens": 881
+      },
+      "output_tokens": 163,
+      "output_tokens_details": {
+        "reasoning_tokens": 89
+      },
+      "total_tokens": 3010
+    },
+    {
+      "input_tokens": 3118,
+      "input_tokens_details": {
+        "cached_tokens": 881
+      },
+      "output_tokens": 104,
+      "output_tokens_details": {
+        "reasoning_tokens": 23
+      },
+      "total_tokens": 3222
+    },
+    {
+      "input_tokens": 3113,
+      "input_tokens_details": {
+        "cached_tokens": 881
+      },
+      "output_tokens": 93,
+      "output_tokens_details": {
+        "reasoning_tokens": 16
+      },
+      "total_tokens": 3206
+    },
+    {
+      "input_tokens": 3896,
+      "input_tokens_details": {
+        "cached_tokens": 881
+      },
+      "output_tokens": 197,
+      "output_tokens_details": {
+        "reasoning_tokens": 117
+      },
+      "total_tokens": 4093
+    },
+    {
+      "input_tokens": 4065,
+      "input_tokens_details": {
+        "cached_tokens": 881
+      },
+      "output_tokens": 125,
+      "output_tokens_details": {
+        "reasoning_tokens": 50
+      },
+      "total_tokens": 4190
+    },
+    {
+      "input_tokens": 4054,
+      "input_tokens_details": {
+        "cached_tokens": 881
+      },
+      "output_tokens": 302,
+      "output_tokens_details": {
+        "reasoning_tokens": 227
+      },
+      "total_tokens": 4356
+    },
+    {
+      "input_tokens": 4303,
+      "input_tokens_details": {
+        "cached_tokens": 881
+      },
+      "output_tokens": 115,
+      "output_tokens_details": {
+        "reasoning_tokens": 39
+      },
+      "total_tokens": 4418
+    },
+    {
+      "input_tokens": 4203,
+      "input_tokens_details": {
+        "cached_tokens": 881
+      },
+      "output_tokens": 109,
+      "output_tokens_details": {
+        "reasoning_tokens": 36
+      },
+      "total_tokens": 4312
+    },
+    {
+      "input_tokens": 4270,
+      "input_tokens_details": {
+        "cached_tokens": 881
+      },
+      "output_tokens": 128,
+      "output_tokens_details": {
+        "reasoning_tokens": 51
+      },
+      "total_tokens": 4398
+    },
+    {
+      "input_tokens": 4630,
+      "input_tokens_details": {
+        "cached_tokens": 881
+      },
+      "output_tokens": 173,
+      "output_tokens_details": {
+        "reasoning_tokens": 100
+      },
+      "total_tokens": 4803
+    },
+    {
+      "input_tokens": 4735,
+      "input_tokens_details": {
+        "cached_tokens": 881
+      },
+      "output_tokens": 97,
+      "output_tokens_details": {
+        "reasoning_tokens": 24
+      },
+      "total_tokens": 4832
+    },
+    {
+      "input_tokens": 4732,
+      "input_tokens_details": {
+        "cached_tokens": 881
+      },
+      "output_tokens": 144,
+      "output_tokens_details": {
+        "reasoning_tokens": 71
+      },
+      "total_tokens": 4876
+    },
+    {
+      "input_tokens": 5157,
+      "input_tokens_details": {
+        "cached_tokens": 881
+      },
+      "output_tokens": 121,
+      "output_tokens_details": {
+        "reasoning_tokens": 42
+      },
+      "total_tokens": 5278
+    },
+    {
+      "input_tokens": 5220,
+      "input_tokens_details": {
+        "cached_tokens": 881
+      },
+      "output_tokens": 404,
+      "output_tokens_details": {
+        "reasoning_tokens": 333
+      },
+      "total_tokens": 5624
+    },
+    {
+      "input_tokens": 5645,
+      "input_tokens_details": {
+        "cached_tokens": 881
+      },
+      "output_tokens": 196,
+      "output_tokens_details": {
+        "reasoning_tokens": 127
+      },
+      "total_tokens": 5841
+    },
+    {
+      "input_tokens": 5482,
+      "input_tokens_details": {
+        "cached_tokens": 881
+      },
+      "output_tokens": 130,
+      "output_tokens_details": {
+        "reasoning_tokens": 59
+      },
+      "total_tokens": 5612
+    },
+    {
+      "input_tokens": 5153,
+      "input_tokens_details": {
+        "cached_tokens": 881
+      },
+      "output_tokens": 91,
+      "output_tokens_details": {
+        "reasoning_tokens": 23
+      },
+      "total_tokens": 5244
+    },
+    {
+      "input_tokens": 5360,
+      "input_tokens_details": {
+        "cached_tokens": 881
+      },
+      "output_tokens": 534,
+      "output_tokens_details": {
+        "reasoning_tokens": 464
+      },
+      "total_tokens": 5894
+    },
+    {
+      "input_tokens": 5890,
+      "input_tokens_details": {
+        "cached_tokens": 881
+      },
+      "output_tokens": 905,
+      "output_tokens_details": {
+        "reasoning_tokens": 826
+      },
+      "total_tokens": 6795
+    },
+    {
+      "input_tokens": 6280,
+      "input_tokens_details": {
+        "cached_tokens": 881
+      },
+      "output_tokens": 207,
+      "output_tokens_details": {
+        "reasoning_tokens": 130
+      },
+      "total_tokens": 6487
+    },
+    {
+      "input_tokens": 5568,
+      "input_tokens_details": {
+        "cached_tokens": 881
+      },
+      "output_tokens": 321,
+      "output_tokens_details": {
+        "reasoning_tokens": 280
+      },
+      "total_tokens": 5889
+    },
+    {
+      "input_tokens": 2847,
+      "input_tokens_details": {
+        "cached_tokens": 2801
+      },
+      "output_tokens": 145,
+      "output_tokens_details": {
+        "reasoning_tokens": 70
+      },
+      "total_tokens": 2992
+    },
+    {
+      "input_tokens": 3099,
+      "input_tokens_details": {
+        "cached_tokens": 881
+      },
+      "output_tokens": 94,
+      "output_tokens_details": {
+        "reasoning_tokens": 19
+      },
+      "total_tokens": 3193
+    },
+    {
+      "input_tokens": 3109,
+      "input_tokens_details": {
+        "cached_tokens": 881
+      },
+      "output_tokens": 91,
+      "output_tokens_details": {
+        "reasoning_tokens": 14
+      },
+      "total_tokens": 3200
+    },
+    {
+      "input_tokens": 3894,
+      "input_tokens_details": {
+        "cached_tokens": 881
+      },
+      "output_tokens": 305,
+      "output_tokens_details": {
+        "reasoning_tokens": 230
+      },
+      "total_tokens": 4199
+    },
+    {
+      "input_tokens": 4178,
+      "input_tokens_details": {
+        "cached_tokens": 881
+      },
+      "output_tokens": 155,
+      "output_tokens_details": {
+        "reasoning_tokens": 78
+      },
+      "total_tokens": 4333
+    },
+    {
+      "input_tokens": 4082,
+      "input_tokens_details": {
+        "cached_tokens": 881
+      },
+      "output_tokens": 217,
+      "output_tokens_details": {
+        "reasoning_tokens": 137
+      },
+      "total_tokens": 4299
+    },
+    {
+      "input_tokens": 4213,
+      "input_tokens_details": {
+        "cached_tokens": 881
+      },
+      "output_tokens": 131,
+      "output_tokens_details": {
+        "reasoning_tokens": 53
+      },
+      "total_tokens": 4344
+    },
+    {
+      "input_tokens": 4217,
+      "input_tokens_details": {
+        "cached_tokens": 881
+      },
+      "output_tokens": 91,
+      "output_tokens_details": {
+        "reasoning_tokens": 13
+      },
+      "total_tokens": 4308
+    },
+    {
+      "input_tokens": 4247,
+      "input_tokens_details": {
+        "cached_tokens": 881
+      },
+      "output_tokens": 90,
+      "output_tokens_details": {
+        "reasoning_tokens": 16
+      },
+      "total_tokens": 4337
+    },
+    {
+      "input_tokens": 4595,
+      "input_tokens_details": {
+        "cached_tokens": 881
+      },
+      "output_tokens": 247,
+      "output_tokens_details": {
+        "reasoning_tokens": 171
+      },
+      "total_tokens": 4842
+    },
+    {
+      "input_tokens": 4806,
+      "input_tokens_details": {
+        "cached_tokens": 881
+      },
+      "output_tokens": 92,
+      "output_tokens_details": {
+        "reasoning_tokens": 18
+      },
+      "total_tokens": 4898
+    },
+    {
+      "input_tokens": 4726,
+      "input_tokens_details": {
+        "cached_tokens": 881
+      },
+      "output_tokens": 104,
+      "output_tokens_details": {
+        "reasoning_tokens": 32
+      },
+      "total_tokens": 4830
+    },
+    {
+      "input_tokens": 5118,
+      "input_tokens_details": {
+        "cached_tokens": 881
+      },
+      "output_tokens": 240,
+      "output_tokens_details": {
+        "reasoning_tokens": 160
+      },
+      "total_tokens": 5358
+    },
+    {
+      "input_tokens": 5338,
+      "input_tokens_details": {
+        "cached_tokens": 881
+      },
+      "output_tokens": 298,
+      "output_tokens_details": {
+        "reasoning_tokens": 216
+      },
+      "total_tokens": 5636
+    },
+    {
+      "input_tokens": 5528,
+      "input_tokens_details": {
+        "cached_tokens": 881
+      },
+      "output_tokens": 161,
+      "output_tokens_details": {
+        "reasoning_tokens": 87
+      },
+      "total_tokens": 5689
+    },
+    {
+      "input_tokens": 5442,
+      "input_tokens_details": {
+        "cached_tokens": 881
+      },
+      "output_tokens": 81,
+      "output_tokens_details": {
+        "reasoning_tokens": 10
+      },
+      "total_tokens": 5523
+    },
+    {
+      "input_tokens": 5104,
+      "input_tokens_details": {
+        "cached_tokens": 881
+      },
+      "output_tokens": 223,
+      "output_tokens_details": {
+        "reasoning_tokens": 152
+      },
+      "total_tokens": 5327
+    },
+    {
+      "input_tokens": 5343,
+      "input_tokens_details": {
+        "cached_tokens": 881
+      },
+      "output_tokens": 282,
+      "output_tokens_details": {
+        "reasoning_tokens": 248
+      },
+      "total_tokens": 5625
+    }
+  ],
+  "executionMode": "meta-live",
+  "comparison": {
+    "original": {
+      "label": "Before",
+      "url": "http://127.0.0.1:4217/releases/r8x/",
+      "state": "finished",
+      "total": 3,
+      "completed": 3,
+      "passed": 0,
+      "failed": 3,
+      "inconclusive": 0,
+      "steps": [
+        {
+          "index": 1,
+          "action": {
+            "name": "press_key",
+            "arguments": {
+              "key": "Tab"
+            }
+          },
+          "timestamp": "2026-10-31T11:41:36.904Z",
+          "focusBefore": {
+            "id": null,
+            "tag": "BODY",
+            "role": null,
+            "name": "Page",
+            "value": null,
+            "selectionStart": null,
+            "selectionEnd": null
+          },
+          "focusAfter": {
+            "id": null,
+            "tag": "A",
+            "role": null,
+            "name": "Overview",
+            "value": null,
+            "selectionStart": null,
+            "selectionEnd": null
+          },
+          "checkpoint": {
+            "before": "80abab3ec40df5d47f244a8943f36dc29fbc7f40d92171142c9d81dde9bcd5f3",
+            "after": "9aecd0aa7db8c31e01ecf04a8212106d92c326b1319f82fb40efa096cb77e785",
+            "unchangedActions": 0
+          }
+        },
+        {
+          "index": 2,
+          "action": {
+            "name": "press_key",
+            "arguments": {
+              "key": "Tab"
+            }
+          },
+          "timestamp": "2026-10-31T11:41:39.977Z",
+          "focusBefore": {
+            "id": null,
+            "tag": "A",
+            "role": null,
+            "name": "Overview",
+            "value": null,
+            "selectionStart": null,
+            "selectionEnd": null
+          },
+          "focusAfter": {
+            "id": null,
+            "tag": "A",
+            "role": null,
+            "name": "Orders",
+            "value": null,
+            "selectionStart": null,
+            "selectionEnd": null
+          },
+          "checkpoint": {
+            "before": "9aecd0aa7db8c31e01ecf04a8212106d92c326b1319f82fb40efa096cb77e785",
+            "after": "0b80b5bd17ee9cd43caf3ce42f1445fd6146687cdf5574561e0bde2aab9b54e6",
+            "unchangedActions": 0
+          }
+        },
+        {
+          "index": 3,
+          "action": {
+            "name": "press_key",
+            "arguments": {
+              "key": "Enter"
+            }
+          },
+          "timestamp": "2026-10-31T11:41:42.951Z",
+          "focusBefore": {
+            "id": null,
+            "tag": "A",
+            "role": null,
+            "name": "Orders",
+            "value": null,
+            "selectionStart": null,
+            "selectionEnd": null
+          },
+          "focusAfter": {
+            "id": null,
+            "tag": "H1",
+            "role": null,
+            "name": "Orders",
+            "value": null,
+            "selectionStart": null,
+            "selectionEnd": null
+          },
+          "checkpoint": {
+            "before": "0b80b5bd17ee9cd43caf3ce42f1445fd6146687cdf5574561e0bde2aab9b54e6",
+            "after": "31aa7e87c77a91015d782371c74526f54c51ba7b52be0a26254121bcccfdae86",
+            "unchangedActions": 0
+          }
+        },
+        {
+          "index": 4,
+          "action": {
+            "name": "press_key",
+            "arguments": {
+              "key": "Tab"
+            }
+          },
+          "timestamp": "2026-10-31T11:41:46.085Z",
+          "focusBefore": {
+            "id": null,
+            "tag": "H1",
+            "role": null,
+            "name": "Orders",
+            "value": null,
+            "selectionStart": null,
+            "selectionEnd": null
+          },
+          "focusAfter": {
+            "id": "order-search",
+            "tag": "INPUT",
+            "role": null,
+            "name": "Find orders by customer",
+            "value": "",
+            "selectionStart": 0,
+            "selectionEnd": 0
+          },
+          "checkpoint": {
+            "before": "31aa7e87c77a91015d782371c74526f54c51ba7b52be0a26254121bcccfdae86",
+            "after": "b696c949f48eb4888072dad86e97d7dbd3d24a3ba3dcad96d4290b75de984203",
+            "unchangedActions": 0
+          }
+        },
+        {
+          "index": 5,
+          "action": {
+            "name": "press_key",
+            "arguments": {
+              "key": "Tab"
+            }
+          },
+          "timestamp": "2026-10-31T11:41:48.184Z",
+          "focusBefore": {
+            "id": "order-search",
+            "tag": "INPUT",
+            "role": null,
+            "name": "Find orders by customer",
+            "value": "",
+            "selectionStart": 0,
+            "selectionEnd": 0
+          },
+          "focusAfter": {
+            "id": null,
+            "tag": "BUTTON",
+            "role": null,
+            "name": "Search orders",
+            "value": "",
+            "selectionStart": null,
+            "selectionEnd": null
+          },
+          "checkpoint": {
+            "before": "b696c949f48eb4888072dad86e97d7dbd3d24a3ba3dcad96d4290b75de984203",
+            "after": "6861266ae1886c2f14914abae6b6cc5fea1217494b8c91f702b8d0413a155538",
+            "unchangedActions": 0
+          }
+        },
+        {
+          "index": 6,
+          "action": {
+            "name": "press_key",
+            "arguments": {
+              "key": "Tab"
+            }
+          },
+          "timestamp": "2026-10-31T11:41:51.667Z",
+          "focusBefore": {
+            "id": null,
+            "tag": "BUTTON",
+            "role": null,
+            "name": "Search orders",
+            "value": "",
+            "selectionStart": null,
+            "selectionEnd": null
+          },
+          "focusAfter": {
+            "id": "shipment-status",
+            "tag": "SELECT",
+            "role": null,
+            "name": "Shipment status",
+            "value": "All shipments",
+            "selectionStart": null,
+            "selectionEnd": null
+          },
+          "checkpoint": {
+            "before": "6861266ae1886c2f14914abae6b6cc5fea1217494b8c91f702b8d0413a155538",
+            "after": "11113f03fda1ce3206ac5875aa4037ff2f61264e311a65947c312e201792a49e",
+            "unchangedActions": 0
+          }
+        },
+        {
+          "index": 7,
+          "action": {
+            "name": "press_key",
+            "arguments": {
+              "key": "Tab"
+            }
+          },
+          "timestamp": "2026-10-31T11:41:54.483Z",
+          "focusBefore": {
+            "id": "shipment-status",
+            "tag": "SELECT",
+            "role": null,
+            "name": "Shipment status",
+            "value": "All shipments",
+            "selectionStart": null,
+            "selectionEnd": null
+          },
+          "focusAfter": {
+            "id": null,
+            "tag": "BUTTON",
+            "role": null,
+            "name": "Open NE-6718 for Northstar Studio East, In transit",
+            "value": "",
+            "selectionStart": null,
+            "selectionEnd": null
+          },
+          "checkpoint": {
+            "before": "11113f03fda1ce3206ac5875aa4037ff2f61264e311a65947c312e201792a49e",
+            "after": "9e70286c74d2e35757e685d7dbffffbf3faeccaefecf931cb4dcdd0960da97af",
+            "unchangedActions": 0
+          }
+        },
+        {
+          "index": 8,
+          "action": {
+            "name": "press_key",
+            "arguments": {
+              "key": "Tab"
+            }
+          },
+          "timestamp": "2026-10-31T11:41:57.902Z",
+          "focusBefore": {
+            "id": null,
+            "tag": "BUTTON",
+            "role": null,
+            "name": "Open NE-6718 for Northstar Studio East, In transit",
+            "value": "",
+            "selectionStart": null,
+            "selectionEnd": null
+          },
+          "focusAfter": {
+            "id": null,
+            "tag": "BUTTON",
+            "role": null,
+            "name": "Open NS-2841 for Northstar Studio, In transit",
+            "value": "",
+            "selectionStart": null,
+            "selectionEnd": null
+          },
+          "checkpoint": {
+            "before": "9e70286c74d2e35757e685d7dbffffbf3faeccaefecf931cb4dcdd0960da97af",
+            "after": "ea5d5c5af73e2b6bbe344312083049dd994ba4609487bf866b4c821121bb8ffe",
+            "unchangedActions": 0
+          }
+        },
+        {
+          "index": 9,
+          "action": {
+            "name": "press_key",
+            "arguments": {
+              "key": "Enter"
+            }
+          },
+          "timestamp": "2026-10-31T11:42:00.778Z",
+          "focusBefore": {
+            "id": null,
+            "tag": "BUTTON",
+            "role": null,
+            "name": "Open NS-2841 for Northstar Studio, In transit",
+            "value": "",
+            "selectionStart": null,
+            "selectionEnd": null
+          },
+          "focusAfter": {
+            "id": null,
+            "tag": "H1",
+            "role": null,
+            "name": "Order NS-2841",
+            "value": null,
+            "selectionStart": null,
+            "selectionEnd": null
+          },
+          "checkpoint": {
+            "before": "ea5d5c5af73e2b6bbe344312083049dd994ba4609487bf866b4c821121bb8ffe",
+            "after": "bc45a1a076f8f5b9cd4a8461cc5deb6191b3dd2fc71f722fa11301bf8fc3f401",
+            "unchangedActions": 0
+          }
+        },
+        {
+          "index": 10,
+          "action": {
+            "name": "press_key",
+            "arguments": {
+              "key": "Tab"
+            }
+          },
+          "timestamp": "2026-10-31T11:42:03.677Z",
+          "focusBefore": {
+            "id": null,
+            "tag": "H1",
+            "role": null,
+            "name": "Order NS-2841",
+            "value": null,
+            "selectionStart": null,
+            "selectionEnd": null
+          },
+          "focusAfter": {
+            "id": "invoice",
+            "tag": "BUTTON",
+            "role": null,
+            "name": "Request invoice",
+            "value": "",
+            "selectionStart": null,
+            "selectionEnd": null
+          },
+          "checkpoint": {
+            "before": "bc45a1a076f8f5b9cd4a8461cc5deb6191b3dd2fc71f722fa11301bf8fc3f401",
+            "after": "151faa5fa20720653a52f8448a6fef022b837f3ba4a472ba8299c7787619f513",
+            "unchangedActions": 0
+          }
+        },
+        {
+          "index": 11,
+          "action": {
+            "name": "press_key",
+            "arguments": {
+              "key": "Tab"
+            }
+          },
+          "timestamp": "2026-10-31T11:42:06.441Z",
+          "focusBefore": {
+            "id": "invoice",
+            "tag": "BUTTON",
+            "role": null,
+            "name": "Request invoice",
+            "value": "",
+            "selectionStart": null,
+            "selectionEnd": null
+          },
+          "focusAfter": {
+            "id": "delivery-request",
+            "tag": "BUTTON",
+            "role": null,
+            "name": "Review delivery change",
+            "value": "",
+            "selectionStart": null,
+            "selectionEnd": null
+          },
+          "checkpoint": {
+            "before": "151faa5fa20720653a52f8448a6fef022b837f3ba4a472ba8299c7787619f513",
+            "after": "fd728f0122d3524312076799d3f98ceae178cbbe6f4e835ea0abb289a3da94f5",
+            "unchangedActions": 0
+          }
+        },
+        {
+          "index": 12,
+          "action": {
+            "name": "press_key",
+            "arguments": {
+              "key": "Enter"
+            }
+          },
+          "timestamp": "2026-10-31T11:42:08.771Z",
+          "focusBefore": {
+            "id": "delivery-request",
+            "tag": "BUTTON",
+            "role": null,
+            "name": "Review delivery change",
+            "value": "",
+            "selectionStart": null,
+            "selectionEnd": null
+          },
+          "focusAfter": {
+            "id": null,
+            "tag": "H1",
+            "role": null,
+            "name": "Delivery change · NS-2841",
+            "value": null,
+            "selectionStart": null,
+            "selectionEnd": null
+          },
+          "checkpoint": {
+            "before": "fd728f0122d3524312076799d3f98ceae178cbbe6f4e835ea0abb289a3da94f5",
+            "after": "cb097a9c52accb7eaa54a68de723b900033a1f48ab7d6028bf3f9bba7adb51cd",
+            "unchangedActions": 0
+          }
+        },
+        {
+          "index": 13,
+          "action": {
+            "name": "press_key",
+            "arguments": {
+              "key": "Tab"
+            }
+          },
+          "timestamp": "2026-10-31T11:42:11.257Z",
+          "focusBefore": {
+            "id": null,
+            "tag": "H1",
+            "role": null,
+            "name": "Delivery change · NS-2841",
+            "value": null,
+            "selectionStart": null,
+            "selectionEnd": null
+          },
+          "focusAfter": {
+            "id": null,
+            "tag": "INPUT",
+            "role": null,
+            "name": "Friday, November 6, 2026",
+            "value": "2026-11-06",
+            "selectionStart": null,
+            "selectionEnd": null
+          },
+          "checkpoint": {
+            "before": "cb097a9c52accb7eaa54a68de723b900033a1f48ab7d6028bf3f9bba7adb51cd",
+            "after": "3634cbdc2d3021bd4e4a39855d2218977980eede8f61fac91f4959d0f93fbd53",
+            "unchangedActions": 0
+          }
+        },
+        {
+          "index": 14,
+          "action": {
+            "name": "press_key",
+            "arguments": {
+              "key": "Space"
+            }
+          },
+          "timestamp": "2026-10-31T11:42:15.827Z",
+          "focusBefore": {
+            "id": null,
+            "tag": "INPUT",
+            "role": null,
+            "name": "Friday, November 6, 2026",
+            "value": "2026-11-06",
+            "selectionStart": null,
+            "selectionEnd": null
+          },
+          "focusAfter": {
+            "id": null,
+            "tag": "INPUT",
+            "role": null,
+            "name": "Friday, November 6, 2026",
+            "value": "2026-11-06",
+            "selectionStart": null,
+            "selectionEnd": null
+          },
+          "checkpoint": {
+            "before": "3634cbdc2d3021bd4e4a39855d2218977980eede8f61fac91f4959d0f93fbd53",
+            "after": "3f09ebf1e1b5360fdc6f6f628065c8261bcededce1ed0975dcb9f48c57246c0e",
+            "unchangedActions": 0
+          }
+        },
+        {
+          "index": 15,
+          "action": {
+            "name": "press_key",
+            "arguments": {
+              "key": "Tab"
+            }
+          },
+          "timestamp": "2026-10-31T11:42:19.112Z",
+          "focusBefore": {
+            "id": null,
+            "tag": "INPUT",
+            "role": null,
+            "name": "Friday, November 6, 2026",
+            "value": "2026-11-06",
+            "selectionStart": null,
+            "selectionEnd": null
+          },
+          "focusAfter": {
+            "id": "preview-change",
+            "tag": "BUTTON",
+            "role": null,
+            "name": "Preview change",
+            "value": "",
+            "selectionStart": null,
+            "selectionEnd": null
+          },
+          "checkpoint": {
+            "before": "3f09ebf1e1b5360fdc6f6f628065c8261bcededce1ed0975dcb9f48c57246c0e",
+            "after": "873ed749ef1c398d4ee66bedd99e9fd73a610ec533d6ed3e51900c1e1cc1298c",
+            "unchangedActions": 0
+          }
+        },
+        {
+          "index": 16,
+          "action": {
+            "name": "press_key",
+            "arguments": {
+              "key": "Enter"
+            }
+          },
+          "timestamp": "2026-10-31T11:42:21.974Z",
+          "focusBefore": {
+            "id": "preview-change",
+            "tag": "BUTTON",
+            "role": null,
+            "name": "Preview change",
+            "value": "",
+            "selectionStart": null,
+            "selectionEnd": null
+          },
+          "focusAfter": {
+            "id": "preview-summary",
+            "tag": "DIV",
+            "role": null,
+            "name": "Northstar Studio · Order NS-2841 · Proposed delivery: Friday, November 6, 2026",
+            "value": null,
+            "selectionStart": null,
+            "selectionEnd": null
+          },
+          "checkpoint": {
+            "before": "873ed749ef1c398d4ee66bedd99e9fd73a610ec533d6ed3e51900c1e1cc1298c",
+            "after": "9723f17ee4c0985535ed4a20a9178543d6edacd61408718ae9c46bebbe840d1e",
+            "unchangedActions": 0
+          }
+        },
+        {
+          "index": 17,
+          "action": {
+            "name": "press_key",
+            "arguments": {
+              "key": "Escape"
+            }
+          },
+          "timestamp": "2026-10-31T11:42:26.177Z",
+          "focusBefore": {
+            "id": "preview-summary",
+            "tag": "DIV",
+            "role": null,
+            "name": "Northstar Studio · Order NS-2841 · Proposed delivery: Friday, November 6, 2026",
+            "value": null,
+            "selectionStart": null,
+            "selectionEnd": null
+          },
+          "focusAfter": {
+            "id": "preview-summary",
+            "tag": "DIV",
+            "role": null,
+            "name": "Northstar Studio · Order NS-2841 · Proposed delivery: Friday, November 6, 2026",
+            "value": null,
+            "selectionStart": null,
+            "selectionEnd": null
+          },
+          "checkpoint": {
+            "before": "9723f17ee4c0985535ed4a20a9178543d6edacd61408718ae9c46bebbe840d1e",
+            "after": "9723f17ee4c0985535ed4a20a9178543d6edacd61408718ae9c46bebbe840d1e",
+            "unchangedActions": 1
+          }
+        },
+        {
+          "index": 18,
+          "action": {
+            "name": "press_key",
+            "arguments": {
+              "key": "Escape"
+            }
+          },
+          "timestamp": "2026-10-31T11:42:32.167Z",
+          "focusBefore": {
+            "id": "preview-summary",
+            "tag": "DIV",
+            "role": null,
+            "name": "Northstar Studio · Order NS-2841 · Proposed delivery: Friday, November 6, 2026",
+            "value": null,
+            "selectionStart": null,
+            "selectionEnd": null
+          },
+          "focusAfter": {
+            "id": "preview-summary",
+            "tag": "DIV",
+            "role": null,
+            "name": "Northstar Studio · Order NS-2841 · Proposed delivery: Friday, November 6, 2026",
+            "value": null,
+            "selectionStart": null,
+            "selectionEnd": null
+          },
+          "checkpoint": {
+            "before": "9723f17ee4c0985535ed4a20a9178543d6edacd61408718ae9c46bebbe840d1e",
+            "after": "9723f17ee4c0985535ed4a20a9178543d6edacd61408718ae9c46bebbe840d1e",
+            "unchangedActions": 2
+          }
+        },
+        {
+          "index": 19,
+          "action": {
+            "name": "press_key",
+            "arguments": {
+              "key": "Tab"
+            }
+          },
+          "timestamp": "2026-10-31T11:42:39.849Z",
+          "focusBefore": {
+            "id": "preview-summary",
+            "tag": "DIV",
+            "role": null,
+            "name": "Northstar Studio · Order NS-2841 · Proposed delivery: Friday, November 6, 2026",
+            "value": null,
+            "selectionStart": null,
+            "selectionEnd": null
+          },
+          "focusAfter": {
+            "id": "apply-change",
+            "tag": "BUTTON",
+            "role": null,
+            "name": "Apply delivery change",
+            "value": "",
+            "selectionStart": null,
+            "selectionEnd": null
+          },
+          "checkpoint": {
+            "before": "9723f17ee4c0985535ed4a20a9178543d6edacd61408718ae9c46bebbe840d1e",
+            "after": "697c1d01f24bf31ad7c432c843b1f739a897bb05601918258d1cbc2c799d5732",
+            "unchangedActions": 0
+          }
+        },
+        {
+          "index": 20,
+          "action": {
+            "name": "press_key",
+            "arguments": {
+              "key": "Escape"
+            }
+          },
+          "timestamp": "2026-10-31T11:42:44.442Z",
+          "focusBefore": {
+            "id": "apply-change",
+            "tag": "BUTTON",
+            "role": null,
+            "name": "Apply delivery change",
+            "value": "",
+            "selectionStart": null,
+            "selectionEnd": null
+          },
+          "focusAfter": {
+            "id": "preview-change",
+            "tag": "BUTTON",
+            "role": null,
+            "name": "Preview change",
+            "value": "",
+            "selectionStart": null,
+            "selectionEnd": null
+          },
+          "checkpoint": {
+            "before": "697c1d01f24bf31ad7c432c843b1f739a897bb05601918258d1cbc2c799d5732",
+            "after": "873ed749ef1c398d4ee66bedd99e9fd73a610ec533d6ed3e51900c1e1cc1298c",
+            "unchangedActions": 0
+          }
+        }
+      ],
+      "probes": [
+        {
+          "valid": true,
+          "passed": false,
+          "reason": "escape_did_not_close",
+          "actions": [
+            {
+              "action": {
+                "name": "press_key",
+                "arguments": {
+                  "key": "Tab"
+                }
+              },
+              "focusBefore": {
+                "id": null,
+                "tag": "BODY",
+                "role": null,
+                "name": "Page",
+                "value": null,
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "focusAfter": {
+                "id": null,
+                "tag": "A",
+                "role": null,
+                "name": "Overview",
+                "value": null,
+                "selectionStart": null,
+                "selectionEnd": null
+              }
+            },
+            {
+              "action": {
+                "name": "press_key",
+                "arguments": {
+                  "key": "Tab"
+                }
+              },
+              "focusBefore": {
+                "id": null,
+                "tag": "A",
+                "role": null,
+                "name": "Overview",
+                "value": null,
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "focusAfter": {
+                "id": null,
+                "tag": "A",
+                "role": null,
+                "name": "Orders",
+                "value": null,
+                "selectionStart": null,
+                "selectionEnd": null
+              }
+            },
+            {
+              "action": {
+                "name": "press_key",
+                "arguments": {
+                  "key": "Enter"
+                }
+              },
+              "focusBefore": {
+                "id": null,
+                "tag": "A",
+                "role": null,
+                "name": "Orders",
+                "value": null,
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "focusAfter": {
+                "id": null,
+                "tag": "H1",
+                "role": null,
+                "name": "Orders",
+                "value": null,
+                "selectionStart": null,
+                "selectionEnd": null
+              }
+            },
+            {
+              "action": {
+                "name": "press_key",
+                "arguments": {
+                  "key": "Tab"
+                }
+              },
+              "focusBefore": {
+                "id": null,
+                "tag": "H1",
+                "role": null,
+                "name": "Orders",
+                "value": null,
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "focusAfter": {
+                "id": "order-search",
+                "tag": "INPUT",
+                "role": null,
+                "name": "Find orders by customer",
+                "value": "",
+                "selectionStart": 0,
+                "selectionEnd": 0
+              }
+            },
+            {
+              "action": {
+                "name": "press_key",
+                "arguments": {
+                  "key": "Tab"
+                }
+              },
+              "focusBefore": {
+                "id": "order-search",
+                "tag": "INPUT",
+                "role": null,
+                "name": "Find orders by customer",
+                "value": "",
+                "selectionStart": 0,
+                "selectionEnd": 0
+              },
+              "focusAfter": {
+                "id": null,
+                "tag": "BUTTON",
+                "role": null,
+                "name": "Search orders",
+                "value": "",
+                "selectionStart": null,
+                "selectionEnd": null
+              }
+            },
+            {
+              "action": {
+                "name": "press_key",
+                "arguments": {
+                  "key": "Tab"
+                }
+              },
+              "focusBefore": {
+                "id": null,
+                "tag": "BUTTON",
+                "role": null,
+                "name": "Search orders",
+                "value": "",
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "focusAfter": {
+                "id": "shipment-status",
+                "tag": "SELECT",
+                "role": null,
+                "name": "Shipment status",
+                "value": "All shipments",
+                "selectionStart": null,
+                "selectionEnd": null
+              }
+            },
+            {
+              "action": {
+                "name": "press_key",
+                "arguments": {
+                  "key": "Tab"
+                }
+              },
+              "focusBefore": {
+                "id": "shipment-status",
+                "tag": "SELECT",
+                "role": null,
+                "name": "Shipment status",
+                "value": "All shipments",
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "focusAfter": {
+                "id": null,
+                "tag": "BUTTON",
+                "role": null,
+                "name": "Open NE-6718 for Northstar Studio East, In transit",
+                "value": "",
+                "selectionStart": null,
+                "selectionEnd": null
+              }
+            },
+            {
+              "action": {
+                "name": "press_key",
+                "arguments": {
+                  "key": "Tab"
+                }
+              },
+              "focusBefore": {
+                "id": null,
+                "tag": "BUTTON",
+                "role": null,
+                "name": "Open NE-6718 for Northstar Studio East, In transit",
+                "value": "",
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "focusAfter": {
+                "id": null,
+                "tag": "BUTTON",
+                "role": null,
+                "name": "Open NS-2841 for Northstar Studio, In transit",
+                "value": "",
+                "selectionStart": null,
+                "selectionEnd": null
+              }
+            },
+            {
+              "action": {
+                "name": "press_key",
+                "arguments": {
+                  "key": "Enter"
+                }
+              },
+              "focusBefore": {
+                "id": null,
+                "tag": "BUTTON",
+                "role": null,
+                "name": "Open NS-2841 for Northstar Studio, In transit",
+                "value": "",
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "focusAfter": {
+                "id": null,
+                "tag": "H1",
+                "role": null,
+                "name": "Order NS-2841",
+                "value": null,
+                "selectionStart": null,
+                "selectionEnd": null
+              }
+            },
+            {
+              "action": {
+                "name": "press_key",
+                "arguments": {
+                  "key": "Tab"
+                }
+              },
+              "focusBefore": {
+                "id": null,
+                "tag": "H1",
+                "role": null,
+                "name": "Order NS-2841",
+                "value": null,
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "focusAfter": {
+                "id": "invoice",
+                "tag": "BUTTON",
+                "role": null,
+                "name": "Request invoice",
+                "value": "",
+                "selectionStart": null,
+                "selectionEnd": null
+              }
+            },
+            {
+              "action": {
+                "name": "press_key",
+                "arguments": {
+                  "key": "Tab"
+                }
+              },
+              "focusBefore": {
+                "id": "invoice",
+                "tag": "BUTTON",
+                "role": null,
+                "name": "Request invoice",
+                "value": "",
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "focusAfter": {
+                "id": "delivery-request",
+                "tag": "BUTTON",
+                "role": null,
+                "name": "Review delivery change",
+                "value": "",
+                "selectionStart": null,
+                "selectionEnd": null
+              }
+            },
+            {
+              "action": {
+                "name": "press_key",
+                "arguments": {
+                  "key": "Enter"
+                }
+              },
+              "focusBefore": {
+                "id": "delivery-request",
+                "tag": "BUTTON",
+                "role": null,
+                "name": "Review delivery change",
+                "value": "",
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "focusAfter": {
+                "id": null,
+                "tag": "H1",
+                "role": null,
+                "name": "Delivery change · NS-2841",
+                "value": null,
+                "selectionStart": null,
+                "selectionEnd": null
+              }
+            },
+            {
+              "action": {
+                "name": "press_key",
+                "arguments": {
+                  "key": "Tab"
+                }
+              },
+              "focusBefore": {
+                "id": null,
+                "tag": "H1",
+                "role": null,
+                "name": "Delivery change · NS-2841",
+                "value": null,
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "focusAfter": {
+                "id": null,
+                "tag": "INPUT",
+                "role": null,
+                "name": "Friday, November 6, 2026",
+                "value": "2026-11-06",
+                "selectionStart": null,
+                "selectionEnd": null
+              }
+            },
+            {
+              "action": {
+                "name": "press_key",
+                "arguments": {
+                  "key": "Space"
+                }
+              },
+              "focusBefore": {
+                "id": null,
+                "tag": "INPUT",
+                "role": null,
+                "name": "Friday, November 6, 2026",
+                "value": "2026-11-06",
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "focusAfter": {
+                "id": null,
+                "tag": "INPUT",
+                "role": null,
+                "name": "Friday, November 6, 2026",
+                "value": "2026-11-06",
+                "selectionStart": null,
+                "selectionEnd": null
+              }
+            },
+            {
+              "action": {
+                "name": "press_key",
+                "arguments": {
+                  "key": "Tab"
+                }
+              },
+              "focusBefore": {
+                "id": null,
+                "tag": "INPUT",
+                "role": null,
+                "name": "Friday, November 6, 2026",
+                "value": "2026-11-06",
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "focusAfter": {
+                "id": "preview-change",
+                "tag": "BUTTON",
+                "role": null,
+                "name": "Preview change",
+                "value": "",
+                "selectionStart": null,
+                "selectionEnd": null
+              }
+            },
+            {
+              "action": {
+                "name": "press_key",
+                "arguments": {
+                  "key": "Enter"
+                }
+              },
+              "focusBefore": {
+                "id": "preview-change",
+                "tag": "BUTTON",
+                "role": null,
+                "name": "Preview change",
+                "value": "",
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "focusAfter": {
+                "id": "preview-summary",
+                "tag": "DIV",
+                "role": null,
+                "name": "Northstar Studio · Order NS-2841 · Proposed delivery: Friday, November 6, 2026",
+                "value": null,
+                "selectionStart": null,
+                "selectionEnd": null
+              }
+            },
+            {
+              "action": {
+                "name": "press_key",
+                "arguments": {
+                  "key": "Escape"
+                }
+              },
+              "focusBefore": {
+                "id": "preview-summary",
+                "tag": "DIV",
+                "name": "Northstar Studio · Order NS-2841 · Proposed delivery: Friday, November 6, 2026"
+              },
+              "focusAfter": {
+                "id": "preview-summary",
+                "tag": "DIV",
+                "name": "Northstar Studio · Order NS-2841 · Proposed delivery: Friday, November 6, 2026"
+              }
+            }
+          ],
+          "initialUrl": "http://127.0.0.1:4217/releases/r8x/",
+          "finalUrl": "http://127.0.0.1:4217/releases/r8x/",
+          "configuration": {
+            "schema": 1,
+            "fixtureAndAgentBuild": "5612c7051455d62c80e124a0be7c86a90e00eaf47cff662e0246519e90dc8377",
+            "browserVersion": "156.0.8078.4",
+            "playwrightVersion": "1.64.1",
+            "platform": "darwin",
+            "architecture": "arm64",
+            "seed": "booking-v1",
+            "requestedModel": "muse-spark-1.3",
+            "inputTokenLimit": 64000,
+            "modelSettings": {
+              "tool_choice": "auto",
+              "parallel_tool_calls": false,
+              "max_output_tokens": 2048,
+              "store": false
+            },
+            "contextPolicy": {
+              "version": 3,
+              "observations": "current-screenshot-and-page",
+              "memory": "complete-action-ledger-and-bounded-page-excerpts",
+              "recentToolTurns": 1,
+              "reasoning": "latest-encrypted-turn-in-memory-only",
+              "maxActions": 25,
+              "maxPageExcerpts": 3,
+              "maxExcerptCharacters": 12000
+            }
+          },
+          "routeSourceRunId": "agent-1793446893385914078",
+          "routeSteps": 16,
+          "beforeEscape": {
+            "valid": true,
+            "targetPresent": true,
+            "dialogVisible": true,
+            "focusInside": true,
+            "triggerFocused": false,
+            "triggerVisible": true,
+            "focus": {
+              "id": "preview-summary",
+              "tag": "DIV",
+              "name": "Northstar Studio · Order NS-2841 · Proposed delivery: Friday, November 6, 2026"
+            }
+          },
+          "afterEscape": {
+            "valid": true,
+            "targetPresent": true,
+            "dialogVisible": true,
+            "focusInside": true,
+            "triggerFocused": false,
+            "triggerVisible": true,
+            "focus": {
+              "id": "preview-summary",
+              "tag": "DIV",
+              "name": "Northstar Studio · Order NS-2841 · Proposed delivery: Friday, November 6, 2026"
+            }
+          }
+        },
+        {
+          "valid": true,
+          "passed": false,
+          "reason": "escape_did_not_close",
+          "actions": [
+            {
+              "action": {
+                "name": "press_key",
+                "arguments": {
+                  "key": "Tab"
+                }
+              },
+              "focusBefore": {
+                "id": null,
+                "tag": "BODY",
+                "role": null,
+                "name": "Page",
+                "value": null,
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "focusAfter": {
+                "id": null,
+                "tag": "A",
+                "role": null,
+                "name": "Overview",
+                "value": null,
+                "selectionStart": null,
+                "selectionEnd": null
+              }
+            },
+            {
+              "action": {
+                "name": "press_key",
+                "arguments": {
+                  "key": "Tab"
+                }
+              },
+              "focusBefore": {
+                "id": null,
+                "tag": "A",
+                "role": null,
+                "name": "Overview",
+                "value": null,
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "focusAfter": {
+                "id": null,
+                "tag": "A",
+                "role": null,
+                "name": "Orders",
+                "value": null,
+                "selectionStart": null,
+                "selectionEnd": null
+              }
+            },
+            {
+              "action": {
+                "name": "press_key",
+                "arguments": {
+                  "key": "Enter"
+                }
+              },
+              "focusBefore": {
+                "id": null,
+                "tag": "A",
+                "role": null,
+                "name": "Orders",
+                "value": null,
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "focusAfter": {
+                "id": null,
+                "tag": "H1",
+                "role": null,
+                "name": "Orders",
+                "value": null,
+                "selectionStart": null,
+                "selectionEnd": null
+              }
+            },
+            {
+              "action": {
+                "name": "press_key",
+                "arguments": {
+                  "key": "Tab"
+                }
+              },
+              "focusBefore": {
+                "id": null,
+                "tag": "H1",
+                "role": null,
+                "name": "Orders",
+                "value": null,
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "focusAfter": {
+                "id": "order-search",
+                "tag": "INPUT",
+                "role": null,
+                "name": "Find orders by customer",
+                "value": "",
+                "selectionStart": 0,
+                "selectionEnd": 0
+              }
+            },
+            {
+              "action": {
+                "name": "press_key",
+                "arguments": {
+                  "key": "Tab"
+                }
+              },
+              "focusBefore": {
+                "id": "order-search",
+                "tag": "INPUT",
+                "role": null,
+                "name": "Find orders by customer",
+                "value": "",
+                "selectionStart": 0,
+                "selectionEnd": 0
+              },
+              "focusAfter": {
+                "id": null,
+                "tag": "BUTTON",
+                "role": null,
+                "name": "Search orders",
+                "value": "",
+                "selectionStart": null,
+                "selectionEnd": null
+              }
+            },
+            {
+              "action": {
+                "name": "press_key",
+                "arguments": {
+                  "key": "Tab"
+                }
+              },
+              "focusBefore": {
+                "id": null,
+                "tag": "BUTTON",
+                "role": null,
+                "name": "Search orders",
+                "value": "",
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "focusAfter": {
+                "id": "shipment-status",
+                "tag": "SELECT",
+                "role": null,
+                "name": "Shipment status",
+                "value": "All shipments",
+                "selectionStart": null,
+                "selectionEnd": null
+              }
+            },
+            {
+              "action": {
+                "name": "press_key",
+                "arguments": {
+                  "key": "Tab"
+                }
+              },
+              "focusBefore": {
+                "id": "shipment-status",
+                "tag": "SELECT",
+                "role": null,
+                "name": "Shipment status",
+                "value": "All shipments",
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "focusAfter": {
+                "id": null,
+                "tag": "BUTTON",
+                "role": null,
+                "name": "Open NE-6718 for Northstar Studio East, In transit",
+                "value": "",
+                "selectionStart": null,
+                "selectionEnd": null
+              }
+            },
+            {
+              "action": {
+                "name": "press_key",
+                "arguments": {
+                  "key": "Tab"
+                }
+              },
+              "focusBefore": {
+                "id": null,
+                "tag": "BUTTON",
+                "role": null,
+                "name": "Open NE-6718 for Northstar Studio East, In transit",
+                "value": "",
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "focusAfter": {
+                "id": null,
+                "tag": "BUTTON",
+                "role": null,
+                "name": "Open NS-2841 for Northstar Studio, In transit",
+                "value": "",
+                "selectionStart": null,
+                "selectionEnd": null
+              }
+            },
+            {
+              "action": {
+                "name": "press_key",
+                "arguments": {
+                  "key": "Enter"
+                }
+              },
+              "focusBefore": {
+                "id": null,
+                "tag": "BUTTON",
+                "role": null,
+                "name": "Open NS-2841 for Northstar Studio, In transit",
+                "value": "",
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "focusAfter": {
+                "id": null,
+                "tag": "H1",
+                "role": null,
+                "name": "Order NS-2841",
+                "value": null,
+                "selectionStart": null,
+                "selectionEnd": null
+              }
+            },
+            {
+              "action": {
+                "name": "press_key",
+                "arguments": {
+                  "key": "Tab"
+                }
+              },
+              "focusBefore": {
+                "id": null,
+                "tag": "H1",
+                "role": null,
+                "name": "Order NS-2841",
+                "value": null,
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "focusAfter": {
+                "id": "invoice",
+                "tag": "BUTTON",
+                "role": null,
+                "name": "Request invoice",
+                "value": "",
+                "selectionStart": null,
+                "selectionEnd": null
+              }
+            },
+            {
+              "action": {
+                "name": "press_key",
+                "arguments": {
+                  "key": "Tab"
+                }
+              },
+              "focusBefore": {
+                "id": "invoice",
+                "tag": "BUTTON",
+                "role": null,
+                "name": "Request invoice",
+                "value": "",
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "focusAfter": {
+                "id": "delivery-request",
+                "tag": "BUTTON",
+                "role": null,
+                "name": "Review delivery change",
+                "value": "",
+                "selectionStart": null,
+                "selectionEnd": null
+              }
+            },
+            {
+              "action": {
+                "name": "press_key",
+                "arguments": {
+                  "key": "Enter"
+                }
+              },
+              "focusBefore": {
+                "id": "delivery-request",
+                "tag": "BUTTON",
+                "role": null,
+                "name": "Review delivery change",
+                "value": "",
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "focusAfter": {
+                "id": null,
+                "tag": "H1",
+                "role": null,
+                "name": "Delivery change · NS-2841",
+                "value": null,
+                "selectionStart": null,
+                "selectionEnd": null
+              }
+            },
+            {
+              "action": {
+                "name": "press_key",
+                "arguments": {
+                  "key": "Tab"
+                }
+              },
+              "focusBefore": {
+                "id": null,
+                "tag": "H1",
+                "role": null,
+                "name": "Delivery change · NS-2841",
+                "value": null,
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "focusAfter": {
+                "id": null,
+                "tag": "INPUT",
+                "role": null,
+                "name": "Friday, November 6, 2026",
+                "value": "2026-11-06",
+                "selectionStart": null,
+                "selectionEnd": null
+              }
+            },
+            {
+              "action": {
+                "name": "press_key",
+                "arguments": {
+                  "key": "Space"
+                }
+              },
+              "focusBefore": {
+                "id": null,
+                "tag": "INPUT",
+                "role": null,
+                "name": "Friday, November 6, 2026",
+                "value": "2026-11-06",
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "focusAfter": {
+                "id": null,
+                "tag": "INPUT",
+                "role": null,
+                "name": "Friday, November 6, 2026",
+                "value": "2026-11-06",
+                "selectionStart": null,
+                "selectionEnd": null
+              }
+            },
+            {
+              "action": {
+                "name": "press_key",
+                "arguments": {
+                  "key": "Tab"
+                }
+              },
+              "focusBefore": {
+                "id": null,
+                "tag": "INPUT",
+                "role": null,
+                "name": "Friday, November 6, 2026",
+                "value": "2026-11-06",
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "focusAfter": {
+                "id": "preview-change",
+                "tag": "BUTTON",
+                "role": null,
+                "name": "Preview change",
+                "value": "",
+                "selectionStart": null,
+                "selectionEnd": null
+              }
+            },
+            {
+              "action": {
+                "name": "press_key",
+                "arguments": {
+                  "key": "Enter"
+                }
+              },
+              "focusBefore": {
+                "id": "preview-change",
+                "tag": "BUTTON",
+                "role": null,
+                "name": "Preview change",
+                "value": "",
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "focusAfter": {
+                "id": "preview-summary",
+                "tag": "DIV",
+                "role": null,
+                "name": "Northstar Studio · Order NS-2841 · Proposed delivery: Friday, November 6, 2026",
+                "value": null,
+                "selectionStart": null,
+                "selectionEnd": null
+              }
+            },
+            {
+              "action": {
+                "name": "press_key",
+                "arguments": {
+                  "key": "Escape"
+                }
+              },
+              "focusBefore": {
+                "id": "preview-summary",
+                "tag": "DIV",
+                "name": "Northstar Studio · Order NS-2841 · Proposed delivery: Friday, November 6, 2026"
+              },
+              "focusAfter": {
+                "id": "preview-summary",
+                "tag": "DIV",
+                "name": "Northstar Studio · Order NS-2841 · Proposed delivery: Friday, November 6, 2026"
+              }
+            }
+          ],
+          "initialUrl": "http://127.0.0.1:4217/releases/r8x/",
+          "finalUrl": "http://127.0.0.1:4217/releases/r8x/",
+          "configuration": {
+            "schema": 1,
+            "fixtureAndAgentBuild": "5612c7051455d62c80e124a0be7c86a90e00eaf47cff662e0246519e90dc8377",
+            "browserVersion": "156.0.8078.4",
+            "playwrightVersion": "1.64.1",
+            "platform": "darwin",
+            "architecture": "arm64",
+            "seed": "booking-v1",
+            "requestedModel": "muse-spark-1.3",
+            "inputTokenLimit": 64000,
+            "modelSettings": {
+              "tool_choice": "auto",
+              "parallel_tool_calls": false,
+              "max_output_tokens": 2048,
+              "store": false
+            },
+            "contextPolicy": {
+              "version": 3,
+              "observations": "current-screenshot-and-page",
+              "memory": "complete-action-ledger-and-bounded-page-excerpts",
+              "recentToolTurns": 1,
+              "reasoning": "latest-encrypted-turn-in-memory-only",
+              "maxActions": 25,
+              "maxPageExcerpts": 3,
+              "maxExcerptCharacters": 12000
+            }
+          },
+          "routeSourceRunId": "agent-1793446893385914078",
+          "routeSteps": 16,
+          "beforeEscape": {
+            "valid": true,
+            "targetPresent": true,
+            "dialogVisible": true,
+            "focusInside": true,
+            "triggerFocused": false,
+            "triggerVisible": true,
+            "focus": {
+              "id": "preview-summary",
+              "tag": "DIV",
+              "name": "Northstar Studio · Order NS-2841 · Proposed delivery: Friday, November 6, 2026"
+            }
+          },
+          "afterEscape": {
+            "valid": true,
+            "targetPresent": true,
+            "dialogVisible": true,
+            "focusInside": true,
+            "triggerFocused": false,
+            "triggerVisible": true,
+            "focus": {
+              "id": "preview-summary",
+              "tag": "DIV",
+              "name": "Northstar Studio · Order NS-2841 · Proposed delivery: Friday, November 6, 2026"
+            }
+          }
+        },
+        {
+          "valid": true,
+          "passed": false,
+          "reason": "escape_did_not_close",
+          "actions": [
+            {
+              "action": {
+                "name": "press_key",
+                "arguments": {
+                  "key": "Tab"
+                }
+              },
+              "focusBefore": {
+                "id": null,
+                "tag": "BODY",
+                "role": null,
+                "name": "Page",
+                "value": null,
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "focusAfter": {
+                "id": null,
+                "tag": "A",
+                "role": null,
+                "name": "Overview",
+                "value": null,
+                "selectionStart": null,
+                "selectionEnd": null
+              }
+            },
+            {
+              "action": {
+                "name": "press_key",
+                "arguments": {
+                  "key": "Tab"
+                }
+              },
+              "focusBefore": {
+                "id": null,
+                "tag": "A",
+                "role": null,
+                "name": "Overview",
+                "value": null,
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "focusAfter": {
+                "id": null,
+                "tag": "A",
+                "role": null,
+                "name": "Orders",
+                "value": null,
+                "selectionStart": null,
+                "selectionEnd": null
+              }
+            },
+            {
+              "action": {
+                "name": "press_key",
+                "arguments": {
+                  "key": "Enter"
+                }
+              },
+              "focusBefore": {
+                "id": null,
+                "tag": "A",
+                "role": null,
+                "name": "Orders",
+                "value": null,
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "focusAfter": {
+                "id": null,
+                "tag": "H1",
+                "role": null,
+                "name": "Orders",
+                "value": null,
+                "selectionStart": null,
+                "selectionEnd": null
+              }
+            },
+            {
+              "action": {
+                "name": "press_key",
+                "arguments": {
+                  "key": "Tab"
+                }
+              },
+              "focusBefore": {
+                "id": null,
+                "tag": "H1",
+                "role": null,
+                "name": "Orders",
+                "value": null,
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "focusAfter": {
+                "id": "order-search",
+                "tag": "INPUT",
+                "role": null,
+                "name": "Find orders by customer",
+                "value": "",
+                "selectionStart": 0,
+                "selectionEnd": 0
+              }
+            },
+            {
+              "action": {
+                "name": "press_key",
+                "arguments": {
+                  "key": "Tab"
+                }
+              },
+              "focusBefore": {
+                "id": "order-search",
+                "tag": "INPUT",
+                "role": null,
+                "name": "Find orders by customer",
+                "value": "",
+                "selectionStart": 0,
+                "selectionEnd": 0
+              },
+              "focusAfter": {
+                "id": null,
+                "tag": "BUTTON",
+                "role": null,
+                "name": "Search orders",
+                "value": "",
+                "selectionStart": null,
+                "selectionEnd": null
+              }
+            },
+            {
+              "action": {
+                "name": "press_key",
+                "arguments": {
+                  "key": "Tab"
+                }
+              },
+              "focusBefore": {
+                "id": null,
+                "tag": "BUTTON",
+                "role": null,
+                "name": "Search orders",
+                "value": "",
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "focusAfter": {
+                "id": "shipment-status",
+                "tag": "SELECT",
+                "role": null,
+                "name": "Shipment status",
+                "value": "All shipments",
+                "selectionStart": null,
+                "selectionEnd": null
+              }
+            },
+            {
+              "action": {
+                "name": "press_key",
+                "arguments": {
+                  "key": "Tab"
+                }
+              },
+              "focusBefore": {
+                "id": "shipment-status",
+                "tag": "SELECT",
+                "role": null,
+                "name": "Shipment status",
+                "value": "All shipments",
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "focusAfter": {
+                "id": null,
+                "tag": "BUTTON",
+                "role": null,
+                "name": "Open NE-6718 for Northstar Studio East, In transit",
+                "value": "",
+                "selectionStart": null,
+                "selectionEnd": null
+              }
+            },
+            {
+              "action": {
+                "name": "press_key",
+                "arguments": {
+                  "key": "Tab"
+                }
+              },
+              "focusBefore": {
+                "id": null,
+                "tag": "BUTTON",
+                "role": null,
+                "name": "Open NE-6718 for Northstar Studio East, In transit",
+                "value": "",
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "focusAfter": {
+                "id": null,
+                "tag": "BUTTON",
+                "role": null,
+                "name": "Open NS-2841 for Northstar Studio, In transit",
+                "value": "",
+                "selectionStart": null,
+                "selectionEnd": null
+              }
+            },
+            {
+              "action": {
+                "name": "press_key",
+                "arguments": {
+                  "key": "Enter"
+                }
+              },
+              "focusBefore": {
+                "id": null,
+                "tag": "BUTTON",
+                "role": null,
+                "name": "Open NS-2841 for Northstar Studio, In transit",
+                "value": "",
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "focusAfter": {
+                "id": null,
+                "tag": "H1",
+                "role": null,
+                "name": "Order NS-2841",
+                "value": null,
+                "selectionStart": null,
+                "selectionEnd": null
+              }
+            },
+            {
+              "action": {
+                "name": "press_key",
+                "arguments": {
+                  "key": "Tab"
+                }
+              },
+              "focusBefore": {
+                "id": null,
+                "tag": "H1",
+                "role": null,
+                "name": "Order NS-2841",
+                "value": null,
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "focusAfter": {
+                "id": "invoice",
+                "tag": "BUTTON",
+                "role": null,
+                "name": "Request invoice",
+                "value": "",
+                "selectionStart": null,
+                "selectionEnd": null
+              }
+            },
+            {
+              "action": {
+                "name": "press_key",
+                "arguments": {
+                  "key": "Tab"
+                }
+              },
+              "focusBefore": {
+                "id": "invoice",
+                "tag": "BUTTON",
+                "role": null,
+                "name": "Request invoice",
+                "value": "",
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "focusAfter": {
+                "id": "delivery-request",
+                "tag": "BUTTON",
+                "role": null,
+                "name": "Review delivery change",
+                "value": "",
+                "selectionStart": null,
+                "selectionEnd": null
+              }
+            },
+            {
+              "action": {
+                "name": "press_key",
+                "arguments": {
+                  "key": "Enter"
+                }
+              },
+              "focusBefore": {
+                "id": "delivery-request",
+                "tag": "BUTTON",
+                "role": null,
+                "name": "Review delivery change",
+                "value": "",
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "focusAfter": {
+                "id": null,
+                "tag": "H1",
+                "role": null,
+                "name": "Delivery change · NS-2841",
+                "value": null,
+                "selectionStart": null,
+                "selectionEnd": null
+              }
+            },
+            {
+              "action": {
+                "name": "press_key",
+                "arguments": {
+                  "key": "Tab"
+                }
+              },
+              "focusBefore": {
+                "id": null,
+                "tag": "H1",
+                "role": null,
+                "name": "Delivery change · NS-2841",
+                "value": null,
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "focusAfter": {
+                "id": null,
+                "tag": "INPUT",
+                "role": null,
+                "name": "Friday, November 6, 2026",
+                "value": "2026-11-06",
+                "selectionStart": null,
+                "selectionEnd": null
+              }
+            },
+            {
+              "action": {
+                "name": "press_key",
+                "arguments": {
+                  "key": "Space"
+                }
+              },
+              "focusBefore": {
+                "id": null,
+                "tag": "INPUT",
+                "role": null,
+                "name": "Friday, November 6, 2026",
+                "value": "2026-11-06",
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "focusAfter": {
+                "id": null,
+                "tag": "INPUT",
+                "role": null,
+                "name": "Friday, November 6, 2026",
+                "value": "2026-11-06",
+                "selectionStart": null,
+                "selectionEnd": null
+              }
+            },
+            {
+              "action": {
+                "name": "press_key",
+                "arguments": {
+                  "key": "Tab"
+                }
+              },
+              "focusBefore": {
+                "id": null,
+                "tag": "INPUT",
+                "role": null,
+                "name": "Friday, November 6, 2026",
+                "value": "2026-11-06",
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "focusAfter": {
+                "id": "preview-change",
+                "tag": "BUTTON",
+                "role": null,
+                "name": "Preview change",
+                "value": "",
+                "selectionStart": null,
+                "selectionEnd": null
+              }
+            },
+            {
+              "action": {
+                "name": "press_key",
+                "arguments": {
+                  "key": "Enter"
+                }
+              },
+              "focusBefore": {
+                "id": "preview-change",
+                "tag": "BUTTON",
+                "role": null,
+                "name": "Preview change",
+                "value": "",
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "focusAfter": {
+                "id": "preview-summary",
+                "tag": "DIV",
+                "role": null,
+                "name": "Northstar Studio · Order NS-2841 · Proposed delivery: Friday, November 6, 2026",
+                "value": null,
+                "selectionStart": null,
+                "selectionEnd": null
+              }
+            },
+            {
+              "action": {
+                "name": "press_key",
+                "arguments": {
+                  "key": "Escape"
+                }
+              },
+              "focusBefore": {
+                "id": "preview-summary",
+                "tag": "DIV",
+                "name": "Northstar Studio · Order NS-2841 · Proposed delivery: Friday, November 6, 2026"
+              },
+              "focusAfter": {
+                "id": "preview-summary",
+                "tag": "DIV",
+                "name": "Northstar Studio · Order NS-2841 · Proposed delivery: Friday, November 6, 2026"
+              }
+            }
+          ],
+          "initialUrl": "http://127.0.0.1:4217/releases/r8x/",
+          "finalUrl": "http://127.0.0.1:4217/releases/r8x/",
+          "configuration": {
+            "schema": 1,
+            "fixtureAndAgentBuild": "5612c7051455d62c80e124a0be7c86a90e00eaf47cff662e0246519e90dc8377",
+            "browserVersion": "156.0.8078.4",
+            "playwrightVersion": "1.64.1",
+            "platform": "darwin",
+            "architecture": "arm64",
+            "seed": "booking-v1",
+            "requestedModel": "muse-spark-1.3",
+            "inputTokenLimit": 64000,
+            "modelSettings": {
+              "tool_choice": "auto",
+              "parallel_tool_calls": false,
+              "max_output_tokens": 2048,
+              "store": false
+            },
+            "contextPolicy": {
+              "version": 3,
+              "observations": "current-screenshot-and-page",
+              "memory": "complete-action-ledger-and-bounded-page-excerpts",
+              "recentToolTurns": 1,
+              "reasoning": "latest-encrypted-turn-in-memory-only",
+              "maxActions": 25,
+              "maxPageExcerpts": 3,
+              "maxExcerptCharacters": 12000
+            }
+          },
+          "routeSourceRunId": "agent-1793446893385914078",
+          "routeSteps": 16,
+          "beforeEscape": {
+            "valid": true,
+            "targetPresent": true,
+            "dialogVisible": true,
+            "focusInside": true,
+            "triggerFocused": false,
+            "triggerVisible": true,
+            "focus": {
+              "id": "preview-summary",
+              "tag": "DIV",
+              "name": "Northstar Studio · Order NS-2841 · Proposed delivery: Friday, November 6, 2026"
+            }
+          },
+          "afterEscape": {
+            "valid": true,
+            "targetPresent": true,
+            "dialogVisible": true,
+            "focusInside": true,
+            "triggerFocused": false,
+            "triggerVisible": true,
+            "focus": {
+              "id": "preview-summary",
+              "tag": "DIV",
+              "name": "Northstar Studio · Order NS-2841 · Proposed delivery: Friday, November 6, 2026"
+            }
+          }
+        }
+      ],
+      "screenshot": "/reports/agent-1793446893384801091/original.png?v=44",
+      "taskVerified": null,
+      "actionsScope": "AI agent session",
+      "modelOutcome": "agent_reported_complete",
+      "agentContract": {
+        "valid": true,
+        "passed": false,
+        "reason": "escape_did_not_close",
+        "attempts": [
+          {
+            "actionIndex": 16,
+            "openedAtIndex": 15,
+            "before": {
+              "valid": true,
+              "targetPresent": true,
+              "dialogVisible": true,
+              "focusInside": true,
+              "triggerFocused": false,
+              "triggerVisible": true,
+              "focus": {
+                "id": "preview-summary",
+                "tag": "DIV",
+                "name": "Northstar Studio · Order NS-2841 · Proposed delivery: Friday, November 6, 2026"
+              }
+            },
+            "after": {
+              "valid": true,
+              "targetPresent": true,
+              "dialogVisible": true,
+              "focusInside": true,
+              "triggerFocused": false,
+              "triggerVisible": true,
+              "focus": {
+                "id": "preview-summary",
+                "tag": "DIV",
+                "name": "Northstar Studio · Order NS-2841 · Proposed delivery: Friday, November 6, 2026"
+              }
+            },
+            "valid": true,
+            "passed": false,
+            "reason": "escape_did_not_close"
+          },
+          {
+            "actionIndex": 17,
+            "openedAtIndex": 15,
+            "before": {
+              "valid": true,
+              "targetPresent": true,
+              "dialogVisible": true,
+              "focusInside": true,
+              "triggerFocused": false,
+              "triggerVisible": true,
+              "focus": {
+                "id": "preview-summary",
+                "tag": "DIV",
+                "name": "Northstar Studio · Order NS-2841 · Proposed delivery: Friday, November 6, 2026"
+              }
+            },
+            "after": {
+              "valid": true,
+              "targetPresent": true,
+              "dialogVisible": true,
+              "focusInside": true,
+              "triggerFocused": false,
+              "triggerVisible": true,
+              "focus": {
+                "id": "preview-summary",
+                "tag": "DIV",
+                "name": "Northstar Studio · Order NS-2841 · Proposed delivery: Friday, November 6, 2026"
+              }
+            },
+            "valid": true,
+            "passed": false,
+            "reason": "escape_did_not_close"
+          },
+          {
+            "actionIndex": 19,
+            "openedAtIndex": 15,
+            "before": {
+              "valid": true,
+              "targetPresent": true,
+              "dialogVisible": true,
+              "focusInside": true,
+              "triggerFocused": false,
+              "triggerVisible": true,
+              "focus": {
+                "id": "apply-change",
+                "tag": "BUTTON",
+                "name": "Apply delivery change"
+              }
+            },
+            "after": {
+              "valid": true,
+              "targetPresent": true,
+              "dialogVisible": false,
+              "focusInside": false,
+              "triggerFocused": true,
+              "triggerVisible": true,
+              "focus": {
+                "id": "preview-change",
+                "tag": "BUTTON",
+                "name": "Preview change"
+              }
+            },
+            "valid": true,
+            "passed": true,
+            "reason": "dialog_contract_passed"
+          }
+        ],
+        "openedAtIndex": 15
+      },
+      "summary": "Dialog contract: 0 passed, 3 failed, 0 inconclusive. Escape left the dialog open. Screenshot from independent check 3 of 3. AI outcome: agent_reported_complete. AI Escape audit: Escape left the dialog open. Whole-task completion is not verified.",
+      "revision": 44,
+      "screenshotSource": "Screenshot from independent check 3 of 3",
+      "agent": {
+        "runId": "agent-1793446893385914078",
+        "valid": true,
+        "model": "muse-spark-1.3",
+        "outcome": "agent_reported_complete",
+        "reason": "model_reported_completion",
+        "configuration": {
+          "schema": 1,
+          "fixtureAndAgentBuild": "5612c7051455d62c80e124a0be7c86a90e00eaf47cff662e0246519e90dc8377",
+          "browserVersion": "156.0.8078.4",
+          "playwrightVersion": "1.64.1",
+          "platform": "darwin",
+          "architecture": "arm64",
+          "seed": null,
+          "requestedModel": "muse-spark-1.3",
+          "inputTokenLimit": 64000,
+          "modelSettings": {
+            "tool_choice": "auto",
+            "parallel_tool_calls": false,
+            "max_output_tokens": 2048,
+            "store": false
+          },
+          "contextPolicy": {
+            "version": 3,
+            "observations": "current-screenshot-and-page",
+            "memory": "complete-action-ledger-and-bounded-page-excerpts",
+            "recentToolTurns": 1,
+            "reasoning": "latest-encrypted-turn-in-memory-only",
+            "maxActions": 25,
+            "maxPageExcerpts": 3,
+            "maxExcerptCharacters": 12000
+          },
+          "targetKind": "custom",
+          "completionVerification": "model-reported"
+        },
+        "contract": {
+          "valid": true,
+          "passed": false,
+          "reason": "escape_did_not_close",
+          "attempts": [
+            {
+              "actionIndex": 16,
+              "openedAtIndex": 15,
+              "before": {
+                "valid": true,
+                "targetPresent": true,
+                "dialogVisible": true,
+                "focusInside": true,
+                "triggerFocused": false,
+                "triggerVisible": true,
+                "focus": {
+                  "id": "preview-summary",
+                  "tag": "DIV",
+                  "name": "Northstar Studio · Order NS-2841 · Proposed delivery: Friday, November 6, 2026"
+                }
+              },
+              "after": {
+                "valid": true,
+                "targetPresent": true,
+                "dialogVisible": true,
+                "focusInside": true,
+                "triggerFocused": false,
+                "triggerVisible": true,
+                "focus": {
+                  "id": "preview-summary",
+                  "tag": "DIV",
+                  "name": "Northstar Studio · Order NS-2841 · Proposed delivery: Friday, November 6, 2026"
+                }
+              },
+              "valid": true,
+              "passed": false,
+              "reason": "escape_did_not_close"
+            },
+            {
+              "actionIndex": 17,
+              "openedAtIndex": 15,
+              "before": {
+                "valid": true,
+                "targetPresent": true,
+                "dialogVisible": true,
+                "focusInside": true,
+                "triggerFocused": false,
+                "triggerVisible": true,
+                "focus": {
+                  "id": "preview-summary",
+                  "tag": "DIV",
+                  "name": "Northstar Studio · Order NS-2841 · Proposed delivery: Friday, November 6, 2026"
+                }
+              },
+              "after": {
+                "valid": true,
+                "targetPresent": true,
+                "dialogVisible": true,
+                "focusInside": true,
+                "triggerFocused": false,
+                "triggerVisible": true,
+                "focus": {
+                  "id": "preview-summary",
+                  "tag": "DIV",
+                  "name": "Northstar Studio · Order NS-2841 · Proposed delivery: Friday, November 6, 2026"
+                }
+              },
+              "valid": true,
+              "passed": false,
+              "reason": "escape_did_not_close"
+            },
+            {
+              "actionIndex": 19,
+              "openedAtIndex": 15,
+              "before": {
+                "valid": true,
+                "targetPresent": true,
+                "dialogVisible": true,
+                "focusInside": true,
+                "triggerFocused": false,
+                "triggerVisible": true,
+                "focus": {
+                  "id": "apply-change",
+                  "tag": "BUTTON",
+                  "name": "Apply delivery change"
+                }
+              },
+              "after": {
+                "valid": true,
+                "targetPresent": true,
+                "dialogVisible": false,
+                "focusInside": false,
+                "triggerFocused": true,
+                "triggerVisible": true,
+                "focus": {
+                  "id": "preview-change",
+                  "tag": "BUTTON",
+                  "name": "Preview change"
+                }
+              },
+              "valid": true,
+              "passed": true,
+              "reason": "dialog_contract_passed"
+            }
+          ],
+          "openedAtIndex": 15
+        }
+      }
+    },
+    "corrected": {
+      "label": "After",
+      "url": "http://127.0.0.1:4217/releases/q2z/",
+      "state": "finished",
+      "total": 3,
+      "completed": 3,
+      "passed": 3,
+      "failed": 0,
+      "inconclusive": 0,
+      "steps": [
+        {
+          "index": 1,
+          "action": {
+            "name": "press_key",
+            "arguments": {
+              "key": "Tab"
+            }
+          },
+          "timestamp": "2026-10-31T11:43:01.589Z",
+          "focusBefore": {
+            "id": null,
+            "tag": "BODY",
+            "role": null,
+            "name": "Page",
+            "value": null,
+            "selectionStart": null,
+            "selectionEnd": null
+          },
+          "focusAfter": {
+            "id": null,
+            "tag": "A",
+            "role": null,
+            "name": "Overview",
+            "value": null,
+            "selectionStart": null,
+            "selectionEnd": null
+          },
+          "checkpoint": {
+            "before": "82a2309d141f565c342df42c823156c5142302644a1d7b13b92817ac70fb3233",
+            "after": "f8cbdac00e050760575190c4a46adb77306eb2c32036dbd78b0d2d0f63523c1d",
+            "unchangedActions": 0
+          }
+        },
+        {
+          "index": 2,
+          "action": {
+            "name": "press_key",
+            "arguments": {
+              "key": "Tab"
+            }
+          },
+          "timestamp": "2026-10-31T11:43:04.742Z",
+          "focusBefore": {
+            "id": null,
+            "tag": "A",
+            "role": null,
+            "name": "Overview",
+            "value": null,
+            "selectionStart": null,
+            "selectionEnd": null
+          },
+          "focusAfter": {
+            "id": null,
+            "tag": "A",
+            "role": null,
+            "name": "Orders",
+            "value": null,
+            "selectionStart": null,
+            "selectionEnd": null
+          },
+          "checkpoint": {
+            "before": "f8cbdac00e050760575190c4a46adb77306eb2c32036dbd78b0d2d0f63523c1d",
+            "after": "5f96a5b781ae9ef35ca03417c6d520d99c413f4a124c67c19096b2d8b069bcbe",
+            "unchangedActions": 0
+          }
+        },
+        {
+          "index": 3,
+          "action": {
+            "name": "press_key",
+            "arguments": {
+              "key": "Enter"
+            }
+          },
+          "timestamp": "2026-10-31T11:43:08.098Z",
+          "focusBefore": {
+            "id": null,
+            "tag": "A",
+            "role": null,
+            "name": "Orders",
+            "value": null,
+            "selectionStart": null,
+            "selectionEnd": null
+          },
+          "focusAfter": {
+            "id": null,
+            "tag": "H1",
+            "role": null,
+            "name": "Orders",
+            "value": null,
+            "selectionStart": null,
+            "selectionEnd": null
+          },
+          "checkpoint": {
+            "before": "5f96a5b781ae9ef35ca03417c6d520d99c413f4a124c67c19096b2d8b069bcbe",
+            "after": "f961072983d728d2835e31c79119c61cc4054df232e6f4d947ae689681b78c05",
+            "unchangedActions": 0
+          }
+        },
+        {
+          "index": 4,
+          "action": {
+            "name": "press_key",
+            "arguments": {
+              "key": "Tab"
+            }
+          },
+          "timestamp": "2026-10-31T11:43:11.415Z",
+          "focusBefore": {
+            "id": null,
+            "tag": "H1",
+            "role": null,
+            "name": "Orders",
+            "value": null,
+            "selectionStart": null,
+            "selectionEnd": null
+          },
+          "focusAfter": {
+            "id": "order-search",
+            "tag": "INPUT",
+            "role": null,
+            "name": "Find orders by customer",
+            "value": "",
+            "selectionStart": 0,
+            "selectionEnd": 0
+          },
+          "checkpoint": {
+            "before": "f961072983d728d2835e31c79119c61cc4054df232e6f4d947ae689681b78c05",
+            "after": "d2b39f6693aafb24dcf423783c8f95bff1ae25111cbc50a6e76bab5656a452a3",
+            "unchangedActions": 0
+          }
+        },
+        {
+          "index": 5,
+          "action": {
+            "name": "press_key",
+            "arguments": {
+              "key": "Tab"
+            }
+          },
+          "timestamp": "2026-10-31T11:43:15.578Z",
+          "focusBefore": {
+            "id": "order-search",
+            "tag": "INPUT",
+            "role": null,
+            "name": "Find orders by customer",
+            "value": "",
+            "selectionStart": 0,
+            "selectionEnd": 0
+          },
+          "focusAfter": {
+            "id": null,
+            "tag": "BUTTON",
+            "role": null,
+            "name": "Search orders",
+            "value": "",
+            "selectionStart": null,
+            "selectionEnd": null
+          },
+          "checkpoint": {
+            "before": "d2b39f6693aafb24dcf423783c8f95bff1ae25111cbc50a6e76bab5656a452a3",
+            "after": "88521d5979108c5d250095adbbe43b26cbebd54aa35ab367ad3f613b23a991ae",
+            "unchangedActions": 0
+          }
+        },
+        {
+          "index": 6,
+          "action": {
+            "name": "press_key",
+            "arguments": {
+              "key": "Tab"
+            }
+          },
+          "timestamp": "2026-10-31T11:43:20.477Z",
+          "focusBefore": {
+            "id": null,
+            "tag": "BUTTON",
+            "role": null,
+            "name": "Search orders",
+            "value": "",
+            "selectionStart": null,
+            "selectionEnd": null
+          },
+          "focusAfter": {
+            "id": "shipment-status",
+            "tag": "SELECT",
+            "role": null,
+            "name": "Shipment status",
+            "value": "All shipments",
+            "selectionStart": null,
+            "selectionEnd": null
+          },
+          "checkpoint": {
+            "before": "88521d5979108c5d250095adbbe43b26cbebd54aa35ab367ad3f613b23a991ae",
+            "after": "d1166c5194c4568a067bac8b58535537e0645a9f6b2745d83155734297f26e98",
+            "unchangedActions": 0
+          }
+        },
+        {
+          "index": 7,
+          "action": {
+            "name": "press_key",
+            "arguments": {
+              "key": "Tab"
+            }
+          },
+          "timestamp": "2026-10-31T11:43:23.093Z",
+          "focusBefore": {
+            "id": "shipment-status",
+            "tag": "SELECT",
+            "role": null,
+            "name": "Shipment status",
+            "value": "All shipments",
+            "selectionStart": null,
+            "selectionEnd": null
+          },
+          "focusAfter": {
+            "id": null,
+            "tag": "BUTTON",
+            "role": null,
+            "name": "Open NE-6718 for Northstar Studio East, In transit",
+            "value": "",
+            "selectionStart": null,
+            "selectionEnd": null
+          },
+          "checkpoint": {
+            "before": "d1166c5194c4568a067bac8b58535537e0645a9f6b2745d83155734297f26e98",
+            "after": "fe523cb67429662cf5891035984e95a35cb3815b1f8b611039e03e0bfa13ab69",
+            "unchangedActions": 0
+          }
+        },
+        {
+          "index": 8,
+          "action": {
+            "name": "press_key",
+            "arguments": {
+              "key": "Tab"
+            }
+          },
+          "timestamp": "2026-10-31T11:43:25.717Z",
+          "focusBefore": {
+            "id": null,
+            "tag": "BUTTON",
+            "role": null,
+            "name": "Open NE-6718 for Northstar Studio East, In transit",
+            "value": "",
+            "selectionStart": null,
+            "selectionEnd": null
+          },
+          "focusAfter": {
+            "id": null,
+            "tag": "BUTTON",
+            "role": null,
+            "name": "Open NS-2841 for Northstar Studio, In transit",
+            "value": "",
+            "selectionStart": null,
+            "selectionEnd": null
+          },
+          "checkpoint": {
+            "before": "fe523cb67429662cf5891035984e95a35cb3815b1f8b611039e03e0bfa13ab69",
+            "after": "3ebf91031dfc82cfac66278e28ed7e7ee0541898ee4819972e71a20885233ef0",
+            "unchangedActions": 0
+          }
+        },
+        {
+          "index": 9,
+          "action": {
+            "name": "press_key",
+            "arguments": {
+              "key": "Enter"
+            }
+          },
+          "timestamp": "2026-10-31T11:43:27.989Z",
+          "focusBefore": {
+            "id": null,
+            "tag": "BUTTON",
+            "role": null,
+            "name": "Open NS-2841 for Northstar Studio, In transit",
+            "value": "",
+            "selectionStart": null,
+            "selectionEnd": null
+          },
+          "focusAfter": {
+            "id": null,
+            "tag": "H1",
+            "role": null,
+            "name": "Order NS-2841",
+            "value": null,
+            "selectionStart": null,
+            "selectionEnd": null
+          },
+          "checkpoint": {
+            "before": "3ebf91031dfc82cfac66278e28ed7e7ee0541898ee4819972e71a20885233ef0",
+            "after": "dc3fa0acc778123eeb135f3b487f18b9d3b7ef64901e97a8a7782689ffc1a323",
+            "unchangedActions": 0
+          }
+        },
+        {
+          "index": 10,
+          "action": {
+            "name": "press_key",
+            "arguments": {
+              "key": "Tab"
+            }
+          },
+          "timestamp": "2026-10-31T11:43:31.473Z",
+          "focusBefore": {
+            "id": null,
+            "tag": "H1",
+            "role": null,
+            "name": "Order NS-2841",
+            "value": null,
+            "selectionStart": null,
+            "selectionEnd": null
+          },
+          "focusAfter": {
+            "id": "invoice",
+            "tag": "BUTTON",
+            "role": null,
+            "name": "Request invoice",
+            "value": "",
+            "selectionStart": null,
+            "selectionEnd": null
+          },
+          "checkpoint": {
+            "before": "dc3fa0acc778123eeb135f3b487f18b9d3b7ef64901e97a8a7782689ffc1a323",
+            "after": "0f86e7eb3d001f060b8be6606d994e71c3d7f9498e3b7d96c38eb39c240f31d4",
+            "unchangedActions": 0
+          }
+        },
+        {
+          "index": 11,
+          "action": {
+            "name": "press_key",
+            "arguments": {
+              "key": "Tab"
+            }
+          },
+          "timestamp": "2026-10-31T11:43:34.091Z",
+          "focusBefore": {
+            "id": "invoice",
+            "tag": "BUTTON",
+            "role": null,
+            "name": "Request invoice",
+            "value": "",
+            "selectionStart": null,
+            "selectionEnd": null
+          },
+          "focusAfter": {
+            "id": "delivery-request",
+            "tag": "BUTTON",
+            "role": null,
+            "name": "Review delivery change",
+            "value": "",
+            "selectionStart": null,
+            "selectionEnd": null
+          },
+          "checkpoint": {
+            "before": "0f86e7eb3d001f060b8be6606d994e71c3d7f9498e3b7d96c38eb39c240f31d4",
+            "after": "6c031781f13b797a777cd27329df54967cfd257ae45eadc2ed968cd62ff7ab79",
+            "unchangedActions": 0
+          }
+        },
+        {
+          "index": 12,
+          "action": {
+            "name": "press_key",
+            "arguments": {
+              "key": "Enter"
+            }
+          },
+          "timestamp": "2026-10-31T11:43:36.724Z",
+          "focusBefore": {
+            "id": "delivery-request",
+            "tag": "BUTTON",
+            "role": null,
+            "name": "Review delivery change",
+            "value": "",
+            "selectionStart": null,
+            "selectionEnd": null
+          },
+          "focusAfter": {
+            "id": null,
+            "tag": "H1",
+            "role": null,
+            "name": "Delivery change · NS-2841",
+            "value": null,
+            "selectionStart": null,
+            "selectionEnd": null
+          },
+          "checkpoint": {
+            "before": "6c031781f13b797a777cd27329df54967cfd257ae45eadc2ed968cd62ff7ab79",
+            "after": "f91c2a9cfeb664a0768e53509487adece39ce3406e9cd21903c2e93f3577e327",
+            "unchangedActions": 0
+          }
+        },
+        {
+          "index": 13,
+          "action": {
+            "name": "press_key",
+            "arguments": {
+              "key": "Tab"
+            }
+          },
+          "timestamp": "2026-10-31T11:43:40.624Z",
+          "focusBefore": {
+            "id": null,
+            "tag": "H1",
+            "role": null,
+            "name": "Delivery change · NS-2841",
+            "value": null,
+            "selectionStart": null,
+            "selectionEnd": null
+          },
+          "focusAfter": {
+            "id": null,
+            "tag": "INPUT",
+            "role": null,
+            "name": "Friday, November 6, 2026",
+            "value": "2026-11-06",
+            "selectionStart": null,
+            "selectionEnd": null
+          },
+          "checkpoint": {
+            "before": "f91c2a9cfeb664a0768e53509487adece39ce3406e9cd21903c2e93f3577e327",
+            "after": "9066a79e35c5645771f0fbac3ef6a96f3e9ff0cec75913058fe1e538d4ea528f",
+            "unchangedActions": 0
+          }
+        },
+        {
+          "index": 14,
+          "action": {
+            "name": "press_key",
+            "arguments": {
+              "key": "Space"
+            }
+          },
+          "timestamp": "2026-10-31T11:43:44.569Z",
+          "focusBefore": {
+            "id": null,
+            "tag": "INPUT",
+            "role": null,
+            "name": "Friday, November 6, 2026",
+            "value": "2026-11-06",
+            "selectionStart": null,
+            "selectionEnd": null
+          },
+          "focusAfter": {
+            "id": null,
+            "tag": "INPUT",
+            "role": null,
+            "name": "Friday, November 6, 2026",
+            "value": "2026-11-06",
+            "selectionStart": null,
+            "selectionEnd": null
+          },
+          "checkpoint": {
+            "before": "9066a79e35c5645771f0fbac3ef6a96f3e9ff0cec75913058fe1e538d4ea528f",
+            "after": "62f1eafc59ebfed125f3cd2cd344c3e6968d54b7200b8e6f50f5e986f7b502c2",
+            "unchangedActions": 0
+          }
+        },
+        {
+          "index": 15,
+          "action": {
+            "name": "press_key",
+            "arguments": {
+              "key": "Tab"
+            }
+          },
+          "timestamp": "2026-10-31T11:43:47.390Z",
+          "focusBefore": {
+            "id": null,
+            "tag": "INPUT",
+            "role": null,
+            "name": "Friday, November 6, 2026",
+            "value": "2026-11-06",
+            "selectionStart": null,
+            "selectionEnd": null
+          },
+          "focusAfter": {
+            "id": "preview-change",
+            "tag": "BUTTON",
+            "role": null,
+            "name": "Preview change",
+            "value": "",
+            "selectionStart": null,
+            "selectionEnd": null
+          },
+          "checkpoint": {
+            "before": "62f1eafc59ebfed125f3cd2cd344c3e6968d54b7200b8e6f50f5e986f7b502c2",
+            "after": "efd89191465a2b0bb91c3fbb89d41f5f23949c6d75c3f8a3d4408245e414e25e",
+            "unchangedActions": 0
+          }
+        },
+        {
+          "index": 16,
+          "action": {
+            "name": "press_key",
+            "arguments": {
+              "key": "Enter"
+            }
+          },
+          "timestamp": "2026-10-31T11:43:49.512Z",
+          "focusBefore": {
+            "id": "preview-change",
+            "tag": "BUTTON",
+            "role": null,
+            "name": "Preview change",
+            "value": "",
+            "selectionStart": null,
+            "selectionEnd": null
+          },
+          "focusAfter": {
+            "id": "preview-summary",
+            "tag": "DIV",
+            "role": null,
+            "name": "Northstar Studio · Order NS-2841 · Proposed delivery: Friday, November 6, 2026",
+            "value": null,
+            "selectionStart": null,
+            "selectionEnd": null
+          },
+          "checkpoint": {
+            "before": "efd89191465a2b0bb91c3fbb89d41f5f23949c6d75c3f8a3d4408245e414e25e",
+            "after": "5ab28a6fe994485f52ec96b7400b1418a76a2e47742803140b9ebb5c76913f65",
+            "unchangedActions": 0
+          }
+        },
+        {
+          "index": 17,
+          "action": {
+            "name": "press_key",
+            "arguments": {
+              "key": "Escape"
+            }
+          },
+          "timestamp": "2026-10-31T11:43:53.090Z",
+          "focusBefore": {
+            "id": "preview-summary",
+            "tag": "DIV",
+            "role": null,
+            "name": "Northstar Studio · Order NS-2841 · Proposed delivery: Friday, November 6, 2026",
+            "value": null,
+            "selectionStart": null,
+            "selectionEnd": null
+          },
+          "focusAfter": {
+            "id": "preview-change",
+            "tag": "BUTTON",
+            "role": null,
+            "name": "Preview change",
+            "value": "",
+            "selectionStart": null,
+            "selectionEnd": null
+          },
+          "checkpoint": {
+            "before": "5ab28a6fe994485f52ec96b7400b1418a76a2e47742803140b9ebb5c76913f65",
+            "after": "efd89191465a2b0bb91c3fbb89d41f5f23949c6d75c3f8a3d4408245e414e25e",
+            "unchangedActions": 0
+          }
+        }
+      ],
+      "probes": [
+        {
+          "valid": true,
+          "passed": true,
+          "reason": "dialog_contract_passed",
+          "actions": [
+            {
+              "action": {
+                "name": "press_key",
+                "arguments": {
+                  "key": "Tab"
+                }
+              },
+              "focusBefore": {
+                "id": null,
+                "tag": "BODY",
+                "role": null,
+                "name": "Page",
+                "value": null,
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "focusAfter": {
+                "id": null,
+                "tag": "A",
+                "role": null,
+                "name": "Overview",
+                "value": null,
+                "selectionStart": null,
+                "selectionEnd": null
+              }
+            },
+            {
+              "action": {
+                "name": "press_key",
+                "arguments": {
+                  "key": "Tab"
+                }
+              },
+              "focusBefore": {
+                "id": null,
+                "tag": "A",
+                "role": null,
+                "name": "Overview",
+                "value": null,
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "focusAfter": {
+                "id": null,
+                "tag": "A",
+                "role": null,
+                "name": "Orders",
+                "value": null,
+                "selectionStart": null,
+                "selectionEnd": null
+              }
+            },
+            {
+              "action": {
+                "name": "press_key",
+                "arguments": {
+                  "key": "Enter"
+                }
+              },
+              "focusBefore": {
+                "id": null,
+                "tag": "A",
+                "role": null,
+                "name": "Orders",
+                "value": null,
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "focusAfter": {
+                "id": null,
+                "tag": "H1",
+                "role": null,
+                "name": "Orders",
+                "value": null,
+                "selectionStart": null,
+                "selectionEnd": null
+              }
+            },
+            {
+              "action": {
+                "name": "press_key",
+                "arguments": {
+                  "key": "Tab"
+                }
+              },
+              "focusBefore": {
+                "id": null,
+                "tag": "H1",
+                "role": null,
+                "name": "Orders",
+                "value": null,
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "focusAfter": {
+                "id": "order-search",
+                "tag": "INPUT",
+                "role": null,
+                "name": "Find orders by customer",
+                "value": "",
+                "selectionStart": 0,
+                "selectionEnd": 0
+              }
+            },
+            {
+              "action": {
+                "name": "press_key",
+                "arguments": {
+                  "key": "Tab"
+                }
+              },
+              "focusBefore": {
+                "id": "order-search",
+                "tag": "INPUT",
+                "role": null,
+                "name": "Find orders by customer",
+                "value": "",
+                "selectionStart": 0,
+                "selectionEnd": 0
+              },
+              "focusAfter": {
+                "id": null,
+                "tag": "BUTTON",
+                "role": null,
+                "name": "Search orders",
+                "value": "",
+                "selectionStart": null,
+                "selectionEnd": null
+              }
+            },
+            {
+              "action": {
+                "name": "press_key",
+                "arguments": {
+                  "key": "Tab"
+                }
+              },
+              "focusBefore": {
+                "id": null,
+                "tag": "BUTTON",
+                "role": null,
+                "name": "Search orders",
+                "value": "",
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "focusAfter": {
+                "id": "shipment-status",
+                "tag": "SELECT",
+                "role": null,
+                "name": "Shipment status",
+                "value": "All shipments",
+                "selectionStart": null,
+                "selectionEnd": null
+              }
+            },
+            {
+              "action": {
+                "name": "press_key",
+                "arguments": {
+                  "key": "Tab"
+                }
+              },
+              "focusBefore": {
+                "id": "shipment-status",
+                "tag": "SELECT",
+                "role": null,
+                "name": "Shipment status",
+                "value": "All shipments",
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "focusAfter": {
+                "id": null,
+                "tag": "BUTTON",
+                "role": null,
+                "name": "Open NE-6718 for Northstar Studio East, In transit",
+                "value": "",
+                "selectionStart": null,
+                "selectionEnd": null
+              }
+            },
+            {
+              "action": {
+                "name": "press_key",
+                "arguments": {
+                  "key": "Tab"
+                }
+              },
+              "focusBefore": {
+                "id": null,
+                "tag": "BUTTON",
+                "role": null,
+                "name": "Open NE-6718 for Northstar Studio East, In transit",
+                "value": "",
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "focusAfter": {
+                "id": null,
+                "tag": "BUTTON",
+                "role": null,
+                "name": "Open NS-2841 for Northstar Studio, In transit",
+                "value": "",
+                "selectionStart": null,
+                "selectionEnd": null
+              }
+            },
+            {
+              "action": {
+                "name": "press_key",
+                "arguments": {
+                  "key": "Enter"
+                }
+              },
+              "focusBefore": {
+                "id": null,
+                "tag": "BUTTON",
+                "role": null,
+                "name": "Open NS-2841 for Northstar Studio, In transit",
+                "value": "",
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "focusAfter": {
+                "id": null,
+                "tag": "H1",
+                "role": null,
+                "name": "Order NS-2841",
+                "value": null,
+                "selectionStart": null,
+                "selectionEnd": null
+              }
+            },
+            {
+              "action": {
+                "name": "press_key",
+                "arguments": {
+                  "key": "Tab"
+                }
+              },
+              "focusBefore": {
+                "id": null,
+                "tag": "H1",
+                "role": null,
+                "name": "Order NS-2841",
+                "value": null,
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "focusAfter": {
+                "id": "invoice",
+                "tag": "BUTTON",
+                "role": null,
+                "name": "Request invoice",
+                "value": "",
+                "selectionStart": null,
+                "selectionEnd": null
+              }
+            },
+            {
+              "action": {
+                "name": "press_key",
+                "arguments": {
+                  "key": "Tab"
+                }
+              },
+              "focusBefore": {
+                "id": "invoice",
+                "tag": "BUTTON",
+                "role": null,
+                "name": "Request invoice",
+                "value": "",
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "focusAfter": {
+                "id": "delivery-request",
+                "tag": "BUTTON",
+                "role": null,
+                "name": "Review delivery change",
+                "value": "",
+                "selectionStart": null,
+                "selectionEnd": null
+              }
+            },
+            {
+              "action": {
+                "name": "press_key",
+                "arguments": {
+                  "key": "Enter"
+                }
+              },
+              "focusBefore": {
+                "id": "delivery-request",
+                "tag": "BUTTON",
+                "role": null,
+                "name": "Review delivery change",
+                "value": "",
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "focusAfter": {
+                "id": null,
+                "tag": "H1",
+                "role": null,
+                "name": "Delivery change · NS-2841",
+                "value": null,
+                "selectionStart": null,
+                "selectionEnd": null
+              }
+            },
+            {
+              "action": {
+                "name": "press_key",
+                "arguments": {
+                  "key": "Tab"
+                }
+              },
+              "focusBefore": {
+                "id": null,
+                "tag": "H1",
+                "role": null,
+                "name": "Delivery change · NS-2841",
+                "value": null,
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "focusAfter": {
+                "id": null,
+                "tag": "INPUT",
+                "role": null,
+                "name": "Friday, November 6, 2026",
+                "value": "2026-11-06",
+                "selectionStart": null,
+                "selectionEnd": null
+              }
+            },
+            {
+              "action": {
+                "name": "press_key",
+                "arguments": {
+                  "key": "Space"
+                }
+              },
+              "focusBefore": {
+                "id": null,
+                "tag": "INPUT",
+                "role": null,
+                "name": "Friday, November 6, 2026",
+                "value": "2026-11-06",
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "focusAfter": {
+                "id": null,
+                "tag": "INPUT",
+                "role": null,
+                "name": "Friday, November 6, 2026",
+                "value": "2026-11-06",
+                "selectionStart": null,
+                "selectionEnd": null
+              }
+            },
+            {
+              "action": {
+                "name": "press_key",
+                "arguments": {
+                  "key": "Tab"
+                }
+              },
+              "focusBefore": {
+                "id": null,
+                "tag": "INPUT",
+                "role": null,
+                "name": "Friday, November 6, 2026",
+                "value": "2026-11-06",
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "focusAfter": {
+                "id": "preview-change",
+                "tag": "BUTTON",
+                "role": null,
+                "name": "Preview change",
+                "value": "",
+                "selectionStart": null,
+                "selectionEnd": null
+              }
+            },
+            {
+              "action": {
+                "name": "press_key",
+                "arguments": {
+                  "key": "Enter"
+                }
+              },
+              "focusBefore": {
+                "id": "preview-change",
+                "tag": "BUTTON",
+                "role": null,
+                "name": "Preview change",
+                "value": "",
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "focusAfter": {
+                "id": "preview-summary",
+                "tag": "DIV",
+                "role": null,
+                "name": "Northstar Studio · Order NS-2841 · Proposed delivery: Friday, November 6, 2026",
+                "value": null,
+                "selectionStart": null,
+                "selectionEnd": null
+              }
+            },
+            {
+              "action": {
+                "name": "press_key",
+                "arguments": {
+                  "key": "Escape"
+                }
+              },
+              "focusBefore": {
+                "id": "preview-summary",
+                "tag": "DIV",
+                "name": "Northstar Studio · Order NS-2841 · Proposed delivery: Friday, November 6, 2026"
+              },
+              "focusAfter": {
+                "id": "preview-change",
+                "tag": "BUTTON",
+                "name": "Preview change"
+              }
+            }
+          ],
+          "initialUrl": "http://127.0.0.1:4217/releases/q2z/",
+          "finalUrl": "http://127.0.0.1:4217/releases/q2z/",
+          "configuration": {
+            "schema": 1,
+            "fixtureAndAgentBuild": "5612c7051455d62c80e124a0be7c86a90e00eaf47cff662e0246519e90dc8377",
+            "browserVersion": "156.0.8078.4",
+            "playwrightVersion": "1.64.1",
+            "platform": "darwin",
+            "architecture": "arm64",
+            "seed": "booking-v1",
+            "requestedModel": "muse-spark-1.3",
+            "inputTokenLimit": 64000,
+            "modelSettings": {
+              "tool_choice": "auto",
+              "parallel_tool_calls": false,
+              "max_output_tokens": 2048,
+              "store": false
+            },
+            "contextPolicy": {
+              "version": 3,
+              "observations": "current-screenshot-and-page",
+              "memory": "complete-action-ledger-and-bounded-page-excerpts",
+              "recentToolTurns": 1,
+              "reasoning": "latest-encrypted-turn-in-memory-only",
+              "maxActions": 25,
+              "maxPageExcerpts": 3,
+              "maxExcerptCharacters": 12000
+            }
+          },
+          "routeSourceRunId": "agent-1793446893385914078",
+          "routeSteps": 16,
+          "beforeEscape": {
+            "valid": true,
+            "targetPresent": true,
+            "dialogVisible": true,
+            "focusInside": true,
+            "triggerFocused": false,
+            "triggerVisible": true,
+            "focus": {
+              "id": "preview-summary",
+              "tag": "DIV",
+              "name": "Northstar Studio · Order NS-2841 · Proposed delivery: Friday, November 6, 2026"
+            }
+          },
+          "afterEscape": {
+            "valid": true,
+            "targetPresent": true,
+            "dialogVisible": false,
+            "focusInside": false,
+            "triggerFocused": true,
+            "triggerVisible": true,
+            "focus": {
+              "id": "preview-change",
+              "tag": "BUTTON",
+              "name": "Preview change"
+            }
+          }
+        },
+        {
+          "valid": true,
+          "passed": true,
+          "reason": "dialog_contract_passed",
+          "actions": [
+            {
+              "action": {
+                "name": "press_key",
+                "arguments": {
+                  "key": "Tab"
+                }
+              },
+              "focusBefore": {
+                "id": null,
+                "tag": "BODY",
+                "role": null,
+                "name": "Page",
+                "value": null,
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "focusAfter": {
+                "id": null,
+                "tag": "A",
+                "role": null,
+                "name": "Overview",
+                "value": null,
+                "selectionStart": null,
+                "selectionEnd": null
+              }
+            },
+            {
+              "action": {
+                "name": "press_key",
+                "arguments": {
+                  "key": "Tab"
+                }
+              },
+              "focusBefore": {
+                "id": null,
+                "tag": "A",
+                "role": null,
+                "name": "Overview",
+                "value": null,
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "focusAfter": {
+                "id": null,
+                "tag": "A",
+                "role": null,
+                "name": "Orders",
+                "value": null,
+                "selectionStart": null,
+                "selectionEnd": null
+              }
+            },
+            {
+              "action": {
+                "name": "press_key",
+                "arguments": {
+                  "key": "Enter"
+                }
+              },
+              "focusBefore": {
+                "id": null,
+                "tag": "A",
+                "role": null,
+                "name": "Orders",
+                "value": null,
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "focusAfter": {
+                "id": null,
+                "tag": "H1",
+                "role": null,
+                "name": "Orders",
+                "value": null,
+                "selectionStart": null,
+                "selectionEnd": null
+              }
+            },
+            {
+              "action": {
+                "name": "press_key",
+                "arguments": {
+                  "key": "Tab"
+                }
+              },
+              "focusBefore": {
+                "id": null,
+                "tag": "H1",
+                "role": null,
+                "name": "Orders",
+                "value": null,
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "focusAfter": {
+                "id": "order-search",
+                "tag": "INPUT",
+                "role": null,
+                "name": "Find orders by customer",
+                "value": "",
+                "selectionStart": 0,
+                "selectionEnd": 0
+              }
+            },
+            {
+              "action": {
+                "name": "press_key",
+                "arguments": {
+                  "key": "Tab"
+                }
+              },
+              "focusBefore": {
+                "id": "order-search",
+                "tag": "INPUT",
+                "role": null,
+                "name": "Find orders by customer",
+                "value": "",
+                "selectionStart": 0,
+                "selectionEnd": 0
+              },
+              "focusAfter": {
+                "id": null,
+                "tag": "BUTTON",
+                "role": null,
+                "name": "Search orders",
+                "value": "",
+                "selectionStart": null,
+                "selectionEnd": null
+              }
+            },
+            {
+              "action": {
+                "name": "press_key",
+                "arguments": {
+                  "key": "Tab"
+                }
+              },
+              "focusBefore": {
+                "id": null,
+                "tag": "BUTTON",
+                "role": null,
+                "name": "Search orders",
+                "value": "",
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "focusAfter": {
+                "id": "shipment-status",
+                "tag": "SELECT",
+                "role": null,
+                "name": "Shipment status",
+                "value": "All shipments",
+                "selectionStart": null,
+                "selectionEnd": null
+              }
+            },
+            {
+              "action": {
+                "name": "press_key",
+                "arguments": {
+                  "key": "Tab"
+                }
+              },
+              "focusBefore": {
+                "id": "shipment-status",
+                "tag": "SELECT",
+                "role": null,
+                "name": "Shipment status",
+                "value": "All shipments",
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "focusAfter": {
+                "id": null,
+                "tag": "BUTTON",
+                "role": null,
+                "name": "Open NE-6718 for Northstar Studio East, In transit",
+                "value": "",
+                "selectionStart": null,
+                "selectionEnd": null
+              }
+            },
+            {
+              "action": {
+                "name": "press_key",
+                "arguments": {
+                  "key": "Tab"
+                }
+              },
+              "focusBefore": {
+                "id": null,
+                "tag": "BUTTON",
+                "role": null,
+                "name": "Open NE-6718 for Northstar Studio East, In transit",
+                "value": "",
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "focusAfter": {
+                "id": null,
+                "tag": "BUTTON",
+                "role": null,
+                "name": "Open NS-2841 for Northstar Studio, In transit",
+                "value": "",
+                "selectionStart": null,
+                "selectionEnd": null
+              }
+            },
+            {
+              "action": {
+                "name": "press_key",
+                "arguments": {
+                  "key": "Enter"
+                }
+              },
+              "focusBefore": {
+                "id": null,
+                "tag": "BUTTON",
+                "role": null,
+                "name": "Open NS-2841 for Northstar Studio, In transit",
+                "value": "",
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "focusAfter": {
+                "id": null,
+                "tag": "H1",
+                "role": null,
+                "name": "Order NS-2841",
+                "value": null,
+                "selectionStart": null,
+                "selectionEnd": null
+              }
+            },
+            {
+              "action": {
+                "name": "press_key",
+                "arguments": {
+                  "key": "Tab"
+                }
+              },
+              "focusBefore": {
+                "id": null,
+                "tag": "H1",
+                "role": null,
+                "name": "Order NS-2841",
+                "value": null,
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "focusAfter": {
+                "id": "invoice",
+                "tag": "BUTTON",
+                "role": null,
+                "name": "Request invoice",
+                "value": "",
+                "selectionStart": null,
+                "selectionEnd": null
+              }
+            },
+            {
+              "action": {
+                "name": "press_key",
+                "arguments": {
+                  "key": "Tab"
+                }
+              },
+              "focusBefore": {
+                "id": "invoice",
+                "tag": "BUTTON",
+                "role": null,
+                "name": "Request invoice",
+                "value": "",
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "focusAfter": {
+                "id": "delivery-request",
+                "tag": "BUTTON",
+                "role": null,
+                "name": "Review delivery change",
+                "value": "",
+                "selectionStart": null,
+                "selectionEnd": null
+              }
+            },
+            {
+              "action": {
+                "name": "press_key",
+                "arguments": {
+                  "key": "Enter"
+                }
+              },
+              "focusBefore": {
+                "id": "delivery-request",
+                "tag": "BUTTON",
+                "role": null,
+                "name": "Review delivery change",
+                "value": "",
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "focusAfter": {
+                "id": null,
+                "tag": "H1",
+                "role": null,
+                "name": "Delivery change · NS-2841",
+                "value": null,
+                "selectionStart": null,
+                "selectionEnd": null
+              }
+            },
+            {
+              "action": {
+                "name": "press_key",
+                "arguments": {
+                  "key": "Tab"
+                }
+              },
+              "focusBefore": {
+                "id": null,
+                "tag": "H1",
+                "role": null,
+                "name": "Delivery change · NS-2841",
+                "value": null,
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "focusAfter": {
+                "id": null,
+                "tag": "INPUT",
+                "role": null,
+                "name": "Friday, November 6, 2026",
+                "value": "2026-11-06",
+                "selectionStart": null,
+                "selectionEnd": null
+              }
+            },
+            {
+              "action": {
+                "name": "press_key",
+                "arguments": {
+                  "key": "Space"
+                }
+              },
+              "focusBefore": {
+                "id": null,
+                "tag": "INPUT",
+                "role": null,
+                "name": "Friday, November 6, 2026",
+                "value": "2026-11-06",
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "focusAfter": {
+                "id": null,
+                "tag": "INPUT",
+                "role": null,
+                "name": "Friday, November 6, 2026",
+                "value": "2026-11-06",
+                "selectionStart": null,
+                "selectionEnd": null
+              }
+            },
+            {
+              "action": {
+                "name": "press_key",
+                "arguments": {
+                  "key": "Tab"
+                }
+              },
+              "focusBefore": {
+                "id": null,
+                "tag": "INPUT",
+                "role": null,
+                "name": "Friday, November 6, 2026",
+                "value": "2026-11-06",
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "focusAfter": {
+                "id": "preview-change",
+                "tag": "BUTTON",
+                "role": null,
+                "name": "Preview change",
+                "value": "",
+                "selectionStart": null,
+                "selectionEnd": null
+              }
+            },
+            {
+              "action": {
+                "name": "press_key",
+                "arguments": {
+                  "key": "Enter"
+                }
+              },
+              "focusBefore": {
+                "id": "preview-change",
+                "tag": "BUTTON",
+                "role": null,
+                "name": "Preview change",
+                "value": "",
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "focusAfter": {
+                "id": "preview-summary",
+                "tag": "DIV",
+                "role": null,
+                "name": "Northstar Studio · Order NS-2841 · Proposed delivery: Friday, November 6, 2026",
+                "value": null,
+                "selectionStart": null,
+                "selectionEnd": null
+              }
+            },
+            {
+              "action": {
+                "name": "press_key",
+                "arguments": {
+                  "key": "Escape"
+                }
+              },
+              "focusBefore": {
+                "id": "preview-summary",
+                "tag": "DIV",
+                "name": "Northstar Studio · Order NS-2841 · Proposed delivery: Friday, November 6, 2026"
+              },
+              "focusAfter": {
+                "id": "preview-change",
+                "tag": "BUTTON",
+                "name": "Preview change"
+              }
+            }
+          ],
+          "initialUrl": "http://127.0.0.1:4217/releases/q2z/",
+          "finalUrl": "http://127.0.0.1:4217/releases/q2z/",
+          "configuration": {
+            "schema": 1,
+            "fixtureAndAgentBuild": "5612c7051455d62c80e124a0be7c86a90e00eaf47cff662e0246519e90dc8377",
+            "browserVersion": "156.0.8078.4",
+            "playwrightVersion": "1.64.1",
+            "platform": "darwin",
+            "architecture": "arm64",
+            "seed": "booking-v1",
+            "requestedModel": "muse-spark-1.3",
+            "inputTokenLimit": 64000,
+            "modelSettings": {
+              "tool_choice": "auto",
+              "parallel_tool_calls": false,
+              "max_output_tokens": 2048,
+              "store": false
+            },
+            "contextPolicy": {
+              "version": 3,
+              "observations": "current-screenshot-and-page",
+              "memory": "complete-action-ledger-and-bounded-page-excerpts",
+              "recentToolTurns": 1,
+              "reasoning": "latest-encrypted-turn-in-memory-only",
+              "maxActions": 25,
+              "maxPageExcerpts": 3,
+              "maxExcerptCharacters": 12000
+            }
+          },
+          "routeSourceRunId": "agent-1793446893385914078",
+          "routeSteps": 16,
+          "beforeEscape": {
+            "valid": true,
+            "targetPresent": true,
+            "dialogVisible": true,
+            "focusInside": true,
+            "triggerFocused": false,
+            "triggerVisible": true,
+            "focus": {
+              "id": "preview-summary",
+              "tag": "DIV",
+              "name": "Northstar Studio · Order NS-2841 · Proposed delivery: Friday, November 6, 2026"
+            }
+          },
+          "afterEscape": {
+            "valid": true,
+            "targetPresent": true,
+            "dialogVisible": false,
+            "focusInside": false,
+            "triggerFocused": true,
+            "triggerVisible": true,
+            "focus": {
+              "id": "preview-change",
+              "tag": "BUTTON",
+              "name": "Preview change"
+            }
+          }
+        },
+        {
+          "valid": true,
+          "passed": true,
+          "reason": "dialog_contract_passed",
+          "actions": [
+            {
+              "action": {
+                "name": "press_key",
+                "arguments": {
+                  "key": "Tab"
+                }
+              },
+              "focusBefore": {
+                "id": null,
+                "tag": "BODY",
+                "role": null,
+                "name": "Page",
+                "value": null,
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "focusAfter": {
+                "id": null,
+                "tag": "A",
+                "role": null,
+                "name": "Overview",
+                "value": null,
+                "selectionStart": null,
+                "selectionEnd": null
+              }
+            },
+            {
+              "action": {
+                "name": "press_key",
+                "arguments": {
+                  "key": "Tab"
+                }
+              },
+              "focusBefore": {
+                "id": null,
+                "tag": "A",
+                "role": null,
+                "name": "Overview",
+                "value": null,
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "focusAfter": {
+                "id": null,
+                "tag": "A",
+                "role": null,
+                "name": "Orders",
+                "value": null,
+                "selectionStart": null,
+                "selectionEnd": null
+              }
+            },
+            {
+              "action": {
+                "name": "press_key",
+                "arguments": {
+                  "key": "Enter"
+                }
+              },
+              "focusBefore": {
+                "id": null,
+                "tag": "A",
+                "role": null,
+                "name": "Orders",
+                "value": null,
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "focusAfter": {
+                "id": null,
+                "tag": "H1",
+                "role": null,
+                "name": "Orders",
+                "value": null,
+                "selectionStart": null,
+                "selectionEnd": null
+              }
+            },
+            {
+              "action": {
+                "name": "press_key",
+                "arguments": {
+                  "key": "Tab"
+                }
+              },
+              "focusBefore": {
+                "id": null,
+                "tag": "H1",
+                "role": null,
+                "name": "Orders",
+                "value": null,
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "focusAfter": {
+                "id": "order-search",
+                "tag": "INPUT",
+                "role": null,
+                "name": "Find orders by customer",
+                "value": "",
+                "selectionStart": 0,
+                "selectionEnd": 0
+              }
+            },
+            {
+              "action": {
+                "name": "press_key",
+                "arguments": {
+                  "key": "Tab"
+                }
+              },
+              "focusBefore": {
+                "id": "order-search",
+                "tag": "INPUT",
+                "role": null,
+                "name": "Find orders by customer",
+                "value": "",
+                "selectionStart": 0,
+                "selectionEnd": 0
+              },
+              "focusAfter": {
+                "id": null,
+                "tag": "BUTTON",
+                "role": null,
+                "name": "Search orders",
+                "value": "",
+                "selectionStart": null,
+                "selectionEnd": null
+              }
+            },
+            {
+              "action": {
+                "name": "press_key",
+                "arguments": {
+                  "key": "Tab"
+                }
+              },
+              "focusBefore": {
+                "id": null,
+                "tag": "BUTTON",
+                "role": null,
+                "name": "Search orders",
+                "value": "",
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "focusAfter": {
+                "id": "shipment-status",
+                "tag": "SELECT",
+                "role": null,
+                "name": "Shipment status",
+                "value": "All shipments",
+                "selectionStart": null,
+                "selectionEnd": null
+              }
+            },
+            {
+              "action": {
+                "name": "press_key",
+                "arguments": {
+                  "key": "Tab"
+                }
+              },
+              "focusBefore": {
+                "id": "shipment-status",
+                "tag": "SELECT",
+                "role": null,
+                "name": "Shipment status",
+                "value": "All shipments",
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "focusAfter": {
+                "id": null,
+                "tag": "BUTTON",
+                "role": null,
+                "name": "Open NE-6718 for Northstar Studio East, In transit",
+                "value": "",
+                "selectionStart": null,
+                "selectionEnd": null
+              }
+            },
+            {
+              "action": {
+                "name": "press_key",
+                "arguments": {
+                  "key": "Tab"
+                }
+              },
+              "focusBefore": {
+                "id": null,
+                "tag": "BUTTON",
+                "role": null,
+                "name": "Open NE-6718 for Northstar Studio East, In transit",
+                "value": "",
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "focusAfter": {
+                "id": null,
+                "tag": "BUTTON",
+                "role": null,
+                "name": "Open NS-2841 for Northstar Studio, In transit",
+                "value": "",
+                "selectionStart": null,
+                "selectionEnd": null
+              }
+            },
+            {
+              "action": {
+                "name": "press_key",
+                "arguments": {
+                  "key": "Enter"
+                }
+              },
+              "focusBefore": {
+                "id": null,
+                "tag": "BUTTON",
+                "role": null,
+                "name": "Open NS-2841 for Northstar Studio, In transit",
+                "value": "",
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "focusAfter": {
+                "id": null,
+                "tag": "H1",
+                "role": null,
+                "name": "Order NS-2841",
+                "value": null,
+                "selectionStart": null,
+                "selectionEnd": null
+              }
+            },
+            {
+              "action": {
+                "name": "press_key",
+                "arguments": {
+                  "key": "Tab"
+                }
+              },
+              "focusBefore": {
+                "id": null,
+                "tag": "H1",
+                "role": null,
+                "name": "Order NS-2841",
+                "value": null,
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "focusAfter": {
+                "id": "invoice",
+                "tag": "BUTTON",
+                "role": null,
+                "name": "Request invoice",
+                "value": "",
+                "selectionStart": null,
+                "selectionEnd": null
+              }
+            },
+            {
+              "action": {
+                "name": "press_key",
+                "arguments": {
+                  "key": "Tab"
+                }
+              },
+              "focusBefore": {
+                "id": "invoice",
+                "tag": "BUTTON",
+                "role": null,
+                "name": "Request invoice",
+                "value": "",
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "focusAfter": {
+                "id": "delivery-request",
+                "tag": "BUTTON",
+                "role": null,
+                "name": "Review delivery change",
+                "value": "",
+                "selectionStart": null,
+                "selectionEnd": null
+              }
+            },
+            {
+              "action": {
+                "name": "press_key",
+                "arguments": {
+                  "key": "Enter"
+                }
+              },
+              "focusBefore": {
+                "id": "delivery-request",
+                "tag": "BUTTON",
+                "role": null,
+                "name": "Review delivery change",
+                "value": "",
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "focusAfter": {
+                "id": null,
+                "tag": "H1",
+                "role": null,
+                "name": "Delivery change · NS-2841",
+                "value": null,
+                "selectionStart": null,
+                "selectionEnd": null
+              }
+            },
+            {
+              "action": {
+                "name": "press_key",
+                "arguments": {
+                  "key": "Tab"
+                }
+              },
+              "focusBefore": {
+                "id": null,
+                "tag": "H1",
+                "role": null,
+                "name": "Delivery change · NS-2841",
+                "value": null,
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "focusAfter": {
+                "id": null,
+                "tag": "INPUT",
+                "role": null,
+                "name": "Friday, November 6, 2026",
+                "value": "2026-11-06",
+                "selectionStart": null,
+                "selectionEnd": null
+              }
+            },
+            {
+              "action": {
+                "name": "press_key",
+                "arguments": {
+                  "key": "Space"
+                }
+              },
+              "focusBefore": {
+                "id": null,
+                "tag": "INPUT",
+                "role": null,
+                "name": "Friday, November 6, 2026",
+                "value": "2026-11-06",
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "focusAfter": {
+                "id": null,
+                "tag": "INPUT",
+                "role": null,
+                "name": "Friday, November 6, 2026",
+                "value": "2026-11-06",
+                "selectionStart": null,
+                "selectionEnd": null
+              }
+            },
+            {
+              "action": {
+                "name": "press_key",
+                "arguments": {
+                  "key": "Tab"
+                }
+              },
+              "focusBefore": {
+                "id": null,
+                "tag": "INPUT",
+                "role": null,
+                "name": "Friday, November 6, 2026",
+                "value": "2026-11-06",
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "focusAfter": {
+                "id": "preview-change",
+                "tag": "BUTTON",
+                "role": null,
+                "name": "Preview change",
+                "value": "",
+                "selectionStart": null,
+                "selectionEnd": null
+              }
+            },
+            {
+              "action": {
+                "name": "press_key",
+                "arguments": {
+                  "key": "Enter"
+                }
+              },
+              "focusBefore": {
+                "id": "preview-change",
+                "tag": "BUTTON",
+                "role": null,
+                "name": "Preview change",
+                "value": "",
+                "selectionStart": null,
+                "selectionEnd": null
+              },
+              "focusAfter": {
+                "id": "preview-summary",
+                "tag": "DIV",
+                "role": null,
+                "name": "Northstar Studio · Order NS-2841 · Proposed delivery: Friday, November 6, 2026",
+                "value": null,
+                "selectionStart": null,
+                "selectionEnd": null
+              }
+            },
+            {
+              "action": {
+                "name": "press_key",
+                "arguments": {
+                  "key": "Escape"
+                }
+              },
+              "focusBefore": {
+                "id": "preview-summary",
+                "tag": "DIV",
+                "name": "Northstar Studio · Order NS-2841 · Proposed delivery: Friday, November 6, 2026"
+              },
+              "focusAfter": {
+                "id": "preview-change",
+                "tag": "BUTTON",
+                "name": "Preview change"
+              }
+            }
+          ],
+          "initialUrl": "http://127.0.0.1:4217/releases/q2z/",
+          "finalUrl": "http://127.0.0.1:4217/releases/q2z/",
+          "configuration": {
+            "schema": 1,
+            "fixtureAndAgentBuild": "5612c7051455d62c80e124a0be7c86a90e00eaf47cff662e0246519e90dc8377",
+            "browserVersion": "156.0.8078.4",
+            "playwrightVersion": "1.64.1",
+            "platform": "darwin",
+            "architecture": "arm64",
+            "seed": "booking-v1",
+            "requestedModel": "muse-spark-1.3",
+            "inputTokenLimit": 64000,
+            "modelSettings": {
+              "tool_choice": "auto",
+              "parallel_tool_calls": false,
+              "max_output_tokens": 2048,
+              "store": false
+            },
+            "contextPolicy": {
+              "version": 3,
+              "observations": "current-screenshot-and-page",
+              "memory": "complete-action-ledger-and-bounded-page-excerpts",
+              "recentToolTurns": 1,
+              "reasoning": "latest-encrypted-turn-in-memory-only",
+              "maxActions": 25,
+              "maxPageExcerpts": 3,
+              "maxExcerptCharacters": 12000
+            }
+          },
+          "routeSourceRunId": "agent-1793446893385914078",
+          "routeSteps": 16,
+          "beforeEscape": {
+            "valid": true,
+            "targetPresent": true,
+            "dialogVisible": true,
+            "focusInside": true,
+            "triggerFocused": false,
+            "triggerVisible": true,
+            "focus": {
+              "id": "preview-summary",
+              "tag": "DIV",
+              "name": "Northstar Studio · Order NS-2841 · Proposed delivery: Friday, November 6, 2026"
+            }
+          },
+          "afterEscape": {
+            "valid": true,
+            "targetPresent": true,
+            "dialogVisible": false,
+            "focusInside": false,
+            "triggerFocused": true,
+            "triggerVisible": true,
+            "focus": {
+              "id": "preview-change",
+              "tag": "BUTTON",
+              "name": "Preview change"
+            }
+          }
+        }
+      ],
+      "screenshot": "/reports/agent-1793446893384801091/corrected.png?v=38",
+      "taskVerified": null,
+      "actionsScope": "AI agent session",
+      "modelOutcome": "agent_reported_complete",
+      "agentContract": {
+        "valid": true,
+        "passed": true,
+        "reason": "dialog_contract_passed",
+        "attempts": [
+          {
+            "actionIndex": 16,
+            "openedAtIndex": 15,
+            "before": {
+              "valid": true,
+              "targetPresent": true,
+              "dialogVisible": true,
+              "focusInside": true,
+              "triggerFocused": false,
+              "triggerVisible": true,
+              "focus": {
+                "id": "preview-summary",
+                "tag": "DIV",
+                "name": "Northstar Studio · Order NS-2841 · Proposed delivery: Friday, November 6, 2026"
+              }
+            },
+            "after": {
+              "valid": true,
+              "targetPresent": true,
+              "dialogVisible": false,
+              "focusInside": false,
+              "triggerFocused": true,
+              "triggerVisible": true,
+              "focus": {
+                "id": "preview-change",
+                "tag": "BUTTON",
+                "name": "Preview change"
+              }
+            },
+            "valid": true,
+            "passed": true,
+            "reason": "dialog_contract_passed"
+          }
+        ],
+        "openedAtIndex": 15
+      },
+      "summary": "Dialog contract: 3 passed, 0 failed, 0 inconclusive. Escape closed the dialog and restored focus. Screenshot from independent check 3 of 3. AI outcome: agent_reported_complete. AI Escape audit: Escape closed the dialog and restored focus. Whole-task completion is not verified.",
+      "revision": 38,
+      "screenshotSource": "Screenshot from independent check 3 of 3",
+      "agent": {
+        "runId": "agent-1793446977649775945",
+        "valid": true,
+        "model": "muse-spark-1.3",
+        "outcome": "agent_reported_complete",
+        "reason": "model_reported_completion",
+        "configuration": {
+          "schema": 1,
+          "fixtureAndAgentBuild": "5612c7051455d62c80e124a0be7c86a90e00eaf47cff662e0246519e90dc8377",
+          "browserVersion": "156.0.8078.4",
+          "playwrightVersion": "1.64.1",
+          "platform": "darwin",
+          "architecture": "arm64",
+          "seed": null,
+          "requestedModel": "muse-spark-1.3",
+          "inputTokenLimit": 64000,
+          "modelSettings": {
+            "tool_choice": "auto",
+            "parallel_tool_calls": false,
+            "max_output_tokens": 2048,
+            "store": false
+          },
+          "contextPolicy": {
+            "version": 3,
+            "observations": "current-screenshot-and-page",
+            "memory": "complete-action-ledger-and-bounded-page-excerpts",
+            "recentToolTurns": 1,
+            "reasoning": "latest-encrypted-turn-in-memory-only",
+            "maxActions": 25,
+            "maxPageExcerpts": 3,
+            "maxExcerptCharacters": 12000
+          },
+          "targetKind": "custom",
+          "completionVerification": "model-reported"
+        },
+        "contract": {
+          "valid": true,
+          "passed": true,
+          "reason": "dialog_contract_passed",
+          "attempts": [
+            {
+              "actionIndex": 16,
+              "openedAtIndex": 15,
+              "before": {
+                "valid": true,
+                "targetPresent": true,
+                "dialogVisible": true,
+                "focusInside": true,
+                "triggerFocused": false,
+                "triggerVisible": true,
+                "focus": {
+                  "id": "preview-summary",
+                  "tag": "DIV",
+                  "name": "Northstar Studio · Order NS-2841 · Proposed delivery: Friday, November 6, 2026"
+                }
+              },
+              "after": {
+                "valid": true,
+                "targetPresent": true,
+                "dialogVisible": false,
+                "focusInside": false,
+                "triggerFocused": true,
+                "triggerVisible": true,
+                "focus": {
+                  "id": "preview-change",
+                  "tag": "BUTTON",
+                  "name": "Preview change"
+                }
+              },
+              "valid": true,
+              "passed": true,
+              "reason": "dialog_contract_passed"
+            }
+          ],
+          "openedAtIndex": 15
+        }
+      }
+    },
+    "phase": "finished",
+    "verified": true,
+    "scope": "Only the configured main-frame dialog: open it with Enter, close it with Escape, and restore focus to its opener. This does not verify the whole task or accessibility conformance. The URLs are supplied by the user; source-code equivalence between the versions is not established.",
+    "summary": "Escape failed consistently before the change and passed after it. This verifies only the configured dialog contract.",
+    "discovery": {
+      "sourceRunId": "agent-1793446893385914078",
+      "source": "original-agent-actions",
+      "steps": [
+        {
+          "index": 1,
+          "action": {
+            "name": "press_key",
+            "arguments": {
+              "key": "Tab"
+            }
+          },
+          "timestamp": "2026-10-31T11:41:36.904Z",
+          "focusBefore": {
+            "id": null,
+            "tag": "BODY",
+            "role": null,
+            "name": "Page",
+            "value": null,
+            "selectionStart": null,
+            "selectionEnd": null
+          },
+          "focusAfter": {
+            "id": null,
+            "tag": "A",
+            "role": null,
+            "name": "Overview",
+            "value": null,
+            "selectionStart": null,
+            "selectionEnd": null
+          },
+          "checkpoint": {
+            "before": "80abab3ec40df5d47f244a8943f36dc29fbc7f40d92171142c9d81dde9bcd5f3",
+            "after": "9aecd0aa7db8c31e01ecf04a8212106d92c326b1319f82fb40efa096cb77e785",
+            "unchangedActions": 0
+          }
+        },
+        {
+          "index": 2,
+          "action": {
+            "name": "press_key",
+            "arguments": {
+              "key": "Tab"
+            }
+          },
+          "timestamp": "2026-10-31T11:41:39.977Z",
+          "focusBefore": {
+            "id": null,
+            "tag": "A",
+            "role": null,
+            "name": "Overview",
+            "value": null,
+            "selectionStart": null,
+            "selectionEnd": null
+          },
+          "focusAfter": {
+            "id": null,
+            "tag": "A",
+            "role": null,
+            "name": "Orders",
+            "value": null,
+            "selectionStart": null,
+            "selectionEnd": null
+          },
+          "checkpoint": {
+            "before": "9aecd0aa7db8c31e01ecf04a8212106d92c326b1319f82fb40efa096cb77e785",
+            "after": "0b80b5bd17ee9cd43caf3ce42f1445fd6146687cdf5574561e0bde2aab9b54e6",
+            "unchangedActions": 0
+          }
+        },
+        {
+          "index": 3,
+          "action": {
+            "name": "press_key",
+            "arguments": {
+              "key": "Enter"
+            }
+          },
+          "timestamp": "2026-10-31T11:41:42.951Z",
+          "focusBefore": {
+            "id": null,
+            "tag": "A",
+            "role": null,
+            "name": "Orders",
+            "value": null,
+            "selectionStart": null,
+            "selectionEnd": null
+          },
+          "focusAfter": {
+            "id": null,
+            "tag": "H1",
+            "role": null,
+            "name": "Orders",
+            "value": null,
+            "selectionStart": null,
+            "selectionEnd": null
+          },
+          "checkpoint": {
+            "before": "0b80b5bd17ee9cd43caf3ce42f1445fd6146687cdf5574561e0bde2aab9b54e6",
+            "after": "31aa7e87c77a91015d782371c74526f54c51ba7b52be0a26254121bcccfdae86",
+            "unchangedActions": 0
+          }
+        },
+        {
+          "index": 4,
+          "action": {
+            "name": "press_key",
+            "arguments": {
+              "key": "Tab"
+            }
+          },
+          "timestamp": "2026-10-31T11:41:46.085Z",
+          "focusBefore": {
+            "id": null,
+            "tag": "H1",
+            "role": null,
+            "name": "Orders",
+            "value": null,
+            "selectionStart": null,
+            "selectionEnd": null
+          },
+          "focusAfter": {
+            "id": "order-search",
+            "tag": "INPUT",
+            "role": null,
+            "name": "Find orders by customer",
+            "value": "",
+            "selectionStart": 0,
+            "selectionEnd": 0
+          },
+          "checkpoint": {
+            "before": "31aa7e87c77a91015d782371c74526f54c51ba7b52be0a26254121bcccfdae86",
+            "after": "b696c949f48eb4888072dad86e97d7dbd3d24a3ba3dcad96d4290b75de984203",
+            "unchangedActions": 0
+          }
+        },
+        {
+          "index": 5,
+          "action": {
+            "name": "press_key",
+            "arguments": {
+              "key": "Tab"
+            }
+          },
+          "timestamp": "2026-10-31T11:41:48.184Z",
+          "focusBefore": {
+            "id": "order-search",
+            "tag": "INPUT",
+            "role": null,
+            "name": "Find orders by customer",
+            "value": "",
+            "selectionStart": 0,
+            "selectionEnd": 0
+          },
+          "focusAfter": {
+            "id": null,
+            "tag": "BUTTON",
+            "role": null,
+            "name": "Search orders",
+            "value": "",
+            "selectionStart": null,
+            "selectionEnd": null
+          },
+          "checkpoint": {
+            "before": "b696c949f48eb4888072dad86e97d7dbd3d24a3ba3dcad96d4290b75de984203",
+            "after": "6861266ae1886c2f14914abae6b6cc5fea1217494b8c91f702b8d0413a155538",
+            "unchangedActions": 0
+          }
+        },
+        {
+          "index": 6,
+          "action": {
+            "name": "press_key",
+            "arguments": {
+              "key": "Tab"
+            }
+          },
+          "timestamp": "2026-10-31T11:41:51.667Z",
+          "focusBefore": {
+            "id": null,
+            "tag": "BUTTON",
+            "role": null,
+            "name": "Search orders",
+            "value": "",
+            "selectionStart": null,
+            "selectionEnd": null
+          },
+          "focusAfter": {
+            "id": "shipment-status",
+            "tag": "SELECT",
+            "role": null,
+            "name": "Shipment status",
+            "value": "All shipments",
+            "selectionStart": null,
+            "selectionEnd": null
+          },
+          "checkpoint": {
+            "before": "6861266ae1886c2f14914abae6b6cc5fea1217494b8c91f702b8d0413a155538",
+            "after": "11113f03fda1ce3206ac5875aa4037ff2f61264e311a65947c312e201792a49e",
+            "unchangedActions": 0
+          }
+        },
+        {
+          "index": 7,
+          "action": {
+            "name": "press_key",
+            "arguments": {
+              "key": "Tab"
+            }
+          },
+          "timestamp": "2026-10-31T11:41:54.483Z",
+          "focusBefore": {
+            "id": "shipment-status",
+            "tag": "SELECT",
+            "role": null,
+            "name": "Shipment status",
+            "value": "All shipments",
+            "selectionStart": null,
+            "selectionEnd": null
+          },
+          "focusAfter": {
+            "id": null,
+            "tag": "BUTTON",
+            "role": null,
+            "name": "Open NE-6718 for Northstar Studio East, In transit",
+            "value": "",
+            "selectionStart": null,
+            "selectionEnd": null
+          },
+          "checkpoint": {
+            "before": "11113f03fda1ce3206ac5875aa4037ff2f61264e311a65947c312e201792a49e",
+            "after": "9e70286c74d2e35757e685d7dbffffbf3faeccaefecf931cb4dcdd0960da97af",
+            "unchangedActions": 0
+          }
+        },
+        {
+          "index": 8,
+          "action": {
+            "name": "press_key",
+            "arguments": {
+              "key": "Tab"
+            }
+          },
+          "timestamp": "2026-10-31T11:41:57.902Z",
+          "focusBefore": {
+            "id": null,
+            "tag": "BUTTON",
+            "role": null,
+            "name": "Open NE-6718 for Northstar Studio East, In transit",
+            "value": "",
+            "selectionStart": null,
+            "selectionEnd": null
+          },
+          "focusAfter": {
+            "id": null,
+            "tag": "BUTTON",
+            "role": null,
+            "name": "Open NS-2841 for Northstar Studio, In transit",
+            "value": "",
+            "selectionStart": null,
+            "selectionEnd": null
+          },
+          "checkpoint": {
+            "before": "9e70286c74d2e35757e685d7dbffffbf3faeccaefecf931cb4dcdd0960da97af",
+            "after": "ea5d5c5af73e2b6bbe344312083049dd994ba4609487bf866b4c821121bb8ffe",
+            "unchangedActions": 0
+          }
+        },
+        {
+          "index": 9,
+          "action": {
+            "name": "press_key",
+            "arguments": {
+              "key": "Enter"
+            }
+          },
+          "timestamp": "2026-10-31T11:42:00.778Z",
+          "focusBefore": {
+            "id": null,
+            "tag": "BUTTON",
+            "role": null,
+            "name": "Open NS-2841 for Northstar Studio, In transit",
+            "value": "",
+            "selectionStart": null,
+            "selectionEnd": null
+          },
+          "focusAfter": {
+            "id": null,
+            "tag": "H1",
+            "role": null,
+            "name": "Order NS-2841",
+            "value": null,
+            "selectionStart": null,
+            "selectionEnd": null
+          },
+          "checkpoint": {
+            "before": "ea5d5c5af73e2b6bbe344312083049dd994ba4609487bf866b4c821121bb8ffe",
+            "after": "bc45a1a076f8f5b9cd4a8461cc5deb6191b3dd2fc71f722fa11301bf8fc3f401",
+            "unchangedActions": 0
+          }
+        },
+        {
+          "index": 10,
+          "action": {
+            "name": "press_key",
+            "arguments": {
+              "key": "Tab"
+            }
+          },
+          "timestamp": "2026-10-31T11:42:03.677Z",
+          "focusBefore": {
+            "id": null,
+            "tag": "H1",
+            "role": null,
+            "name": "Order NS-2841",
+            "value": null,
+            "selectionStart": null,
+            "selectionEnd": null
+          },
+          "focusAfter": {
+            "id": "invoice",
+            "tag": "BUTTON",
+            "role": null,
+            "name": "Request invoice",
+            "value": "",
+            "selectionStart": null,
+            "selectionEnd": null
+          },
+          "checkpoint": {
+            "before": "bc45a1a076f8f5b9cd4a8461cc5deb6191b3dd2fc71f722fa11301bf8fc3f401",
+            "after": "151faa5fa20720653a52f8448a6fef022b837f3ba4a472ba8299c7787619f513",
+            "unchangedActions": 0
+          }
+        },
+        {
+          "index": 11,
+          "action": {
+            "name": "press_key",
+            "arguments": {
+              "key": "Tab"
+            }
+          },
+          "timestamp": "2026-10-31T11:42:06.441Z",
+          "focusBefore": {
+            "id": "invoice",
+            "tag": "BUTTON",
+            "role": null,
+            "name": "Request invoice",
+            "value": "",
+            "selectionStart": null,
+            "selectionEnd": null
+          },
+          "focusAfter": {
+            "id": "delivery-request",
+            "tag": "BUTTON",
+            "role": null,
+            "name": "Review delivery change",
+            "value": "",
+            "selectionStart": null,
+            "selectionEnd": null
+          },
+          "checkpoint": {
+            "before": "151faa5fa20720653a52f8448a6fef022b837f3ba4a472ba8299c7787619f513",
+            "after": "fd728f0122d3524312076799d3f98ceae178cbbe6f4e835ea0abb289a3da94f5",
+            "unchangedActions": 0
+          }
+        },
+        {
+          "index": 12,
+          "action": {
+            "name": "press_key",
+            "arguments": {
+              "key": "Enter"
+            }
+          },
+          "timestamp": "2026-10-31T11:42:08.771Z",
+          "focusBefore": {
+            "id": "delivery-request",
+            "tag": "BUTTON",
+            "role": null,
+            "name": "Review delivery change",
+            "value": "",
+            "selectionStart": null,
+            "selectionEnd": null
+          },
+          "focusAfter": {
+            "id": null,
+            "tag": "H1",
+            "role": null,
+            "name": "Delivery change · NS-2841",
+            "value": null,
+            "selectionStart": null,
+            "selectionEnd": null
+          },
+          "checkpoint": {
+            "before": "fd728f0122d3524312076799d3f98ceae178cbbe6f4e835ea0abb289a3da94f5",
+            "after": "cb097a9c52accb7eaa54a68de723b900033a1f48ab7d6028bf3f9bba7adb51cd",
+            "unchangedActions": 0
+          }
+        },
+        {
+          "index": 13,
+          "action": {
+            "name": "press_key",
+            "arguments": {
+              "key": "Tab"
+            }
+          },
+          "timestamp": "2026-10-31T11:42:11.257Z",
+          "focusBefore": {
+            "id": null,
+            "tag": "H1",
+            "role": null,
+            "name": "Delivery change · NS-2841",
+            "value": null,
+            "selectionStart": null,
+            "selectionEnd": null
+          },
+          "focusAfter": {
+            "id": null,
+            "tag": "INPUT",
+            "role": null,
+            "name": "Friday, November 6, 2026",
+            "value": "2026-11-06",
+            "selectionStart": null,
+            "selectionEnd": null
+          },
+          "checkpoint": {
+            "before": "cb097a9c52accb7eaa54a68de723b900033a1f48ab7d6028bf3f9bba7adb51cd",
+            "after": "3634cbdc2d3021bd4e4a39855d2218977980eede8f61fac91f4959d0f93fbd53",
+            "unchangedActions": 0
+          }
+        },
+        {
+          "index": 14,
+          "action": {
+            "name": "press_key",
+            "arguments": {
+              "key": "Space"
+            }
+          },
+          "timestamp": "2026-10-31T11:42:15.827Z",
+          "focusBefore": {
+            "id": null,
+            "tag": "INPUT",
+            "role": null,
+            "name": "Friday, November 6, 2026",
+            "value": "2026-11-06",
+            "selectionStart": null,
+            "selectionEnd": null
+          },
+          "focusAfter": {
+            "id": null,
+            "tag": "INPUT",
+            "role": null,
+            "name": "Friday, November 6, 2026",
+            "value": "2026-11-06",
+            "selectionStart": null,
+            "selectionEnd": null
+          },
+          "checkpoint": {
+            "before": "3634cbdc2d3021bd4e4a39855d2218977980eede8f61fac91f4959d0f93fbd53",
+            "after": "3f09ebf1e1b5360fdc6f6f628065c8261bcededce1ed0975dcb9f48c57246c0e",
+            "unchangedActions": 0
+          }
+        },
+        {
+          "index": 15,
+          "action": {
+            "name": "press_key",
+            "arguments": {
+              "key": "Tab"
+            }
+          },
+          "timestamp": "2026-10-31T11:42:19.112Z",
+          "focusBefore": {
+            "id": null,
+            "tag": "INPUT",
+            "role": null,
+            "name": "Friday, November 6, 2026",
+            "value": "2026-11-06",
+            "selectionStart": null,
+            "selectionEnd": null
+          },
+          "focusAfter": {
+            "id": "preview-change",
+            "tag": "BUTTON",
+            "role": null,
+            "name": "Preview change",
+            "value": "",
+            "selectionStart": null,
+            "selectionEnd": null
+          },
+          "checkpoint": {
+            "before": "3f09ebf1e1b5360fdc6f6f628065c8261bcededce1ed0975dcb9f48c57246c0e",
+            "after": "873ed749ef1c398d4ee66bedd99e9fd73a610ec533d6ed3e51900c1e1cc1298c",
+            "unchangedActions": 0
+          }
+        },
+        {
+          "index": 16,
+          "action": {
+            "name": "press_key",
+            "arguments": {
+              "key": "Enter"
+            }
+          },
+          "timestamp": "2026-10-31T11:42:21.974Z",
+          "focusBefore": {
+            "id": "preview-change",
+            "tag": "BUTTON",
+            "role": null,
+            "name": "Preview change",
+            "value": "",
+            "selectionStart": null,
+            "selectionEnd": null
+          },
+          "focusAfter": {
+            "id": "preview-summary",
+            "tag": "DIV",
+            "role": null,
+            "name": "Northstar Studio · Order NS-2841 · Proposed delivery: Friday, November 6, 2026",
+            "value": null,
+            "selectionStart": null,
+            "selectionEnd": null
+          },
+          "checkpoint": {
+            "before": "873ed749ef1c398d4ee66bedd99e9fd73a610ec533d6ed3e51900c1e1cc1298c",
+            "after": "9723f17ee4c0985535ed4a20a9178543d6edacd61408718ae9c46bebbe840d1e",
+            "unchangedActions": 0
+          }
+        }
+      ],
+      "escapeActionIndex": 16,
+      "openedAtIndex": 15,
+      "executionMode": "meta-live"
+    },
+    "independent": {
+      "verified": true,
+      "reason": "independent_contract_improvement"
+    },
+    "agentComparability": {
+      "verified": true,
+      "reason": "same_task_model_budget_and_runtime"
+    }
+  },
+  "model": "muse-spark-1.3",
+  "finishedAt": "2026-10-31T11:44:00.156Z",
+  "agentResult": {
+    "valid": true,
+    "outcome": "comparison_verified",
+    "reason": "dialog_contract_improvement"
+  }
+}

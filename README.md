@@ -63,6 +63,8 @@ npm run check:discovery
 
 The last command checks real browsers and learned-route replay with explicitly injected test decisions and no model calls. `npm run check:discovery:live` is separate: it requires the configured main workbench and DispatchDesk, starts two actual Meta sessions from the UI and spends API credits. The recorded October 29 Meta pair found a 16-action route; first-Escape checks failed 3/3 before and passed 3/3 after. The original agent eventually recovered, and that recovery remains visible. See [the live evidence, discovery and scope](docs/dispatch-discovery.md).
 
+A separate October 31 stability cohort ran three new Meta pairs: all six sessions exercised the target preview, all three pairs verified the correction, and independent first-Escape checks failed 9/9 before and passed 9/9 after. Routes varied between 16 and 18 actions. See [the complete table and all raw records](docs/discovery-stability-2026-10-31/README.md); replay counts are kept separate from model-session counts.
+
 For a separate demonstration website:
 
 ```sh
