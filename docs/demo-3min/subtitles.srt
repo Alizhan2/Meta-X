@@ -1,0 +1,147 @@
+1
+00:00:00,000 --> 00:00:04,395
+A website can work with a mouse and still fail during keyboard navigation.
+
+2
+00:00:04,395 --> 00:00:08,790
+TabProof helps developers turn a keyboard failure into a reproducible test, then check
+
+3
+00:00:08,790 --> 00:00:10,480
+whether a fix actually works.
+
+4
+00:00:12,000 --> 00:00:17,308
+Here is DispatchDesk, our controlled test application. The task is to find Northstar
+
+5
+00:00:17,308 --> 00:00:22,615
+Studio's order in transit, review a proposed delivery date, and close the preview
+
+6
+00:00:22,615 --> 00:00:23,840
+without applying changes.
+
+7
+00:00:25,000 --> 00:00:30,182
+Meta Muse Spark interprets screenshots, page semantics, focus, and action history to choose
+
+8
+00:00:30,182 --> 00:00:35,364
+the next step. We supply the business goal, not a navigation script. The
+
+9
+00:00:35,364 --> 00:00:39,350
+agent's only action tools are keyboard presses and text entry.
+
+10
+00:00:40,000 --> 00:00:44,823
+Watch this recorded route from the third pair. The agent passes a similarly
+
+11
+00:00:44,823 --> 00:00:49,646
+named customer, opens the correct order, and selects the requested date. It briefly
+
+12
+00:00:49,646 --> 00:00:54,469
+overshoots a control, then recovers. Eighteen real keyboard actions reach the preview. These
+
+13
+00:00:54,469 --> 00:00:58,550
+are observations from the saved Meta session, not a hand-authored route.
+
+14
+00:01:05,000 --> 00:01:09,561
+Now the first Escape leaves the preview open, with focus still inside it.
+
+15
+00:01:09,561 --> 00:01:14,123
+TabProof records the observed dialog state independently of what the model says. This
+
+16
+00:01:14,123 --> 00:01:16,930
+is the specific keyboard behavior we are measuring.
+
+17
+00:01:20,000 --> 00:01:24,908
+The agent eventually finds a way out after more actions and reports completion.
+
+18
+00:01:24,908 --> 00:01:29,817
+That does not erase the earlier Escape failures. TabProof keeps eventual recovery and
+
+19
+00:01:29,817 --> 00:01:32,460
+the measured interaction defect as separate results.
+
+20
+00:01:34,000 --> 00:01:38,294
+The two demo releases differ by one source change: removing the cancel handler
+
+21
+00:01:38,294 --> 00:01:42,587
+that prevents default dialog dismissal. The generated pages are checked for this exact
+
+22
+00:01:42,587 --> 00:01:46,220
+difference. This is a seeded bug in our own test application.
+
+23
+00:01:48,000 --> 00:01:52,673
+The independent checker replays the original agent's exact route on both versions, in
+
+24
+00:01:52,673 --> 00:01:57,346
+three fresh browsers each. It checks focus along the way, then tests one
+
+25
+00:01:57,346 --> 00:02:01,300
+Escape. A changed route becomes inconclusive instead of a guessed defect.
+
+26
+00:02:03,000 --> 00:02:07,468
+A fresh Meta attempt also reaches the corrected preview. Its first Escape closes
+
+27
+00:02:07,468 --> 00:02:11,936
+the dialog and returns focus to the opener. The independently replayed original route
+
+28
+00:02:11,936 --> 00:02:16,060
+passes too. The model outcome and the keyboard measurements are both retained.
+
+29
+00:02:18,000 --> 00:02:23,117
+We ran three new pairs, six actual Meta sessions, with no API failures.
+
+30
+00:02:23,117 --> 00:02:28,233
+All six reached the target. Every original first Escape failed; every corrected first
+
+31
+00:02:28,233 --> 00:02:33,350
+Escape passed. The eighteen independent reproductions are separate checks, not extra model runs.
+
+32
+00:02:34,000 --> 00:02:38,567
+Developers can start and stop runs, inspect actions and screenshots, compare versions, and
+
+33
+00:02:38,567 --> 00:02:43,134
+download an offline evidence report. Instead of manually writing the initial path, they
+
+34
+00:02:43,134 --> 00:02:47,350
+can inspect the path discovered by Meta and reproduce the measured interaction.
+
+35
+00:02:48,000 --> 00:02:52,760
+That is TabProof: Meta discovers a path, and independent checks measure the fix.
+
+36
+00:02:52,760 --> 00:02:57,519
+This small controlled study is not an accessibility certification. Our code, raw results,
+
+37
+00:02:57,519 --> 00:02:59,350
+and reproduction steps are public.

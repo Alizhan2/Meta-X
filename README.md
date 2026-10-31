@@ -65,6 +65,8 @@ The last command checks real browsers and learned-route replay with explicitly i
 
 A separate October 31 stability cohort ran three new Meta pairs: all six sessions exercised the target preview, all three pairs verified the correction, and independent first-Escape checks failed 9/9 before and passed 9/9 after. Routes varied between 16 and 18 actions. See [the complete table and all raw records](docs/discovery-stability-2026-10-31/README.md); replay counts are kept separate from model-session counts.
 
+The [three-minute demo pack](docs/demo-3min/README.md) contains the timed English narration, subtitles, provenance and video verification. It presents actual recorded Meta actions, the first Escape failure, the correction and all three stability pairs. The generated MP4 remains a local artifact until uploaded for submission.
+
 For a separate demonstration website:
 
 ```sh

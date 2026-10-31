@@ -1,0 +1,16 @@
+{
+  "durationSeconds": 180,
+  "dimensions": [
+    1920,
+    1080
+  ],
+  "fps": 25,
+  "videoCodec": "h264",
+  "audioCodec": "aac",
+  "subtitleCodec": "mov_text",
+  "meanVolumeDb": -16.6,
+  "fullDecode": "passed",
+  "bytes": 5645834,
+  "sha256": "9a259ac55b6d27585e56a56784df0c9e71d1994490ec996a7b5f502b2a3412ed",
+  "scope": "Technical media checks and sampled visual review; system English voice; no new Meta calls."
+}
