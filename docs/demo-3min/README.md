@@ -2,6 +2,8 @@
 
 An edited presentation of actual recorded Meta sessions and independent checks. English system narration (macOS Samantha); selectable English subtitles. It does not depict a new live model session. No new Meta calls were made to produce the video.
 
+Published demo: [Watch on YouTube](https://youtu.be/EESCrXBHmOA) — unlisted, verified playing while signed out on October 31, 2026.
+
 Local video: `output/playwright/demo-3min/TabProof-demo-3min.mp4` (generated, not committed). [Narration and timing](narration-en.md), [subtitles](subtitles.srt), [scene sources](scenes.json).
 
 ## Story
@@ -37,4 +39,4 @@ Requires the saved local run artifacts above, the workbench on port 3000, instal
 
 ## Before submission
 
-Watch the full MP4 and adjust pronunciation/pacing or record the provided English text in your own voice. Upload the video to an accessible hosting service and add that link to the submission. Creating this local file does not upload a video or submit the project.
+Watch the full MP4 and adjust pronunciation/pacing or record the provided English text in your own voice. The video is now uploaded to YouTube with unlisted access. Use `https://youtu.be/EESCrXBHmOA` in the submission. Uploading the video does not submit the project.
